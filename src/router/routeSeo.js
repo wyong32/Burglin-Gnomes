@@ -8,6 +8,12 @@ export const routeSeo = {
       "The definitive, database-driven Burglin' Gnomes wiki. Access patch-verified item spawn tables, co-op task routes, and survival mechanics.",
     keywords: 'Burglin Gnomes guide, Burglin Gnomes wiki, co-op tips, beginner route',
   },
+  search: {
+    title: "Search Guides, Items & Recipes | Burglin' Gnomes",
+    description:
+      "Search Burglin' Gnomes guides for items, crafting recipes, enemies, beginner routes, wiki topics, and patch notes.",
+    keywords: 'Burglin Gnomes search, item lookup, recipe finder, enemy guide',
+  },
   wiki: {
     title: "Burglin' Gnomes Wiki — Guides, Items & Enemies",
     description:

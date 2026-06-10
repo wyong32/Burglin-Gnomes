@@ -5,6 +5,7 @@ import CraftingView from '../views/CraftingView.vue'
 import CraftingDetailView from '../views/CraftingDetailView.vue'
 import EnemiesView from '../views/EnemiesView.vue'
 import HomeView from '../views/HomeView.vue'
+import SearchView from '../views/SearchView.vue'
 import ItemDetailView from '../views/ItemDetailView.vue'
 import ItemsView from '../views/ItemsView.vue'
 import AboutUsView from '../views/Legal/AboutUsView.vue'
@@ -63,6 +64,12 @@ const router = createRouter({
       name: 'home',
       component: HomeView,
       meta: routeMeta('home'),
+    },
+    {
+      path: '/search',
+      name: 'search',
+      component: SearchView,
+      meta: routeMeta('search'),
     },
     {
       path: '/wiki',

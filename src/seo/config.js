@@ -17,6 +17,7 @@ export const seoConfig = {
   },
   priorities: {
     home: 1.0,
+    search: 0.75,
     wiki: 0.92,
     beginner: 0.95,
     items: 0.9,
@@ -34,6 +35,7 @@ export const seoConfig = {
   },
   changefreq: {
     home: 'weekly',
+    search: 'monthly',
     wiki: 'weekly',
     beginner: 'weekly',
     items: 'weekly',

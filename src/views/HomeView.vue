@@ -7,8 +7,22 @@
           <span class="eyebrow">Player guide</span>
           <h1>Burglin' Gnomes Guide — Tasks, Items, Crafting &amp; Co-op Tips</h1>
           <p>
-            Our live-build testing confirms that chasing raw loot value early on is a trap. Team progression strictly relies on prioritizing High-Gnome tasks first to secure the initial run loop and unlock necessary baseline upgrades.
+            Burglin' Gnomes is out on Steam as of June 10, 2026. This site is our full-release player guide — beginner routes, item and crafting databases, bestiary notes, and co-op tips from real runs, updated as patches land.
           </p>
+          <form class="hero-search" role="search" @submit.prevent="submitSearch">
+            <label class="hero-search-label" for="hero-search-input">Search guides, items, recipes, and enemies</label>
+            <div class="hero-search-row">
+              <input
+                id="hero-search-input"
+                v-model="searchQuery"
+                type="search"
+                name="q"
+                autocomplete="off"
+                placeholder="Search items, recipes, enemies..."
+              />
+              <button type="submit">Search</button>
+            </div>
+          </form>
           <div class="hero-actions" aria-label="Primary guide links">
             <RouterLink to="/beginner">Start with Beginner Guide</RouterLink>
             <RouterLink to="/items">Browse all items</RouterLink>
@@ -47,16 +61,7 @@
             <span class="eyebrow">Gameplay introduction</span>
             <h2>How a Burglin' Gnomes run works</h2>
             <p>
-              A run starts with small gnomes entering a human home and trying to turn household chaos
-              into useful progress. The game is not only about grabbing valuables. The High-Gnome gives
-              jobs, and those jobs decide which rooms matter, which objects are worth carrying, and
-              when the group should leave instead of getting greedy.
-            </p>
-            <p>
-              The safest early rhythm is: check the task list, identify a low-risk entry, clear small
-              objectives, bank useful materials, then carry larger loot once the route back out is known.
-              Combat, enemy behavior, and strange physics interactions should be tested separately
-              before a team relies on them during a clean run.
+              Our live-build testing confirms that chasing raw loot value early on is a trap. Team progression strictly relies on prioritizing High-Gnome tasks first to secure the initial run loop and unlock necessary baseline upgrades.
             </p>
           </article>
           <figure class="media-panel">
@@ -255,8 +260,22 @@
 </template>
 
 <script setup>
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 import homeData from '../data/homeData'
 import { displayStatus, statusClass } from '../utils/contentLabels'
+
+const router = useRouter()
+const searchQuery = ref('')
+
+function submitSearch() {
+  const q = searchQuery.value.trim()
+  if (!q) {
+    router.push('/search')
+    return
+  }
+  router.push({ path: '/search', query: { q } })
+}
 
 const facts = homeData.find((section) => section.key === 'facts').items
 const quickLinks = homeData.find((section) => section.key === 'quickLinks').items
@@ -273,11 +292,74 @@ const faq = homeData.find((section) => section.key === 'faq').items
   padding-top: 54px;
 }
 
+.hero-search {
+  display: grid;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.hero-search-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.hero-search-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+}
+
+.hero-search-row input {
+  width: 100%;
+  border: 2px solid var(--color-ink);
+  border-radius: 999px;
+  padding: 12px 16px;
+  background: var(--color-surface);
+  color: var(--color-ink);
+  font: inherit;
+  font-weight: 800;
+  box-shadow: 3px 4px 0 rgba(36, 51, 45, 0.12);
+}
+
+.hero-search-row input:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.hero-search-row button {
+  border: 2px solid var(--color-ink);
+  border-radius: 999px;
+  padding: 12px 16px;
+  background: var(--color-ink);
+  color: var(--color-surface);
+  font: inherit;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 4px 5px 0 rgba(36, 51, 45, 0.18);
+  transition:
+    background 180ms ease,
+    transform 180ms ease;
+}
+
+.hero-search-row button:hover,
+.hero-search-row button:focus-visible {
+  background: var(--color-primary);
+  outline: none;
+  transform: translateY(-2px);
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 6px;
+  margin-top: 12px;
 }
 
 .hero-actions a {
@@ -437,6 +519,10 @@ const faq = homeData.find((section) => section.key === 'faq').items
   }
 
   .tool-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-search-row {
     grid-template-columns: 1fr;
   }
 
