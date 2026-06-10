@@ -1,0 +1,52 @@
+/**
+ * Burglin' Gnomes Guide — canonical、OG、Twitter、sitemap 使用此域名。
+ */
+export const seoConfig = {
+  domain: 'burglin-gnomes.org',
+  fullDomain: 'https://burglin-gnomes.org',
+  siteName: "Burglin' Gnomes Guide",
+  defaultOgImage: '/images/logo.webp',
+  defaults: {
+    title: "Burglin' Gnomes Guide — Tasks, Items, Crafting & Co-op Tips",
+    description:
+      "Player-made guide for Burglin' Gnomes: first High-Gnome tasks, safe routes, item finds, crafting recipes, enemy tips, and co-op fixes after the June 10 release.",
+    keywords:
+      "Burglin Gnomes guide, Burglin Gnomes wiki, co-op tips, beginner route, items, crafting, bestiary",
+    author: "Burglin' Gnomes Guide",
+    type: 'website',
+  },
+  priorities: {
+    home: 1.0,
+    wiki: 0.92,
+    beginner: 0.95,
+    items: 0.9,
+    'item-detail': 0.8,
+    crafting: 0.88,
+    'crafting-detail': 0.78,
+    bestiary: 0.88,
+    'bestiary-detail': 0.78,
+    updates: 0.9,
+    'legal-privacy': 0.35,
+    'legal-terms': 0.35,
+    'legal-copyright': 0.35,
+    'legal-about': 0.45,
+    'legal-contact': 0.45,
+  },
+  changefreq: {
+    home: 'weekly',
+    wiki: 'weekly',
+    beginner: 'weekly',
+    items: 'weekly',
+    'item-detail': 'monthly',
+    crafting: 'weekly',
+    'crafting-detail': 'monthly',
+    bestiary: 'weekly',
+    'bestiary-detail': 'monthly',
+    updates: 'weekly',
+    'legal-privacy': 'yearly',
+    'legal-terms': 'yearly',
+    'legal-copyright': 'yearly',
+    'legal-about': 'yearly',
+    'legal-contact': 'yearly',
+  },
+}

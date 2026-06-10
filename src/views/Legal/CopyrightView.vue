@@ -5,7 +5,7 @@
         <div class="page-hero">
           <div class="page-hero-copy">
             <span class="eyebrow">Legal</span>
-            <h1>Copyright</h1>
+            <h1>Copyright &amp; Attribution | burglin-gnomes.org</h1>
             <p>
               This page explains how copyright, attribution, and takedown requests are handled for
               burglin-gnomes.org.
@@ -60,11 +60,6 @@
 </template>
 
 <script setup>
-import { useRoute } from 'vue-router'
-import { setRouteSeo } from '../../utils/seo'
-
-const routeMeta = useRoute()
-setRouteSeo(routeMeta)
 </script>
 
 <style scoped>

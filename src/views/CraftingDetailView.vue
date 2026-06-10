@@ -5,7 +5,7 @@
         <div class="page-hero">
           <div class="page-hero-copy">
             <span class="eyebrow">{{ recipe.category }}</span>
-            <h1>{{ recipe.name }} Recipe — Burglin' Gnomes Crafting</h1>
+            <h1>{{ recipe.tdk.title }}</h1>
             <p>{{ recipe.effect }} {{ recipe.bestUse }}</p>
           </div>
           <figure class="hero-art">
@@ -26,7 +26,7 @@
             <section id="materials" class="guide-block">
               <h2>Materials to craft {{ recipe.name }}</h2>
               <div class="ingredient-grid">
-                <RouterLink v-for="material in materials" :key="material.item" class="ingredient-card" :to="`/items/${material.item}/`">
+                <RouterLink v-for="material in materials" :key="material.item" class="ingredient-card" :to="`/items/${material.item}`">
                   <img :src="material.image" :alt="material.name" />
                   <span>
                     <strong>{{ material.quantity }}x {{ material.name }}</strong>
@@ -38,7 +38,7 @@
 
             <section id="output" class="guide-block">
               <h2>What {{ recipe.name }} gives you</h2>
-              <RouterLink v-if="outputItem" class="guide-card" :to="`/items/${outputItem.slug}/`">
+              <RouterLink v-if="outputItem" class="guide-card" :to="`/items/${outputItem.slug}`">
                 <strong>{{ outputItem.name }}</strong>
                 <span>{{ outputItem.use }}</span>
               </RouterLink>
@@ -49,7 +49,7 @@
             <section id="bestiary" class="guide-block">
               <h2>Enemies and hazards this craft helps with</h2>
               <div class="link-grid">
-                <RouterLink v-for="entry in relatedBestiary" :key="entry.slug" class="guide-card" :to="`/bestiary/${entry.slug}/`">
+                <RouterLink v-for="entry in relatedBestiary" :key="entry.slug" class="guide-card" :to="`/bestiary/${entry.slug}`">
                   <strong>{{ entry.name }}</strong>
                   <span>{{ entry.counter }}</span>
                 </RouterLink>
@@ -69,9 +69,9 @@
 
       <div v-else class="page-content">
         <div class="guide-card">
-          <h1>Recipe not found</h1>
+          <h1>Crafting Recipes | Burglin' Gnomes</h1>
           <p>That crafting page does not exist yet. Browse all recipes or send us a correction.</p>
-          <RouterLink to="/crafting/">Back to all recipes</RouterLink>
+          <RouterLink to="/crafting">Back to all recipes</RouterLink>
         </div>
       </div>
     </div>
@@ -79,13 +79,12 @@
 </template>
 
 <script setup>
-import { computed, watchEffect } from 'vue'
+import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import craftingData from '../data/craftingData'
 import enemiesData from '../data/enemiesData'
 import itemsData from '../data/itemsData'
 import { displayStatus, statusClass } from '../utils/contentLabels'
-import { setPageSeo } from '../utils/seo'
 
 const route = useRoute()
 const recipes = craftingData.find((section) => section.key === 'recipes').items
@@ -103,22 +102,6 @@ const materials = computed(() =>
   })),
 )
 const relatedBestiary = computed(() => (recipe.value?.relatedBestiary || []).map((slug) => bestiary.find((entry) => entry.slug === slug)).filter(Boolean))
-
-watchEffect(() => {
-  if (!recipe.value) {
-    setPageSeo({
-      title: "Crafting Recipes | Burglin' Gnomes",
-      description: "Burglin' Gnomes crafting recipes with materials, gear effects, and the craft order we use on co-op runs.",
-      path: '/crafting/',
-    })
-    return
-  }
-
-  setPageSeo({
-    ...recipe.value.tdk,
-    path: `/crafting/${recipe.value.slug}/`,
-  })
-})
 </script>
 
 <style scoped>

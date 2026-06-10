@@ -6,7 +6,7 @@
         <div class="page-hero">
           <div class="page-hero-copy">
             <span class="eyebrow">Start here</span>
-            <h1>Burglin' Gnomes Beginner Guide — Tasks First Route</h1>
+            <h1>Beginner Guide — First Tasks &amp; Safe Routes | Burglin' Gnomes</h1>
             <p>
               New player? Read the High-Gnome task list before you touch loot. Pick an entry you
               can escape from, clear safe objectives, learn revive rules, and fix co-op setup before
@@ -271,13 +271,8 @@
 </template>
 
 <script setup>
-import { useRoute } from 'vue-router'
 import beginnerData from '../data/beginnerData'
 import { displayStatus, statusClass } from '../utils/contentLabels'
-import { setRouteSeo } from '../utils/seo'
-
-const routeMeta = useRoute()
-setRouteSeo(routeMeta)
 
 const steps = beginnerData.find((section) => section.key === 'steps').items
 const mistakes = beginnerData.find((section) => section.key === 'mistakes').items

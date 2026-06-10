@@ -32,7 +32,7 @@ export const buildRecipePageMeta = (recipe) => ({
 })
 
 export const buildBestiaryPageMeta = (entry) => ({
-  title: `${entry.name} — How to Survive | Burglin' Gnomes Bestiary`,
+  title: `${entry.name} — How to Survive | Burglin' Gnomes`,
   description: `Fight or avoid ${entry.name} in Burglin' Gnomes: danger level, behavior we have seen, survival tips, and gear that helps on co-op runs.`,
   keywords: `Burglin Gnomes ${entry.name}, ${entry.name} counter`,
 })

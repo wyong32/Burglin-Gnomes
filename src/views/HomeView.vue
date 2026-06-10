@@ -7,19 +7,15 @@
           <span class="eyebrow">Player guide</span>
           <h1>Burglin' Gnomes Guide — Tasks, Items, Crafting &amp; Co-op Tips</h1>
           <p>
-            Burglin' Gnomes is a first-person online co-op heist game where tiny gnomes break into
-            human homes, finish High-Gnome jobs, steal useful loot, craft gear, upgrade home, and
-            try not to get caught. We built this guide for players who want fast answers mid-run:
-            safe routes, item finds, crafting order, enemy counters, and co-op fixes after the
-            June 10 release.
+            Our live-build testing confirms that chasing raw loot value early on is a trap. Team progression strictly relies on prioritizing High-Gnome tasks first to secure the initial run loop and unlock necessary baseline upgrades.
           </p>
           <div class="hero-actions" aria-label="Primary guide links">
-            <RouterLink to="/beginner/">Start with Beginner Guide</RouterLink>
-            <RouterLink to="/items/">Browse all items</RouterLink>
+            <RouterLink to="/beginner">Start with Beginner Guide</RouterLink>
+            <RouterLink to="/items">Browse all items</RouterLink>
           </div>
         </div>
         <figure class="hero-art">
-          <img src="/images/steam-cover.jpg" alt="Burglin' Gnomes official Steam key art" />
+          <img src="/images/logo.webp" alt="Burglin' Gnomes official Steam key art" />
         </figure>
       </div>
     </div>
@@ -209,22 +205,6 @@
     </div>
   </section>
 
-  <section class="danger-section page-section">
-    <div class="container">
-      <div class="danger-content dark-band page-content">
-        <div class="section-heading">
-          <span class="eyebrow">Strategy guide</span>
-          <h2>Why task routing matters more than raw loot value</h2>
-          <p>
-            Burglin' Gnomes rewards stealth, teamwork, rescue timing, crafting, and High-Gnome task
-            completion. That means the best route is not a loot-only value list. It is a plan that
-            protects task progress.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="systems-section page-section">
     <div class="container">
       <div class="systems-content page-content">
@@ -275,13 +255,8 @@
 </template>
 
 <script setup>
-import { useRoute } from 'vue-router'
 import homeData from '../data/homeData'
 import { displayStatus, statusClass } from '../utils/contentLabels'
-import { setRouteSeo } from '../utils/seo'
-
-const routeMeta = useRoute()
-setRouteSeo(routeMeta)
 
 const facts = homeData.find((section) => section.key === 'facts').items
 const quickLinks = homeData.find((section) => section.key === 'quickLinks').items
@@ -444,12 +419,6 @@ const faq = homeData.find((section) => section.key === 'faq').items
 
 .tool-card:nth-child(3n) {
   background: #f8dec9;
-}
-
-.danger-content .eyebrow {
-  border-color: rgba(255, 250, 240, 0.22);
-  background: rgba(255, 250, 240, 0.08);
-  color: var(--color-surface);
 }
 
 @media (max-width: 1024px) {

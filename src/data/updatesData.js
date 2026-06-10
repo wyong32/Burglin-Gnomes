@@ -22,7 +22,7 @@ export default [
         type: 'Map routes',
         priority: 'High',
         target: 'Wiki map guides',
-        path: '/wiki/',
+        path: '/wiki',
       },
       {
         title: 'Tall humanoid grabs',
@@ -33,7 +33,7 @@ export default [
         type: 'Bestiary',
         priority: 'High',
         target: 'Tall Humanoid page',
-        path: '/bestiary/tall-humanoid/',
+        path: '/bestiary/tall-humanoid',
       },
       {
         title: 'Expanded gear set',
@@ -44,7 +44,7 @@ export default [
         type: 'Items and crafting',
         priority: 'High',
         target: 'Items and crafting pages',
-        path: '/items/',
+        path: '/items',
       },
       {
         title: 'Smoke tool behavior',
@@ -55,7 +55,7 @@ export default [
         type: 'Tools',
         priority: 'Medium',
         target: 'Smoke tool page',
-        path: '/items/smoke-tool/',
+        path: '/items/smoke-tool',
       },
       {
         title: 'Gnome-world base objects',
@@ -66,7 +66,7 @@ export default [
         type: 'Base building',
         priority: 'Medium',
         target: 'Base object guides',
-        path: '/items/purple-crystal/',
+        path: '/items/purple-crystal',
       },
       {
         title: 'Door and entry tools',
@@ -77,7 +77,7 @@ export default [
         type: 'Route tools',
         priority: 'Medium',
         target: 'Crowbar and tool pages',
-        path: '/items/crowbar/',
+        path: '/items/crowbar',
       },
     ],
   },

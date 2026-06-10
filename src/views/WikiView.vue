@@ -6,7 +6,7 @@
         <div class="page-hero">
           <div class="page-hero-copy">
             <span class="eyebrow">Wiki index</span>
-            <h1>Burglin' Gnomes Wiki — All Guides &amp; Topics</h1>
+            <h1>Burglin' Gnomes Wiki — Guides, Items &amp; Enemies</h1>
             <p>
               Already know what you need? Jump straight to beginner routes, tasks, items, crafting,
               enemies, or post-patch changes. We organized pages around what players ask mid-run.
@@ -111,12 +111,7 @@
 </template>
 
 <script setup>
-import { useRoute } from 'vue-router'
 import wikiData from '../data/wikiData'
-import { setRouteSeo } from '../utils/seo'
-
-const routeMeta = useRoute()
-setRouteSeo(routeMeta)
 
 const indexes = wikiData.find((section) => section.key === 'indexes').items
 const deepIndexes = wikiData.find((section) => section.key === 'deepIndexes').items

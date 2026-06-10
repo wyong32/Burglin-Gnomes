@@ -11,12 +11,12 @@ export default [
   {
     key: 'quickLinks',
     items: [
-      { label: 'Beginner', path: '/beginner/', note: 'First route, tasks, doors and windows, revive rules, and co-op fixes.' },
-      { label: 'Wiki', path: '/wiki/', note: 'Every guide topic in one index when you need a fast answer mid-run.' },
-      { label: 'Items & Loot', path: '/items/', note: 'What to grab, what to skip, and what still needs in-game checks.' },
-      { label: 'Crafting', path: '/crafting/', note: 'Gear, home upgrades, and which crafts we prioritize first.' },
-      { label: 'NPCs & Enemies', path: '/bestiary/', note: 'Humans, cats, pests, and hazards that can end a run.' },
-      { label: 'Updates', path: '/updates/', note: 'Release facts and what we recheck after patches land.' },
+      { label: 'Beginner', path: '/beginner', note: 'First route, tasks, doors and windows, revive rules, and co-op fixes.' },
+      { label: 'Wiki', path: '/wiki', note: 'Every guide topic in one index when you need a fast answer mid-run.' },
+      { label: 'Items & Loot', path: '/items', note: 'What to grab, what to skip, and what still needs in-game checks.' },
+      { label: 'Crafting', path: '/crafting', note: 'Gear, home upgrades, and which crafts we prioritize first.' },
+      { label: 'NPCs & Enemies', path: '/bestiary', note: 'Humans, cats, pests, and hazards that can end a run.' },
+      { label: 'Updates', path: '/updates', note: 'Release facts and what we recheck after patches land.' },
     ],
   },
   {

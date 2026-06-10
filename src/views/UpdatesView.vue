@@ -6,7 +6,7 @@
         <div class="page-hero">
           <div class="page-hero-copy">
             <span class="eyebrow">Release &amp; patches</span>
-            <h1>Burglin' Gnomes Updates — Release Date &amp; Patch Notes</h1>
+            <h1>Updates &amp; Patch Notes — Release Date | Burglin' Gnomes</h1>
             <p>
               Release facts, what we are watching in the full game, and which routes, items, and
               enemies we recheck after patches. When AI, crafting, or network code changes, old
@@ -14,7 +14,7 @@
             </p>
           </div>
           <figure class="hero-art">
-            <img src="/images/steam-hero.jpg" alt="Burglin' Gnomes Steam header art" />
+            <img src="/images/updates-page-01.webp" alt="Burglin' Gnomes Steam header art" />
           </figure>
         </div>
 
@@ -133,13 +133,8 @@
 </template>
 
 <script setup>
-import { useRoute } from 'vue-router'
 import updatesData from '../data/updatesData'
 import { displayStatus, statusClass } from '../utils/contentLabels'
-import { setRouteSeo } from '../utils/seo'
-
-const routeMeta = useRoute()
-setRouteSeo(routeMeta)
 
 const releaseFacts = updatesData.find((section) => section.key === 'releaseFacts').items
 const releasePreview = updatesData.find((section) => section.key === 'releasePreview').items

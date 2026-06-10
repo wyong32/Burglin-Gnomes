@@ -5,7 +5,7 @@
         <div class="page-hero">
           <div class="page-hero-copy">
             <span class="eyebrow">All items</span>
-            <h1>Burglin' Gnomes Items — Materials, Weapons, Tools &amp; Gear</h1>
+            <h1>All Items — Materials, Weapons, Tools &amp; Gear | Burglin' Gnomes</h1>
             <p>
               Every item we track from our runs: materials, weapons, tools, gear, task loot, base
               objects, and utility items. Pick a category, then open a page for where to find it,
@@ -13,7 +13,7 @@
             </p>
           </div>
           <figure class="hero-art">
-            <img src="/images/material-clonk.jpg" alt="Burglin' Gnomes materials and item guide" />
+            <img src="/images/item-page-01.webp" alt="Burglin' Gnomes materials and item guide" />
           </figure>
         </div>
 
@@ -49,13 +49,13 @@
               </div>
 
               <div class="item-grid">
-                <RouterLink v-for="item in group.items" :key="item.slug" class="item-card" :to="`/items/${item.slug}/`">
+                <RouterLink v-for="item in group.items" :key="item.slug" class="item-card" :to="`/items/${item.slug}`">
                   <img :src="item.image" :alt="item.name" />
                   <span class="item-card-body">
                     <small>{{ item.category }} / {{ item.type }}</small>
                     <strong>{{ item.name }}</strong>
-                    <em>{{ item.source }}</em>
-                    <b :class="['status-pill', statusClass(item.status)]">{{ displayStatus(item.status) }}</b>
+                    <em>{{ itemCardSource(item) }}</em>
+                    <b :class="itemCardLabelClass(item)">{{ itemCardLabel(item) }}</b>
                   </span>
                 </RouterLink>
               </div>
@@ -68,13 +68,8 @@
 </template>
 
 <script setup>
-import { useRoute } from 'vue-router'
 import itemsData from '../data/itemsData'
 import { displayStatus, statusClass } from '../utils/contentLabels'
-import { setRouteSeo } from '../utils/seo'
-
-const routeMeta = useRoute()
-setRouteSeo(routeMeta)
 
 const categories = itemsData.find((section) => section.key === 'categories').items
 const items = itemsData.find((section) => section.key === 'items').items
@@ -82,6 +77,13 @@ const items = itemsData.find((section) => section.key === 'items').items
 const itemsByCategory = (category) => items.filter((item) => item.category === category)
 const categoryGroups = categories.map((category) => ({ category, items: itemsByCategory(category) })).filter((group) => group.items.length)
 const categoryId = (category) => `items-${category.toLowerCase().replaceAll(' ', '-')}`
+const itemCardSource = (item) => (item.source === 'Unknown source' ? item.use : item.source)
+
+const itemCardLabel = (item) => (item.source === 'Unknown source' ? 'New' : displayStatus(item.status))
+
+const itemCardLabelClass = (item) =>
+  item.source === 'Unknown source' ? 'status-pill new' : ['status-pill', statusClass(item.status)]
+
 const categoryIntro = (category) =>
   ({
     Materials: 'Metal, cloth, and junk you need for early crafts and task overlap.',
@@ -229,6 +231,12 @@ const categoryIntro = (category) =>
   font-style: normal;
   font-weight: 800;
   line-height: 1.32;
+}
+
+.item-card .status-pill.new {
+  background: rgba(217, 163, 49, 0.14);
+  color: var(--color-gold);
+  border-color: var(--color-gold);
 }
 
 @media (max-width: 1024px) {

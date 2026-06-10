@@ -1,4 +1,4 @@
-import { buildBestiaryPageMeta } from '../utils/contentLabels'
+import { buildBestiaryPageMeta } from '../utils/contentLabels.js'
 
 const withBestiaryTdk = (entries) => entries.map((entry) => ({ ...entry, tdk: buildBestiaryPageMeta(entry) }))
 
@@ -22,7 +22,7 @@ export default [
         recommendedItems: [],
         relatedGuides: ['first-tasks'],
         status: 'Confirmed',
-        image: '/images/task-list.jpg',
+        image: '/images/task-list.webp',
         sections: [
           {
             heading: 'Why High-Gnome matters',

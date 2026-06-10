@@ -5,7 +5,7 @@
         <div class="page-hero">
           <div class="page-hero-copy">
             <span class="eyebrow">{{ item.category }}</span>
-            <h1>{{ item.name }} — Burglin' Gnomes Item Guide</h1>
+            <h1>{{ item.tdk.title }}</h1>
             <p>{{ item.use }} {{ item.advice }}</p>
           </div>
           <figure class="hero-art">
@@ -37,11 +37,11 @@
               <h2>What {{ item.name }} is used for</h2>
               <p>{{ item.use }}</p>
               <div class="link-grid">
-                <RouterLink v-for="craft in relatedCrafts" :key="craft.slug" class="guide-card" :to="`/crafting/${craft.slug}/`">
+                <RouterLink v-for="craft in relatedCrafts" :key="craft.slug" class="guide-card" :to="`/crafting/${craft.slug}`">
                   <strong>{{ craft.name }}</strong>
                   <span>{{ craft.materials.map((material) => `${material.quantity} ${material.name}`).join(' + ') }}</span>
                 </RouterLink>
-                <RouterLink v-for="related in relatedItems" :key="related.slug" class="guide-card" :to="`/items/${related.slug}/`">
+                <RouterLink v-for="related in relatedItems" :key="related.slug" class="guide-card" :to="`/items/${related.slug}`">
                   <strong>{{ related.name }}</strong>
                   <span>{{ related.type }}</span>
                 </RouterLink>
@@ -61,9 +61,9 @@
 
       <div v-else class="page-content">
         <div class="guide-card">
-          <h1>Item not found</h1>
+          <h1>All Items | Burglin' Gnomes</h1>
           <p>That item page does not exist yet. Browse the full list or tell us what is missing.</p>
-          <RouterLink to="/items/">Back to all items</RouterLink>
+          <RouterLink to="/items">Back to all items</RouterLink>
         </div>
       </div>
     </div>
@@ -71,12 +71,11 @@
 </template>
 
 <script setup>
-import { computed, watchEffect } from 'vue'
+import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import craftingData from '../data/craftingData'
 import itemsData from '../data/itemsData'
 import { displayStatus, statusClass } from '../utils/contentLabels'
-import { setPageSeo } from '../utils/seo'
 
 const route = useRoute()
 const items = itemsData.find((section) => section.key === 'items').items
@@ -88,22 +87,6 @@ const relatedCrafts = computed(() => {
   const direct = item.value?.relatedCrafts || []
   const usedIn = item.value?.usedIn || []
   return [...new Set([...direct, ...usedIn])].map((slug) => recipes.find((recipe) => recipe.slug === slug)).filter(Boolean)
-})
-
-watchEffect(() => {
-  if (!item.value) {
-    setPageSeo({
-      title: "All Items | Burglin' Gnomes",
-      description: "Browse Burglin' Gnomes materials, weapons, tools, gear, and task items with sources and crafting links from our playtesting.",
-      path: '/items/',
-    })
-    return
-  }
-
-  setPageSeo({
-    ...item.value.tdk,
-    path: `/items/${item.value.slug}/`,
-  })
 })
 </script>
 

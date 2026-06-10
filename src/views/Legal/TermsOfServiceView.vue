@@ -5,7 +5,7 @@
         <div class="page-hero">
           <div class="page-hero-copy">
             <span class="eyebrow">Legal</span>
-            <h1>Terms of Service</h1>
+            <h1>Terms of Service | burglin-gnomes.org</h1>
             <p>
               These Terms of Service describe the basic rules for using burglin-gnomes.org, a
               player-focused Burglin Gnomes guide and wiki resource.
@@ -67,11 +67,6 @@
 </template>
 
 <script setup>
-import { useRoute } from 'vue-router'
-import { setRouteSeo } from '../../utils/seo'
-
-const routeMeta = useRoute()
-setRouteSeo(routeMeta)
 </script>
 
 <style scoped>

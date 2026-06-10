@@ -5,7 +5,7 @@
         <div class="page-hero">
           <div class="page-hero-copy">
             <span class="eyebrow">About</span>
-            <h1>About burglin-gnomes.org</h1>
+            <h1>About Us — Who Writes This Guide | burglin-gnomes.org</h1>
             <p>
               We are players who write Burglin' Gnomes guides from our own co-op runs — not an
               official site from Fobri or Steam. Our goal is practical help you can scan between
@@ -61,11 +61,6 @@
 </template>
 
 <script setup>
-import { useRoute } from 'vue-router'
-import { setRouteSeo } from '../../utils/seo'
-
-const routeMeta = useRoute()
-setRouteSeo(routeMeta)
 </script>
 
 <style scoped>

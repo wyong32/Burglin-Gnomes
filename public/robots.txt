@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://burglin-gnomes.org/sitemap.xml

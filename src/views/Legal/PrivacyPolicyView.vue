@@ -5,7 +5,7 @@
         <div class="page-hero">
           <div class="page-hero-copy">
             <span class="eyebrow">Legal</span>
-            <h1>Privacy Policy</h1>
+            <h1>Privacy Policy | burglin-gnomes.org</h1>
             <p>
               This Privacy Policy explains how burglin-gnomes.org handles basic information when
               players read our Burglin Gnomes guides, wiki pages, item notes, crafting recipes, and
@@ -70,11 +70,6 @@
 </template>
 
 <script setup>
-import { useRoute } from 'vue-router'
-import { setRouteSeo } from '../../utils/seo'
-
-const routeMeta = useRoute()
-setRouteSeo(routeMeta)
 </script>
 
 <style scoped>

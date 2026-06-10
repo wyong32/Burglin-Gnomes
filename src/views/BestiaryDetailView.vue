@@ -5,7 +5,7 @@
         <div class="page-hero">
           <div class="page-hero-copy">
             <span class="eyebrow">{{ entry.category }}</span>
-            <h1>{{ entry.name }} — How to Survive | Burglin' Gnomes</h1>
+            <h1>{{ entry.tdk.title }}</h1>
             <p>{{ entry.behavior }} {{ entry.counter }}</p>
           </div>
           <figure class="hero-art">
@@ -36,7 +36,7 @@
               <h2>How to survive {{ entry.name }}</h2>
               <p>{{ entry.counter }}</p>
               <div class="link-grid">
-                <RouterLink v-for="item in recommendedItems" :key="item.slug" class="guide-card" :to="`/items/${item.slug}/`">
+                <RouterLink v-for="item in recommendedItems" :key="item.slug" class="guide-card" :to="`/items/${item.slug}`">
                   <strong>{{ item.name }}</strong>
                   <span>{{ item.use }}</span>
                 </RouterLink>
@@ -56,9 +56,9 @@
 
       <div v-else class="page-content">
         <div class="guide-card">
-          <h1>Bestiary entry not found</h1>
+          <h1>Bestiary | Burglin' Gnomes</h1>
           <p>That enemy or NPC page does not exist yet. Browse the full bestiary or send us a tip.</p>
-          <RouterLink to="/bestiary/">Back to the bestiary</RouterLink>
+          <RouterLink to="/bestiary">Back to the bestiary</RouterLink>
         </div>
       </div>
     </div>
@@ -66,12 +66,11 @@
 </template>
 
 <script setup>
-import { computed, watchEffect } from 'vue'
+import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import enemiesData from '../data/enemiesData'
 import itemsData from '../data/itemsData'
 import { displayStatus, statusClass } from '../utils/contentLabels'
-import { setPageSeo } from '../utils/seo'
 
 const route = useRoute()
 const entries = enemiesData.find((section) => section.key === 'entries').items
@@ -79,22 +78,6 @@ const items = itemsData.find((section) => section.key === 'items').items
 
 const entry = computed(() => entries.find((item) => item.slug === route.params.slug))
 const recommendedItems = computed(() => (entry.value?.recommendedItems || []).map((slug) => items.find((item) => item.slug === slug)).filter(Boolean))
-
-watchEffect(() => {
-  if (!entry.value) {
-    setPageSeo({
-      title: "Bestiary | Burglin' Gnomes",
-      description: "NPCs, enemies, and hazards in Burglin' Gnomes with danger levels and survival tips from our co-op runs.",
-      path: '/bestiary/',
-    })
-    return
-  }
-
-  setPageSeo({
-    ...entry.value.tdk,
-    path: `/bestiary/${entry.value.slug}/`,
-  })
-})
 </script>
 
 <style scoped>

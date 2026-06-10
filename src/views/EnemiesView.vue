@@ -5,7 +5,7 @@
         <div class="page-hero">
           <div class="page-hero-copy">
             <span class="eyebrow">Bestiary</span>
-            <h1>Burglin' Gnomes Bestiary — NPCs, Enemies &amp; Hazards</h1>
+            <h1>Bestiary — NPCs, Enemies &amp; Hazards | Burglin' Gnomes</h1>
             <p>
               Humans, cats, pests, hostile gnomes, and household hazards that can end a run. We
               log what blocks tasks, what causes wipes, and which tools we practice before trusting
@@ -13,7 +13,7 @@
             </p>
           </div>
           <figure class="hero-art">
-            <img src="/images/threat-cat.jpg" alt="Burglin' Gnomes NPCs and enemies bestiary" />
+            <img src="/images/bestiary-page-01.webp" alt="Burglin' Gnomes NPCs and enemies bestiary" />
           </figure>
         </div>
 
@@ -31,7 +31,7 @@
             <h2>{{ categoryHeading(category) }}</h2>
           </div>
           <div class="database-grid">
-            <RouterLink v-for="entry in entriesByCategory(category)" :key="entry.slug" class="bestiary-card" :to="`/bestiary/${entry.slug}/`">
+            <RouterLink v-for="entry in entriesByCategory(category)" :key="entry.slug" class="bestiary-card" :to="`/bestiary/${entry.slug}`">
               <img :src="entry.image" :alt="entry.name" />
               <span>
                 <small>{{ entry.role }}</small>
@@ -48,13 +48,8 @@
 </template>
 
 <script setup>
-import { useRoute } from 'vue-router'
 import enemiesData from '../data/enemiesData'
 import { displayStatus, statusClass } from '../utils/contentLabels'
-import { setRouteSeo } from '../utils/seo'
-
-const routeMeta = useRoute()
-setRouteSeo(routeMeta)
 
 const categories = enemiesData.find((section) => section.key === 'categories').items
 const entries = enemiesData.find((section) => section.key === 'entries').items

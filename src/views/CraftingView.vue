@@ -5,7 +5,7 @@
         <div class="page-hero">
           <div class="page-hero-copy">
             <span class="eyebrow">Crafting</span>
-            <h1>Burglin' Gnomes Crafting — Recipes &amp; Materials</h1>
+            <h1>Crafting Recipes — Gear &amp; Upgrades | Burglin' Gnomes</h1>
             <p>
               What materials do you need, what gear do you get, and is it worth crafting before
               your next run? Every recipe links to material pages and to items or enemies when
@@ -13,7 +13,7 @@
             </p>
           </div>
           <figure class="hero-art">
-            <img src="/images/crafting-board.jpg" alt="Burglin' Gnomes crafting board" />
+            <img src="/images/crafting-page-01.webp" alt="Burglin' Gnomes crafting board" />
           </figure>
         </div>
 
@@ -24,13 +24,13 @@
             <p>Open a recipe for exact materials, what you craft, when we make it first, and what still needs more playtime.</p>
           </div>
           <div class="recipe-grid">
-            <RouterLink v-for="recipe in recipes" :key="recipe.slug" class="recipe-card" :to="`/crafting/${recipe.slug}/`">
+            <RouterLink v-for="recipe in recipes" :key="recipe.slug" class="recipe-card" :to="`/crafting/${recipe.slug}`">
               <img :src="recipe.image" :alt="recipe.name" />
               <span>
                 <small>{{ recipe.category }}</small>
                 <strong>{{ recipe.name }}</strong>
-                <em>{{ recipe.materials.map((material) => `${material.quantity} ${material.name}`).join(' + ') }}</em>
-                <b :class="['status-pill', statusClass(recipe.status)]">{{ displayStatus(recipe.status) }}</b>
+                <em>{{ recipeCardDetail(recipe) }}</em>
+                <b :class="recipeCardLabelClass(recipe)">{{ recipeCardLabel(recipe) }}</b>
               </span>
             </RouterLink>
           </div>
@@ -49,13 +49,13 @@
               <span>Guide note</span>
             </div>
             <div v-for="material in materials" :key="material.name" class="table-row material-row">
-              <RouterLink class="table-title" :to="material.item ? `/items/${material.item}/` : '/items/'">
+              <RouterLink class="table-title" :to="material.item ? `/items/${material.item}` : '/items'">
                 <img :src="material.image" :alt="material.name" />
                 <strong>{{ material.name }}</strong>
               </RouterLink>
-              <span>{{ material.source }}</span>
+              <span>{{ materialCardSource(material) }}</span>
               <span>{{ material.note }}</span>
-              <b :class="['status-pill', statusClass(material.status)]">{{ displayStatus(material.status) }}</b>
+              <b :class="materialCardLabelClass(material)">{{ materialCardLabel(material) }}</b>
             </div>
           </div>
         </section>
@@ -65,16 +65,30 @@
 </template>
 
 <script setup>
-import { useRoute } from 'vue-router'
 import craftingData from '../data/craftingData'
 import { displayStatus, statusClass } from '../utils/contentLabels'
-import { setRouteSeo } from '../utils/seo'
-
-const routeMeta = useRoute()
-setRouteSeo(routeMeta)
 
 const recipes = craftingData.find((section) => section.key === 'recipes').items
 const materials = craftingData.find((section) => section.key === 'materials').items
+
+const isNewRecipe = (recipe) => recipe.status === 'Retest Required' || recipe.category === 'Unverified'
+
+const recipeCardDetail = (recipe) =>
+  recipe.materials.map((material) => `${material.quantity} ${material.name}`).join(' + ')
+
+const recipeCardLabel = (recipe) => (isNewRecipe(recipe) ? 'New' : displayStatus(recipe.status))
+
+const recipeCardLabelClass = (recipe) =>
+  isNewRecipe(recipe) ? 'status-pill new' : ['status-pill', statusClass(recipe.status)]
+
+const isNewMaterial = (material) => material.source === 'Unknown' || material.status === 'Retest Required'
+
+const materialCardSource = (material) => (material.source === 'Unknown' ? material.note : material.source)
+
+const materialCardLabel = (material) => (isNewMaterial(material) ? 'New' : displayStatus(material.status))
+
+const materialCardLabelClass = (material) =>
+  isNewMaterial(material) ? 'status-pill new' : ['status-pill', statusClass(material.status)]
 </script>
 
 <style scoped>
@@ -130,6 +144,14 @@ const materials = craftingData.find((section) => section.key === 'materials').it
   color: var(--color-text);
   font-style: normal;
   font-weight: 900;
+  line-height: 1.32;
+}
+
+.recipe-card .status-pill.new,
+.materials-section .status-pill.new {
+  background: rgba(217, 163, 49, 0.14);
+  color: var(--color-gold);
+  border-color: var(--color-gold);
 }
 
 .material-row {

@@ -1,4 +1,4 @@
-import { buildRecipePageMeta } from '../utils/contentLabels'
+import { buildRecipePageMeta } from '../utils/contentLabels.js'
 
 const withRecipeTdk = (recipes) => recipes.map((recipe) => ({ ...recipe, tdk: buildRecipePageMeta(recipe) }))
 
@@ -24,7 +24,7 @@ export default [
         bestUse:
           'Craft this before chasing risky valuables. Carry capacity is one of the few upgrades that helps every route.',
         status: 'Observed',
-        image: '/images/recipe-expanded-backpack.jpg',
+        image: '/images/recipe-expanded-backpack.webp',
         relatedBestiary: ['human-homeowner', 'cat'],
         sections: [
           {
@@ -158,7 +158,7 @@ export default [
         note:
           'Used by Slap Hammer, Spring Shoes, and Pickaxe. The material guide describes it as gathered from metal-containing items.',
         status: 'Observed',
-        image: '/images/material-clonk.jpg',
+        image: '/images/material-clonk.webp',
       },
       {
         name: 'Basic Junk',
@@ -177,7 +177,7 @@ export default [
         source: 'Fabric, linen, and cloth-type objects',
         note: 'Used by the Expanded Backpack and also appears as an early task target.',
         status: 'Observed',
-        image: '/images/material-rag-strip.jpg',
+        image: '/images/material-rag-strip.webp',
       },
       {
         name: 'Plastic Block',
@@ -186,7 +186,7 @@ export default [
         source: 'Plastic-made objects',
         note: 'Used by Spring Shoes. Exact English item name should be rechecked in the English build.',
         status: 'Observed',
-        image: '/images/material-plastic-block.jpg',
+        image: '/images/material-plastic-block.webp',
       },
       {
         name: 'Gnome Element',

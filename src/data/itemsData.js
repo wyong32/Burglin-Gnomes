@@ -1,4 +1,4 @@
-import { buildItemPageMeta } from '../utils/contentLabels'
+import { buildItemPageMeta } from '../utils/contentLabels.js'
 
 const placeholder = 'https://placehold.co/160x120/ffdac1/6B9B7B?text='
 
@@ -23,7 +23,7 @@ export default [
         advice:
           'Search metal household objects first. The material journal states that Clonk is gathered from items containing metal.',
         status: 'Observed',
-        image: '/images/material-clonk.jpg',
+        image: '/images/material-clonk.webp',
         usedIn: ['slap-hammer', 'spring-shoes', 'pickaxe'],
         relatedItems: ['basic-junk', 'plastic-block'],
         sections: [
@@ -77,7 +77,7 @@ export default [
         advice:
           'Need 5 for the observed early task list and 3 for Expanded Backpack. Search cloth clutter before heavy loot.',
         status: 'Observed',
-        image: '/images/material-rag-strip.jpg',
+        image: '/images/material-rag-strip.webp',
         usedIn: ['expanded-backpack'],
         relatedItems: ['basic-junk'],
         sections: [
@@ -104,7 +104,7 @@ export default [
         advice:
           'Search plastic bins, containers, toys, and similar plastic objects once source conversion is tested.',
         status: 'Observed',
-        image: '/images/material-plastic-block.jpg',
+        image: '/images/material-plastic-block.webp',
         usedIn: ['spring-shoes'],
         relatedItems: ['clonk'],
         sections: [
@@ -301,7 +301,7 @@ export default [
         use: 'Increases carrying efficiency and reduces repeat trips.',
         advice: 'Observed recipe: 3 Rag Strips and 1 Basic Junk. Prioritize early because capacity changes every route.',
         status: 'Observed',
-        image: '/images/recipe-expanded-backpack.jpg',
+        image: '/images/recipe-expanded-backpack.webp',
         usedIn: [],
         relatedCrafts: ['expanded-backpack'],
         relatedItems: ['rag-strip', 'basic-junk'],

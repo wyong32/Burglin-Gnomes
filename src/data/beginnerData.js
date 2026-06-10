@@ -7,7 +7,7 @@ export default [
         title: 'Read the High-Gnome task list before touching loot',
         detail:
           'The first visible task set includes rag strips, broken objects, a cockroach, a toilet flush, and a fork. That means bathroom and kitchen routing matters more than random valuables.',
-        image: '/images/task-list.jpg',
+        image: '/images/task-list.webp',
       },
       {
         order: '02',
@@ -66,9 +66,9 @@ export default [
         room: 'Bathroom, cloth piles, low clutter',
         method:
           'Search soft clutter first. Do not carry bulky loot while checking for small cloth pieces.',
-        image: '/images/task-list.jpg',
+        image: '/images/task-list.webp',
         status: 'Observed',
-        path: '/items/rag-strip/',
+        path: '/items/rag-strip',
       },
       {
         name: 'Break Any Items',
@@ -78,7 +78,7 @@ export default [
           'Use disposable objects. Avoid breaking task objects until the list is complete.',
         image: '/images/steam-shot-3.jpg',
         status: 'Observed',
-        path: '/items/small-junk-item/',
+        path: '/items/small-junk-item',
       },
       {
         name: 'Stab a Cockroach',
@@ -88,7 +88,7 @@ export default [
           'Clear floor clutter, isolate the target, then leave once the objective registers.',
         image: 'https://placehold.co/40x40/ffdac1/6B9B7B?text=CR',
         status: 'Observed',
-        path: '/bestiary/cockroach/',
+        path: '/bestiary/cockroach',
       },
       {
         name: 'Flush an Item in the Toilet',
@@ -96,9 +96,9 @@ export default [
         room: 'Bathroom',
         method:
           'Bring a small junk object. Large objects waste time and can block movement near the toilet.',
-        image: '/images/task-list.jpg',
+        image: '/images/task-list.webp',
         status: 'Observed',
-        path: '/items/small-junk-item/',
+        path: '/items/small-junk-item',
       },
       {
         name: 'Steal a Fork',
@@ -108,7 +108,7 @@ export default [
           'Check counters, tables, drawers, and utensil surfaces before chasing valuables.',
         image: 'https://placehold.co/40x40/ffdac1/6B9B7B?text=FK',
         status: 'Observed',
-        path: '/items/fork/',
+        path: '/items/fork',
       },
     ],
   },

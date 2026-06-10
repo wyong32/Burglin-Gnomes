@@ -5,7 +5,7 @@
         <div class="page-hero">
           <div class="page-hero-copy">
             <span class="eyebrow">Contact</span>
-            <h1>Contact Us</h1>
+            <h1>Contact Us — Corrections &amp; Feedback | burglin-gnomes.org</h1>
             <p>
               Use this page for corrections, guide suggestions, copyright questions, or general
               messages about burglin-gnomes.org.
@@ -54,11 +54,6 @@
 </template>
 
 <script setup>
-import { useRoute } from 'vue-router'
-import { setRouteSeo } from '../../utils/seo'
-
-const routeMeta = useRoute()
-setRouteSeo(routeMeta)
 </script>
 
 <style scoped>

@@ -3,7 +3,7 @@
     <div class="container">
       <div class="app-header-content">
         <RouterLink class="brand" to="/" aria-label="Burglin' Gnomes guide home">
-          <span class="brand-mark" aria-hidden="true">BG</span>
+          <img class="brand-mark" src="/images/logo.webp" alt="" width="42" height="42" />
           <span>
             <strong>Burglin' Gnomes</strong>
             <small>Player Guide</small>
@@ -33,12 +33,12 @@ const isOpen = ref(false)
 
 const links = [
   { label: 'Home', path: '/' },
-  { label: 'Beginner', path: '/beginner/' },
-  { label: 'Wiki', path: '/wiki/' },
-  { label: 'Items', path: '/items/' },
-  { label: 'Crafting', path: '/crafting/' },
-  { label: 'NPCs & Enemies Bestiary', path: '/bestiary/' },
-  { label: 'Updates', path: '/updates/' },
+  { label: 'Beginner', path: '/beginner' },
+  { label: 'Wiki', path: '/wiki' },
+  { label: 'Items', path: '/items' },
+  { label: 'Crafting', path: '/crafting' },
+  { label: 'NPCs & Enemies Bestiary', path: '/bestiary' },
+  { label: 'Updates', path: '/updates' },
 ]
 </script>
 
@@ -100,16 +100,12 @@ const links = [
 }
 
 .brand-mark {
-  display: grid;
+  flex: 0 0 auto;
   width: 42px;
   height: 42px;
-  place-items: center;
   border: 2px solid var(--color-ink);
   border-radius: 14px;
-  background:
-    linear-gradient(135deg, var(--color-primary), #3f8c63 58%, var(--color-accent));
-  color: #fffaf0;
-  font-weight: 900;
+  object-fit: cover;
   box-shadow: 3px 3px 0 rgba(36, 51, 45, 0.18);
 }
 
