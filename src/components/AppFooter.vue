@@ -6,8 +6,7 @@
           <RouterLink class="footer-logo" to="/" aria-label="Burglin' Gnomes guide home">
             <img class="footer-mark" src="/images/logo.webp" alt="" width="48" height="48" />
             <span>
-              <strong>Burglin' Gnomes Guide</strong>
-              <small>burglin-gnomes.org</small>
+              <strong>Burglin' Gnomes</strong>
             </span>
           </RouterLink>
           <p>

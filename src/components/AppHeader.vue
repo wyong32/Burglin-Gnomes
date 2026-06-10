@@ -6,7 +6,6 @@
           <img class="brand-mark" src="/images/logo.webp" alt="" width="42" height="42" />
           <span>
             <strong>Burglin' Gnomes</strong>
-            <small>Player Guide</small>
           </span>
         </RouterLink>
 
