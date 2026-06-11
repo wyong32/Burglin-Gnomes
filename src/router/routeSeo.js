@@ -39,7 +39,7 @@ export const routeSeo = {
     keywords: "Burglin Gnomes crafting, recipes, gear upgrades",
   },
   'base-building': {
-    title: "Base Building Guide — Gnome World | Burglin' Gnomes",
+    title: "Base Building — Gnome World | Burglin' Gnomes",
     description:
       'Burglin Gnomes base building guide for the gnome world: storage, purple crystal revival, bell extraction, crafting well upgrades, and pre-run setup.',
     keywords: 'Burglin Gnomes base building, gnome world, purple crystal, bell, crafting well',
