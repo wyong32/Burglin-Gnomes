@@ -202,14 +202,59 @@ export default [
         ],
       },
       {
+        slug: 'chair-stool',
+        name: 'Chair / Stool',
+        category: 'Task Items',
+        type: 'Height-assist object',
+        priority: 'High for door routes',
+        source: 'Living rooms, kitchens, bedrooms, and other furniture rooms',
+        use: 'Used as a step to reach human-scale door handles from inside the house.',
+        advice:
+          'A low chair or stool can turn a blocked interior door into a usable route. Two players should move heavier furniture together.',
+        status: 'Observed',
+        image: `${placeholder}ST`,
+        usedIn: [],
+        relatedItems: ['crowbar', 'small-junk-item'],
+        sections: [
+          {
+            heading: 'Door setup use',
+            body:
+              'Place the stool near an interior door, stand on it, and reach the handle. This is slower than a tool route but useful before better gear is crafted.',
+          },
+        ],
+      },
+      {
+        slug: 'cigarette-pack',
+        name: 'Cigarette Pack',
+        category: 'Task Items',
+        type: 'Random drawer loot',
+        priority: 'Task dependent',
+        source: 'Drawers, cabinets, and random household containers',
+        use: 'Possible task or trade item that players often search for in cabinets and drawers.',
+        advice:
+          'Spawn rules are random. Some houses contain several packs, while other runs may not show one at all.',
+        status: 'Observed',
+        image: `${placeholder}SM`,
+        usedIn: [],
+        relatedItems: ['smoke-tool', 'small-junk-item'],
+        sections: [
+          {
+            heading: 'Where to search',
+            body:
+              'Open drawers and cabinets before calling a room empty. Cigarette-style loot is easy to miss because it often sits inside small storage objects.',
+          },
+        ],
+      },
+      {
         slug: 'slap-hammer',
         name: 'Slap Hammer',
         category: 'Weapons',
         type: 'Weapon / tool',
         priority: 'High after capacity',
         source: 'Gnome-world crafting board',
-        use: 'Basic combat or interaction tool with visible material requirements.',
-        advice: 'Observed recipe: 3 Clonk and 2 Basic Junk. Damage and stun still need testing.',
+        use: 'Basic defense weapon for small enemies and object-breaking tasks.',
+        advice:
+          'Observed recipe: 3 Clonk and 2 Basic Junk. Current route notes put cockroaches at 1 hit, rats around 2-3 hits, and Evil Gnomes around 3 hits; retest after combat patches.',
         status: 'Observed',
         image: '/images/recipe-slap-hammer.jpg',
         usedIn: [],
@@ -292,6 +337,27 @@ export default [
         ],
       },
       {
+        slug: 'knife',
+        name: 'Knife',
+        category: 'Weapons',
+        type: 'Close-range weapon',
+        priority: 'Threat dependent',
+        source: 'Kitchen and sharp-object routes',
+        use: 'Possible close-range counter for rats, pests, and emergency combat.',
+        advice:
+          'Track hit count and reach before using it as a planned counter. Slap Hammer is easier to route when crafted.',
+        status: 'Retest Required',
+        image: `${placeholder}KN`,
+        relatedItems: ['slap-hammer', 'handgun'],
+        sections: [
+          {
+            heading: 'Combat warning',
+            body:
+              'A short weapon can solve small threats but can also force bad spacing. Test it against rats and cockroaches before trusting it.',
+          },
+        ],
+      },
+      {
         slug: 'expanded-backpack',
         name: 'Expanded Backpack',
         category: 'Gear',
@@ -320,8 +386,9 @@ export default [
         type: 'Mobility gear',
         priority: 'Route dependent',
         source: 'Gnome-world crafting board',
-        use: 'Raises jump height and may help with vertical movement.',
-        advice: 'Observed recipe: 1 Clonk and 2 Plastic Blocks. Test fall safety before using it in clean routes.',
+        use: 'Improves vertical movement and prevents fall damage on high-low routes.',
+        advice:
+          'Observed recipe: 1 Clonk and 2 Plastic Blocks. Jumping can make noise, so test stealth impact before relying on it near humans.',
         status: 'Observed',
         image: '/images/recipe-spring-shoes.jpg',
         relatedCrafts: ['spring-shoes'],
@@ -341,7 +408,7 @@ export default [
         type: 'Hand gear',
         priority: 'Medium',
         source: 'Crafting list',
-        use: 'Potential hand, punching, grabbing, or protection upgrade.',
+        use: 'Improves fine object handling, door work, and small-item control.',
         advice:
           'Current recipe note: 3 Gnome Elements plus 1 unclear secondary material. Confirm the second material name before finalizing.',
         status: 'Retest Required',
@@ -363,8 +430,9 @@ export default [
         type: 'Environment tool',
         priority: 'Medium',
         source: 'Crafting list',
-        use: 'Likely environment or material interaction.',
-        advice: 'Observed recipe: 3 Clonk and 2 Basic Junk. Do not assume mining behavior until interactable targets are confirmed.',
+        use: 'Breaks or dismantles stolen objects into parts so players do not have to haul every item home.',
+        advice:
+          'Observed recipe: 3 Clonk and 2 Basic Junk. Confirm which objects can be dismantled before planning a farming route around it.',
         status: 'Observed',
         image: '/images/recipe-pickaxe.jpg',
         relatedCrafts: ['pickaxe'],

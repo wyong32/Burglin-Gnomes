@@ -16,7 +16,7 @@ export default [
       {
         title: 'New outdoor map routes',
         detail:
-          'The full game adds exterior paths and vertical movement. Relearn extraction routes before you reuse demo habits.',
+          'Exterior paths and vertical movement can change extraction timing. Recheck safe exits before reusing an old route.',
         image: '/images/new-map.jpg',
         status: 'Inferred',
         type: 'Map routes',
@@ -38,7 +38,7 @@ export default [
       {
         title: 'Expanded gear set',
         detail:
-          'Glider, ranged weapons, gloves, and protective gear are in the full release. We are logging recipes and route value as we play.',
+          'Glider, ranged weapons, gloves, and protective gear can change route safety. Check recipes and route value before spending materials.',
         image: '/images/new-gear.jpg',
         status: 'Inferred',
         type: 'Items and crafting',
@@ -60,7 +60,7 @@ export default [
       {
         title: 'Gnome-world base objects',
         detail:
-          'Mushroom houses, the wooden well, and purple crystal objects may tie into revival or home upgrades — we are mapping interactions now.',
+          'Mushroom houses, the wooden well, and purple crystal objects may tie into revival or home upgrades. Treat interactions as patch-sensitive.',
         image: '/images/hero-gnome-world.jpg',
         status: 'Observed',
         type: 'Base building',

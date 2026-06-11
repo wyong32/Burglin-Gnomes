@@ -15,6 +15,7 @@ export default [
       { label: 'Wiki', path: '/wiki', note: 'Every guide topic in one index when you need a fast answer mid-run.' },
       { label: 'Items & Loot', path: '/items', note: 'What to grab, what to skip, and what still needs in-game checks.' },
       { label: 'Crafting', path: '/crafting', note: 'Gear, home upgrades, and which crafts we prioritize first.' },
+      { label: 'Base Building', path: '/base-building', note: 'Gnome-world objects, storage, crystal revival, bell extraction, and the crafting well.' },
       { label: 'NPCs & Enemies', path: '/bestiary', note: 'Humans, cats, pests, and hazards that can end a run.' },
       { label: 'Updates', path: '/updates', note: 'Release facts and what we recheck after patches land.' },
     ],

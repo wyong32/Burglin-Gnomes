@@ -8,9 +8,9 @@
             <span class="eyebrow">Release &amp; patches</span>
             <h1>Updates &amp; Patch Notes — Release Date | Burglin' Gnomes</h1>
             <p>
-              Release facts, what we are watching in the full game, and which routes, items, and
-              enemies we recheck after patches. When AI, crafting, or network code changes, old
-              habits from the demo can stop working overnight.
+              Release facts, patch-sensitive routes, and the items, enemies, crafting rules, and
+              co-op fixes players should recheck after updates. When AI, crafting, or network code
+              changes, old routes can stop working overnight.
             </p>
           </div>
           <figure class="hero-art">
@@ -22,7 +22,7 @@
           <aside class="guide-sidebar" aria-label="Updates guide sections">
             <strong>On this page</strong>
             <a href="#release-facts">Release facts</a>
-            <a href="#release-preview">What we are testing</a>
+            <a href="#release-preview">Patch-sensitive changes</a>
             <a href="#patch-checklist">Post-patch checklist</a>
             <a href="#patch-rules">When patches drop</a>
           </aside>
@@ -38,21 +38,19 @@
                 <div class="table-row table-head release-row">
                   <span>Fact</span>
                   <span>Value</span>
-                  <span>Guide note</span>
                 </div>
                 <div v-for="fact in releaseFacts" :key="fact.label" class="table-row release-row">
                   <strong>{{ fact.label }}</strong>
                   <span>{{ fact.value }}</span>
-                  <b class="status-pill confirmed">{{ displayStatus(fact.status) }}</b>
                 </div>
               </div>
             </section>
 
             <section id="release-preview" class="guide-block release-preview-block">
-              <h2>Full-release content we are testing now</h2>
+              <h2>Patch-sensitive changes players should recheck</h2>
               <p>
-                These are the first pages we update after a patch: new routes, grab threats, gear,
-                crafting links, and object interactions that can rewrite early-game loadouts.
+                Start here after a patch: route changes, grab threats, gear effects, crafting links,
+                and object interactions can all rewrite early-game loadouts.
               </p>
               <div class="patch-check-board">
                 <RouterLink :to="featuredLead.path" class="patch-feature">
@@ -62,7 +60,6 @@
                     <h3>{{ featuredLead.title }}</h3>
                     <p>{{ featuredLead.detail }}</p>
                     <div class="patch-actions">
-                      <b :class="['status-pill', statusClass(featuredLead.status)]">{{ displayStatus(featuredLead.status) }}</b>
                       <span>{{ featuredLead.target }}</span>
                     </div>
                   </div>
@@ -82,7 +79,6 @@
                       <p>{{ item.detail }}</p>
                       <div class="patch-card-footer">
                         <span>{{ item.target }}</span>
-                        <b :class="['status-pill', statusClass(item.status)]">{{ displayStatus(item.status) }}</b>
                       </div>
                     </div>
                   </RouterLink>
@@ -134,7 +130,6 @@
 
 <script setup>
 import updatesData from '../data/updatesData'
-import { displayStatus, statusClass } from '../utils/contentLabels'
 
 const releaseFacts = updatesData.find((section) => section.key === 'releaseFacts').items
 const releasePreview = updatesData.find((section) => section.key === 'releasePreview').items
@@ -146,7 +141,7 @@ const patchRules = updatesData.find((section) => section.key === 'patchRules').i
 
 <style scoped>
 .release-row {
-  grid-template-columns: 1fr 1.5fr 130px;
+  grid-template-columns: 1fr 1.5fr;
 }
 
 .queue-row {

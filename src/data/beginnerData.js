@@ -1,5 +1,110 @@
 export default [
   {
+    key: 'coreLoop',
+    items: [
+      {
+        label: 'Daily task roll',
+        value: '5 tasks',
+        detail:
+          'Each day gives a set of five random sabotage or theft objectives. Read them before touching loot.',
+        status: 'Observed',
+      },
+      {
+        label: 'Minimum extraction',
+        value: '3 tasks',
+        detail:
+          'Complete at least three tasks before calling extraction. Treat this as the safety line for every beginner route.',
+        status: 'Observed',
+      },
+      {
+        label: 'Failure penalty',
+        value: 'Progress reset',
+        detail:
+          'If the timer ends before the minimum task count is complete, the run fails and progress can reset back to day one.',
+        status: 'Patch Sensitive',
+      },
+    ],
+  },
+  {
+    key: 'controls',
+    items: [
+      {
+        input: 'W / A / S / D',
+        action: 'Move',
+        use: 'Basic movement, route control, dodging threats, and lining up window climbs.',
+      },
+      {
+        input: 'Right mouse button',
+        action: 'Extend both arms and grab',
+        use: 'Core interaction for objects, windows, handles, furniture, and heavy dragging.',
+      },
+      {
+        input: 'Mouse wheel',
+        action: 'Adjust arm distance',
+        use: 'Pull heavy objects, climb, free stuck items, and control carry distance through tight doors.',
+      },
+      {
+        input: 'E',
+        action: 'Context interaction',
+        use: 'Used for prompts such as drain pipe entry, teammate rescue, and shutting down some hazards.',
+      },
+    ],
+  },
+  {
+    key: 'entryMethods',
+    items: [
+      {
+        name: 'Vine window',
+        route: 'Random exterior window with green vines',
+        method:
+          'Grab the window with both hands, pull upward, and climb in. If the body will not pull, reset position before assuming the window is blocked.',
+        risk: 'Bad angle, heavy carried item, or weak-body bug can make the climb fail.',
+        path: '/beginner#doors-windows',
+      },
+      {
+        name: 'Drain pipe',
+        route: 'Usually fixed near the back side of the house',
+        method:
+          'Approach the pipe and press E when the prompt appears. Use it as a backup entry when windows are unsafe.',
+        risk: 'It can place the team inside without the same visual exit marker as a vine window.',
+        path: '/beginner#human-world',
+      },
+      {
+        name: 'Inside door setup',
+        route: 'After at least one player is already inside',
+        method:
+          'Move a low stool or chair to the door, stand on it, and use the height to reach handles or interior door controls.',
+        risk: 'Furniture is heavy for one gnome; two players are safer when moving it.',
+        path: '/items/chair-stool',
+      },
+    ],
+  },
+  {
+    key: 'interactions',
+    items: [
+      {
+        title: 'Oven and refrigerator doors',
+        detail:
+          'Grab the external handle and pull down or outward. Do not stand in a bad angle where the door pushes your body into clutter.',
+      },
+      {
+        title: 'Drawers and cabinets',
+        detail:
+          'Pull drawers and cabinet doors open before calling a room empty. Small valuables, cigarettes, weapons, and task objects can hide inside.',
+      },
+      {
+        title: 'Cigarettes and smoke items',
+        detail:
+          'House layout, object set, and item spawns are random. Some runs have several packs in drawers or cabinets; some runs may have none.',
+      },
+      {
+        title: 'Mouse holes',
+        detail:
+          'Mouse holes can help escape pressure, but the exit may be awkward. Do not use them while carrying critical loot unless the route is already lost.',
+      },
+    ],
+  },
+  {
     key: 'steps',
     items: [
       {

@@ -18,6 +18,7 @@
             <strong>{{ recipe.name }}</strong>
             <a href="#materials">Materials</a>
             <a href="#output">What you craft</a>
+            <a href="#mechanics">Mechanics</a>
             <a href="#bestiary">Helps against</a>
             <a href="#notes">From our runs</a>
           </aside>
@@ -43,7 +44,24 @@
                 <span>{{ outputItem.use }}</span>
               </RouterLink>
               <p>{{ recipe.bestUse }}</p>
-              <b :class="['status-pill', statusClass(recipe.status)]">{{ displayStatus(recipe.status) }}</b>
+            </section>
+
+            <section id="mechanics" class="guide-block">
+              <h2>How {{ recipe.name }} changes a run</h2>
+              <div class="data-table">
+                <div class="table-row crafting-mechanic-row">
+                  <strong>Mechanic</strong>
+                  <span>{{ recipe.mechanic }}</span>
+                </div>
+                <div class="table-row crafting-mechanic-row">
+                  <strong>Best scenario</strong>
+                  <span>{{ recipe.scenario }}</span>
+                </div>
+                <div class="table-row crafting-mechanic-row">
+                  <strong>Risk note</strong>
+                  <span>{{ recipe.warning }}</span>
+                </div>
+              </div>
             </section>
 
             <section id="bestiary" class="guide-block">
@@ -84,7 +102,6 @@ import { useRoute } from 'vue-router'
 import craftingData from '../data/craftingData'
 import enemiesData from '../data/enemiesData'
 import itemsData from '../data/itemsData'
-import { displayStatus, statusClass } from '../utils/contentLabels'
 
 const route = useRoute()
 const recipes = craftingData.find((section) => section.key === 'recipes').items
@@ -149,6 +166,10 @@ const relatedBestiary = computed(() => (recipe.value?.relatedBestiary || []).map
 
 .note-panel h3 {
   margin-bottom: 8px;
+}
+
+.crafting-mechanic-row {
+  grid-template-columns: 180px minmax(0, 1fr);
 }
 
 @media (max-width: 768px) {

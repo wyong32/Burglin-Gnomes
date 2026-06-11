@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import BaseBuildingView from '../views/BaseBuildingView.vue'
 import BeginnerGuideView from '../views/BeginnerGuideView.vue'
 import BestiaryDetailView from '../views/BestiaryDetailView.vue'
 import CraftingView from '../views/CraftingView.vue'
@@ -98,6 +99,12 @@ const router = createRouter({
     },
     { path: '/crafting/:slug', name: 'crafting-detail', component: CraftingDetailView },
     {
+      path: '/base-building',
+      name: 'base-building',
+      component: BaseBuildingView,
+      meta: routeMeta('base-building'),
+    },
+    {
       path: '/bestiary',
       name: 'bestiary',
       component: EnemiesView,
@@ -143,6 +150,7 @@ const router = createRouter({
     { path: '/beginner-guide', redirect: '/beginner' },
     { path: '/tasks', redirect: '/beginner#first-tasks' },
     { path: '/enemies', redirect: '/bestiary' },
+    { path: '/bestiary/scrapling', redirect: '/bestiary/fairy' },
     { path: '/full-release', redirect: '/updates' },
   ],
 })

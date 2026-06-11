@@ -30,8 +30,8 @@
             <span class="eyebrow">By category</span>
             <h2>Find the item you need</h2>
             <p>
-              Each row links to a full page with sources, uses, linked recipes, and notes from our
-              play sessions. Labels show how confident we are after the latest patch.
+              Each row links to a full page with sources, uses, linked recipes, and player notes
+              for planning a cleaner route.
             </p>
           </div>
 
@@ -53,7 +53,6 @@
                   <span>Item</span>
                   <span>Type</span>
                   <span>Source / use</span>
-                  <span>Status</span>
                 </div>
                 <div v-for="item in group.items" :key="item.slug" class="table-row item-row">
                   <RouterLink class="table-title" :to="`/items/${item.slug}`">
@@ -62,7 +61,6 @@
                   </RouterLink>
                   <span>{{ item.type }}</span>
                   <span>{{ itemCardSource(item) }}</span>
-                  <b :class="itemCardLabelClass(item)">{{ itemCardLabel(item) }}</b>
                 </div>
               </div>
             </section>
@@ -75,7 +73,6 @@
 
 <script setup>
 import itemsData from '../data/itemsData'
-import { displayStatus, statusClass } from '../utils/contentLabels'
 
 const categories = itemsData.find((section) => section.key === 'categories').items
 const items = itemsData.find((section) => section.key === 'items').items
@@ -83,14 +80,7 @@ const items = itemsData.find((section) => section.key === 'items').items
 const itemsByCategory = (category) => items.filter((item) => item.category === category)
 const categoryGroups = categories.map((category) => ({ category, items: itemsByCategory(category) })).filter((group) => group.items.length)
 const categoryId = (category) => `items-${category.toLowerCase().replaceAll(' ', '-')}`
-const isNewItem = (item) => item.status === 'Retest Required' || item.source === 'Unknown source'
-
 const itemCardSource = (item) => (item.source === 'Unknown source' ? item.use : item.source)
-
-const itemCardLabel = (item) => (isNewItem(item) ? 'New' : displayStatus(item.status))
-
-const itemCardLabelClass = (item) =>
-  isNewItem(item) ? 'status-pill new' : ['status-pill', statusClass(item.status)]
 
 const categoryIntro = (category) =>
   ({
@@ -182,7 +172,7 @@ const categoryIntro = (category) =>
 }
 
 .item-row {
-  grid-template-columns: minmax(180px, 1.1fr) 0.75fr 1.5fr 130px;
+  grid-template-columns: minmax(180px, 1.1fr) 0.75fr 1.5fr;
 }
 
 .table-title {
@@ -204,12 +194,6 @@ const categoryIntro = (category) =>
 .table-title h3 {
   font-size: 1.05rem;
   line-height: 1.15;
-}
-
-.item-row .status-pill.new {
-  background: rgba(217, 163, 49, 0.14);
-  color: var(--color-gold);
-  border-color: var(--color-gold);
 }
 
 @media (max-width: 1024px) {

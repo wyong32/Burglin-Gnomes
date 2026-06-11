@@ -8,6 +8,7 @@ export const sitemapStaticRoutes = [
   { path: '/beginner', name: 'beginner' },
   { path: '/items', name: 'items' },
   { path: '/crafting', name: 'crafting' },
+  { path: '/base-building', name: 'base-building' },
   { path: '/bestiary', name: 'bestiary' },
   { path: '/updates', name: 'updates' },
   { path: '/legal/privacy-policy', name: 'legal-privacy' },

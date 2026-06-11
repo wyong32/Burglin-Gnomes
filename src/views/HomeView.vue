@@ -143,13 +143,11 @@
             <span>Target</span>
             <span>Where</span>
             <span>Action</span>
-            <span>Guide note</span>
           </div>
           <div v-for="item in priorityTable" :key="item.target" class="table-row priority-row">
             <strong>{{ item.target }}</strong>
             <span>{{ item.room }}</span>
             <span>{{ item.action }}</span>
-            <b :class="['status-pill', statusClass(item.status)]">{{ displayStatus(item.status) }}</b>
           </div>
         </div>
       </div>
@@ -173,14 +171,12 @@
             <span>Target</span>
             <span>Route</span>
             <span>Run note</span>
-            <span>Guide note</span>
           </div>
           <div v-for="item in firstTasks" :key="item.task" class="table-row first-task-row">
             <strong>{{ item.task }}</strong>
             <span>{{ item.target }}</span>
             <span>{{ item.route }}</span>
             <span>{{ item.note }}</span>
-            <b :class="['status-pill', statusClass(item.status)]">{{ displayStatus(item.status) }}</b>
           </div>
         </div>
       </div>
@@ -263,7 +259,6 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import homeData from '../data/homeData'
-import { displayStatus, statusClass } from '../utils/contentLabels'
 
 const router = useRouter()
 const searchQuery = ref('')
@@ -461,11 +456,11 @@ const faq = homeData.find((section) => section.key === 'faq').items
 }
 
 .priority-row {
-  grid-template-columns: 1fr 1.25fr 1.5fr 130px;
+  grid-template-columns: 1fr 1.25fr 1.5fr;
 }
 
 .first-task-row {
-  grid-template-columns: 1fr 0.5fr 1.15fr 1.45fr 130px;
+  grid-template-columns: 1fr 0.5fr 1.15fr 1.45fr;
 }
 
 .tool-grid {

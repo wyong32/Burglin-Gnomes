@@ -37,7 +37,6 @@
                 <small>{{ entry.role }}</small>
                 <strong>{{ entry.name }}</strong>
                 <em>Danger: {{ entry.danger }}</em>
-                <b :class="['status-pill', statusClass(entry.status)]">{{ displayStatus(entry.status) }}</b>
               </span>
             </RouterLink>
           </div>
@@ -49,7 +48,6 @@
 
 <script setup>
 import enemiesData from '../data/enemiesData'
-import { displayStatus, statusClass } from '../utils/contentLabels'
 
 const categories = enemiesData.find((section) => section.key === 'categories').items
 const entries = enemiesData.find((section) => section.key === 'entries').items

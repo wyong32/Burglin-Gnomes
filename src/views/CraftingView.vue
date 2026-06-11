@@ -17,6 +17,32 @@
           </figure>
         </div>
 
+        <section id="craft-order" class="craft-order-section">
+          <div class="section-heading">
+            <span class="eyebrow">Craft order</span>
+            <h2>Recommended crafting order for new players</h2>
+            <p>
+              Crafting should reduce risk before it adds damage. Carry capacity, basic defense,
+              mobility, hand control, and material farming each solve a different route problem.
+            </p>
+          </div>
+          <div class="craft-order-list">
+            <RouterLink
+              v-for="item in craftOrder"
+              :key="item.rank"
+              class="craft-order-card"
+              :to="`/crafting/${item.recipe}`"
+            >
+              <strong>{{ item.rank }}</strong>
+              <span>
+                <h3>{{ item.name }}</h3>
+                <p>{{ item.reason }}</p>
+                <em>{{ item.timing }}</em>
+              </span>
+            </RouterLink>
+          </div>
+        </section>
+
         <section id="recipes" class="recipe-board-section">
           <div class="section-heading">
             <span class="eyebrow">Recipes</span>
@@ -30,7 +56,6 @@
                 <small>{{ recipe.category }}</small>
                 <strong>{{ recipe.name }}</strong>
                 <em>{{ recipeCardDetail(recipe) }}</em>
-                <b :class="recipeCardLabelClass(recipe)">{{ recipeCardLabel(recipe) }}</b>
               </span>
             </RouterLink>
           </div>
@@ -46,7 +71,6 @@
               <span>Material</span>
               <span>Source</span>
               <span>Used for</span>
-              <span>Guide note</span>
             </div>
             <div v-for="material in materials" :key="material.name" class="table-row material-row">
               <RouterLink class="table-title" :to="material.item ? `/items/${material.item}` : '/items'">
@@ -55,7 +79,6 @@
               </RouterLink>
               <span>{{ materialCardSource(material) }}</span>
               <span>{{ material.note }}</span>
-              <b :class="materialCardLabelClass(material)">{{ materialCardLabel(material) }}</b>
             </div>
           </div>
         </section>
@@ -66,29 +89,15 @@
 
 <script setup>
 import craftingData from '../data/craftingData'
-import { displayStatus, statusClass } from '../utils/contentLabels'
 
 const recipes = craftingData.find((section) => section.key === 'recipes').items
 const materials = craftingData.find((section) => section.key === 'materials').items
-
-const isNewRecipe = (recipe) => recipe.status === 'Retest Required' || recipe.category === 'Unverified'
+const craftOrder = craftingData.find((section) => section.key === 'craftOrder').items
 
 const recipeCardDetail = (recipe) =>
   recipe.materials.map((material) => `${material.quantity} ${material.name}`).join(' + ')
 
-const recipeCardLabel = (recipe) => (isNewRecipe(recipe) ? 'New' : displayStatus(recipe.status))
-
-const recipeCardLabelClass = (recipe) =>
-  isNewRecipe(recipe) ? 'status-pill new' : ['status-pill', statusClass(recipe.status)]
-
-const isNewMaterial = (material) => material.source === 'Unknown' || material.status === 'Retest Required'
-
 const materialCardSource = (material) => (material.source === 'Unknown' ? material.note : material.source)
-
-const materialCardLabel = (material) => (isNewMaterial(material) ? 'New' : displayStatus(material.status))
-
-const materialCardLabelClass = (material) =>
-  isNewMaterial(material) ? 'status-pill new' : ['status-pill', statusClass(material.status)]
 </script>
 
 <style scoped>
@@ -96,6 +105,59 @@ const materialCardLabelClass = (material) =>
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
+}
+
+.craft-order-list {
+  display: grid;
+  gap: 12px;
+}
+
+.craft-order-card {
+  display: grid;
+  grid-template-columns: 70px minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+  border: 2px solid var(--color-ink);
+  border-radius: 20px;
+  padding: 15px;
+  background:
+    linear-gradient(90deg, rgba(255, 240, 199, 0.9), rgba(223, 240, 198, 0.58)),
+    var(--color-surface);
+  box-shadow: var(--shadow-card);
+  transition:
+    background 180ms ease,
+    transform 180ms ease;
+}
+
+.craft-order-card:hover,
+.craft-order-card:focus-visible {
+  background: var(--color-surface-strong);
+  outline: none;
+  transform: translateY(-2px);
+}
+
+.craft-order-card > strong {
+  display: grid;
+  width: 54px;
+  height: 54px;
+  place-items: center;
+  border: 2px solid var(--color-ink);
+  border-radius: 16px;
+  background: var(--color-accent);
+  color: var(--color-surface);
+  font-family: "Bricolage Grotesque", "Nunito", sans-serif;
+  font-size: 1.24rem;
+}
+
+.craft-order-card span {
+  display: grid;
+  gap: 6px;
+}
+
+.craft-order-card em {
+  color: var(--color-primary);
+  font-style: normal;
+  font-weight: 900;
 }
 
 .recipe-card {
@@ -147,15 +209,8 @@ const materialCardLabelClass = (material) =>
   line-height: 1.32;
 }
 
-.recipe-card .status-pill.new,
-.materials-section .status-pill.new {
-  background: rgba(217, 163, 49, 0.14);
-  color: var(--color-gold);
-  border-color: var(--color-gold);
-}
-
 .material-row {
-  grid-template-columns: 1fr 1.15fr 1.65fr 130px;
+  grid-template-columns: 1fr 1.15fr 1.65fr;
 }
 
 .table-title {

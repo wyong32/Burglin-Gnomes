@@ -6,11 +6,11 @@
         <div class="page-hero">
           <div class="page-hero-copy">
             <span class="eyebrow">Start here</span>
-            <h1>Beginner Guide — First Tasks &amp; Safe Routes | Burglin' Gnomes</h1>
+            <h1>Tasks First Beginner Guide | Burglin' Gnomes</h1>
             <p>
-              New player? Read the High-Gnome task list before you touch loot. Pick an entry you
-              can escape from, clear safe objectives, learn revive rules, and fix co-op setup before
-              you test weapons or heavy hauls.
+              New player? Your first job is not looting. Each day rolls five tasks, three are needed
+              for extraction, and a failed timer can reset progress. Learn the entry, finish safe
+              objectives, then decide whether loot is worth the risk.
             </p>
           </div>
           <figure class="hero-art">
@@ -21,6 +21,8 @@
         <div class="guide-layout">
           <aside class="guide-sidebar" aria-label="Beginner guide sections">
             <strong>On this page</strong>
+            <a href="#core-loop">Core loop</a>
+            <a href="#controls">Controls</a>
             <a href="#first-route">First route</a>
             <a href="#first-tasks">First five tasks</a>
             <a href="#human-world">Enter human world</a>
@@ -34,6 +36,53 @@
           </aside>
 
           <div class="guide-main">
+            <section id="core-loop" class="guide-block">
+              <h2>Core loop: 5 tasks, 3 required to extract</h2>
+              <p>
+                Every run should be planned around the task count first. The house can contain useful
+                loot, but the bell only matters after the team has enough task progress to leave safely.
+              </p>
+              <div class="data-table">
+                <div class="table-row table-head core-loop-row">
+                  <span>Rule</span>
+                  <span>Number</span>
+                  <span>What it means</span>
+                </div>
+                <div v-for="rule in coreLoop" :key="rule.label" class="table-row core-loop-row">
+                  <strong>{{ rule.label }}</strong>
+                  <span>{{ rule.value }}</span>
+                  <span>{{ rule.detail }}</span>
+                </div>
+              </div>
+              <div class="note-panel">
+                <p>
+                  Beginner rule: stop chasing valuables until three tasks are done, the exit is known,
+                  and at least one player can call the route back to the bell.
+                </p>
+              </div>
+            </section>
+
+            <section id="controls" class="guide-block">
+              <h2>Basic controls that actually decide runs</h2>
+              <p>
+                Burglin' Gnomes is a physics-heavy game. Right-click grab and mouse-wheel arm distance
+                are not secondary controls; they decide whether you can climb windows, open drawers,
+                pull heavy items, and avoid getting stuck in door frames.
+              </p>
+              <div class="data-table">
+                <div class="table-row table-head control-row">
+                  <span>Input</span>
+                  <span>Action</span>
+                  <span>Why it matters</span>
+                </div>
+                <div v-for="control in controls" :key="control.input" class="table-row control-row">
+                  <strong>{{ control.input }}</strong>
+                  <span>{{ control.action }}</span>
+                  <span>{{ control.use }}</span>
+                </div>
+              </div>
+            </section>
+
             <section id="first-route" class="guide-block">
               <h2>Best first route for new players</h2>
               <p>
@@ -65,7 +114,6 @@
                   <span>Target</span>
                   <span>Best room</span>
                   <span>Method</span>
-                  <span>Guide note</span>
                 </div>
                 <div v-for="task in firstTasks" :key="task.name" class="table-row first-task-row">
                   <RouterLink class="table-title task-link" :to="task.path">
@@ -75,7 +123,6 @@
                   <span>{{ task.target }}</span>
                   <span>{{ task.room }}</span>
                   <span>{{ task.method }}</span>
-                  <b :class="['status-pill', statusClass(task.status)]">{{ displayStatus(task.status) }}</b>
                 </div>
               </div>
             </section>
@@ -83,33 +130,26 @@
             <section id="human-world" class="guide-block">
               <h2>How to enter the human world safely</h2>
               <p>
-                Start in the gnome world, invite teammates if needed, then move toward a recognizable
-                entry point. The vine-covered window is the cleanest early route because it acts
-                as both entry marker and exit memory. Do not enter deep rooms until someone can call
-                the way back.
+                The human world is the task zone: lawn, exterior walls, windows, drain pipe, and
+                rooms such as kitchen, bathroom, bedroom, living room, and hallway. The front door
+                does not open cleanly from outside, so new players should learn three entry methods.
               </p>
-              <div class="media-band">
-                <article class="guide-card">
-                  <h3>Entry rule</h3>
-                  <p>
-                    Enter through a route the team can describe quickly: vine window, exterior path,
-                    door tool route, or another visible landmark. If nobody can name the exit, the team
-                    is not ready to haul loot.
-                  </p>
-                </article>
-                <figure class="media-panel">
-                  <img src="/images/vine-entry.jpg" alt="Burglin' Gnomes vine window entry" />
-                </figure>
+              <div class="entry-grid">
+                <RouterLink v-for="entry in entryMethods" :key="entry.name" class="guide-card" :to="entry.path">
+                  <h3>{{ entry.name }}</h3>
+                  <p><strong>{{ entry.route }}</strong></p>
+                  <p>{{ entry.method }}</p>
+                  <p>{{ entry.risk }}</p>
+                </RouterLink>
               </div>
             </section>
 
             <section id="doors-windows" class="guide-block">
               <h2>How to open doors, climb windows, and avoid getting stuck</h2>
               <p>
-                Doors and windows are route tools, not background props. Use normal interaction first,
-                then test Crowbar or other tools only when the route is blocked. For windows, line up
-                the gnome body before jumping, keep hands free if the climb feels unreliable, and avoid
-                dragging large objects through the frame.
+                Doors, windows, cabinets, drawers, ovens, and refrigerators are route tools, not
+                background props. Many early runs fail because players never open the containers that
+                actually hide task items, cigarettes, weapons, or useful small loot.
               </p>
               <div class="data-table">
                 <div class="table-row table-head mechanic-row">
@@ -124,14 +164,20 @@
                 </div>
                 <div class="table-row mechanic-row">
                   <strong>Window climb</strong>
-                  <span>Face the opening, keep the body centered, and use the window as an exit marker.</span>
-                  <span>Jumping at an angle while holding a bulky object.</span>
+                  <span>Right-click grab the frame, pull up, and keep the body centered before climbing through.</span>
+                  <span>Jumping at an angle, carrying bulky loot, or hitting the weak-body bug.</span>
                 </div>
                 <div class="table-row mechanic-row">
-                  <strong>Carry distance</strong>
-                  <span>Use mouse wheel distance control when objects catch on frames or furniture.</span>
-                  <span>Dragging the object harder instead of adjusting carry distance.</span>
+                  <strong>Interior door setup</strong>
+                  <span>Move a low chair or stool to the door, stand on it, and reach the handle from inside.</span>
+                  <span>Trying to open human-scale doors from the floor with no height assist.</span>
                 </div>
+              </div>
+              <div class="card-grid">
+                <article v-for="item in interactions" :key="item.title" class="guide-card">
+                  <h3>{{ item.title }}</h3>
+                  <p>{{ item.detail }}</p>
+                </article>
               </div>
             </section>
 
@@ -139,8 +185,9 @@
               <h2>Death and revival mechanics: crystal vs press E</h2>
               <p>
                 Revival needs separate practice because players mix up three states: being grabbed,
-                being downed and rescued by a teammate, and returning through a crystal or base
-                revive. We are confirming crystal rules in the full release.
+                being downed and rescued by a teammate, and using the purple crystal. On the island,
+                the crystal supports Steam friend invite flow. In the human world, the crystal is tied
+                to reviving teammates and should be treated as a limited recovery resource.
               </p>
               <div class="card-grid">
                 <article class="guide-card">
@@ -154,8 +201,8 @@
                 <article class="guide-card">
                   <h3>Crystal revive</h3>
                   <p>
-                    The purple crystal is visible in gnome world, but exact revive cost, cooldown,
-                    and co-op rules still need more playtime in the live game.
+                    Treat purple crystal revives as limited. Current route notes track a three-use
+                    run limit, so do not spend revives on greedy loot routes.
                   </p>
                 </article>
                 <article class="guide-card">
@@ -272,9 +319,12 @@
 
 <script setup>
 import beginnerData from '../data/beginnerData'
-import { displayStatus, statusClass } from '../utils/contentLabels'
 
 const steps = beginnerData.find((section) => section.key === 'steps').items
+const coreLoop = beginnerData.find((section) => section.key === 'coreLoop').items
+const controls = beginnerData.find((section) => section.key === 'controls').items
+const entryMethods = beginnerData.find((section) => section.key === 'entryMethods').items
+const interactions = beginnerData.find((section) => section.key === 'interactions').items
 const mistakes = beginnerData.find((section) => section.key === 'mistakes').items
 const route = beginnerData.find((section) => section.key === 'route').items
 const firstTasks = beginnerData.find((section) => section.key === 'firstTasks').items
@@ -293,12 +343,26 @@ const interfaceNotes = beginnerData.find((section) => section.key === 'interface
 }
 
 .first-task-row {
-  grid-template-columns: 1.1fr 0.45fr 1fr 1.6fr 130px;
+  grid-template-columns: 1.1fr 0.45fr 1fr 1.6fr;
+}
+
+.core-loop-row {
+  grid-template-columns: 0.8fr 0.55fr 1.8fr;
+}
+
+.control-row {
+  grid-template-columns: 0.7fr 1fr 1.7fr;
 }
 
 .mechanic-row,
 .fix-row {
   grid-template-columns: 0.8fr 1.6fr 1.2fr;
+}
+
+.entry-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
 }
 
 .table-title {
@@ -326,5 +390,11 @@ const interfaceNotes = beginnerData.find((section) => section.key === 'interface
 .task-link:focus-visible {
   color: var(--color-primary);
   outline: none;
+}
+
+@media (max-width: 1024px) {
+  .entry-grid {
+    grid-template-columns: 1fr;
+  }
 }
 </style>

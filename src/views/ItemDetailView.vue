@@ -29,7 +29,6 @@
                 <div class="table-row detail-row"><strong>Type</strong><span>{{ item.type }}</span></div>
                 <div class="table-row detail-row"><strong>Priority</strong><span>{{ item.priority }}</span></div>
                 <div class="table-row detail-row"><strong>Source</strong><span>{{ item.source }}</span></div>
-                <div class="table-row detail-row"><strong>Guide note</strong><b :class="['status-pill', statusClass(item.status)]">{{ displayStatus(item.status) }}</b></div>
               </div>
             </section>
 
@@ -75,7 +74,6 @@ import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import craftingData from '../data/craftingData'
 import itemsData from '../data/itemsData'
-import { displayStatus, statusClass } from '../utils/contentLabels'
 
 const route = useRoute()
 const items = itemsData.find((section) => section.key === 'items').items

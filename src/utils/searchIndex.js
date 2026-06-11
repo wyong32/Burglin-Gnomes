@@ -1,4 +1,5 @@
 import beginnerData from '../data/beginnerData.js'
+import baseData from '../data/baseData.js'
 import craftingData from '../data/craftingData.js'
 import enemiesData from '../data/enemiesData.js'
 import homeData from '../data/homeData.js'
@@ -41,19 +42,44 @@ function buildSearchIndex() {
     { key: 'beginner', path: '/beginner', type: 'Guide' },
     { key: 'items', path: '/items', type: 'Items' },
     { key: 'crafting', path: '/crafting', type: 'Crafting' },
+    { key: 'base-building', path: '/base-building', type: 'Guide' },
     { key: 'bestiary', path: '/bestiary', type: 'Bestiary' },
     { key: 'updates', path: '/updates', type: 'Updates' },
   ]
 
   staticPages.forEach(({ key, path, type }) => {
     const meta = routeSeo[key]
-    if (!meta) return
+    if (!meta && key !== 'base-building') return
     addEntry(entries, {
-      title: meta.title,
-      summary: meta.description,
+      title: meta?.title ?? "Burglin' Gnomes Base Building Guide",
+      summary:
+        meta?.description ??
+        'Gnome-world base guide for storage, purple crystal revival, bell extraction, crafting well upgrades, safe-zone objects, and pre-run setup.',
       path,
       type,
-      parts: [meta.keywords],
+      parts: [meta?.keywords, 'base building gnome world storage crystal bell well'],
+    })
+  })
+
+  getSectionItems(baseData, 'zones').forEach((entry) => {
+    addEntry(entries, {
+      title: entry.name,
+      summary: entry.summary,
+      path: '/base-building#zones',
+      type: 'Base',
+      image: entry.image,
+      parts: [entry.type],
+    })
+  })
+
+  getSectionItems(baseData, 'objects').forEach((entry) => {
+    addEntry(entries, {
+      title: entry.name,
+      summary: entry.detail,
+      path: '/base-building#base-objects',
+      type: 'Base',
+      image: entry.image,
+      parts: [entry.role, entry.location, entry.tips],
     })
   })
 

@@ -38,6 +38,12 @@ export const routeSeo = {
       "Burglin' Gnomes crafting recipes we use on co-op runs: materials, gear effects, and which upgrades to craft first for safer routes.",
     keywords: "Burglin Gnomes crafting, recipes, gear upgrades",
   },
+  'base-building': {
+    title: "Base Building Guide — Gnome World | Burglin' Gnomes",
+    description:
+      'Burglin Gnomes base building guide for the gnome world: storage, purple crystal revival, bell extraction, crafting well upgrades, and pre-run setup.',
+    keywords: 'Burglin Gnomes base building, gnome world, purple crystal, bell, crafting well',
+  },
   bestiary: {
     title: "Bestiary — NPCs, Enemies & Hazards | Burglin' Gnomes",
     description:
