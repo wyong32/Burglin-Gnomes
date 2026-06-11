@@ -6,15 +6,14 @@
         <div class="page-hero">
           <div class="page-hero-copy">
             <span class="eyebrow">Release &amp; patches</span>
-            <h1>Updates &amp; Patch Notes — Release Date | Burglin' Gnomes</h1>
+            <h1>Burglin' Gnomes Updates &amp; Patch Notes</h1>
             <p>
-              Release facts, patch-sensitive routes, and the items, enemies, crafting rules, and
-              co-op fixes players should recheck after updates. When AI, crafting, or network code
-              changes, old routes can stop working overnight.
+              Full-release update notes for routes, tasks, items, crafting, NPCs, enemies, and
+              co-op fixes players should check before trusting an old strategy.
             </p>
           </div>
           <figure class="hero-art">
-            <img src="/images/updates-page-01.webp" alt="Burglin' Gnomes Steam header art" />
+            <img src="/images/extracted/area-bell.png" alt="Burglin' Gnomes update and extraction bell" />
           </figure>
         </div>
 
@@ -22,14 +21,14 @@
           <aside class="guide-sidebar" aria-label="Updates guide sections">
             <strong>On this page</strong>
             <a href="#release-facts">Release facts</a>
-            <a href="#release-preview">Patch-sensitive changes</a>
+            <a href="#release-preview">Live guide priorities</a>
             <a href="#patch-checklist">Post-patch checklist</a>
             <a href="#patch-rules">When patches drop</a>
           </aside>
 
           <div class="guide-main">
             <section id="release-facts" class="guide-block">
-              <h2>Release facts from Steam</h2>
+              <h2>Burglin' Gnomes full release facts</h2>
               <p>
                 These details come from the official store page and developer posts. We only change
                 strategy advice when in-game mechanics actually shift.
@@ -47,10 +46,10 @@
             </section>
 
             <section id="release-preview" class="guide-block release-preview-block">
-              <h2>Patch-sensitive changes players should recheck</h2>
+              <h2>What changed from early tests to the full release</h2>
               <p>
-                Start here after a patch: route changes, grab threats, gear effects, crafting links,
-                and object interactions can all rewrite early-game loadouts.
+                Start here when a patch lands or a route feels different: task flow, house weapons,
+                crafting links, outdoor routes, and enemy behavior have the highest impact on live runs.
               </p>
               <div class="patch-check-board">
                 <RouterLink :to="featuredLead.path" class="patch-feature">
@@ -96,8 +95,8 @@
       <div class="queue-content page-content">
         <div class="section-heading">
           <span class="eyebrow">Post-patch checklist</span>
-          <h2>What we recheck after major updates</h2>
-          <p>Run through this list when a new patch lands — especially if tasks, AI, or crafting feel different.</p>
+          <h2>What to check after every Burglin' Gnomes patch</h2>
+          <p>Use this list before copying an old route into the current build, especially after AI, task, item, or network changes.</p>
         </div>
         <div class="data-table">
           <div v-for="(item, index) in patchChecklist" :key="item" class="table-row queue-row">
@@ -113,8 +112,8 @@
     <div class="container">
       <div class="rules-content page-content">
         <div class="section-heading">
-          <span class="eyebrow">Patch types</span>
-          <h2>What to watch when each kind of patch drops</h2>
+          <span class="eyebrow">Live build priorities</span>
+          <h2>Which systems can change your route first</h2>
         </div>
         <div class="card-grid">
           <article v-for="item in patchRules" :key="item.title" class="guide-card">
@@ -183,7 +182,7 @@ const patchRules = updatesData.find((section) => section.key === 'patchRules').i
 }
 
 .patch-feature::after {
-  content: 'New routes';
+  content: 'Full release';
   position: absolute;
   top: 18px;
   right: -44px;

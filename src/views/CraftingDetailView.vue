@@ -18,14 +18,15 @@
             <strong>{{ recipe.name }}</strong>
             <a href="#materials">Materials</a>
             <a href="#output">What you craft</a>
+            <a href="#areas">Crafting area</a>
             <a href="#mechanics">Mechanics</a>
             <a href="#bestiary">Helps against</a>
-            <a href="#notes">From our runs</a>
+            <a href="#notes">Route notes</a>
           </aside>
 
           <div class="guide-main">
             <section id="materials" class="guide-block">
-              <h2>Materials to craft {{ recipe.name }}</h2>
+              <h2>{{ recipe.name }} materials</h2>
               <div class="ingredient-grid">
                 <RouterLink v-for="material in materials" :key="material.item" class="ingredient-card" :to="`/items/${material.item}`">
                   <img :src="material.image" :alt="material.name" />
@@ -38,7 +39,7 @@
             </section>
 
             <section id="output" class="guide-block">
-              <h2>What {{ recipe.name }} gives you</h2>
+              <h2>{{ recipe.name }} output and use</h2>
               <RouterLink v-if="outputItem" class="guide-card" :to="`/items/${outputItem.slug}`">
                 <strong>{{ outputItem.name }}</strong>
                 <span>{{ outputItem.use }}</span>
@@ -46,8 +47,18 @@
               <p>{{ recipe.bestUse }}</p>
             </section>
 
+            <section id="areas" class="guide-block">
+              <h2>Where to craft or route {{ recipe.name }}</h2>
+              <div class="link-grid">
+                <RouterLink v-for="area in recipeAreas" :key="area.slug" class="guide-card" :to="`/areas/${area.slug}`">
+                  <strong>{{ area.name }}</strong>
+                  <span>{{ area.routeUse }}</span>
+                </RouterLink>
+              </div>
+            </section>
+
             <section id="mechanics" class="guide-block">
-              <h2>How {{ recipe.name }} changes a run</h2>
+              <h2>When {{ recipe.name }} is worth crafting</h2>
               <div class="data-table">
                 <div class="table-row crafting-mechanic-row">
                   <strong>Mechanic</strong>
@@ -65,7 +76,7 @@
             </section>
 
             <section id="bestiary" class="guide-block">
-              <h2>Enemies and hazards this craft helps with</h2>
+              <h2>Threats {{ recipe.name }} helps handle</h2>
               <div class="link-grid">
                 <RouterLink v-for="entry in relatedBestiary" :key="entry.slug" class="guide-card" :to="`/bestiary/${entry.slug}`">
                   <strong>{{ entry.name }}</strong>
@@ -75,7 +86,7 @@
             </section>
 
             <section id="notes" class="guide-block">
-              <h2>What we learned about {{ recipe.name }}</h2>
+              <h2>{{ recipe.name }} route notes</h2>
               <article v-for="section in recipe.sections" :key="section.heading" class="note-panel">
                 <h3>{{ section.heading }}</h3>
                 <p>{{ section.body }}</p>
@@ -99,6 +110,7 @@
 <script setup>
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
+import areasData from '../data/areasData'
 import craftingData from '../data/craftingData'
 import enemiesData from '../data/enemiesData'
 import itemsData from '../data/itemsData'
@@ -108,9 +120,11 @@ const recipes = craftingData.find((section) => section.key === 'recipes').items
 const materialData = craftingData.find((section) => section.key === 'materials').items
 const items = itemsData.find((section) => section.key === 'items').items
 const bestiary = enemiesData.find((section) => section.key === 'entries').items
+const areas = areasData.find((section) => section.key === 'areas').items
 
 const recipe = computed(() => recipes.find((entry) => entry.slug === route.params.slug))
 const outputItem = computed(() => items.find((item) => item.slug === recipe.value?.outputItem))
+const recipeAreas = computed(() => (recipe.value?.areas || []).map((slug) => areas.find((area) => area.slug === slug)).filter(Boolean))
 const materials = computed(() =>
   (recipe.value?.materials || []).map((material) => ({
     ...material,

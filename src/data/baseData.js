@@ -5,9 +5,9 @@ export default [
       {
         name: 'Gnome World',
         type: 'Safe zone',
-        image: '/images/hero-gnome-world.jpg',
+        image: '/images/extracted/area-gnome-tree.png',
         summary:
-          'The island is the pre-run base. Use it to regroup, store loot, invite friends, craft equipment, and start the next house run.',
+          'Pre-run island hub for storage, invites, crafting, and bell starts. Full routing notes live on the area page.',
         links: [
           { label: 'Crafting', path: '/crafting' },
           { label: 'Beginner route', path: '/beginner#core-loop' },
@@ -16,9 +16,9 @@ export default [
       {
         name: 'Human World',
         type: 'Task zone',
-        image: '/images/steam-shot-1.jpg',
+        image: '/images/extracted/area-kitchen.png',
         summary:
-          'The house and lawn are the active run area. Complete at least three tasks, steal useful loot, avoid threats, and call extraction before time runs out.',
+          'Active task zone with extraction pressure. Room-by-room guides start on the Human House area page.',
         links: [
           { label: 'Entry methods', path: '/beginner#human-world' },
           { label: 'Bestiary', path: '/bestiary' },
@@ -33,7 +33,7 @@ export default [
         name: 'The Tree',
         role: 'Spawn and respawn point',
         location: 'Gnome-world island',
-        image: '/images/hero-gnome-world.jpg',
+        image: '/images/extracted/area-gnome-tree.png',
         status: 'Observed',
         detail:
           'Players begin near the tree. It also works as the practical anchor point after death or failed pressure, so use it as the team regroup call.',
@@ -46,12 +46,12 @@ export default [
         name: 'Mushroom House',
         role: 'Storage and lobby utility',
         location: 'Gnome-world island',
-        image: '/images/hero-gnome-world.jpg',
+        image: '/images/extracted/area-gnome-tree.png',
         status: 'Observed',
         detail:
           'The mushroom house is where base utility belongs: storage, friend setup, and pre-run cleanup. Empty your inventory before starting a task route.',
         tips: [
-          'Store materials before testing combat or risky routes.',
+          'Store materials before practicing combat or risky routes.',
           'Do not bring random clutter into the next run unless it has a known use.',
         ],
       },
@@ -59,10 +59,10 @@ export default [
         name: 'Storage Chest',
         role: 'Loot and material storage',
         location: 'Inside or near the mushroom house',
-        image: '/images/crafting-board.jpg',
+        image: '/images/extracted/area-cupboard.png',
         status: 'Observed',
         detail:
-          'Use the chest to bank stolen materials and task loot. A clean inventory makes it easier to carry forks, rag strips, tools, and emergency items.',
+          'Use the chest to bank stolen materials and task loot. A clean inventory makes it easier to carry tools, potion ingredients, weapons, and emergency items.',
         tips: [
           'Bank materials before crafting checks.',
           'Separate task items from valuables when possible.',
@@ -70,15 +70,29 @@ export default [
       },
       {
         name: 'Purple Crystal',
-        role: 'Friend invite and revive utility',
+        role: 'Friend invite and lobby utility',
         location: 'Gnome world and human-world run space',
-        image: '/images/hero-gnome-world.jpg',
+        image: '/images/extracted/area-crystal.png',
         status: 'Observed',
         detail:
-          'On the island, the purple crystal is used for Steam friend invite flow. In the human world, it is tied to teammate revival and should be treated as a limited recovery resource.',
+          'On the island, the purple crystal is used for Steam friend invite flow and squad setup. Treat revival planning separately through the Spirit Catcher / Medical Terminal system.',
         tips: [
-          'Practice revive calls before relying on them.',
-          'Track the three-use run limit until the live build proves otherwise.',
+          'Invite friends before ringing the bell.',
+          'Do not confuse lobby setup with in-run rescue calls.',
+        ],
+        links: [{ label: 'Death and revival', path: '/beginner#death-revival' }],
+      },
+      {
+        name: 'Spirit Catcher',
+        role: 'Limited respawn furniture',
+        location: 'Gnome-world base setup',
+        image: '/images/extracted/area-crystal.png',
+        status: 'Observed',
+        detail:
+          'The Medical Terminal / Spirit Catcher handles limited respawns during a day. Multiplayer has three charges, while solo play has one charge.',
+        tips: [
+          'Spend respawns on task progress, not greedy loot mistakes.',
+          'If everyone is dead and no auto-respawn is available, the day can collapse fast.',
         ],
         links: [{ label: 'Death and revival', path: '/beginner#death-revival' }],
       },
@@ -86,7 +100,7 @@ export default [
         name: 'Bell',
         role: 'Start and extraction call',
         location: 'Gnome world and human-world run space',
-        image: '/images/task-list.webp',
+        image: '/images/extracted/area-bell.png',
         status: 'Observed',
         detail:
           'On the island, the bell starts the run. In the human world, the bell calls extraction back to the island after the team has enough task progress.',
@@ -100,13 +114,13 @@ export default [
         name: 'The Well',
         role: 'Crafting station',
         location: 'Gnome-world island',
-        image: '/images/crafting-page-01.webp',
+        image: '/images/extracted/area-well.png',
         status: 'Observed',
         detail:
           'The well is the base crafting station. Spend collected parts here to make gear that changes routes, carrying, combat, and material farming.',
         tips: [
-          'Craft backpack upgrades before greedy loot routes.',
-          'Test combat gear away from progression runs.',
+          'Craft Backpack and Pickaxe before greedy loot routes.',
+          'Practice combat gear away from progression runs.',
         ],
         links: [{ label: 'Crafting recipes', path: '/crafting' }],
       },

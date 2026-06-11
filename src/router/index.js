@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import AreaDetailView from '../views/AreaDetailView.vue'
 import BaseBuildingView from '../views/BaseBuildingView.vue'
 import BeginnerGuideView from '../views/BeginnerGuideView.vue'
 import BestiaryDetailView from '../views/BestiaryDetailView.vue'
@@ -17,6 +18,7 @@ import TermsOfServiceView from '../views/Legal/TermsOfServiceView.vue'
 import UpdatesView from '../views/UpdatesView.vue'
 import WikiView from '../views/WikiView.vue'
 
+import areasData from '../data/areasData.js'
 import craftingData from '../data/craftingData.js'
 import enemiesData from '../data/enemiesData.js'
 import itemsData from '../data/itemsData.js'
@@ -46,6 +48,7 @@ function getSectionItems(data, key) {
 const items = getSectionItems(itemsData, 'items')
 const recipes = getSectionItems(craftingData, 'recipes')
 const bestiaryEntries = getSectionItems(enemiesData, 'entries')
+const areaEntries = getSectionItems(areasData, 'areas')
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -104,6 +107,7 @@ const router = createRouter({
       component: BaseBuildingView,
       meta: routeMeta('base-building'),
     },
+    { path: '/areas/:slug', name: 'area-detail', component: AreaDetailView },
     {
       path: '/bestiary',
       name: 'bestiary',
@@ -150,7 +154,13 @@ const router = createRouter({
     { path: '/beginner-guide', redirect: '/beginner' },
     { path: '/tasks', redirect: '/beginner#first-tasks' },
     { path: '/enemies', redirect: '/bestiary' },
-    { path: '/bestiary/scrapling', redirect: '/bestiary/fairy' },
+    { path: '/bestiary/scrapling', redirect: '/items/scraplings' },
+    { path: '/bestiary/scraplings', redirect: '/items/scraplings' },
+    { path: '/items/scrapling', redirect: '/items/scraplings' },
+    { path: '/items/bee', redirect: '/bestiary/bee' },
+    { path: '/bestiary/bibi', redirect: '/bestiary/tall-humanoid' },
+    { path: '/bestiary/mole', redirect: '/bestiary/groundhog' },
+    { path: '/bestiary/roomba', redirect: '/bestiary/vacuum-robot' },
     { path: '/full-release', redirect: '/updates' },
   ],
 })
@@ -163,6 +173,24 @@ router.beforeEach((to) => {
       hash: to.hash,
       replace: true,
     }
+  }
+
+  const slug = to.params.slug
+
+  if (to.name === 'item-detail' && slug && !items.some((entry) => entry.slug === slug)) {
+    return { path: '/items', replace: true }
+  }
+
+  if (to.name === 'crafting-detail' && slug && !recipes.some((entry) => entry.slug === slug)) {
+    return { path: '/crafting', replace: true }
+  }
+
+  if (to.name === 'bestiary-detail' && slug && !bestiaryEntries.some((entry) => entry.slug === slug)) {
+    return { path: '/bestiary', replace: true }
+  }
+
+  if (to.name === 'area-detail' && slug && !areaEntries.some((entry) => entry.slug === slug)) {
+    return { path: '/base-building', replace: true }
   }
 })
 
@@ -246,6 +274,37 @@ router.afterEach((to) => {
         description: entry.tdk.description,
         url: resolveCanonicalUrl(path),
         imageUrl: entry.image,
+      }),
+    })
+    return
+  }
+
+  if (to.name === 'area-detail') {
+    const slug = to.params.slug
+    const area = areaEntries.find((item) => item.slug === slug)
+    const path = area ? `/areas/${area.slug}` : '/base-building'
+
+    if (!area) {
+      applyDocumentSeo({
+        path,
+        title: "Areas — Items & Routes | Burglin' Gnomes",
+        description:
+          "Browse Burglin' Gnomes area guides for items, weapons, crafting stations, route notes, tasks, and danger checks.",
+        keywords: "Burglin Gnomes areas, Burglin Gnomes item locations",
+      })
+      return
+    }
+
+    applyDocumentSeo({
+      path,
+      ...area.tdk,
+      ogImage: area.image,
+      ogType: 'article',
+      jsonLd: buildArticleJsonLd({
+        headline: area.tdk.title,
+        description: area.tdk.description,
+        url: resolveCanonicalUrl(path),
+        imageUrl: area.image,
       }),
     })
     return

@@ -13,7 +13,7 @@
             </p>
           </div>
           <figure class="hero-art">
-            <img src="/images/crafting-page-01.webp" alt="Burglin' Gnomes crafting board" />
+            <img src="/images/extracted/area-well.png" alt="Burglin' Gnomes crafting well and recipe guide" />
           </figure>
         </div>
 
@@ -69,7 +69,7 @@
           <div class="data-table">
             <div class="table-row table-head material-row">
               <span>Material</span>
-              <span>Source</span>
+              <span>Where to get it</span>
               <span>Used for</span>
             </div>
             <div v-for="material in materials" :key="material.name" class="table-row material-row">

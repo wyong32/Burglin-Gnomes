@@ -25,6 +25,7 @@
             <a href="#controls">Controls</a>
             <a href="#first-route">First route</a>
             <a href="#first-tasks">First five tasks</a>
+            <a href="#task-system">Daily task pool</a>
             <a href="#human-world">Enter human world</a>
             <a href="#doors-windows">Doors and windows</a>
             <a href="#death-revival">Death and revival</a>
@@ -103,10 +104,10 @@
             <section id="first-tasks" class="guide-block">
               <h2>First task list new players should learn</h2>
               <p>
-                The first useful route is built around five small objectives: collect rag strips,
-                break cheap objects, stab one cockroach, flush one item, and steal a fork. These
-                are not random chores; they teach room priority, item size, enemy focus,
-                and when to stop looting.
+                The first useful route is built around five tutorial fundamentals: break a TV,
+                climb the kitchen counter, hit a target, open a cabinet, and open a window. These
+                are not random chores; they teach room priority, object handling, container checks,
+                vertical movement, and when to stop looting.
               </p>
               <div class="data-table">
                 <div class="table-row table-head first-task-row">
@@ -124,6 +125,40 @@
                   <span>{{ task.room }}</span>
                   <span>{{ task.method }}</span>
                 </div>
+              </div>
+            </section>
+
+            <section id="task-system" class="guide-block">
+              <h2>Daily task pool, group limits, and difficulty by day</h2>
+              <p>
+                Normal days still roll five tasks, but they are not pulled from one flat list.
+                Gather/Steal and Misc are the backbone groups, while toilet, explosion, violence,
+                stun, and blowdart tasks are capped so the day does not become one repeated hazard.
+              </p>
+              <div class="data-table">
+                <div class="table-row table-head task-group-row">
+                  <span>Group</span>
+                  <span>Daily pick</span>
+                  <span>What can appear</span>
+                  <span>Route note</span>
+                </div>
+                <div v-for="group in taskGroups" :key="group.group" class="table-row task-group-row">
+                  <strong>{{ group.group }}</strong>
+                  <span>{{ group.pick }}</span>
+                  <span>{{ group.tasks }}</span>
+                  <span>{{ group.note }}</span>
+                </div>
+              </div>
+              <div class="card-grid">
+                <article v-for="entry in difficultySchedule" :key="entry.day" class="guide-card">
+                  <h3>{{ entry.day }}</h3>
+                  <p><strong>{{ entry.roll }}</strong></p>
+                  <p>{{ entry.advice }}</p>
+                </article>
+              </div>
+              <div class="note-panel">
+                <h3>Task pairs that should not roll together</h3>
+                <p>{{ forbiddenCombos.join('; ') }}.</p>
               </div>
             </section>
 
@@ -159,7 +194,7 @@
                 </div>
                 <div class="table-row mechanic-row">
                   <strong>Door interaction</strong>
-                  <span>Check normal interaction, then test Crowbar if the route is blocked.</span>
+                  <span>Check normal interaction, then use a chair, stool, window, or pipe route if the door is blocked.</span>
                   <span>Forcing a tool without knowing whether the door accepts it.</span>
                 </div>
                 <div class="table-row mechanic-row">
@@ -182,33 +217,33 @@
             </section>
 
             <section id="death-revival" class="guide-block">
-              <h2>Death and revival mechanics: crystal vs press E</h2>
+              <h2>Death and revival mechanics: CPR, Spirit Catcher, and failed days</h2>
               <p>
                 Revival needs separate practice because players mix up three states: being grabbed,
-                being downed and rescued by a teammate, and using the purple crystal. On the island,
-                the crystal supports Steam friend invite flow. In the human world, the crystal is tied
-                to reviving teammates and should be treated as a limited recovery resource.
+                being downed and rescued by a teammate, and using the base revival furniture. The
+                run is still lost if the team reaches the deadline with fewer than three completed tasks.
               </p>
               <div class="card-grid">
                 <article class="guide-card">
-                  <h3>Press E rescue</h3>
+                  <h3>CPR rescue</h3>
                   <p>
-                    If a prompt appears near a downed or held teammate, call the threat first, then
-                    rescue. Do not start the revive while the human, cat, or large enemy still controls
-                    the space.
+                    CPR-style rescue is not a guaranteed fixed timer. Treat it as a repeated chance
+                    to bring a teammate back, and stop if the body is in a lethal position or the threat
+                    still controls the room.
                   </p>
                 </article>
                 <article class="guide-card">
-                  <h3>Crystal revive</h3>
+                  <h3>Spirit Catcher charges</h3>
                   <p>
-                    Treat purple crystal revives as limited. Current route notes track a three-use
-                    run limit, so do not spend revives on greedy loot routes.
+                    The Medical Terminal / Spirit Catcher setup has limited charges: three in multiplayer
+                    and one in solo. Spend them on task progress, not greedy loot mistakes.
                   </p>
                 </article>
                 <article class="guide-card">
-                  <h3>Clean-run rule</h3>
+                  <h3>Failed-day lockout</h3>
                   <p>
-                    A route that depends on revival is not a safe beginner route. Use revival for recovery, not as the plan.
+                    When the day fails because the task minimum was not met, respawns are blocked briefly
+                    while the game resolves the loss and resets the run.
                   </p>
                 </article>
               </div>
@@ -251,7 +286,7 @@
               <p>
                 Burglin' Gnomes has enough physics, camera movement, voice coordination, and small
                 object handling that setup matters. Do this before a co-op session, not after someone
-                is already stuck under a table with a fork.
+                is already stuck under a table with a task item.
               </p>
               <div class="card-grid">
                 <article v-for="item in interfaceNotes" :key="item.title" class="guide-card">
@@ -328,6 +363,9 @@ const interactions = beginnerData.find((section) => section.key === 'interaction
 const mistakes = beginnerData.find((section) => section.key === 'mistakes').items
 const route = beginnerData.find((section) => section.key === 'route').items
 const firstTasks = beginnerData.find((section) => section.key === 'firstTasks').items
+const taskGroups = beginnerData.find((section) => section.key === 'taskGroups').items
+const difficultySchedule = beginnerData.find((section) => section.key === 'difficultySchedule').items
+const forbiddenCombos = beginnerData.find((section) => section.key === 'forbiddenCombos').items
 const interfaceNotes = beginnerData.find((section) => section.key === 'interface').items
 </script>
 
@@ -344,6 +382,10 @@ const interfaceNotes = beginnerData.find((section) => section.key === 'interface
 
 .first-task-row {
   grid-template-columns: 1.1fr 0.45fr 1fr 1.6fr;
+}
+
+.task-group-row {
+  grid-template-columns: 0.8fr 0.6fr 1.5fr 1.7fr;
 }
 
 .core-loop-row {

@@ -17,7 +17,7 @@
                     type="search"
                     name="q"
                     autocomplete="off"
-                    placeholder="Try crowbar, rag strip, cat, expanded backpack..."
+                    placeholder="Try pickaxe, metal bat, cat, backpack..."
                   />
                   <button type="submit">Search</button>
                 </div>
@@ -76,7 +76,7 @@ import { searchSite } from '../utils/searchIndex'
 const route = useRoute()
 const router = useRouter()
 const inputQuery = ref('')
-const hints = ['crowbar', 'rag strip', 'cat', 'expanded backpack', 'human', 'fork', 'smoke tool']
+const hints = ['pickaxe', 'metal bat', 'cat', 'backpack', 'human', 'gnomium gloves', 'health potion']
 
 const query = computed(() => String(route.query.q ?? '').trim())
 const results = computed(() => (query.value ? searchSite(query.value) : []))

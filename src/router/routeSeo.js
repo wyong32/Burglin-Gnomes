@@ -91,14 +91,14 @@ export const routeSeo = {
 export const itemNotFoundSeo = {
   title: "All Items | Burglin' Gnomes",
   description:
-    "Browse Burglin' Gnomes materials, weapons, tools, gear, and task items with sources and crafting links from our playtesting.",
+    "Browse Burglin' Gnomes materials, weapons, tools, gear, and task items with where-to-find notes, crafting links, and route uses.",
   keywords: 'Burglin Gnomes items, materials, weapons, tools',
 }
 
 export const recipeNotFoundSeo = {
   title: "Crafting Recipes | Burglin' Gnomes",
   description:
-    "Browse Burglin' Gnomes crafting recipes with materials, gear effects, and upgrade order from our co-op playtesting.",
+    "Browse Burglin' Gnomes crafting recipes with materials, gear effects, linked items, and upgrade order for cleaner co-op runs.",
   keywords: "Burglin Gnomes crafting, recipes, gear",
 }
 

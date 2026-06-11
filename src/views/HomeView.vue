@@ -61,11 +61,11 @@
             <span class="eyebrow">Gameplay introduction</span>
             <h2>How a Burglin' Gnomes run works</h2>
             <p>
-              Our live-build testing confirms that chasing raw loot value early on is a trap. Team progression strictly relies on prioritizing High-Gnome tasks first to secure the initial run loop and unlock necessary baseline upgrades.
+              Chasing raw loot before task progress is the fastest way to lose a clean day. Read the High-Gnome list, secure three tasks, then decide whether extra loot is worth the risk.
             </p>
           </article>
           <figure class="media-panel">
-            <img src="/images/steam-shot-2.jpg" alt="Burglin' Gnomes house interior gameplay" />
+          <img src="/images/extracted/area-kitchen.png" alt="Burglin' Gnomes kitchen route and house item guide" />
           </figure>
         </div>
       </div>
@@ -106,7 +106,7 @@
             </article>
           </div>
           <figure class="media-panel">
-            <img src="/images/steam-shot-1.jpg" alt="Burglin' Gnomes house route screenshot" />
+            <img src="/images/extracted/area-cupboard.png" alt="Burglin' Gnomes cabinets drawers and storage route guide" />
           </figure>
         </div>
       </div>
@@ -188,10 +188,10 @@
       <div class="tools-content page-content">
         <div class="section-heading">
           <span class="eyebrow">Learn next</span>
-          <h2>Routes, tools, threats, and new map content</h2>
+          <h2>Routes, tools, threats, and areas to learn next</h2>
           <p>
             After the first task set, these are the pages we open most: entry routes, carry upgrades,
-            utility items, major threats, and outdoor map leads from the full release.
+            utility items, major threats, and the rooms or outdoor areas that decide most runs.
           </p>
         </div>
         <div class="tool-grid">

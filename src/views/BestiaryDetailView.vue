@@ -20,7 +20,7 @@
             <a href="#behavior">Behavior</a>
             <a href="#counters">Survival plan</a>
             <a href="#related-guides">Related guides</a>
-            <a href="#notes">What we have seen</a>
+            <a href="#notes">Route notes</a>
             <a v-if="sameCategoryEntries.length" href="#related-category">More {{ entry.category }}</a>
           </aside>
 
@@ -74,14 +74,14 @@
             </section>
 
             <section id="notes" class="guide-block">
-              <h2>Verification notes for {{ entry.name }}</h2>
+              <h2>{{ entry.name }} route notes</h2>
               <article v-for="section in entry.sections" :key="section.heading" class="note-panel">
                 <h3>{{ section.heading }}</h3>
                 <p>{{ section.body }}</p>
               </article>
               <div class="data-table">
                 <div v-for="note in entry.testing" :key="note" class="table-row bestiary-note-row">
-                  <strong>Retest</strong>
+                  <strong>Check</strong>
                   <span>{{ note }}</span>
                 </div>
               </div>

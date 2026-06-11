@@ -2,6 +2,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
+import areasData from '../src/data/areasData.js'
 import craftingData from '../src/data/craftingData.js'
 import enemiesData from '../src/data/enemiesData.js'
 import itemsData from '../src/data/itemsData.js'
@@ -67,6 +68,13 @@ function generate() {
     const recipePath = `/crafting/${recipe.slug}`
     const date = coerceSitemapLastmod(recipe.updatedAt || recipe.datePublished, lastmod)
     xml += `\n${urlNode(recipePath, date, getChangefreq('crafting-detail'), getPriority('crafting-detail'))}`
+  }
+
+  for (const area of getSectionItems(areasData, 'areas')) {
+    if (!area?.slug) continue
+    const areaPath = `/areas/${area.slug}`
+    const date = coerceSitemapLastmod(area.updatedAt || area.datePublished, lastmod)
+    xml += `\n${urlNode(areaPath, date, getChangefreq('area-detail'), getPriority('area-detail'))}`
   }
 
   for (const entry of getSectionItems(enemiesData, 'entries')) {

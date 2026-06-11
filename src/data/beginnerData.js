@@ -23,6 +23,13 @@ export default [
           'If the timer ends before the minimum task count is complete, the run fails and progress can reset back to day one.',
         status: 'Patch Sensitive',
       },
+      {
+        label: 'Gnomium reward',
+        value: 'Tasks minus deaths',
+        detail:
+          'Successful days reward Gnomium from completed tasks, reduced by dead players. Finish more tasks, but do not trade deaths for one extra objective.',
+        status: 'Observed',
+      },
     ],
   },
   {
@@ -111,7 +118,7 @@ export default [
         order: '01',
         title: 'Read the High-Gnome task list before touching loot',
         detail:
-          'The first visible task set includes rag strips, broken objects, a cockroach, a toilet flush, and a fork. That means bathroom and kitchen routing matters more than random valuables.',
+          'The tutorial task set teaches five fundamentals: break a TV, climb the kitchen counter, hit with Clonk-style force, open a cabinet, and open a window.',
         image: '/images/task-list.webp',
       },
       {
@@ -123,16 +130,16 @@ export default [
       },
       {
         order: '03',
-        title: 'Clear bathroom tasks before heavy hauling',
+        title: 'Open cabinets before calling a room empty',
         detail:
-          'The toilet objective needs a small object, not a trophy haul. Bring something disposable, flush it, then continue with rag strips and break tasks.',
+          'Task items and useful loot often sit behind drawers or cabinet doors. Open containers before deciding the room has nothing useful.',
         image: '/images/steam-shot-3.jpg',
       },
       {
         order: '04',
-        title: 'Sweep kitchen and dining surfaces for the fork',
+        title: 'Use counters and windows as movement tests',
         detail:
-          'Fork objectives pull you toward counters, dining tables, drawers, and utensil areas. Do this before the route gets noisy or blocked.',
+          'Climbing the kitchen counter and opening a window are not side tricks; they teach how to reach human-scale surfaces and leave under pressure.',
         image: '/images/steam-shot-4.jpg',
       },
       {
@@ -156,9 +163,9 @@ export default [
     items: [
       'Check the task list immediately and call every required object out loud.',
       'Use the vine window or another exterior entry that you can recognize under pressure.',
-      'Finish bathroom objectives first when the list includes rag strips, toilet flush, or break tasks.',
+      'Finish the tutorial fundamentals first: break, climb, hit, open a cabinet, and open a window.',
       'Move to the kitchen only after one player knows the exit and one player watches threat movement.',
-      'Take the fork and other small task objects before hauling valuables.',
+      'Take small task objects before hauling valuables.',
       'Return to gnome-world crafting only after the first objective cluster is solved or the route becomes unsafe.',
     ],
   },
@@ -166,55 +173,109 @@ export default [
     key: 'firstTasks',
     items: [
       {
-        name: 'Collect Rag Strips',
-        target: '5',
-        room: 'Bathroom, cloth piles, low clutter',
+        name: 'Break TV',
+        target: '1',
+        room: 'Living room or TV room',
         method:
-          'Search soft clutter first. Do not carry bulky loot while checking for small cloth pieces.',
+          'Use this as the first object-breaking lesson. Clear the room shape before committing to a noisy hit.',
         image: '/images/task-list.webp',
         status: 'Observed',
-        path: '/items/rag-strip',
+        path: '/beginner#first-route',
       },
       {
-        name: 'Break Any Items',
-        target: '4',
-        room: 'Bathroom, kitchen, cheap clutter rooms',
+        name: 'Climb Kitchen Counter',
+        target: '1',
+        room: 'Kitchen',
         method:
-          'Use disposable objects. Avoid breaking task objects until the list is complete.',
+          'Practice vertical movement on a counter before using harder window or shelf routes.',
         image: '/images/steam-shot-3.jpg',
         status: 'Observed',
-        path: '/items/small-junk-item',
+        path: '/beginner#human-world',
       },
       {
-        name: 'Stab a Cockroach',
+        name: 'Clonk Tutorial',
         target: '1',
-        room: 'Pest spawn rooms',
+        room: 'Tutorial route',
         method:
-          'Clear floor clutter, isolate the target, then leave once the objective registers.',
-        image: 'https://placehold.co/40x40/ffdac1/6B9B7B?text=CR',
+          'Learn how hitting works before using weapons in a real house run.',
+        image: '/images/items/item-metal-bat.png',
         status: 'Observed',
-        path: '/bestiary/cockroach',
+        path: '/items/metal-bat',
       },
       {
-        name: 'Flush an Item in the Toilet',
+        name: 'Open Cabinet',
         target: '1',
-        room: 'Bathroom',
+        room: 'Kitchen, bathroom, storage rooms',
         method:
-          'Bring a small junk object. Large objects waste time and can block movement near the toilet.',
+          'Pull cabinet doors and drawers open before calling a room empty. Small loot and weapons can hide inside.',
         image: '/images/task-list.webp',
         status: 'Observed',
-        path: '/items/small-junk-item',
+        path: '/beginner#doors-windows',
       },
       {
-        name: 'Steal a Fork',
+        name: 'Open Window',
         target: '1',
-        room: 'Kitchen or dining area',
+        room: 'Exterior wall or room window',
         method:
-          'Check counters, tables, drawers, and utensil surfaces before chasing valuables.',
-        image: 'https://placehold.co/40x40/ffdac1/6B9B7B?text=FK',
+          'Grab the frame, pull up, and keep the body centered. This is the safest early entry and exit skill.',
+        image: '/images/vine-entry.jpg',
         status: 'Observed',
-        path: '/items/fork',
+        path: '/beginner#doors-windows',
       },
+    ],
+  },
+  {
+    key: 'taskGroups',
+    items: [
+      {
+        group: 'Gather / Steal',
+        pick: '1-2 per day',
+        tasks: 'Gather Random, Steal From Random Room, Steal Random Category, Steal Random Specific',
+        note: 'This is the only formal task group with a minimum pick count, so every normal day should route some kind of item collection.',
+      },
+      {
+        group: 'Misc',
+        pick: '1-3 per day',
+        tasks: 'Garden gnome kisses, boar tasks, water plants, sauna water, garage, Jonathan, TV, greenhouse, shed, dog, window, cabinet, bee, weapon safe',
+        note: 'Misc tasks are broad; read the verb first because these can send the team outdoors, into cabinets, or into special event routes.',
+      },
+      {
+        group: 'Breaking',
+        pick: '0-2 per day',
+        tasks: 'Break Stealables, Blender, Window Shatter, Break Seagull Egg',
+        note: 'Break objectives can be quick, but they make noise and can ruin a clean stealth route.',
+      },
+      {
+        group: 'Toilet / Explosion / Violence / Stun / Blowdart',
+        pick: '0-1 per group',
+        tasks: 'Toilet tasks, explosive tasks, weapon tasks, stun tasks, and potion-dart tasks',
+        note: 'These groups cap at one each, so do not expect several objectives from the same dangerous category on a normal roll.',
+      },
+    ],
+  },
+  {
+    key: 'difficultySchedule',
+    items: [
+      { day: 'Days 0-1', roll: '5 Easy tasks', advice: 'Use these days to learn entry, containers, and extraction timing.' },
+      { day: 'Day 2', roll: '3 Medium + 2 Easy', advice: 'Start crafting route tools before the house asks for harder objectives.' },
+      { day: 'Days 3-4', roll: '1 Hard + 3 Medium + 1 Easy', advice: 'Do not over-loot before the hard task is solved or skipped.' },
+      { day: 'Days 5-7', roll: '2 Hard + 3 Medium', advice: 'Enter with a craft plan, not just empty hands.' },
+      { day: 'Days 8+', roll: 'Hard-heavy task pool', advice: 'Expect more dangerous verbs and recheck the exit before fighting.' },
+    ],
+  },
+  {
+    key: 'forbiddenCombos',
+    items: [
+      'Cause Explosion + Explode Random Enemy',
+      'Mine Explode + Mine Trigger',
+      'Boar Charge + Boar Tusk',
+      'Jonathan Music Box + Jonathan Spawned',
+      'Water Plants + Cut Plants',
+      'Dart Stab + Fork Stab',
+      'Enter Shed + Enter Greenhouse',
+      'Build Minicopter + Garage Door Open',
+      'Steal Dog Toy + Free Dog',
+      'Window Open + Window Shatter',
     ],
   },
   {
@@ -255,7 +316,7 @@ export default [
       },
       {
         title: 'Dragging large objects through early objectives',
-        fix: 'Finish rag, fork, toilet, pest, and break tasks before heavy haul attempts.',
+        fix: 'Finish container, window, break, movement, and small-object tasks before heavy haul attempts.',
       },
       {
         title: 'Fighting in cluttered rooms',
@@ -267,7 +328,7 @@ export default [
       },
       {
         title: 'Ignoring crafting after the first run',
-        fix: 'Expanded Backpack and basic tools can change the whole route once recipes are confirmed.',
+        fix: 'Backpack, Pickaxe, Metal Bat, and movement gear can change the whole route once the team can afford them.',
       },
     ],
   },

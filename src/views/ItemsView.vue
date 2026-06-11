@@ -13,7 +13,7 @@
             </p>
           </div>
           <figure class="hero-art">
-            <img src="/images/item-page-01.webp" alt="Burglin' Gnomes materials and item guide" />
+            <img src="/images/extracted/area-cupboard.png" alt="Burglin' Gnomes materials weapons tools and item guide" />
           </figure>
         </div>
 
@@ -30,7 +30,7 @@
             <span class="eyebrow">By category</span>
             <h2>Find the item you need</h2>
             <p>
-              Each row links to a full page with sources, uses, linked recipes, and player notes
+              Each row links to a full page with locations, uses, linked recipes, and player notes
               for planning a cleaner route.
             </p>
           </div>
@@ -52,7 +52,7 @@
                 <div class="table-row table-head item-row">
                   <span>Item</span>
                   <span>Type</span>
-                  <span>Source / use</span>
+                  <span>Where to get it or why it matters</span>
                 </div>
                 <div v-for="item in group.items" :key="item.slug" class="table-row item-row">
                   <RouterLink class="table-title" :to="`/items/${item.slug}`">
@@ -85,13 +85,12 @@ const itemCardSource = (item) => (item.source === 'Unknown source' ? item.use : 
 const categoryIntro = (category) =>
   ({
     Materials: 'Metal, cloth, and junk you need for early crafts and task overlap.',
-    Weapons: 'Gear for pests, humans, and buying escape time — practice before clean runs.',
-    Tools: 'Crowbars, pickaxes, and items that open routes or change the house.',
+    Weapons: 'Crafted weapons and house weapons, including firearms, explosives, stun tools, and close-range options.',
+    Tools: 'Pickaxe, Eyeglass, Grappling Hook, and tools that change farming or movement routes.',
     Gear: 'Wearables that change carrying, movement, hands, and survival odds.',
     'Task Items': 'Objects the High-Gnome list asks for directly — route to these first.',
-    'Base Objects': 'Gnome-world objects tied to revival, storage, or home upgrades.',
-    'Utility Items': 'Smoke, potions, and support tools that change timing on a run.',
-    'Hazard Items': 'Household objects and environmental risks that can block a gnome-scale path.',
+    Potions: 'Potion Table crafts that apply player status effects or feed the Repackager.',
+    Ammo: 'Marbles and blowgun darts used by ranged weapons during planned house routes.',
   })[category] || 'Items we are still confirming in the full release.'
 </script>
 

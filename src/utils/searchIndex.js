@@ -1,4 +1,5 @@
 import beginnerData from '../data/beginnerData.js'
+import areasData from '../data/areasData.js'
 import baseData from '../data/baseData.js'
 import craftingData from '../data/craftingData.js'
 import enemiesData from '../data/enemiesData.js'
@@ -38,6 +39,7 @@ function buildSearchIndex() {
 
   const staticPages = [
     { key: 'home', path: '/', type: 'Page' },
+    { key: 'search', path: '/search', type: 'Page' },
     { key: 'wiki', path: '/wiki', type: 'Wiki' },
     { key: 'beginner', path: '/beginner', type: 'Guide' },
     { key: 'items', path: '/items', type: 'Items' },
@@ -61,14 +63,28 @@ function buildSearchIndex() {
     })
   })
 
+  const zoneAreaPaths = {
+    'Gnome World': '/areas/gnome-world',
+    'Human World': '/areas/human-house',
+  }
+
   getSectionItems(baseData, 'zones').forEach((entry) => {
     addEntry(entries, {
       title: entry.name,
       summary: entry.summary,
-      path: '/base-building#zones',
+      path: zoneAreaPaths[entry.name] ?? '/base-building#zones',
       type: 'Base',
       image: entry.image,
-      parts: [entry.type],
+      parts: [entry.type, 'base building zone'],
+    })
+  })
+
+  getSectionItems(baseData, 'checklist').forEach((item, index) => {
+    addEntry(entries, {
+      title: `Pre-run checklist ${index + 1}`,
+      summary: item,
+      path: '/base-building#pre-run-checklist',
+      type: 'Base',
     })
   })
 
@@ -83,6 +99,17 @@ function buildSearchIndex() {
     })
   })
 
+  getSectionItems(areasData, 'areas').forEach((entry) => {
+    addEntry(entries, {
+      title: entry.name,
+      summary: entry.summary,
+      path: `/areas/${entry.slug}`,
+      type: 'Area',
+      image: entry.image,
+      parts: [entry.type, entry.routeUse, entry.tasks, entry.dangers, sectionText(entry.sections)],
+    })
+  })
+
   getSectionItems(itemsData, 'items').forEach((item) => {
     addEntry(entries, {
       title: item.name,
@@ -90,7 +117,28 @@ function buildSearchIndex() {
       path: `/items/${item.slug}`,
       type: 'Item',
       image: item.image,
-      parts: [item.use, item.advice, item.priority, item.status, sectionText(item.sections)],
+      parts: [item.use, item.advice, item.priority, item.status, item.areas, item.stats, item.acquisition, sectionText(item.sections)],
+    })
+  })
+
+  getSectionItems(craftingData, 'craftOrder').forEach((entry) => {
+    addEntry(entries, {
+      title: entry.name,
+      summary: joinParts(entry.reason, entry.timing),
+      path: entry.recipe ? `/crafting/${entry.recipe}` : '/crafting',
+      type: 'Recipe',
+      parts: [entry.rank],
+    })
+  })
+
+  getSectionItems(craftingData, 'materials').forEach((material) => {
+    addEntry(entries, {
+      title: material.name,
+      summary: joinParts(material.role, material.source, material.note),
+      path: material.item ? `/items/${material.item}` : '/crafting#materials',
+      type: 'Crafting',
+      image: material.image,
+      parts: [material.status],
     })
   })
 
@@ -118,7 +166,27 @@ function buildSearchIndex() {
       path: `/bestiary/${entry.slug}`,
       type: 'Bestiary',
       image: entry.image,
-      parts: [entry.behavior, entry.counter, entry.status, sectionText(entry.sections)],
+      parts: [
+        entry.aliases,
+        entry.location,
+        entry.behavior,
+        entry.counter,
+        entry.attacks,
+        entry.counters,
+        entry.status,
+        sectionText(entry.sections),
+      ],
+    })
+
+    ;(entry.aliases ?? []).forEach((alias) => {
+      addEntry(entries, {
+        title: alias,
+        summary: joinParts(entry.name, entry.category, entry.role),
+        path: `/bestiary/${entry.slug}`,
+        type: 'Bestiary',
+        image: entry.image,
+        parts: [entry.behavior, entry.counter],
+      })
     })
   })
 
@@ -155,6 +223,73 @@ function buildSearchIndex() {
       summary: entry.value,
       path: '/wiki',
       type: 'Wiki',
+    })
+  })
+
+  getSectionItems(beginnerData, 'coreLoop').forEach((entry) => {
+    addEntry(entries, {
+      title: entry.label,
+      summary: joinParts(entry.value, entry.detail),
+      path: '/beginner#core-loop',
+      type: 'Guide',
+      parts: [entry.status],
+    })
+  })
+
+  getSectionItems(beginnerData, 'controls').forEach((entry) => {
+    addEntry(entries, {
+      title: entry.action,
+      summary: entry.use,
+      path: '/beginner#controls',
+      type: 'Guide',
+      parts: [entry.input],
+    })
+  })
+
+  getSectionItems(beginnerData, 'entryMethods').forEach((entry) => {
+    addEntry(entries, {
+      title: entry.name,
+      summary: joinParts(entry.method, entry.risk),
+      path: entry.path ?? '/beginner#human-world',
+      type: 'Guide',
+      parts: [entry.route],
+    })
+  })
+
+  getSectionItems(beginnerData, 'interactions').forEach((entry) => {
+    addEntry(entries, {
+      title: entry.title,
+      summary: entry.detail,
+      path: '/beginner#doors-windows',
+      type: 'Guide',
+    })
+  })
+
+  getSectionItems(beginnerData, 'taskGroups').forEach((entry) => {
+    addEntry(entries, {
+      title: entry.group,
+      summary: joinParts(entry.pick, entry.note),
+      path: '/beginner#first-tasks',
+      type: 'Task',
+      parts: [entry.tasks],
+    })
+  })
+
+  getSectionItems(beginnerData, 'difficultySchedule').forEach((entry) => {
+    addEntry(entries, {
+      title: entry.day,
+      summary: joinParts(entry.roll, entry.advice),
+      path: '/beginner#first-route',
+      type: 'Guide',
+    })
+  })
+
+  getSectionItems(beginnerData, 'forbiddenCombos').forEach((combo) => {
+    addEntry(entries, {
+      title: 'Forbidden task combo',
+      summary: combo,
+      path: '/beginner#mistakes',
+      type: 'Guide',
     })
   })
 
@@ -296,9 +431,10 @@ function buildSearchIndex() {
 
   const toolPaths = {
     'Vine Window': '/beginner#human-world',
-    Crowbar: '/items/crowbar',
-    'Expanded Backpack': '/crafting/expanded-backpack',
-    'Smoke Tool': '/items/smoke-tool',
+    Backpack: '/crafting/backpack',
+    Pickaxe: '/crafting/pickaxe',
+    'Metal Bat': '/crafting/metal-bat',
+    'Potion Table': '/crafting/potion-table',
     Cat: '/bestiary/cat',
     'Outdoor Map Leads': '/updates#release-preview',
   }
@@ -341,7 +477,7 @@ export function getSearchIndex() {
   return cachedIndex
 }
 
-export function searchSite(query, limit = 60) {
+export function searchSite(query, limit = 80) {
   const normalized = query.trim().toLowerCase()
   if (!normalized) return []
 
@@ -362,7 +498,7 @@ export function searchSite(query, limit = 60) {
         if (text.includes(token)) score += 6
       })
 
-      if (entry.type === 'Item' || entry.type === 'Recipe' || entry.type === 'Bestiary') score += 4
+      if (['Item', 'Recipe', 'Bestiary', 'Area'].includes(entry.type)) score += 4
 
       return { ...entry, score }
     })
