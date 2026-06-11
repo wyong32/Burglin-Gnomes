@@ -13,7 +13,7 @@
             </p>
           </div>
           <figure class="hero-art">
-            <img src="/images/hero-gnome-world.jpg" alt="Burglin' Gnomes gnome world base" />
+            <img src="/images/home-img-03.jpg" alt="Burglin' Gnomes gnome world base" />
           </figure>
         </div>
 

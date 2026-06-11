@@ -29,7 +29,7 @@
           </div>
         </div>
         <figure class="hero-art">
-          <img src="/images/logo.webp" alt="Burglin' Gnomes official Steam key art" />
+          <img src="/images/steam-cover.jpg" alt="Burglin' Gnomes official Steam key art" />
         </figure>
       </div>
     </div>
@@ -65,7 +65,7 @@
           <RouterLink class="intro-band__cta" to="/beginner">Read the beginner route guide</RouterLink>
         </article>
         <figure class="intro-band__visual">
-          <img src="/images/extracted/area-kitchen.png" alt="Burglin' Gnomes kitchen route and house item guide" />
+          <img src="/images/home-img-02.jpg" alt="Burglin' Gnomes kitchen route and house item guide" />
         </figure>
       </div>
     </div>
@@ -105,7 +105,7 @@
             </article>
           </div>
           <figure class="media-panel">
-            <img src="/images/extracted/area-cupboard.png" alt="Burglin' Gnomes cabinets drawers and storage route guide" />
+            <img src="/images/home-img-03.jpg" alt="Burglin' Gnomes cabinets drawers and storage route guide" />
           </figure>
         </div>
       </div>
