@@ -19,22 +19,12 @@
         </div>
 
         <div class="guide-layout">
-          <aside class="guide-sidebar" aria-label="Beginner guide sections">
-            <strong>On this page</strong>
-            <a href="#core-loop">Core loop</a>
-            <a href="#controls">Controls</a>
-            <a href="#first-route">First route</a>
-            <a href="#first-tasks">First five tasks</a>
-            <a href="#task-system">Daily task pool</a>
-            <a href="#human-world">Enter human world</a>
-            <a href="#doors-windows">Doors and windows</a>
-            <a href="#death-revival">Death and revival</a>
-            <a href="#bug-fixes">Bug and lag fixes</a>
-            <a href="#settings">Settings and controls</a>
-            <a href="#room-order">Room order</a>
-            <a href="#checklist">Clean-run checklist</a>
-            <a href="#mistakes">Common mistakes</a>
-          </aside>
+          <PageSidebar
+            label="On this page"
+            title="Beginner Guide"
+            aria-label="Beginner guide sections"
+            :sections="beginnerSidebarSections"
+          />
 
           <div class="guide-main">
             <section id="core-loop" class="guide-block">
@@ -353,7 +343,24 @@
 </template>
 
 <script setup>
+import PageSidebar from '../components/PageSidebar.vue'
 import beginnerData from '../data/beginnerData'
+
+const beginnerSidebarSections = [
+  { id: 'core-loop', label: 'Core loop', href: '#core-loop' },
+  { id: 'controls', label: 'Controls', href: '#controls' },
+  { id: 'first-route', label: 'First route', href: '#first-route' },
+  { id: 'first-tasks', label: 'First five tasks', href: '#first-tasks' },
+  { id: 'task-system', label: 'Daily task pool', href: '#task-system' },
+  { id: 'human-world', label: 'Enter human world', href: '#human-world' },
+  { id: 'doors-windows', label: 'Doors and windows', href: '#doors-windows' },
+  { id: 'death-revival', label: 'Death and revival', href: '#death-revival' },
+  { id: 'bug-fixes', label: 'Bug and lag fixes', href: '#bug-fixes' },
+  { id: 'settings', label: 'Settings and controls', href: '#settings' },
+  { id: 'room-order', label: 'Room order', href: '#room-order' },
+  { id: 'checklist', label: 'Clean-run checklist', href: '#checklist' },
+  { id: 'mistakes', label: 'Common mistakes', href: '#mistakes' },
+]
 
 const steps = beginnerData.find((section) => section.key === 'steps').items
 const coreLoop = beginnerData.find((section) => section.key === 'coreLoop').items

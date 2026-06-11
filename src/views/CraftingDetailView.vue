@@ -1,5 +1,5 @@
 <template>
-  <section class="crafting-detail-section page-section">
+  <section class="crafting-detail-section page-section detail-page">
     <div class="container">
       <div v-if="recipe" class="crafting-detail-content page-content">
         <div class="page-hero">
@@ -14,45 +14,57 @@
         </div>
 
         <div class="guide-layout">
-          <aside class="guide-sidebar" aria-label="Crafting detail sections">
-            <strong>{{ recipe.name }}</strong>
-            <a href="#materials">Materials</a>
-            <a href="#output">What you craft</a>
-            <a href="#areas">Crafting area</a>
-            <a href="#mechanics">Mechanics</a>
-            <a href="#bestiary">Helps against</a>
-            <a href="#notes">Route notes</a>
-          </aside>
+          <PageSidebar
+            label="On this page"
+            :title="recipe.name"
+            aria-label="Crafting detail sections"
+            :sections="recipeSidebarSections"
+          />
 
           <div class="guide-main">
             <section id="materials" class="guide-block">
               <h2>{{ recipe.name }} materials</h2>
-              <div class="ingredient-grid">
-                <RouterLink v-for="material in materials" :key="material.item" class="ingredient-card" :to="`/items/${material.item}`">
+              <div class="entry-list">
+                <RouterLink
+                  v-for="material in materials"
+                  :key="material.item"
+                  class="entry-row"
+                  :to="`/items/${material.item}`"
+                >
                   <img :src="material.image" :alt="material.name" />
-                  <span>
+                  <span class="entry-copy">
+                    <small>Material</small>
                     <strong>{{ material.quantity }}x {{ material.name }}</strong>
                     <em>{{ material.source }}</em>
                   </span>
+                  <span class="entry-chevron" aria-hidden="true">→</span>
                 </RouterLink>
               </div>
             </section>
 
             <section id="output" class="guide-block">
               <h2>{{ recipe.name }} output and use</h2>
-              <RouterLink v-if="outputItem" class="guide-card" :to="`/items/${outputItem.slug}`">
-                <strong>{{ outputItem.name }}</strong>
-                <span>{{ outputItem.use }}</span>
-              </RouterLink>
+              <div v-if="outputItem" class="link-list">
+                <RouterLink class="link-list__item" :to="`/items/${outputItem.slug}`">
+                  <span>
+                    <strong>{{ outputItem.name }}</strong>
+                    <span>{{ outputItem.use }}</span>
+                  </span>
+                  <span class="entry-chevron" aria-hidden="true">→</span>
+                </RouterLink>
+              </div>
               <p>{{ recipe.bestUse }}</p>
             </section>
 
             <section id="areas" class="guide-block">
               <h2>Where to craft or route {{ recipe.name }}</h2>
-              <div class="link-grid">
-                <RouterLink v-for="area in recipeAreas" :key="area.slug" class="guide-card" :to="`/areas/${area.slug}`">
-                  <strong>{{ area.name }}</strong>
-                  <span>{{ area.routeUse }}</span>
+              <div class="link-list">
+                <RouterLink v-for="area in recipeAreas" :key="area.slug" class="link-list__item" :to="`/areas/${area.slug}`">
+                  <span>
+                    <strong>{{ area.name }}</strong>
+                    <span>{{ area.routeUse }}</span>
+                  </span>
+                  <span class="entry-chevron" aria-hidden="true">→</span>
                 </RouterLink>
               </div>
             </section>
@@ -77,10 +89,13 @@
 
             <section id="bestiary" class="guide-block">
               <h2>Threats {{ recipe.name }} helps handle</h2>
-              <div class="link-grid">
-                <RouterLink v-for="entry in relatedBestiary" :key="entry.slug" class="guide-card" :to="`/bestiary/${entry.slug}`">
-                  <strong>{{ entry.name }}</strong>
-                  <span>{{ entry.counter }}</span>
+              <div class="link-list">
+                <RouterLink v-for="entry in relatedBestiary" :key="entry.slug" class="link-list__item" :to="`/bestiary/${entry.slug}`">
+                  <span>
+                    <strong>{{ entry.name }}</strong>
+                    <span>{{ entry.counter }}</span>
+                  </span>
+                  <span class="entry-chevron" aria-hidden="true">→</span>
                 </RouterLink>
               </div>
             </section>
@@ -110,6 +125,7 @@
 <script setup>
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
+import PageSidebar from '../components/PageSidebar.vue'
 import areasData from '../data/areasData'
 import craftingData from '../data/craftingData'
 import enemiesData from '../data/enemiesData'
@@ -123,6 +139,15 @@ const bestiary = enemiesData.find((section) => section.key === 'entries').items
 const areas = areasData.find((section) => section.key === 'areas').items
 
 const recipe = computed(() => recipes.find((entry) => entry.slug === route.params.slug))
+
+const recipeSidebarSections = [
+  { id: 'materials', label: 'Materials', href: '#materials' },
+  { id: 'output', label: 'What you craft', href: '#output' },
+  { id: 'areas', label: 'Crafting area', href: '#areas' },
+  { id: 'mechanics', label: 'Mechanics', href: '#mechanics' },
+  { id: 'bestiary', label: 'Helps against', href: '#bestiary' },
+  { id: 'notes', label: 'Route notes', href: '#notes' },
+]
 const outputItem = computed(() => items.find((item) => item.slug === recipe.value?.outputItem))
 const recipeAreas = computed(() => (recipe.value?.areas || []).map((slug) => areas.find((area) => area.slug === slug)).filter(Boolean))
 const materials = computed(() =>
@@ -136,69 +161,11 @@ const relatedBestiary = computed(() => (recipe.value?.relatedBestiary || []).map
 </script>
 
 <style scoped>
-.ingredient-grid,
-.link-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-}
-
-.ingredient-card {
-  display: grid;
-  grid-template-columns: 96px minmax(0, 1fr);
-  gap: 12px;
-  align-items: center;
-  border: 2px solid var(--color-ink);
-  border-radius: 18px;
-  padding: 10px;
-  background: var(--color-surface);
-  box-shadow: var(--shadow-card);
-}
-
-.ingredient-card img {
-  width: 96px;
-  height: 82px;
-  border: 2px solid var(--color-ink);
-  border-radius: 12px;
-  object-fit: cover;
-}
-
-.ingredient-card span {
-  display: grid;
-  gap: 6px;
-}
-
-.ingredient-card strong {
-  color: var(--color-ink);
-}
-
-.ingredient-card em {
-  color: var(--color-text);
-  font-style: normal;
-  font-weight: 800;
-}
-
 .note-panel h3 {
   margin-bottom: 8px;
 }
 
 .crafting-mechanic-row {
   grid-template-columns: 180px minmax(0, 1fr);
-}
-
-@media (max-width: 768px) {
-  .ingredient-grid,
-  .link-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .ingredient-card {
-    grid-template-columns: 82px minmax(0, 1fr);
-  }
-
-  .ingredient-card img {
-    width: 82px;
-    height: 74px;
-  }
 }
 </style>

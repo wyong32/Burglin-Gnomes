@@ -1,5 +1,5 @@
 <template>
-  <section class="item-detail-section page-section">
+  <section class="item-detail-section page-section detail-page">
     <div class="container">
       <div v-if="item" class="item-detail-content page-content">
         <div class="page-hero">
@@ -14,14 +14,12 @@
         </div>
 
         <div class="guide-layout">
-          <aside class="guide-sidebar" aria-label="Item detail sections">
-            <strong>{{ item.name }}</strong>
-            <a href="#overview">Quick facts</a>
-            <a href="#locations">Locations</a>
-            <a href="#recipes">Recipes</a>
-            <a href="#related">Related items</a>
-            <a href="#notes">Route notes</a>
-          </aside>
+          <PageSidebar
+            label="On this page"
+            :title="item.name"
+            aria-label="Item detail sections"
+            :sections="itemSidebarSections"
+          />
 
           <div class="guide-main">
             <section id="overview" class="guide-block">
@@ -41,10 +39,13 @@
             <section id="locations" class="guide-block">
               <h2>Where to find {{ item.name }}</h2>
               <p>{{ item.advice }}</p>
-              <div class="link-grid">
-                <RouterLink v-for="area in itemAreas" :key="area.slug" class="guide-card" :to="`/areas/${area.slug}`">
-                  <strong>{{ area.name }}</strong>
-                  <span>{{ area.summary }}</span>
+              <div class="link-list">
+                <RouterLink v-for="area in itemAreas" :key="area.slug" class="link-list__item" :to="`/areas/${area.slug}`">
+                  <span>
+                    <strong>{{ area.name }}</strong>
+                    <span>{{ area.summary }}</span>
+                  </span>
+                  <span class="entry-chevron" aria-hidden="true">→</span>
                 </RouterLink>
               </div>
               <div v-if="item.acquisition?.length" class="data-table">
@@ -58,24 +59,33 @@
             <section id="recipes" class="guide-block">
               <h2>Recipes that craft or use {{ item.name }}</h2>
               <p>{{ item.use }}</p>
-              <div class="link-grid">
-                <RouterLink v-for="craft in outputCrafts" :key="craft.slug" class="guide-card" :to="`/crafting/${craft.slug}`">
-                  <strong>Craft {{ craft.name }}</strong>
-                  <span>{{ craft.materials.map((material) => `${material.quantity} ${material.name}`).join(' + ') }}</span>
+              <div class="link-list">
+                <RouterLink v-for="craft in outputCrafts" :key="craft.slug" class="link-list__item" :to="`/crafting/${craft.slug}`">
+                  <span>
+                    <strong>Craft {{ craft.name }}</strong>
+                    <span>{{ craft.materials.map((material) => `${material.quantity} ${material.name}`).join(' + ') }}</span>
+                  </span>
+                  <span class="entry-chevron" aria-hidden="true">→</span>
                 </RouterLink>
-                <RouterLink v-for="craft in ingredientCrafts" :key="craft.slug" class="guide-card" :to="`/crafting/${craft.slug}`">
-                  <strong>Used for {{ craft.name }}</strong>
-                  <span>{{ craft.materials.map((material) => `${material.quantity} ${material.name}`).join(' + ') }}</span>
+                <RouterLink v-for="craft in ingredientCrafts" :key="craft.slug" class="link-list__item" :to="`/crafting/${craft.slug}`">
+                  <span>
+                    <strong>Used for {{ craft.name }}</strong>
+                    <span>{{ craft.materials.map((material) => `${material.quantity} ${material.name}`).join(' + ') }}</span>
+                  </span>
+                  <span class="entry-chevron" aria-hidden="true">→</span>
                 </RouterLink>
               </div>
             </section>
 
             <section id="related" class="guide-block">
               <h2>Items related to {{ item.name }}</h2>
-              <div class="link-grid">
-                <RouterLink v-for="related in relatedItems" :key="related.slug" class="guide-card" :to="`/items/${related.slug}`">
-                  <strong>{{ related.name }}</strong>
-                  <span>{{ related.type }}</span>
+              <div class="link-list">
+                <RouterLink v-for="related in relatedItems" :key="related.slug" class="link-list__item" :to="`/items/${related.slug}`">
+                  <span>
+                    <strong>{{ related.name }}</strong>
+                    <span>{{ related.type }}</span>
+                  </span>
+                  <span class="entry-chevron" aria-hidden="true">→</span>
                 </RouterLink>
               </div>
             </section>
@@ -105,6 +115,7 @@
 <script setup>
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
+import PageSidebar from '../components/PageSidebar.vue'
 import areasData from '../data/areasData'
 import craftingData from '../data/craftingData'
 import itemsData from '../data/itemsData'
@@ -115,6 +126,14 @@ const recipes = craftingData.find((section) => section.key === 'recipes').items
 const areas = areasData.find((section) => section.key === 'areas').items
 
 const item = computed(() => items.find((entry) => entry.slug === route.params.slug))
+
+const itemSidebarSections = [
+  { id: 'overview', label: 'Quick facts', href: '#overview' },
+  { id: 'locations', label: 'Locations', href: '#locations' },
+  { id: 'recipes', label: 'Recipes', href: '#recipes' },
+  { id: 'related', label: 'Related items', href: '#related' },
+  { id: 'notes', label: 'Route notes', href: '#notes' },
+]
 const relatedItems = computed(() => (item.value?.relatedItems || []).map((slug) => items.find((entry) => entry.slug === slug)).filter(Boolean))
 const itemAreas = computed(() => (item.value?.areas || []).map((slug) => areas.find((area) => area.slug === slug)).filter(Boolean))
 const outputCrafts = computed(() => recipes.filter((recipe) => recipe.outputItem === item.value?.slug || item.value?.relatedCrafts?.includes(recipe.slug)))
@@ -128,19 +147,7 @@ const ingredientCrafts = computed(() =>
   grid-template-columns: 180px minmax(0, 1fr);
 }
 
-.link-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-}
-
 .note-panel h3 {
   margin-bottom: 8px;
-}
-
-@media (max-width: 768px) {
-  .link-grid {
-    grid-template-columns: 1fr;
-  }
 }
 </style>

@@ -434,7 +434,7 @@ function buildSearchIndex() {
     Backpack: '/crafting/backpack',
     Pickaxe: '/crafting/pickaxe',
     'Metal Bat': '/crafting/metal-bat',
-    'Potion Table': '/crafting/potion-table',
+    'Potion Table': '/areas/potion-table',
     Cat: '/bestiary/cat',
     'Outdoor Map Leads': '/updates#release-preview',
   }

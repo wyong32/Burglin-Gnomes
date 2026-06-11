@@ -2,8 +2,6 @@ import { buildRecipePageMeta } from '../utils/contentLabels.js'
 
 const withRecipeTdk = (recipes) => recipes.map((recipe) => ({ ...recipe, tdk: buildRecipePageMeta(recipe) }))
 const itemImage = (slug) => `/images/items/item-${slug}.png`
-const craftImage = '/images/crafting-page-01.webp'
-
 const materialSources = {
   ceramics: 'Break or steal fragile household objects, then bank the resource for potions and gear.',
   chemicals: 'Search chemical-looking household loot and save it for ranged gear or movement potions.',
@@ -342,142 +340,11 @@ const potionRecipes = [
   }),
 ]
 
-const furnitureRecipes = [
-  recipe({
-    slug: 'gnome-cannon',
-    name: 'Gnome Cannon',
-    category: 'Base Furniture',
-    outputItem: null,
-    priority: 'Base route upgrade',
-    materials: [ingredient('chemicals', 'Chemicals', 3), ingredient('gnomium', 'Gnomium', 2)],
-    effect: 'Base craft for launching or route setup experiments.',
-    bestUse: 'Build after core carry and farming gear are stable.',
-    mechanic: 'Treat as a base object that changes preparation rather than a normal item.',
-    scenario: 'Base experimentation, route setup, and co-op testing.',
-    warning: 'Costs rare Gnomium, so do not build it before essential tools.',
-    image: craftImage,
-  }),
-  recipe({
-    slug: 'potion-table',
-    name: 'Potion Table',
-    category: 'Base Furniture',
-    outputItem: null,
-    priority: 'High once potion ingredients appear',
-    materials: [ingredient('ceramics', 'Ceramics', 2), ingredient('chemicals', 'Chemicals', 2)],
-    effect: 'Unlocks potion crafting from special ingredients and Ceramics.',
-    bestUse: 'Build before stockpiling potion ingredients.',
-    mechanic: 'This is the core station for all eight potion recipes.',
-    scenario: 'Potion routes, dart preparation, and advanced rescue plans.',
-    warning: 'Consumes the same resources used by many gear recipes.',
-    image: craftImage,
-  }),
-  recipe({
-    slug: 'toilet',
-    name: 'Toilet',
-    category: 'Base Furniture',
-    outputItem: null,
-    priority: 'Base utility',
-    materials: [ingredient('plastic', 'Plastic', 2), ingredient('ceramics', 'Ceramics', 2)],
-    effect: 'Base furniture tied to home setup and utility routing.',
-    bestUse: 'Build after early gear unless your base plan specifically needs it.',
-    mechanic: 'Use as a base object, not as a substitute for house toilet task routing.',
-    scenario: 'Base setup and furniture progression.',
-    warning: 'Plastic and Ceramics are both high-demand materials.',
-    image: craftImage,
-  }),
-  recipe({
-    slug: 'table',
-    name: 'Table',
-    category: 'Base Furniture',
-    outputItem: null,
-    priority: 'Low-cost base craft',
-    materials: [ingredient('chemicals', 'Chemicals', 2)],
-    effect: 'Cheap base furniture craft.',
-    bestUse: 'Build when base progression asks for furniture without consuming rare materials.',
-    mechanic: 'A simple home object craft with a low material footprint.',
-    scenario: 'Base setup and furniture progression.',
-    warning: 'Still competes with Blowgun, Slingshot, and potion crafting for Chemicals.',
-    image: craftImage,
-  }),
-  recipe({
-    slug: 'karma-meter',
-    name: 'Karma Meter',
-    category: 'Base Furniture',
-    outputItem: null,
-    priority: 'Information utility',
-    materials: [ingredient('gnomium', 'Gnomium', 1), ingredient('chemicals', 'Chemicals', 1)],
-    effect: 'Base object for tracking karma-style run state.',
-    bestUse: 'Build when the team is ready to track behavior consequences across runs.',
-    mechanic: 'Information objects matter when the route is already stable.',
-    scenario: 'Base planning and mechanic testing.',
-    warning: 'Even one Gnomium matters early.',
-    image: craftImage,
-  }),
-  recipe({
-    slug: 'mannequin',
-    name: 'Mannequin',
-    category: 'Base Furniture',
-    outputItem: null,
-    priority: 'Base display craft',
-    materials: [ingredient('chemicals', 'Chemicals', 2), ingredient('metal', 'Metal', 2)],
-    effect: 'Base furniture for home setup and equipment display planning.',
-    bestUse: 'Build after the practical route crafts are covered.',
-    mechanic: 'Treat as base progression rather than run survival gear.',
-    scenario: 'Base organization and cosmetic progression.',
-    warning: 'Metal is better spent on Pickaxe or Grappling Hook early.',
-    image: craftImage,
-  }),
-  recipe({
-    slug: 'mannequin-stand',
-    name: 'Mannequin Stand',
-    category: 'Base Furniture',
-    outputItem: null,
-    priority: 'Base display craft',
-    materials: [ingredient('metal', 'Metal', 2)],
-    effect: 'Support furniture for base organization.',
-    bestUse: 'Build once Metal is no longer blocking essential tools.',
-    mechanic: 'A small base craft that should not interrupt early progression.',
-    scenario: 'Base organization and furniture progression.',
-    warning: 'Metal is a major early bottleneck.',
-    image: craftImage,
-  }),
-  recipe({
-    slug: 'chair',
-    name: 'Chair',
-    category: 'Base Furniture',
-    outputItem: null,
-    priority: 'Cheap base craft',
-    materials: [ingredient('chemicals', 'Chemicals', 1)],
-    effect: 'Low-cost base furniture.',
-    bestUse: 'Build when you need a cheap home object and can spare Chemicals.',
-    mechanic: 'Base furniture, separate from movable house stools used for door tricks.',
-    scenario: 'Base setup and furniture progression.',
-    warning: 'Chemicals are still useful for weapons and potions.',
-    image: craftImage,
-  }),
-  recipe({
-    slug: 'repackager',
-    name: 'Repackager',
-    category: 'Base Furniture',
-    outputItem: null,
-    priority: 'High for Blowgun routes',
-    materials: [ingredient('gnomium', 'Gnomium', 2), ingredient('chemicals', 'Chemicals', 2)],
-    effect: 'Converts one matching potion into five darts for Blowgun routes.',
-    bestUse: 'Build once the team is actually using Blowgun and potion effects.',
-    mechanic: 'The Repackager turns potion planning into ranged ammo planning.',
-    scenario: 'Sleep Dart, Confusion Dart, Health Dart, and other Blowgun routes.',
-    warning: 'Costs Gnomium; wait until potion and dart routes are part of your plan.',
-    image: craftImage,
-    relatedBestiary: ['human-homeowner', 'evil-gnome'],
-  }),
-]
-
 const recipeAreasByCategory = {
   Weapons: ['gnome-world', 'well'],
   Tools: ['gnome-world', 'well'],
   Gear: ['gnome-world', 'well'],
   Potions: ['gnome-world', 'potion-table'],
-  'Base Furniture': ['gnome-world', 'well'],
 }
 
 function enrichRecipe(entry) {
@@ -487,7 +354,7 @@ function enrichRecipe(entry) {
   }
 }
 
-const recipes = [...equipmentRecipes, ...potionRecipes, ...furnitureRecipes].map(enrichRecipe)
+const recipes = [...equipmentRecipes, ...potionRecipes].map(enrichRecipe)
 
 export default [
   {
@@ -521,18 +388,11 @@ export default [
         reason: 'Vertical movement can make windows, furniture, and exterior paths safer.',
         timing: 'Craft when the house route clearly rewards height or drop recovery.',
       },
-      {
-        rank: '05',
-        recipe: 'potion-table',
-        name: 'Potion Table',
-        reason: 'Unlocks all eight potion recipes and turns special ingredients into route tools.',
-        timing: 'Build once Ceramics and potion ingredients are appearing in your runs.',
-      },
     ],
   },
   {
     key: 'categories',
-    items: ['Weapons', 'Tools', 'Gear', 'Potions', 'Base Furniture'],
+    items: ['Weapons', 'Tools', 'Gear', 'Potions'],
   },
   {
     key: 'recipes',

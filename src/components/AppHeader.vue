@@ -57,13 +57,11 @@ const links = [
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  border: 2px solid var(--color-ink);
-  border-radius: 20px;
-  padding: 9px 12px;
-  background:
-    linear-gradient(90deg, rgba(223, 91, 50, 0.1), transparent 34%),
-    rgba(255, 248, 232, 0.95);
-  box-shadow: 7px 8px 0 rgba(36, 51, 45, 0.16);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 8px 12px;
+  background: rgba(255, 248, 232, 0.92);
+  box-shadow: var(--shadow-soft);
   backdrop-filter: blur(14px);
 }
 

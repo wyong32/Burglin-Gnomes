@@ -53,21 +53,20 @@
     </div>
   </section>
 
-  <section class="intro-section page-section">
+  <section class="intro-band">
     <div class="container">
-      <div class="intro-content page-content">
-        <div class="media-band">
-          <article class="intro-copy guide-card">
-            <span class="eyebrow">Gameplay introduction</span>
-            <h2>How a Burglin' Gnomes run works</h2>
-            <p>
-              Chasing raw loot before task progress is the fastest way to lose a clean day. Read the High-Gnome list, secure three tasks, then decide whether extra loot is worth the risk.
-            </p>
-          </article>
-          <figure class="media-panel">
+      <div class="intro-band__inner">
+        <article class="intro-band__content">
+          <span class="eyebrow">Gameplay introduction</span>
+          <h2>How a Burglin' Gnomes run works</h2>
+          <p>
+            Chasing raw loot before task progress is the fastest way to lose a clean day. Read the High-Gnome list, secure three tasks, then decide whether extra loot is worth the risk.
+          </p>
+          <RouterLink class="intro-band__cta" to="/beginner">Read the beginner route guide</RouterLink>
+        </article>
+        <figure class="intro-band__visual">
           <img src="/images/extracted/area-kitchen.png" alt="Burglin' Gnomes kitchen route and house item guide" />
-          </figure>
-        </div>
+        </figure>
       </div>
     </div>
   </section>
@@ -418,19 +417,6 @@ const faq = homeData.find((section) => section.key === 'faq').items
   font-weight: 800;
 }
 
-.intro-copy {
-  align-content: center;
-  gap: 14px;
-  padding: 28px;
-  background:
-    linear-gradient(135deg, rgba(223, 91, 50, 0.12), transparent 44%),
-    var(--color-surface);
-}
-
-.intro-copy h2 {
-  font-size: 2.45rem;
-}
-
 .quick-card {
   transition:
     border-color 180ms ease,
@@ -521,8 +507,5 @@ const faq = homeData.find((section) => section.key === 'faq').items
     grid-template-columns: 1fr;
   }
 
-  .intro-copy h2 {
-    font-size: 1.72rem;
-  }
 }
 </style>

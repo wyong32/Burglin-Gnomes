@@ -13,65 +13,70 @@
             </p>
           </div>
           <figure class="hero-art">
-            <img src="/images/extracted/area-cupboard.png" alt="Burglin' Gnomes materials weapons tools and item guide" />
+            <img src="/images/item-page-01.webp" alt="Burglin' Gnomes materials weapons tools and item guide" />
           </figure>
         </div>
 
-        <section class="item-categories-section">
-          <div class="category-rail" aria-label="Item categories">
-            <a v-for="category in categories" :key="category" :href="`#${categoryId(category)}`">
-              {{ category }} <b>{{ itemsByCategory(category).length }}</b>
-            </a>
-          </div>
-        </section>
+        <div class="guide-layout">
+          <PageSidebar
+            label="Categories"
+            title="Items"
+            aria-label="Item categories"
+            :sections="sidebarSections"
+          />
 
-        <section class="item-list-section" aria-label="Items by category">
-          <div class="section-heading">
-            <span class="eyebrow">By category</span>
-            <h2>Find the item you need</h2>
-            <p>
-              Each row links to a full page with locations, uses, linked recipes, and player notes
-              for planning a cleaner route.
-            </p>
-          </div>
-
-          <div class="item-category-stack">
-            <section
-              v-for="group in categoryGroups"
-              :id="categoryId(group.category)"
-              :key="group.category"
-              class="item-category-block"
-            >
-              <div class="item-category-heading">
-                <span>{{ group.items.length }} items</span>
-                <h3>{{ group.category }}</h3>
-                <p>{{ categoryIntro(group.category) }}</p>
+          <div class="guide-main">
+            <section id="items-overview" class="guide-block item-list-section" aria-label="Items by category">
+              <div class="section-heading">
+                <span class="eyebrow">By category</span>
+                <h2>Find the item you need</h2>
+                <p>
+                  Each row links to a full page with locations, uses, linked recipes, and player notes
+                  for planning a cleaner route.
+                </p>
               </div>
 
-              <div class="data-table">
-                <div class="table-row table-head item-row">
-                  <span>Item</span>
-                  <span>Type</span>
-                  <span>Where to get it or why it matters</span>
-                </div>
-                <div v-for="item in group.items" :key="item.slug" class="table-row item-row">
-                  <RouterLink class="table-title" :to="`/items/${item.slug}`">
-                    <img :src="item.image" :alt="item.name" />
-                    <h3>{{ item.name }}</h3>
-                  </RouterLink>
-                  <span>{{ item.type }}</span>
-                  <span>{{ itemCardSource(item) }}</span>
-                </div>
+              <div class="item-category-stack">
+                <section
+                  v-for="group in categoryGroups"
+                  :id="categoryId(group.category)"
+                  :key="group.category"
+                  class="item-category-block"
+                >
+                  <div class="item-category-heading">
+                    <span>{{ group.items.length }} items</span>
+                    <h3>{{ group.category }}</h3>
+                    <p>{{ categoryIntro(group.category) }}</p>
+                  </div>
+
+                  <div class="data-table">
+                    <div class="table-row table-head item-row">
+                      <span>Item</span>
+                      <span>Type</span>
+                      <span>Where to get it or why it matters</span>
+                    </div>
+                    <div v-for="item in group.items" :key="item.slug" class="table-row item-row">
+                      <RouterLink class="table-title" :to="`/items/${item.slug}`">
+                        <img :src="item.image" :alt="item.name" />
+                        <h3>{{ item.name }}</h3>
+                      </RouterLink>
+                      <span>{{ item.type }}</span>
+                      <span>{{ itemCardSource(item) }}</span>
+                    </div>
+                  </div>
+                </section>
               </div>
             </section>
           </div>
-        </section>
+        </div>
       </div>
     </div>
   </section>
 </template>
 
 <script setup>
+import { computed } from 'vue'
+import PageSidebar from '../components/PageSidebar.vue'
 import itemsData from '../data/itemsData'
 
 const categories = itemsData.find((section) => section.key === 'categories').items
@@ -80,6 +85,17 @@ const items = itemsData.find((section) => section.key === 'items').items
 const itemsByCategory = (category) => items.filter((item) => item.category === category)
 const categoryGroups = categories.map((category) => ({ category, items: itemsByCategory(category) })).filter((group) => group.items.length)
 const categoryId = (category) => `items-${category.toLowerCase().replaceAll(' ', '-')}`
+
+const sidebarSections = computed(() => [
+  { id: 'items-overview', label: 'Overview', href: '#items-overview' },
+  ...categoryGroups.map((group) => ({
+    id: categoryId(group.category),
+    label: group.category,
+    href: `#${categoryId(group.category)}`,
+    count: group.items.length,
+  })),
+])
+
 const itemCardSource = (item) => (item.source === 'Unknown source' ? item.use : item.source)
 
 const categoryIntro = (category) =>
@@ -95,38 +111,8 @@ const categoryIntro = (category) =>
 </script>
 
 <style scoped>
-.category-rail {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.category-rail a {
-  border: 2px solid var(--color-ink);
-  border-radius: 999px;
-  padding: 9px 12px;
-  background: var(--color-panel-2);
-  color: var(--color-ink);
-  font-weight: 900;
-  text-decoration: none;
-  box-shadow: 3px 4px 0 rgba(36, 51, 45, 0.12);
-}
-
-.category-rail a:hover,
-.category-rail a:focus-visible {
-  background: var(--color-surface-strong);
-  color: var(--color-accent);
-  outline: none;
-}
-
-.category-rail b {
-  color: var(--color-accent);
-}
-
 .item-list-section {
-  display: grid;
-  gap: 18px;
-  scroll-margin-top: 110px;
+  scroll-margin-top: 96px;
 }
 
 .item-category-stack {
@@ -137,37 +123,38 @@ const categoryIntro = (category) =>
 .item-category-block {
   display: grid;
   gap: 14px;
-  scroll-margin-top: 120px;
+  scroll-margin-top: 110px;
 }
 
 .item-category-heading {
   display: grid;
-  grid-template-columns: minmax(140px, 0.25fr) minmax(180px, 0.45fr) minmax(0, 1fr);
-  gap: 16px;
+  grid-template-columns: minmax(120px, 0.22fr) minmax(160px, 0.38fr) minmax(0, 1fr);
+  gap: 14px;
   align-items: center;
-  border: 3px solid var(--color-ink);
-  border-radius: 22px;
-  padding: 16px 18px;
-  background:
-    linear-gradient(135deg, rgba(255, 218, 193, 0.72), rgba(232, 246, 216, 0.7)),
-    var(--color-surface);
-  box-shadow: 6px 7px 0 rgba(36, 51, 45, 0.12);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  background: rgba(223, 240, 198, 0.28);
+  box-shadow: var(--shadow-card);
 }
 
 .item-category-heading span {
   color: var(--color-accent);
-  font-size: 0.78rem;
-  font-weight: 900;
-  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
 .item-category-heading h3 {
   margin: 0;
+  font-size: 1.15rem;
 }
 
 .item-category-heading p {
   margin: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
 }
 
 .item-row {
@@ -183,15 +170,15 @@ const categoryIntro = (category) =>
 
 .table-title img {
   flex-shrink: 0;
-  width: 46px;
-  height: 46px;
-  border: 2px solid var(--color-ink);
-  border-radius: 12px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
   object-fit: cover;
 }
 
 .table-title h3 {
-  font-size: 1.05rem;
+  font-size: 1rem;
   line-height: 1.15;
 }
 

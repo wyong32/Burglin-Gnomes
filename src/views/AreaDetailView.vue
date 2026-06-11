@@ -1,5 +1,5 @@
 <template>
-  <section class="area-detail-section page-section">
+  <section class="area-detail-section page-section detail-page">
     <div class="container">
       <div v-if="area" class="area-detail-content page-content">
         <div class="page-hero">
@@ -14,14 +14,12 @@
         </div>
 
         <div class="guide-layout">
-          <aside class="guide-sidebar" aria-label="Area detail sections">
-            <strong>{{ area.name }}</strong>
-            <a href="#overview">Route overview</a>
-            <a href="#items">Items and weapons</a>
-            <a href="#recipes">Crafting links</a>
-            <a href="#tasks">Tasks and danger</a>
-            <a href="#notes">Route notes</a>
-          </aside>
+          <PageSidebar
+            label="On this page"
+            :title="area.name"
+            aria-label="Area detail sections"
+            :sections="areaSidebarSections"
+          />
 
           <div class="guide-main">
             <section id="overview" class="guide-block">
@@ -49,14 +47,12 @@
                 tasks are safe. Weapons are kept inside Items so every detail page can connect
                 back to recipes and locations.
               </p>
-              <div class="area-card-grid">
-                <RouterLink v-for="item in areaItems" :key="item.slug" class="area-link-card" :to="`/items/${item.slug}`">
+              <div class="recipe-tile-grid area-item-grid">
+                <RouterLink v-for="item in areaItems" :key="item.slug" class="recipe-tile" :to="`/items/${item.slug}`">
                   <img :src="item.image" :alt="item.name" />
-                  <span>
-                    <small>{{ item.category }}</small>
-                    <strong>{{ item.name }}</strong>
-                    <em>{{ item.type }}</em>
-                  </span>
+                  <small>{{ item.category }}</small>
+                  <strong>{{ item.name }}</strong>
+                  <span class="recipe-tile__pill">{{ item.type }}</span>
                 </RouterLink>
               </div>
             </section>
@@ -67,10 +63,13 @@
                 Recipes appear here when this area is the crafting station, the output is used
                 here, or the materials are commonly routed from this area.
               </p>
-              <div class="area-card-grid">
-                <RouterLink v-for="recipe in areaRecipes" :key="recipe.slug" class="guide-card" :to="`/crafting/${recipe.slug}`">
-                  <strong>{{ recipe.name }}</strong>
-                  <span>{{ recipe.materials.map((material) => `${material.quantity} ${material.name}`).join(' + ') }}</span>
+              <div class="link-list">
+                <RouterLink v-for="recipe in areaRecipes" :key="recipe.slug" class="link-list__item" :to="`/crafting/${recipe.slug}`">
+                  <span>
+                    <strong>{{ recipe.name }}</strong>
+                    <span>{{ recipe.materials.map((material) => `${material.quantity} ${material.name}`).join(' + ') }}</span>
+                  </span>
+                  <span class="entry-chevron" aria-hidden="true">→</span>
                 </RouterLink>
               </div>
             </section>
@@ -118,6 +117,7 @@
 <script setup>
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
+import PageSidebar from '../components/PageSidebar.vue'
 import areasData from '../data/areasData'
 import craftingData from '../data/craftingData'
 import itemsData from '../data/itemsData'
@@ -128,6 +128,14 @@ const items = itemsData.find((section) => section.key === 'items').items
 const recipes = craftingData.find((section) => section.key === 'recipes').items
 
 const area = computed(() => areas.find((entry) => entry.slug === route.params.slug))
+
+const areaSidebarSections = [
+  { id: 'overview', label: 'Route overview', href: '#overview' },
+  { id: 'items', label: 'Items and weapons', href: '#items' },
+  { id: 'recipes', label: 'Crafting links', href: '#recipes' },
+  { id: 'tasks', label: 'Tasks and danger', href: '#tasks' },
+  { id: 'notes', label: 'Route notes', href: '#notes' },
+]
 const areaItems = computed(() =>
   items
     .filter((item) => item.areas?.includes(route.params.slug))
@@ -161,64 +169,6 @@ const priorityText = computed(() => {
   grid-template-columns: 180px minmax(0, 1fr);
 }
 
-.area-card-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
-}
-
-.area-link-card {
-  display: grid;
-  grid-template-columns: 84px minmax(0, 1fr);
-  gap: 12px;
-  align-items: center;
-  border: 2px solid var(--color-ink);
-  border-radius: 18px;
-  padding: 10px;
-  background: var(--color-surface);
-  box-shadow: var(--shadow-card);
-  transition:
-    background 180ms ease,
-    transform 180ms ease;
-}
-
-.area-link-card:hover,
-.area-link-card:focus-visible {
-  background: var(--color-surface-strong);
-  outline: none;
-  transform: translateY(-2px);
-}
-
-.area-link-card img {
-  width: 84px;
-  height: 74px;
-  border: 2px solid var(--color-ink);
-  border-radius: 12px;
-  object-fit: cover;
-}
-
-.area-link-card span {
-  display: grid;
-  gap: 4px;
-}
-
-.area-link-card small {
-  color: var(--color-primary);
-  font-weight: 900;
-  text-transform: uppercase;
-}
-
-.area-link-card strong {
-  color: var(--color-ink);
-  font-family: "Bricolage Grotesque", "Nunito", sans-serif;
-}
-
-.area-link-card em {
-  color: var(--color-text);
-  font-style: normal;
-  font-weight: 850;
-}
-
 .area-split {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -237,14 +187,7 @@ const priorityText = computed(() => {
   list-style: disc;
 }
 
-@media (max-width: 1024px) {
-  .area-card-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
 @media (max-width: 768px) {
-  .area-card-grid,
   .area-split {
     grid-template-columns: 1fr;
   }

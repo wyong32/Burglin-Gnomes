@@ -18,14 +18,12 @@
         </div>
 
         <div class="guide-layout">
-          <aside class="guide-sidebar" aria-label="Wiki sections">
-            <strong>On this page</strong>
-            <a href="#wiki-directory">Guide pages</a>
-            <a href="#area-guides">Area guides</a>
-            <a href="#wiki-topics">Popular topics</a>
-            <a href="#guide-labels">How we label notes</a>
-            <a href="#official-facts">Official facts</a>
-          </aside>
+          <PageSidebar
+            label="On this page"
+            title="Wiki"
+            aria-label="Wiki sections"
+            :sections="wikiSidebarSections"
+          />
 
           <div class="guide-main">
             <section id="wiki-directory" class="guide-block">
@@ -138,8 +136,17 @@
 </template>
 
 <script setup>
+import PageSidebar from '../components/PageSidebar.vue'
 import areasData from '../data/areasData'
 import wikiData from '../data/wikiData'
+
+const wikiSidebarSections = [
+  { id: 'wiki-directory', label: 'Guide pages', href: '#wiki-directory' },
+  { id: 'area-guides', label: 'Area guides', href: '#area-guides' },
+  { id: 'wiki-topics', label: 'Popular topics', href: '#wiki-topics' },
+  { id: 'guide-labels', label: 'How we label notes', href: '#guide-labels' },
+  { id: 'official-facts', label: 'Official facts', href: '#official-facts' },
+]
 
 const areas = areasData.find((section) => section.key === 'areas').items
 const indexes = wikiData.find((section) => section.key === 'indexes').items

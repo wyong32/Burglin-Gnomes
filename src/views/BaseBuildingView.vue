@@ -1,7 +1,7 @@
 <template>
   <section class="base-building-section page-section">
     <div class="container">
-      <div class="base-building-content page-content">
+      <div class="page-content">
         <div class="page-hero">
           <div class="page-hero-copy">
             <span class="eyebrow">Gnome world</span>
@@ -18,178 +18,239 @@
         </div>
 
         <div class="guide-layout">
-          <aside class="guide-sidebar" aria-label="Gnome world base guide sections">
-            <strong>On this page</strong>
-            <a href="#gnome-world">Gnome World</a>
-            <a href="#human-world">Human World</a>
-            <a href="#area-routes">Area routes</a>
-            <a href="#tree">The Tree</a>
-            <a href="#mushroom-house">Mushroom House</a>
-            <a href="#well">The Well</a>
-            <a href="#pre-run-checklist">Pre-run checklist</a>
-          </aside>
+          <PageSidebar
+            label="On this page"
+            title="Base Building"
+            aria-label="Gnome world base guide sections"
+            :sections="baseSidebarSections"
+          />
 
           <div class="guide-main">
             <section id="gnome-world" class="guide-block">
-              <h2>Gnome World: Safe Base Before Each House Run</h2>
+              <h2>Gnome World: safe base before each house run</h2>
               <p class="section-lead">
-                This page covers base objects and pre-run setup. For full Gnome World routing, tasks,
-                linked items, and danger notes, use the dedicated area guide.
+                Base objects and pre-run setup live here. For full routing, tasks, and danger notes,
+                open the dedicated area guide.
               </p>
-              <div class="base-split">
-                <article class="base-panel">
-                  <img :src="gnomeWorld.image" :alt="gnomeWorld.name" />
-                  <span>
+              <div class="zone-stack">
+                <div class="split-panel">
+                  <article class="split-panel__copy">
+                    <span class="eyebrow">{{ gnomeWorld.type }}</span>
                     <h3>{{ gnomeWorld.name }}</h3>
                     <p>{{ gnomeWorld.summary }}</p>
-                    <span class="base-link-row">
-                      <RouterLink class="area-guide-link" to="/areas/gnome-world">Open Gnome World area guide</RouterLink>
-                      <RouterLink v-for="link in gnomeWorld.links" :key="link.path" :to="link.path">
-                        {{ link.label }}
+                    <div class="link-list zone-links">
+                      <RouterLink class="link-list__item" to="/areas/gnome-world">
+                        <span>
+                          <strong>Open Gnome World area guide</strong>
+                          <span>Tasks, linked items, and route notes</span>
+                        </span>
+                        <span class="entry-chevron" aria-hidden="true">→</span>
                       </RouterLink>
-                    </span>
-                  </span>
-                </article>
-                <div class="base-note-board">
-                  <strong>Use the island for:</strong>
+                      <RouterLink
+                        v-for="link in gnomeWorld.links"
+                        :key="link.path"
+                        class="link-list__item"
+                        :to="link.path"
+                      >
+                        <span>
+                          <strong>{{ link.label }}</strong>
+                        </span>
+                        <span class="entry-chevron" aria-hidden="true">→</span>
+                      </RouterLink>
+                    </div>
+                  </article>
+                  <figure class="split-panel__media">
+                    <img :src="basePlaceholder(gnomeWorld.name, 'lg')" :alt="gnomeWorld.name" />
+                  </figure>
+                </div>
+                <article class="note-panel">
+                  <h3>Use the island for</h3>
                   <ul>
                     <li>Banking stolen items and materials before the next day.</li>
                     <li>Inviting friends and confirming the party before the bell starts the run.</li>
                     <li>Crafting route-changing gear at the well.</li>
                     <li>Resetting the squad after failed rescue or risky enemy practice.</li>
                   </ul>
-                </div>
+                </article>
               </div>
             </section>
 
             <section id="human-world" class="guide-block">
-              <h2>Human World: Task Area With Extraction Pressure</h2>
+              <h2>Human World: task area with extraction pressure</h2>
               <p class="section-lead">
-                Room routes, loot overlap, and threat timing are tracked on the Human House and outdoor
-                area pages instead of repeating them here.
+                Room routes, loot overlap, and threat timing are on the Human House and outdoor area
+                pages — not duplicated here.
               </p>
-              <div class="base-split reverse">
-                <div class="base-note-board danger">
-                  <strong>Leave the base with a plan:</strong>
+              <div class="zone-stack">
+                <div class="split-panel split-panel--reverse">
+                  <figure class="split-panel__media">
+                    <img :src="basePlaceholder(humanWorld.name, 'lg')" :alt="humanWorld.name" />
+                  </figure>
+                  <article class="split-panel__copy">
+                    <span class="eyebrow">{{ humanWorld.type }}</span>
+                    <h3>{{ humanWorld.name }}</h3>
+                    <p>{{ humanWorld.summary }}</p>
+                    <div class="link-list zone-links">
+                      <RouterLink class="link-list__item" to="/areas/human-house">
+                        <span>
+                          <strong>Open Human House area guide</strong>
+                          <span>Room routes, weapons, and task overlap</span>
+                        </span>
+                        <span class="entry-chevron" aria-hidden="true">→</span>
+                      </RouterLink>
+                      <RouterLink
+                        v-for="link in humanWorld.links"
+                        :key="link.path"
+                        class="link-list__item"
+                        :to="link.path"
+                      >
+                        <span>
+                          <strong>{{ link.label }}</strong>
+                        </span>
+                        <span class="entry-chevron" aria-hidden="true">→</span>
+                      </RouterLink>
+                    </div>
+                  </article>
+                </div>
+                <article class="note-panel note-panel--warn">
+                  <h3>Leave the base with a plan</h3>
                   <ul>
                     <li>Complete at least three tasks before extraction.</li>
                     <li>Use a known entry route such as vine window or drain pipe.</li>
                     <li>Return after enough task progress, not after the backpack is overloaded.</li>
                   </ul>
-                </div>
-                <article class="base-panel">
-                  <img :src="humanWorld.image" :alt="humanWorld.name" />
-                  <span>
-                    <h3>{{ humanWorld.name }}</h3>
-                    <p>{{ humanWorld.summary }}</p>
-                    <span class="base-link-row">
-                      <RouterLink class="area-guide-link" to="/areas/human-house">Open Human House area guide</RouterLink>
-                      <RouterLink v-for="link in humanWorld.links" :key="link.path" :to="link.path">
-                        {{ link.label }}
-                      </RouterLink>
-                    </span>
-                  </span>
                 </article>
               </div>
             </section>
 
             <section id="area-routes" class="guide-block">
-              <h2>Area Pages for Items, Weapons, and Recipes</h2>
+              <h2>Area pages for items, weapons, and recipes</h2>
               <p>
-                Use these pages when you need to know whether a room is worth routing. Each area
-                links to the items, weapons, and recipes connected to that location.
+                Open an area when you need to know whether a room is worth routing. Each page links
+                to the items, weapons, and recipes connected to that location.
               </p>
-              <div class="area-route-grid">
-                <RouterLink v-for="area in areas" :key="area.slug" class="area-route-card" :to="`/areas/${area.slug}`">
-                  <img :src="area.image" :alt="area.name" />
-                  <span>
-                    <small>{{ area.type }}</small>
-                    <h3>{{ area.name }}</h3>
-                    <p>{{ area.summary }}</p>
+              <div class="tile-grid">
+                <RouterLink
+                  v-for="area in areas"
+                  :key="area.slug"
+                  class="tile-card"
+                  :to="`/areas/${area.slug}`"
+                >
+                  <span class="tile-card__media">
+                    <img :src="basePlaceholder(area.name, 'md')" :alt="area.name" />
+                    <span class="tile-card__badge is-none">{{ area.type }}</span>
+                  </span>
+                  <span class="tile-card__body">
+                    <small>Area guide</small>
+                    <strong>{{ area.name }}</strong>
                   </span>
                 </RouterLink>
               </div>
             </section>
 
             <section id="tree" class="guide-block">
-              <h2>The Tree: Spawn and Respawn Point</h2>
-              <article class="object-callout">
-                <img :src="tree.image" :alt="tree.name" />
-                <span>
+              <h2>The Tree: spawn and respawn point</h2>
+              <div class="object-panel">
+                <img :src="basePlaceholder(tree.name, 'lg')" :alt="tree.name" />
+                <div class="object-panel__copy">
+                  <span class="eyebrow">{{ tree.role }}</span>
                   <h3>{{ tree.name }}</h3>
                   <p>{{ tree.detail }}</p>
                   <ul>
                     <li v-for="tip in tree.tips" :key="tip">{{ tip }}</li>
                   </ul>
-                </span>
-              </article>
+                </div>
+              </div>
             </section>
 
             <section id="mushroom-house" class="guide-block">
-              <h2>Mushroom House: Storage, Crystal, Spirit Catcher, and Bell</h2>
+              <h2>Mushroom House: storage, crystal, spirit catcher, and bell</h2>
               <p>
-                The mushroom-house area handles the parts of a run that happen before and after the
-                house: storage, party setup, limited respawns, and starting or ending the route.
+                The mushroom-house cluster handles pre-run and post-run flow: storage, party setup,
+                limited respawns, and starting or ending the route.
               </p>
-              <div class="facility-grid">
-                <article v-for="object in mushroomObjects" :key="object.name" class="facility-card">
-                  <img :src="object.image" :alt="object.name" />
-                  <span>
+              <div class="facility-list">
+                <article v-for="object in mushroomObjects" :key="object.name" class="facility-row">
+                  <img :src="basePlaceholder(object.name, 'sm')" :alt="object.name" />
+                  <div class="facility-row__copy">
                     <small>{{ object.role }}</small>
                     <h3>{{ object.name }}</h3>
                     <p>{{ object.detail }}</p>
                     <ul>
                       <li v-for="tip in object.tips" :key="tip">{{ tip }}</li>
                     </ul>
-                    <span v-if="object.links" class="base-link-row">
+                    <div v-if="object.links?.length" class="facility-row__links">
                       <RouterLink v-for="link in object.links" :key="link.path" :to="link.path">
                         {{ link.label }}
                       </RouterLink>
-                    </span>
-                  </span>
+                    </div>
+                  </div>
                 </article>
               </div>
             </section>
 
             <section id="well" class="guide-block">
-              <h2>The Well: Craft Backpack, Pickaxe, Metal Bat, Shoes, and Potions</h2>
-              <article class="object-callout well-callout">
-                <img :src="well.image" :alt="well.name" />
-                <span>
+              <h2>The Well: craft backpack, pickaxe, metal bat, shoes, and potions</h2>
+              <div class="object-panel object-panel--well">
+                <img :src="basePlaceholder(well.name, 'lg')" :alt="well.name" />
+                <div class="object-panel__copy">
+                  <span class="eyebrow">{{ well.role }}</span>
                   <h3>{{ well.name }}</h3>
                   <p>{{ well.detail }}</p>
                   <ul>
                     <li v-for="tip in well.tips" :key="tip">{{ tip }}</li>
                   </ul>
-                </span>
-              </article>
-              <div class="upgrade-grid">
-                <RouterLink class="guide-card" to="/crafting/backpack">
-                  <h3>Backpack</h3>
-                  <p>Craft first when material runs require fewer return trips through the house.</p>
+                  <RouterLink v-if="well.links?.[0]" class="facility-row__links" :to="well.links[0].path">
+                    {{ well.links[0].label }}
+                  </RouterLink>
+                </div>
+              </div>
+              <div class="link-list craft-links">
+                <RouterLink class="link-list__item" to="/crafting/backpack">
+                  <span>
+                    <strong>Backpack</strong>
+                    <span>Fewer return trips when farming materials through the house.</span>
+                  </span>
+                  <span class="entry-chevron" aria-hidden="true">→</span>
                 </RouterLink>
-                <RouterLink class="guide-card" to="/crafting/pickaxe">
-                  <h3>Pickaxe</h3>
-                  <p>Break suitable objects into resources when carrying them home is too slow.</p>
+                <RouterLink class="link-list__item" to="/crafting/pickaxe">
+                  <span>
+                    <strong>Pickaxe</strong>
+                    <span>Break objects into resources instead of hauling everything home.</span>
+                  </span>
+                  <span class="entry-chevron" aria-hidden="true">→</span>
                 </RouterLink>
-                <RouterLink class="guide-card" to="/crafting/metal-bat">
-                  <h3>Metal Bat</h3>
-                  <p>Basic defense and object hits for pests, hostile gnomes, and emergency routes.</p>
+                <RouterLink class="link-list__item" to="/crafting/metal-bat">
+                  <span>
+                    <strong>Metal Bat</strong>
+                    <span>Basic defense and object hits for pests and emergency routes.</span>
+                  </span>
+                  <span class="entry-chevron" aria-hidden="true">→</span>
                 </RouterLink>
-                <RouterLink class="guide-card" to="/crafting/spring-shoes">
-                  <h3>Spring Shoes</h3>
-                  <p>Fall-safety and vertical movement for windows, furniture, and exterior routes.</p>
+                <RouterLink class="link-list__item" to="/crafting/spring-shoes">
+                  <span>
+                    <strong>Spring Shoes</strong>
+                    <span>Vertical movement for windows, furniture, and exterior routes.</span>
+                  </span>
+                  <span class="entry-chevron" aria-hidden="true">→</span>
                 </RouterLink>
-                <RouterLink class="guide-card" to="/crafting/potion-table">
-                  <h3>Potion Table</h3>
-                  <p>Unlock potion crafting before turning effects into Blowgun dart routes.</p>
+                <RouterLink class="link-list__item" to="/areas/potion-table">
+                  <span>
+                    <strong>Potion Table</strong>
+                    <span>Unlock potion crafting before Blowgun dart routes.</span>
+                  </span>
+                  <span class="entry-chevron" aria-hidden="true">→</span>
                 </RouterLink>
               </div>
             </section>
 
             <section id="pre-run-checklist" class="guide-block">
-              <h2>Pre-Run Checklist Before Entering the House</h2>
+              <h2>Pre-run checklist before entering the house</h2>
               <div class="data-table">
+                <div class="table-row table-head base-check-row">
+                  <span>Step</span>
+                  <span>Check</span>
+                </div>
                 <div v-for="(item, index) in checklist" :key="item" class="table-row base-check-row">
                   <strong>{{ String(index + 1).padStart(2, '0') }}</strong>
                   <span>{{ item }}</span>
@@ -204,8 +265,40 @@
 </template>
 
 <script setup>
+import PageSidebar from '../components/PageSidebar.vue'
 import areasData from '../data/areasData'
 import baseData from '../data/baseData'
+
+const placeholderSizes = {
+  hero: [640, 360],
+  lg: [400, 280],
+  md: [300, 200],
+  sm: [88, 88],
+}
+
+function basePlaceholder(label, size = 'md') {
+  const [width, height] = placeholderSizes[size] ?? placeholderSizes.md
+  const text = String(label)
+    .replace(/[^a-zA-Z0-9 ]/g, '')
+    .trim()
+    .split(/\s+/)
+    .map((part) => part.charAt(0))
+    .join('')
+    .slice(0, 6)
+    .toUpperCase() || 'IMG'
+
+  return `https://placehold.co/${width}x${height}/f4e8c6/28724f?text=${encodeURIComponent(text)}`
+}
+
+const baseSidebarSections = [
+  { id: 'gnome-world', label: 'Gnome World', href: '#gnome-world' },
+  { id: 'human-world', label: 'Human World', href: '#human-world' },
+  { id: 'area-routes', label: 'Area routes', href: '#area-routes', count: areasData.find((s) => s.key === 'areas').items.length },
+  { id: 'tree', label: 'The Tree', href: '#tree' },
+  { id: 'mushroom-house', label: 'Mushroom House', href: '#mushroom-house', count: 5 },
+  { id: 'well', label: 'The Well', href: '#well' },
+  { id: 'pre-run-checklist', label: 'Pre-run checklist', href: '#pre-run-checklist', count: 5 },
+]
 
 const areas = areasData.find((section) => section.key === 'areas').items
 const zones = baseData.find((section) => section.key === 'zones').items
@@ -223,408 +316,227 @@ const mushroomObjects = ['Mushroom House', 'Storage Chest', 'Purple Crystal', 'S
 
 <style scoped>
 .base-building-section {
-  overflow: hidden;
-  background:
-    radial-gradient(circle at 9% 7%, rgba(223, 91, 50, 0.16) 0 94px, transparent 96px),
-    radial-gradient(circle at 88% 14%, rgba(40, 114, 79, 0.16) 0 118px, transparent 120px),
-    linear-gradient(135deg, rgba(255, 218, 193, 0.34), rgba(223, 240, 198, 0.46));
-}
-
-.base-building-content {
-  gap: 38px;
-}
-
-.base-building-content .page-hero {
-  background:
-    linear-gradient(115deg, rgba(255, 248, 232, 0.94) 0 48%, rgba(255, 224, 169, 0.9) 48% 72%, rgba(223, 240, 198, 0.92) 72%),
-    var(--color-surface);
-}
-
-.base-building-content .page-hero::before {
-  width: 220px;
-  background: repeating-linear-gradient(90deg, var(--color-primary) 0 24px, var(--color-gold) 24px 48px, var(--color-accent) 48px 72px);
-}
-
-.base-building-content .hero-art {
-  transform: rotate(-1.5deg);
-}
-
-.base-split {
-  display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
-  gap: 18px;
-  align-items: stretch;
-}
-
-.base-split.reverse {
-  grid-template-columns: minmax(320px, 0.92fr) minmax(0, 1.08fr);
-}
-
-.base-panel,
-.base-note-board,
-.object-callout,
-.facility-card {
-  position: relative;
-  border: 2px solid var(--color-ink);
-  border-radius: 24px;
-  background: var(--color-surface);
-  box-shadow: 9px 10px 0 rgba(36, 51, 45, 0.14);
-  overflow: hidden;
-}
-
-.base-panel {
-  display: grid;
-  grid-template-columns: minmax(220px, 0.55fr) minmax(0, 1fr);
-  min-height: 260px;
-  background:
-    linear-gradient(135deg, rgba(255, 240, 199, 0.92), rgba(255, 248, 232, 0.96)),
-    var(--color-surface);
-}
-
-.base-panel::after,
-.object-callout::after {
-  position: absolute;
-  right: 16px;
-  bottom: 14px;
-  width: 84px;
-  height: 16px;
-  border: 2px solid var(--color-ink);
-  border-radius: 999px;
-  background: var(--color-sky);
-  content: "";
-}
-
-.base-panel img,
-.object-callout img,
-.facility-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.base-panel img,
-.object-callout img {
-  border-right: 2px solid var(--color-ink);
-}
-
-.base-panel > span,
-.object-callout > span,
-.facility-card > span {
-  display: grid;
-  align-content: center;
-  gap: 12px;
-  padding: 22px;
-}
-
-.base-panel h3,
-.object-callout h3,
-.facility-card h3 {
-  max-width: 720px;
-  font-size: 1.48rem;
-}
-
-.base-panel p,
-.object-callout p,
-.facility-card p {
-  color: var(--color-text);
-  font-weight: 850;
-}
-
-.base-note-board {
-  display: grid;
-  align-content: center;
-  gap: 14px;
-  padding: 28px;
-  background:
-    linear-gradient(135deg, rgba(223, 240, 198, 0.94), rgba(255, 240, 199, 0.94)),
-    var(--color-surface);
-}
-
-.base-note-board::before {
-  position: absolute;
-  top: 16px;
-  right: 18px;
-  width: 62px;
-  height: 62px;
-  border: 2px solid var(--color-ink);
-  border-radius: 18px;
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.35), transparent),
-    var(--color-panel-2);
-  content: "";
-  transform: rotate(7deg);
-}
-
-.base-note-board.danger {
-  background:
-    linear-gradient(135deg, rgba(255, 218, 193, 0.96), rgba(255, 248, 232, 0.96)),
-    var(--color-surface);
-}
-
-.base-note-board.danger::before {
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.35), transparent),
-    var(--color-accent);
-}
-
-.base-note-board strong {
-  color: var(--color-ink);
-  font-family: "Bricolage Grotesque", "Nunito", sans-serif;
-  font-size: 1.42rem;
-  line-height: 1.08;
-}
-
-.base-note-board ul,
-.object-callout ul,
-.facility-card ul {
-  display: grid;
-  gap: 7px;
-  padding-left: 18px;
-}
-
-.base-note-board li,
-.object-callout li,
-.facility-card li {
-  color: var(--color-text);
-  font-weight: 800;
-  line-height: 1.45;
-  list-style: disc;
+  background: linear-gradient(180deg, rgba(223, 240, 198, 0.22) 0%, transparent 28%);
 }
 
 .section-lead {
   color: var(--color-text);
-  font-weight: 800;
+  font-size: 0.96rem;
+  font-weight: 700;
   line-height: 1.55;
 }
 
-.base-link-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.base-link-row .area-guide-link {
-  background: var(--color-ink);
-  color: var(--color-surface);
-}
-
-.base-link-row a {
-  border: 2px solid var(--color-ink);
-  border-radius: 999px;
-  padding: 8px 12px;
-  background: var(--color-panel-2);
-  color: var(--color-ink);
-  font-weight: 900;
-  box-shadow: 3px 4px 0 rgba(36, 51, 45, 0.12);
-  transition:
-    background 180ms ease,
-    transform 180ms ease;
-}
-
-.base-link-row a:hover,
-.base-link-row a:focus-visible {
-  background: var(--color-surface-strong);
-  outline: none;
-  transform: translateY(-2px);
-}
-
-.object-callout {
+.zone-stack {
   display: grid;
-  grid-template-columns: 240px minmax(0, 1fr);
-  min-height: 250px;
-  background:
-    linear-gradient(90deg, rgba(255, 240, 199, 0.86), rgba(255, 248, 232, 0.96)),
-    var(--color-surface);
+  gap: 12px;
 }
 
-.object-callout::before {
-  position: absolute;
-  top: 14px;
-  left: 16px;
-  z-index: 1;
-  border: 2px solid var(--color-ink);
-  border-radius: 999px;
-  padding: 5px 10px;
-  background: var(--color-surface);
-  color: var(--color-accent);
-  content: "Base anchor";
-  font-size: 0.72rem;
-  font-weight: 900;
-  text-transform: uppercase;
+.split-panel--reverse {
+  grid-template-columns: minmax(240px, 0.85fr) minmax(0, 1.15fr);
 }
 
-.well-callout {
-  background:
-    linear-gradient(90deg, rgba(223, 240, 198, 0.86), rgba(255, 248, 232, 0.96)),
-    var(--color-surface);
+.split-panel__copy h3,
+.object-panel__copy h3,
+.facility-row__copy h3 {
+  font-size: 1.2rem;
+  line-height: 1.15;
 }
 
-.well-callout::before {
-  content: "Crafting station";
+.zone-links {
+  margin-top: 6px;
 }
 
-.facility-grid {
+.note-panel h3 {
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.note-panel ul {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
+  gap: 6px;
+  padding-left: 18px;
 }
 
-.area-route-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
+.note-panel li {
+  color: var(--color-text);
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.45;
+  list-style: disc;
 }
 
-.area-route-card {
+.note-panel--warn {
+  border-left-color: var(--color-accent);
+  background: rgba(255, 225, 197, 0.5);
+}
+
+.object-panel {
   display: grid;
-  grid-template-rows: 150px minmax(0, 1fr);
-  border: 2px solid var(--color-ink);
-  border-radius: 22px;
+  grid-template-columns: minmax(200px, 280px) minmax(0, 1fr);
+  gap: 0;
   overflow: hidden;
-  background:
-    linear-gradient(180deg, rgba(232, 246, 216, 0.82), rgba(255, 248, 232, 0.96)),
-    var(--color-surface);
-  box-shadow: 7px 8px 0 rgba(36, 51, 45, 0.13);
-  transition:
-    background 180ms ease,
-    transform 180ms ease;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
 }
 
-.area-route-card:hover,
-.area-route-card:focus-visible {
-  background: var(--color-surface-strong);
-  outline: none;
-  transform: translateY(-2px);
-}
-
-.area-route-card img {
+.object-panel img {
   width: 100%;
   height: 100%;
-  border-bottom: 2px solid var(--color-ink);
+  min-height: 200px;
   object-fit: cover;
 }
 
-.area-route-card span {
+.object-panel__copy {
   display: grid;
   gap: 8px;
-  padding: 16px;
+  align-content: center;
+  padding: clamp(16px, 2.5vw, 22px);
 }
 
-.area-route-card small {
-  color: var(--color-primary);
-  font-weight: 900;
-  text-transform: uppercase;
+.object-panel__copy p {
+  font-size: 0.94rem;
+  font-weight: 700;
+  line-height: 1.5;
 }
 
-.area-route-card h3 {
-  font-size: 1.22rem;
-}
-
-.facility-card {
+.object-panel__copy ul {
   display: grid;
-  grid-template-rows: 180px minmax(0, 1fr);
-  background:
-    linear-gradient(180deg, rgba(255, 248, 232, 0.96), rgba(255, 240, 199, 0.74)),
-    var(--color-surface);
-  transition:
-    background 180ms ease,
-    transform 180ms ease,
-    box-shadow 180ms ease;
+  gap: 5px;
+  padding-left: 18px;
 }
 
-.facility-card:hover {
-  background: var(--color-surface-strong);
-  box-shadow: 12px 13px 0 rgba(36, 51, 45, 0.16);
-  transform: translate(-2px, -2px);
+.object-panel__copy li {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.4;
+  list-style: disc;
 }
 
-.facility-card::before {
-  position: absolute;
-  top: 148px;
-  left: 18px;
-  z-index: 1;
-  width: 70px;
-  height: 18px;
-  border: 2px solid var(--color-ink);
-  border-radius: 999px;
-  background: var(--color-accent);
-  content: "";
+.object-panel--well {
+  margin-bottom: 12px;
 }
 
-.facility-card small {
-  color: var(--color-primary);
-  font-weight: 900;
-  text-transform: uppercase;
-}
-
-.upgrade-grid {
+.facility-list {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.facility-row {
+  display: grid;
+  grid-template-columns: 88px minmax(0, 1fr);
   gap: 14px;
+  align-items: start;
+  padding: 12px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
 }
 
-.upgrade-grid .guide-card {
-  min-height: 178px;
-  background:
-    linear-gradient(180deg, rgba(223, 240, 198, 0.72), rgba(255, 248, 232, 0.96)),
-    var(--color-surface);
+.facility-row img {
+  width: 88px;
+  height: 88px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  object-fit: cover;
 }
 
-.upgrade-grid .guide-card:nth-child(2n) {
-  background:
-    linear-gradient(180deg, rgba(255, 218, 193, 0.72), rgba(255, 248, 232, 0.96)),
-    var(--color-surface);
+.facility-row__copy {
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+}
+
+.facility-row__copy small {
+  color: var(--color-primary);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.facility-row__copy h3 {
+  font-size: 1.02rem;
+}
+
+.facility-row__copy p {
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.facility-row__copy ul {
+  display: grid;
+  gap: 4px;
+  padding-left: 16px;
+}
+
+.facility-row__copy li {
+  color: var(--color-muted);
+  font-size: 0.86rem;
+  font-weight: 700;
+  line-height: 1.4;
+  list-style: disc;
+}
+
+.facility-row__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.facility-row__links a {
+  color: var(--color-primary);
+  font-size: 0.86rem;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.facility-row__links a:hover,
+.facility-row__links a:focus-visible {
+  color: var(--color-accent);
+  outline: none;
+}
+
+.craft-links {
+  margin-top: 0;
 }
 
 .base-check-row {
-  grid-template-columns: 72px minmax(0, 1fr);
+  grid-template-columns: 64px minmax(0, 1fr);
 }
 
 .base-check-row strong {
-  color: var(--color-accent);
+  color: var(--color-primary);
 }
 
 @media (max-width: 1024px) {
-  .base-split,
-  .base-split.reverse,
-  .object-callout {
+  .split-panel--reverse {
     grid-template-columns: 1fr;
   }
 
-  .base-panel {
-    grid-template-columns: minmax(180px, 0.42fr) minmax(0, 1fr);
-  }
-
-  .facility-grid {
+  .object-panel {
     grid-template-columns: 1fr;
   }
 
-  .area-route-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .upgrade-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .object-panel img {
+    max-height: 220px;
   }
 }
 
 @media (max-width: 768px) {
-  .base-panel,
-  .area-route-grid,
-  .upgrade-grid {
-    grid-template-columns: 1fr;
+  .facility-row {
+    grid-template-columns: 72px minmax(0, 1fr);
   }
 
-  .base-panel img,
-  .object-callout img {
-    border-right: 0;
-    border-bottom: 2px solid var(--color-ink);
-  }
-
-  .base-panel img,
-  .object-callout img,
-  .facility-card img {
-    aspect-ratio: 16 / 9;
+  .facility-row img {
+    width: 72px;
+    height: 72px;
   }
 }
 </style>

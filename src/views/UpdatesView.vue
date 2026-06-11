@@ -13,18 +13,17 @@
             </p>
           </div>
           <figure class="hero-art">
-            <img src="/images/extracted/area-bell.png" alt="Burglin' Gnomes update and extraction bell" />
+            <img src="/images/updates-page-01.webp" alt="Burglin' Gnomes update and extraction bell" />
           </figure>
         </div>
 
         <div class="guide-layout">
-          <aside class="guide-sidebar" aria-label="Updates guide sections">
-            <strong>On this page</strong>
-            <a href="#release-facts">Release facts</a>
-            <a href="#release-preview">Live guide priorities</a>
-            <a href="#patch-checklist">Post-patch checklist</a>
-            <a href="#patch-rules">When patches drop</a>
-          </aside>
+          <PageSidebar
+            label="On this page"
+            title="Updates"
+            aria-label="Updates guide sections"
+            :sections="updatesSidebarSections"
+          />
 
           <div class="guide-main">
             <section id="release-facts" class="guide-block">
@@ -45,43 +44,27 @@
               </div>
             </section>
 
-            <section id="release-preview" class="guide-block release-preview-block">
+            <section id="release-preview" class="guide-block">
               <h2>What changed from early tests to the full release</h2>
               <p>
                 Start here when a patch lands or a route feels different: task flow, house weapons,
                 crafting links, outdoor routes, and enemy behavior have the highest impact on live runs.
               </p>
-              <div class="patch-check-board">
-                <RouterLink :to="featuredLead.path" class="patch-feature">
-                  <img :src="featuredLead.image" :alt="featuredLead.title" />
-                  <div class="patch-feature-copy">
-                    <span class="patch-kicker">{{ featuredLead.type }} / {{ featuredLead.priority }} priority</span>
-                    <h3>{{ featuredLead.title }}</h3>
-                    <p>{{ featuredLead.detail }}</p>
-                    <div class="patch-actions">
-                      <span>{{ featuredLead.target }}</span>
-                    </div>
+              <div class="preview-grid" aria-label="Release guide priorities">
+                <RouterLink
+                  v-for="(item, index) in releasePreview"
+                  :key="item.title"
+                  :to="item.path"
+                  class="preview-card"
+                >
+                  <img :src="updatesPlaceholder(item.title, 'sm')" :alt="item.title" />
+                  <div>
+                    <small>{{ String(index + 1).padStart(2, '0') }} / {{ item.type }}</small>
+                    <h3>{{ item.title }}</h3>
+                    <p>{{ item.detail }}</p>
+                    <span class="preview-card__target">{{ item.target }}</span>
                   </div>
                 </RouterLink>
-
-                <div class="patch-stack" aria-label="Additional patch checks">
-                  <RouterLink
-                    v-for="(item, index) in secondaryLeads"
-                    :key="item.title"
-                    :to="item.path"
-                    class="patch-card"
-                  >
-                    <img :src="item.image" :alt="item.title" />
-                    <div class="patch-card-copy">
-                      <small>{{ String(index + 2).padStart(2, '0') }} / {{ item.type }}</small>
-                      <h3>{{ item.title }}</h3>
-                      <p>{{ item.detail }}</p>
-                      <div class="patch-card-footer">
-                        <span>{{ item.target }}</span>
-                      </div>
-                    </div>
-                  </RouterLink>
-                </div>
               </div>
             </section>
           </div>
@@ -128,12 +111,37 @@
 </template>
 
 <script setup>
+import PageSidebar from '../components/PageSidebar.vue'
 import updatesData from '../data/updatesData'
+
+const placeholderSizes = {
+  hero: [640, 360],
+  sm: [88, 88],
+}
+
+function updatesPlaceholder(label, size = 'sm') {
+  const [width, height] = placeholderSizes[size] ?? placeholderSizes.sm
+  const text = String(label)
+    .replace(/[^a-zA-Z0-9 ]/g, '')
+    .trim()
+    .split(/\s+/)
+    .map((part) => part.charAt(0))
+    .join('')
+    .slice(0, 6)
+    .toUpperCase() || 'IMG'
+
+  return `https://placehold.co/${width}x${height}/f4e8c6/28724f?text=${encodeURIComponent(text)}`
+}
+
+const updatesSidebarSections = [
+  { id: 'release-facts', label: 'Release facts', href: '#release-facts' },
+  { id: 'release-preview', label: 'Live guide priorities', href: '#release-preview' },
+  { id: 'patch-checklist', label: 'Post-patch checklist', href: '#patch-checklist' },
+  { id: 'patch-rules', label: 'When patches drop', href: '#patch-rules' },
+]
 
 const releaseFacts = updatesData.find((section) => section.key === 'releaseFacts').items
 const releasePreview = updatesData.find((section) => section.key === 'releasePreview').items
-const featuredLead = releasePreview[0]
-const secondaryLeads = releasePreview.slice(1)
 const patchChecklist = updatesData.find((section) => section.key === 'patchChecklist').items
 const patchRules = updatesData.find((section) => section.key === 'patchRules').items
 </script>
@@ -151,179 +159,14 @@ const patchRules = updatesData.find((section) => section.key === 'patchRules').i
   color: var(--color-accent);
 }
 
-.release-preview-block {
-  background:
-    linear-gradient(135deg, rgba(255, 218, 193, 0.7), rgba(186, 229, 201, 0.45)),
-    var(--color-surface);
-}
-
-.patch-check-board {
-  display: grid;
-  grid-template-columns: minmax(0, 0.92fr) minmax(360px, 1.08fr);
-  gap: 18px;
-  margin-top: 20px;
-}
-
-.patch-feature,
-.patch-card {
-  color: inherit;
-  text-decoration: none;
-}
-
-.patch-feature {
-  position: relative;
-  display: grid;
-  min-height: 440px;
-  overflow: hidden;
-  border: 3px solid var(--color-ink);
-  border-radius: 24px;
-  background: #ffe8b9;
-  box-shadow: 10px 10px 0 rgba(34, 45, 38, 0.18);
-}
-
-.patch-feature::after {
-  content: 'Full release';
-  position: absolute;
-  top: 18px;
-  right: -44px;
-  width: 190px;
-  padding: 8px 0;
-  transform: rotate(34deg);
-  background: var(--color-accent);
-  color: #fffaf0;
-  font-size: 0.74rem;
-  font-weight: 900;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  border: 2px solid var(--color-ink);
-}
-
-.patch-feature img {
-  width: 100%;
-  height: 100%;
-  min-height: 440px;
-  object-fit: cover;
-}
-
-.patch-feature-copy {
-  position: absolute;
-  inset: auto 18px 18px;
-  padding: 18px;
-  border: 3px solid var(--color-ink);
-  border-radius: 18px;
-  background: rgba(255, 250, 240, 0.94);
-}
-
-.patch-kicker,
-.patch-card small {
-  display: inline-flex;
-  width: fit-content;
-  margin-bottom: 8px;
-  color: var(--color-accent);
-  font-size: 0.72rem;
-  font-weight: 900;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.patch-feature h3,
-.patch-card h3 {
-  margin-bottom: 8px;
-}
-
-.patch-actions,
-.patch-card-footer {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px;
-  margin-top: 14px;
-}
-
-.patch-actions span,
-.patch-card-footer span {
-  font-weight: 900;
-  color: var(--color-ink-soft);
-}
-
-.patch-stack {
-  display: grid;
-  gap: 12px;
-}
-
-.patch-card {
-  display: grid;
-  grid-template-columns: 134px minmax(0, 1fr);
-  gap: 14px;
-  align-items: stretch;
-  min-height: 138px;
-  padding: 10px;
-  border: 3px solid var(--color-ink);
-  border-radius: 20px;
-  background: var(--color-paper);
-  box-shadow: 6px 6px 0 rgba(34, 45, 38, 0.14);
-  transition:
-    transform 160ms ease,
-    box-shadow 160ms ease,
-    background 160ms ease;
-}
-
-.patch-card:hover,
-.patch-card:focus-visible,
-.patch-feature:hover,
-.patch-feature:focus-visible {
-  transform: translate(-2px, -2px);
-  box-shadow: 10px 10px 0 rgba(34, 45, 38, 0.18);
-}
-
-.patch-card:nth-child(2n) {
-  background: #e8f6d8;
-}
-
-.patch-card:nth-child(3n) {
-  background: #dff3ff;
-}
-
-.patch-card img {
-  width: 100%;
-  height: 100%;
-  min-height: 112px;
-  border: 2px solid var(--color-ink);
-  border-radius: 14px;
-  object-fit: cover;
-}
-
-.patch-card-copy {
-  display: flex;
-  min-width: 0;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.patch-card-copy p {
-  font-size: 0.95rem;
-}
-
-@media (max-width: 1024px) {
-  .patch-check-board {
-    grid-template-columns: 1fr;
-  }
-}
-
 @media (max-width: 768px) {
-  .patch-card {
-    grid-template-columns: 1fr;
+  .preview-card {
+    grid-template-columns: 72px minmax(0, 1fr);
   }
 
-  .patch-feature,
-  .patch-feature img {
-    min-height: 360px;
-  }
-
-  .patch-feature-copy {
-    inset: auto 10px 10px;
-    padding: 14px;
+  .preview-card img {
+    width: 72px;
+    height: 72px;
   }
 }
 </style>

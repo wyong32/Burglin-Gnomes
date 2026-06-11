@@ -1,5 +1,5 @@
 <template>
-  <section class="bestiary-detail-section page-section">
+  <section class="bestiary-detail-section page-section detail-page">
     <div class="container">
       <div v-if="entry" class="bestiary-detail-content page-content">
         <div class="page-hero">
@@ -14,15 +14,12 @@
         </div>
 
         <div class="guide-layout">
-          <aside class="guide-sidebar" aria-label="Bestiary detail sections">
-            <strong>{{ entry.name }}</strong>
-            <a href="#overview">Danger level</a>
-            <a href="#behavior">Behavior</a>
-            <a href="#counters">Survival plan</a>
-            <a href="#related-guides">Related guides</a>
-            <a href="#notes">Route notes</a>
-            <a v-if="sameCategoryEntries.length" href="#related-category">More {{ entry.category }}</a>
-          </aside>
+          <PageSidebar
+            label="On this page"
+            :title="entry.name"
+            aria-label="Bestiary detail sections"
+            :sections="bestiarySidebarSections"
+          />
 
           <div class="guide-main">
             <section id="overview" class="guide-block">
@@ -55,20 +52,26 @@
                   <span>{{ counter }}</span>
                 </div>
               </div>
-              <div class="link-grid">
-                <RouterLink v-for="item in recommendedItems" :key="item.slug" class="guide-card" :to="`/items/${item.slug}`">
-                  <strong>{{ item.name }}</strong>
-                  <span>{{ item.use }}</span>
+              <div class="link-list">
+                <RouterLink v-for="item in recommendedItems" :key="item.slug" class="link-list__item" :to="`/items/${item.slug}`">
+                  <span>
+                    <strong>{{ item.name }}</strong>
+                    <span>{{ item.use }}</span>
+                  </span>
+                  <span class="entry-chevron" aria-hidden="true">→</span>
                 </RouterLink>
               </div>
             </section>
 
             <section id="related-guides" class="guide-block">
               <h2>Related pages for {{ entry.name }}</h2>
-              <div class="link-grid">
-                <RouterLink v-for="guide in entry.relatedGuides" :key="guide.path" class="guide-card" :to="guide.path">
-                  <strong>{{ guide.label }}</strong>
-                  <span>Open the connected route, item, crafting, or mechanics page.</span>
+              <div class="link-list">
+                <RouterLink v-for="guide in entry.relatedGuides" :key="guide.path" class="link-list__item" :to="guide.path">
+                  <span>
+                    <strong>{{ guide.label }}</strong>
+                    <span>Open the connected route, item, crafting, or mechanics page.</span>
+                  </span>
+                  <span class="entry-chevron" aria-hidden="true">→</span>
                 </RouterLink>
               </div>
             </section>
@@ -93,17 +96,23 @@
                 Other {{ entry.category.toLowerCase() }} entries we track — open a page for danger level,
                 behavior notes, and survival tips.
               </p>
-              <ul class="related-list">
-                <li v-for="related in sameCategoryEntries" :key="related.slug">
-                  <RouterLink class="related-entry" :to="`/bestiary/${related.slug}`">
+              <div class="tile-grid">
+                <RouterLink
+                  v-for="related in sameCategoryEntries"
+                  :key="related.slug"
+                  class="tile-card"
+                  :to="`/bestiary/${related.slug}`"
+                >
+                  <span class="tile-card__media">
                     <img :src="related.image" :alt="related.name" />
-                    <span class="related-entry-copy">
-                      <h3>{{ related.name }}</h3>
-                      <p>{{ related.role }} · Danger: {{ related.danger }}</p>
-                    </span>
-                  </RouterLink>
-                </li>
-              </ul>
+                    <span class="tile-card__badge" :class="dangerClass(related.danger)">{{ related.danger }}</span>
+                  </span>
+                  <span class="tile-card__body">
+                    <small>{{ related.role }}</small>
+                    <strong>{{ related.name }}</strong>
+                  </span>
+                </RouterLink>
+              </div>
               <RouterLink class="category-back-link" :to="`/bestiary#${categorySlug(entry.category)}`">
                 View all {{ entry.category }}
               </RouterLink>
@@ -126,6 +135,7 @@
 <script setup>
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
+import PageSidebar from '../components/PageSidebar.vue'
 import enemiesData from '../data/enemiesData'
 import itemsData from '../data/itemsData'
 
@@ -139,7 +149,38 @@ const sameCategoryEntries = computed(() => {
   if (!entry.value) return []
   return entries.filter((item) => item.category === entry.value.category && item.slug !== entry.value.slug)
 })
+
+const bestiarySidebarSections = computed(() => {
+  const sections = [
+    { id: 'overview', label: 'Danger level', href: '#overview' },
+    { id: 'behavior', label: 'Behavior', href: '#behavior' },
+    { id: 'counters', label: 'Survival plan', href: '#counters' },
+    { id: 'related-guides', label: 'Related guides', href: '#related-guides' },
+    { id: 'notes', label: 'Route notes', href: '#notes' },
+  ]
+
+  if (sameCategoryEntries.value.length) {
+    sections.push({
+      id: 'related-category',
+      label: `More ${entry.value.category}`,
+      href: '#related-category',
+      count: sameCategoryEntries.value.length,
+    })
+  }
+
+  return sections
+})
 const categorySlug = (category) => category.toLowerCase().replaceAll(' ', '-')
+
+const dangerClass = (danger) => {
+  const value = String(danger).toLowerCase()
+  if (value.includes('very high')) return 'is-very-high'
+  if (value === 'high') return 'is-high'
+  if (value === 'medium') return 'is-medium'
+  if (value === 'low') return 'is-low'
+  if (value === 'none') return 'is-none'
+  return ''
+}
 </script>
 
 <style scoped>
@@ -151,101 +192,29 @@ const categorySlug = (category) => category.toLowerCase().replaceAll(' ', '-')
   grid-template-columns: 120px minmax(0, 1fr);
 }
 
-.link-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-}
-
 .note-panel h3 {
   margin-bottom: 8px;
-}
-
-.related-list {
-  display: grid;
-  gap: 10px;
-  margin: 0;
-  padding: 0;
-}
-
-.related-entry {
-  display: grid;
-  grid-template-columns: 64px minmax(0, 1fr) auto;
-  gap: 12px;
-  align-items: center;
-  border: 2px solid var(--color-ink);
-  border-radius: 16px;
-  padding: 10px 12px;
-  background: var(--color-surface);
-  box-shadow: var(--shadow-card);
-  transition:
-    background 180ms ease,
-    transform 180ms ease;
-}
-
-.related-entry:hover,
-.related-entry:focus-visible {
-  background: var(--color-surface-strong);
-  outline: none;
-  transform: translateY(-2px);
-}
-
-.related-entry img {
-  width: 64px;
-  height: 64px;
-  border: 2px solid var(--color-ink);
-  border-radius: 12px;
-  object-fit: cover;
-}
-
-.related-entry-copy {
-  display: grid;
-  gap: 4px;
-  min-width: 0;
-}
-
-.related-entry-copy h3 {
-  font-size: 1.05rem;
-  line-height: 1.15;
-}
-
-.related-entry-copy p {
-  color: var(--color-text);
-  font-weight: 800;
-  line-height: 1.35;
 }
 
 .category-back-link {
   display: inline-flex;
   margin-top: 12px;
-  border: 2px solid var(--color-ink);
+  border: 1px solid var(--color-border);
   border-radius: 999px;
-  padding: 10px 14px;
-  background: var(--color-panel-2);
+  padding: 8px 12px;
+  background: var(--color-surface);
   color: var(--color-ink);
-  font-weight: 900;
-  box-shadow: 3px 4px 0 rgba(36, 51, 45, 0.12);
+  font-weight: 800;
   transition:
-    background 180ms ease,
-    transform 180ms ease;
+    background 140ms ease,
+    border-color 140ms ease;
 }
 
 .category-back-link:hover,
 .category-back-link:focus-visible {
-  background: var(--color-surface-strong);
-  color: var(--color-accent);
+  border-color: rgba(40, 114, 79, 0.35);
+  background: rgba(223, 240, 198, 0.35);
+  color: var(--color-primary);
   outline: none;
-  transform: translateY(-2px);
-}
-
-@media (max-width: 768px) {
-  .link-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .related-entry {
-    grid-template-columns: 56px minmax(0, 1fr);
-  }
-
 }
 </style>
