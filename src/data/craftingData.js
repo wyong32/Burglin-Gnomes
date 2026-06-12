@@ -2,6 +2,9 @@ import { buildRecipePageMeta } from '../utils/contentLabels.js'
 
 const withRecipeTdk = (recipes) => recipes.map((recipe) => ({ ...recipe, tdk: buildRecipePageMeta(recipe) }))
 const itemImage = (slug) => `/images/items/item-${slug}.png`
+const materialImageOverrides = {
+  fraggles: '/images/items/item-metal.png',
+}
 const materialSources = {
   fraggles: 'Break or steal fragile household objects, then bank the resource for potions and gear.',
   chemicals: 'Search chemical-looking household loot and save it for ranged gear or movement potions.',
@@ -412,7 +415,7 @@ export default [
         .filter((entry) => entry.materials.some((material) => material.item === item))
         .map((entry) => entry.name)
         .join(', '),
-      image: itemImage(item),
+      image: materialImageOverrides[item] ?? itemImage(item),
     })),
   },
 ]

@@ -5,11 +5,7 @@ import craftingData from '../data/craftingData.js'
 import enemiesData from '../data/enemiesData.js'
 import itemsData from '../data/itemsData.js'
 import { routeSeo } from '../router/routeSeo.js'
-
-function getSectionItems(data, key) {
-  const section = data.find((entry) => entry.key === key)
-  return section?.items ?? []
-}
+import { getSectionItems } from './sectionData.js'
 
 function joinParts(...parts) {
   return parts.flat().filter(Boolean).join(' ')
@@ -308,7 +304,7 @@ function buildSearchIndex() {
 
 let cachedIndex = null
 
-export function getSearchIndex() {
+function getSearchIndex() {
   if (!cachedIndex) cachedIndex = buildSearchIndex()
   return cachedIndex
 }

@@ -29,20 +29,11 @@ import {
   buildHomeGraphJsonLd,
   resolveCanonicalUrl,
 } from '../seo/documentMeta.js'
-import {
-  bestiaryNotFoundSeo,
-  itemNotFoundSeo,
-  recipeNotFoundSeo,
-  routeSeo,
-} from './routeSeo.js'
+import { getSectionItems } from '../utils/sectionData.js'
+import { routeSeo } from './routeSeo.js'
 
 function routeMeta(pageKey) {
   return routeSeo[pageKey] ?? {}
-}
-
-function getSectionItems(data, key) {
-  const section = data.find((entry) => entry.key === key)
-  return section?.items ?? []
 }
 
 const items = getSectionItems(itemsData, 'items')
@@ -198,18 +189,10 @@ router.beforeEach((to) => {
 
 router.afterEach((to) => {
   if (to.name === 'item-detail') {
-    const slug = to.params.slug
-    const item = items.find((entry) => entry.slug === slug)
-    const path = item ? `/items/${item.slug}` : '/items'
+    const item = items.find((entry) => entry.slug === to.params.slug)
+    if (!item) return
 
-    if (!item) {
-      applyDocumentSeo({
-        path,
-        ...itemNotFoundSeo,
-      })
-      return
-    }
-
+    const path = `/items/${item.slug}`
     applyDocumentSeo({
       path,
       ...item.tdk,
@@ -226,18 +209,10 @@ router.afterEach((to) => {
   }
 
   if (to.name === 'crafting-detail') {
-    const slug = to.params.slug
-    const recipe = recipes.find((entry) => entry.slug === slug)
-    const path = recipe ? `/crafting/${recipe.slug}` : '/crafting'
+    const recipe = recipes.find((entry) => entry.slug === to.params.slug)
+    if (!recipe) return
 
-    if (!recipe) {
-      applyDocumentSeo({
-        path,
-        ...recipeNotFoundSeo,
-      })
-      return
-    }
-
+    const path = `/crafting/${recipe.slug}`
     applyDocumentSeo({
       path,
       ...recipe.tdk,
@@ -254,18 +229,10 @@ router.afterEach((to) => {
   }
 
   if (to.name === 'bestiary-detail') {
-    const slug = to.params.slug
-    const entry = bestiaryEntries.find((item) => item.slug === slug)
-    const path = entry ? `/bestiary/${entry.slug}` : '/bestiary'
+    const entry = bestiaryEntries.find((item) => item.slug === to.params.slug)
+    if (!entry) return
 
-    if (!entry) {
-      applyDocumentSeo({
-        path,
-        ...bestiaryNotFoundSeo,
-      })
-      return
-    }
-
+    const path = `/bestiary/${entry.slug}`
     applyDocumentSeo({
       path,
       ...entry.tdk,
@@ -282,21 +249,10 @@ router.afterEach((to) => {
   }
 
   if (to.name === 'area-detail') {
-    const slug = to.params.slug
-    const area = areaEntries.find((item) => item.slug === slug)
-    const path = area ? `/areas/${area.slug}` : '/base-building'
+    const area = areaEntries.find((item) => item.slug === to.params.slug)
+    if (!area) return
 
-    if (!area) {
-      applyDocumentSeo({
-        path,
-        title: "Areas — Items & Routes | Burglin' Gnomes",
-        description:
-          "Browse Burglin' Gnomes area guides for items, weapons, crafting stations, route notes, tasks, and danger checks.",
-        keywords: "Burglin Gnomes areas, Burglin Gnomes item locations",
-      })
-      return
-    }
-
+    const path = `/areas/${area.slug}`
     applyDocumentSeo({
       path,
       ...area.tdk,

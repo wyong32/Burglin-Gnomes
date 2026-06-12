@@ -27,19 +27,10 @@
 
 <script setup>
 import { ref } from 'vue'
+import { primaryNavLinks } from '../data/navLinks.js'
 
 const isOpen = ref(false)
-
-const links = [
-  { label: 'Home', path: '/' },
-  { label: 'Beginner', path: '/beginner' },
-  { label: 'Wiki', path: '/wiki' },
-  { label: 'Items', path: '/items' },
-  { label: 'Crafting', path: '/crafting' },
-  { label: 'Base Building', path: '/base-building' },
-  { label: 'NPCs & Enemies Bestiary', path: '/bestiary' },
-  { label: 'Updates', path: '/updates' },
-]
+const links = primaryNavLinks
 </script>
 
 <style scoped>

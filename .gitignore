@@ -37,3 +37,7 @@ __screenshots__/
 
 # Vite
 *.timestamp-*-*.mjs
+
+# AI tooling (not part of the site)
+.cursor/
+.codex/

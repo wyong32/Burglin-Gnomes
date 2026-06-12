@@ -9,6 +9,7 @@ import enemiesData from '../src/data/enemiesData.js'
 import itemsData from '../src/data/itemsData.js'
 import { seoConfig } from '../src/seo/config.js'
 import { sitemapStaticRoutes } from '../src/seo/sitemapRoutes.js'
+import { getSectionItems } from '../src/utils/sectionData.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -145,11 +146,6 @@ function urlNode(loc, lastmod, changefreq, priority) {
     <changefreq>${changefreq}</changefreq>
     <priority>${p}</priority>
   </url>`
-}
-
-function getSectionItems(data, key) {
-  const section = data.find((entry) => entry.key === key)
-  return section?.items ?? []
 }
 
 function generate() {

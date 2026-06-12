@@ -2,7 +2,6 @@
  * Burglin' Gnomes Guide — canonical、OG、Twitter、sitemap 使用此域名。
  */
 export const seoConfig = {
-  domain: 'burglin-gnomes.org',
   fullDomain: 'https://burglin-gnomes.org',
   siteName: "Burglin' Gnomes Guide",
   defaultOgImage: '/images/logo.webp',

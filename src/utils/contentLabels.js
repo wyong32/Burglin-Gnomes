@@ -202,27 +202,6 @@ function bestiaryKeywords(entry) {
     .join(', ')
 }
 
-export const displayStatus = (status) => {
-  const labels = {
-    Confirmed: 'Verified',
-    Observed: 'Seen in-game',
-    Inferred: 'Early notes',
-    'Retest Required': 'Needs recheck',
-    'Patch Sensitive': 'May change with patches',
-    'Needs Testing': 'Still testing',
-  }
-
-  return labels[status] || status
-}
-
-export const statusClass = (status) => {
-  if (['Confirmed', 'Verified', 'Observed', 'Seen in-game'].includes(status)) return 'confirmed'
-  if (['Patch Sensitive', 'Retest Required', 'May change with patches', 'Needs recheck'].includes(status)) {
-    return 'patch'
-  }
-  return ''
-}
-
 export const buildItemPageMeta = (item) => ({
   title: itemTitle(item),
   description: itemDescription(item),
