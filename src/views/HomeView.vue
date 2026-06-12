@@ -29,7 +29,7 @@
           </div>
         </div>
         <figure class="hero-art">
-          <img src="/images/steam-cover.jpg" alt="Burglin' Gnomes official Steam key art" />
+          <img src="/images/page-01.webp" alt="Burglin' Gnomes official Steam key art" />
         </figure>
       </div>
     </div>
@@ -43,10 +43,30 @@
           <h2>Burglin' Gnomes release date, platform, co-op size, and developer</h2>
         </div>
         <div class="fact-strip">
-          <article v-for="fact in facts" :key="fact.label">
-            <span>{{ fact.label }}</span>
-            <strong>{{ fact.value }}</strong>
-            <p>{{ fact.note }}</p>
+          <article>
+            <span>Current build</span>
+            <strong>Full release</strong>
+            <p>Steam launch: June 10, 2026</p>
+          </article>
+          <article>
+            <span>Platform</span>
+            <strong>PC / Steam</strong>
+            <p>Windows only on the store page</p>
+          </article>
+          <article>
+            <span>Party size</span>
+            <strong>1-6 players</strong>
+            <p>Solo or online co-op squad</p>
+          </article>
+          <article>
+            <span>Win condition</span>
+            <strong>3+ tasks</strong>
+            <p>Finish at least three before extraction</p>
+          </article>
+          <article>
+            <span>Developer</span>
+            <strong>Fobri</strong>
+            <p>Online co-op action-adventure</p>
           </article>
         </div>
       </div>
@@ -65,7 +85,7 @@
           <RouterLink class="intro-band__cta" to="/beginner">Read the beginner route guide</RouterLink>
         </article>
         <figure class="intro-band__visual">
-          <img src="/images/home-img-02.jpg" alt="Burglin' Gnomes kitchen route and house item guide" />
+          <img src="/images/page-02.webp" alt="Burglin' Gnomes kitchen route and house item guide" />
         </figure>
       </div>
     </div>
@@ -80,9 +100,33 @@
           <p>Jump from your first clean run into tasks, loot, crafting, enemies, and post-patch changes.</p>
         </div>
         <div class="card-grid">
-          <RouterLink v-for="link in quickLinks" :key="link.path" class="guide-card quick-card" :to="link.path">
-            <strong>{{ link.label }}</strong>
-            <span>{{ link.note }}</span>
+          <RouterLink to="/beginner" class="guide-card quick-card">
+            <strong>Beginner</strong>
+            <span>First route, tasks, doors and windows, revive rules, and co-op fixes.</span>
+          </RouterLink>
+          <RouterLink to="/wiki" class="guide-card quick-card">
+            <strong>Wiki</strong>
+            <span>Every guide topic in one index when you need a fast answer mid-run.</span>
+          </RouterLink>
+          <RouterLink to="/items" class="guide-card quick-card">
+            <strong>Items &amp; Loot</strong>
+            <span>Materials, weapons, tools, task items, potions, ammo, and where to find them.</span>
+          </RouterLink>
+          <RouterLink to="/crafting" class="guide-card quick-card">
+            <strong>Crafting</strong>
+            <span>Well recipes, Potion Table recipes, Repackager darts, and linked materials.</span>
+          </RouterLink>
+          <RouterLink to="/base-building" class="guide-card quick-card">
+            <strong>Base Building</strong>
+            <span>Gnome-world objects, storage, crystal revival, bell extraction, and the crafting well.</span>
+          </RouterLink>
+          <RouterLink to="/bestiary" class="guide-card quick-card">
+            <strong>NPCs &amp; Enemies</strong>
+            <span>Humans, Fairy, Cat, Rat, Cockroach, Evil Gnome, Roomba, and outdoor entities.</span>
+          </RouterLink>
+          <RouterLink to="/updates" class="guide-card quick-card">
+            <strong>Updates</strong>
+            <span>Full-release notes and what to recheck after patches land.</span>
           </RouterLink>
         </div>
       </div>
@@ -98,14 +142,34 @@
         </div>
         <div class="media-band">
           <div class="card-grid plan-grid">
-            <article v-for="step in runPlan" :key="step.step" class="guide-card plan-card">
-              <b>{{ step.step }}</b>
-              <h3>{{ step.title }}</h3>
-              <p>{{ step.detail }}</p>
+            <article class="guide-card plan-card">
+              <b>01</b>
+              <h3>Read the High-Gnome task list</h3>
+              <p>The day is built around five tasks. Finish at least three before calling extraction.</p>
+            </article>
+            <article class="guide-card plan-card">
+              <b>02</b>
+              <h3>Enter through a reliable route</h3>
+              <p>Use vine windows or pipe-style entries first; the front door is not your beginner plan.</p>
+            </article>
+            <article class="guide-card plan-card">
+              <b>03</b>
+              <h3>Clear small objectives first</h3>
+              <p>Open cabinet, open window, climb, break, and small-object tasks are safer than greedy hauling.</p>
+            </article>
+            <article class="guide-card plan-card">
+              <b>04</b>
+              <h3>Search storage with intent</h3>
+              <p>Drawers, cabinets, bathroom storage, and kitchen routes are where weapons, cigarettes, utensils, and materials start paying off.</p>
+            </article>
+            <article class="guide-card plan-card">
+              <b>05</b>
+              <h3>Upgrade for fewer rescues</h3>
+              <p>Backpack, Pickaxe, Metal Bat, Spring Shoes, Potion Table, and Gnomium Gloves reduce repeated exposure.</p>
             </article>
           </div>
           <figure class="media-panel">
-            <img src="/images/home-img-03.jpg" alt="Burglin' Gnomes cabinets drawers and storage route guide" />
+            <img src="/images/page-03.webp" alt="Burglin' Gnomes cabinets drawers and storage route guide" />
           </figure>
         </div>
       </div>
@@ -121,9 +185,21 @@
           <p>The core loop is simple: break in, finish jobs, steal what helps, craft upgrades, survive threats, and improve your next run.</p>
         </div>
         <div class="card-grid">
-          <article v-for="item in searchIntent" :key="item.title" class="guide-card">
-            <h3>{{ item.title }}</h3>
-            <p>{{ item.detail }}</p>
+          <article class="guide-card">
+            <h3>What is Burglin' Gnomes?</h3>
+            <p>A first-person online co-op heist game where tiny gnomes break into human homes, complete High-Gnome jobs, steal loot, craft gear, and survive cats, humans, and household chaos.</p>
+          </article>
+          <article class="guide-card">
+            <h3>How do tasks work?</h3>
+            <p>The High-Gnome gives job objectives. Finish enough of them or the run can fail even if your backpack looks profitable.</p>
+          </article>
+          <article class="guide-card">
+            <h3>What should I craft first?</h3>
+            <p>Backpack, Pickaxe, Metal Bat, Spring Shoes, Potion Table, Repackager, and Gnomium Gloves are the core early upgrades to compare.</p>
+          </article>
+          <article class="guide-card">
+            <h3>What can kill a run?</h3>
+            <p>Humans, cats, rats, cockroaches, Evil Gnomes, Roomba traps, heavy loot, bad exits, lag, and all-dead failure are the main risks.</p>
           </article>
         </div>
       </div>
@@ -143,10 +219,30 @@
             <span>Where</span>
             <span>Action</span>
           </div>
-          <div v-for="item in priorityTable" :key="item.target" class="table-row priority-row">
-            <strong>{{ item.target }}</strong>
-            <span>{{ item.room }}</span>
-            <span>{{ item.action }}</span>
+          <div class="table-row priority-row">
+            <strong>Task sheet</strong>
+            <span>Spawn / start area</span>
+            <span>Read before looting</span>
+          </div>
+          <div class="table-row priority-row">
+            <strong>Small household items</strong>
+            <span>Bathroom, kitchen, clutter rooms</span>
+            <span>Use for early objectives</span>
+          </div>
+          <div class="table-row priority-row">
+            <strong>Crafting materials</strong>
+            <span>Loot path</span>
+            <span>Bank Metal, Fabric, Plastic, Ceramics, Chemicals, and Gnomium</span>
+          </div>
+          <div class="table-row priority-row">
+            <strong>Backpack</strong>
+            <span>Crafting station</span>
+            <span>Prioritize carry capacity</span>
+          </div>
+          <div class="table-row priority-row">
+            <strong>Revive and extraction</strong>
+            <span>Crystal, bell, or teammate rescue line</span>
+            <span>Know the rescue plan before fighting</span>
           </div>
         </div>
       </div>
@@ -171,11 +267,35 @@
             <span>Route</span>
             <span>Run note</span>
           </div>
-          <div v-for="item in firstTasks" :key="item.task" class="table-row first-task-row">
-            <strong>{{ item.task }}</strong>
-            <span>{{ item.target }}</span>
-            <span>{{ item.route }}</span>
-            <span>{{ item.note }}</span>
+          <div class="table-row first-task-row">
+            <strong>Break TV</strong>
+            <span>1</span>
+            <span>Living room or TV room</span>
+            <span>Learn object breaking before the house gets loud.</span>
+          </div>
+          <div class="table-row first-task-row">
+            <strong>Climb Kitchen Counter</strong>
+            <span>1</span>
+            <span>Kitchen</span>
+            <span>Practice vertical movement before harder window routes.</span>
+          </div>
+          <div class="table-row first-task-row">
+            <strong>Clonk Tutorial</strong>
+            <span>1</span>
+            <span>Tutorial route</span>
+            <span>Learn hit timing before using weapons in a live run.</span>
+          </div>
+          <div class="table-row first-task-row">
+            <strong>Open Cabinet</strong>
+            <span>1</span>
+            <span>Kitchen, bathroom, storage rooms</span>
+            <span>Open containers before calling a room empty.</span>
+          </div>
+          <div class="table-row first-task-row">
+            <strong>Open Window</strong>
+            <span>1</span>
+            <span>Exterior wall or room window</span>
+            <span>This is the safest early entry and exit skill.</span>
           </div>
         </div>
       </div>
@@ -189,17 +309,22 @@
           <span class="eyebrow">Learn next</span>
           <h2>Routes, tools, threats, and areas to learn next</h2>
           <p>
-            After the first task set, these are the pages we open most: entry routes, carry upgrades,
-            utility items, major threats, and the rooms or outdoor areas that decide most runs.
+            After the first five tasks, route the house with intent: know how to get in, which rooms
+            pay off early, what to craft first, and which threats end a run before extraction.
           </p>
         </div>
         <div class="tool-grid">
-          <article v-for="item in toolsToLearn" :key="item.name" class="guide-card tool-card">
+          <RouterLink
+            v-for="item in learnNext"
+            :key="item.path"
+            :to="item.path"
+            class="guide-card tool-card"
+          >
             <img :src="item.image" :alt="item.name" />
             <span>{{ item.role }}</span>
             <h3>{{ item.name }}</h3>
             <p>{{ item.note }}</p>
-          </article>
+          </RouterLink>
         </div>
       </div>
     </div>
@@ -243,9 +368,21 @@
           <h2>Burglin Gnomes FAQ for new and returning players</h2>
         </div>
         <div class="card-grid">
-          <article v-for="item in faq" :key="item.question" class="guide-card">
-            <h3>{{ item.question }}</h3>
-            <p>{{ item.answer }}</p>
+          <article class="guide-card">
+            <h3>Is Burglin' Gnomes co-op?</h3>
+            <p>Yes. Steam lists online co-op for up to six players, including solo play with friends.</p>
+          </article>
+          <article class="guide-card">
+            <h3>When did Burglin' Gnomes release?</h3>
+            <p>The Steam release date is June 10, 2026. We update guides as the live game changes.</p>
+          </article>
+          <article class="guide-card">
+            <h3>Is Burglin Gnomes on console or mobile?</h3>
+            <p>Steam currently lists Windows PC only. We have not seen official console or mobile versions announced.</p>
+          </article>
+          <article class="guide-card">
+            <h3>What should new players do first?</h3>
+            <p>Read the task list, enter through a forgiving route like a vine window, finish three small tasks, then loot only when extraction is already safe.</p>
           </article>
         </div>
       </div>
@@ -257,7 +394,6 @@
 <script setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import homeData from '../data/homeData'
 
 const router = useRouter()
 const searchQuery = ref('')
@@ -271,14 +407,50 @@ function submitSearch() {
   router.push({ path: '/search', query: { q } })
 }
 
-const facts = homeData.find((section) => section.key === 'facts').items
-const quickLinks = homeData.find((section) => section.key === 'quickLinks').items
-const runPlan = homeData.find((section) => section.key === 'runPlan').items
-const searchIntent = homeData.find((section) => section.key === 'searchIntent').items
-const priorityTable = homeData.find((section) => section.key === 'priorityTable').items
-const firstTasks = homeData.find((section) => section.key === 'firstTasks').items
-const toolsToLearn = homeData.find((section) => section.key === 'toolsToLearn').items
-const faq = homeData.find((section) => section.key === 'faq').items
+const learnNext = [
+  {
+    name: 'Human World Entry',
+    role: 'Entry route',
+    path: '/beginner#human-world',
+    image: '/images/the-tree.webp',
+    note: 'Vine windows and drain pipe are the reliable first entries — not the front door.',
+  },
+  {
+    name: 'Human House',
+    role: 'Main area',
+    path: '/areas/human-house',
+    image: '/images/human-world.webp',
+    note: 'Five tasks roll here. Finish three before chasing extra loot or deep rooms.',
+  },
+  {
+    name: 'Kitchen',
+    role: 'Task room',
+    path: '/areas/kitchen',
+    image: '/images/page-02.webp',
+    note: 'Counters, cabinets, utensils, and break objectives stack in one high-value room.',
+  },
+  {
+    name: 'Backpack',
+    role: 'First craft',
+    path: '/crafting/backpack',
+    image: '/images/items/item-backpack.png',
+    note: 'Extra carry slots cut return trips — the upgrade we craft before risky farming.',
+  },
+  {
+    name: 'Cabinets and Drawers',
+    role: 'Storage route',
+    path: '/areas/cabinets-drawers',
+    image: '/images/extracted/area-drawer.png',
+    note: 'Cigarettes, utensils, weapons, and small steal tasks hide behind doors you must open.',
+  },
+  {
+    name: 'Cat',
+    role: 'Outdoor threat',
+    path: '/bestiary/cat',
+    image: '/images/extracted/npc-cat.png',
+    note: 'Treat the lawn like a kill zone until you know the cat path and when to stay indoors.',
+  },
+]
 </script>
 
 <style scoped>
@@ -459,6 +631,19 @@ const faq = homeData.find((section) => section.key === 'faq').items
   align-content: start;
   padding: 12px;
   background: #fff5db;
+  color: inherit;
+  text-decoration: none;
+  transition:
+    border-color 180ms ease,
+    transform 180ms ease,
+    background 180ms ease;
+}
+
+.tool-card:hover,
+.tool-card:focus-visible {
+  border-color: var(--color-ink);
+  outline: none;
+  transform: translateY(-3px);
 }
 
 .tool-card img {

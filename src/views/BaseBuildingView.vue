@@ -13,7 +13,7 @@
             </p>
           </div>
           <figure class="hero-art">
-            <img src="/images/home-img-03.jpg" alt="Burglin' Gnomes gnome world base" />
+            <img src="/images/page-06.webp" alt="Burglin' Gnomes gnome world base" />
           </figure>
         </div>
 
@@ -60,7 +60,7 @@
                     </div>
                   </article>
                   <figure class="split-panel__media">
-                    <img :src="basePlaceholder(gnomeWorld.name, 'lg')" :alt="gnomeWorld.name" />
+                    <img :src="gnomeWorld.image" :alt="gnomeWorld.name" />
                   </figure>
                 </div>
                 <article class="note-panel">
@@ -84,7 +84,7 @@
               <div class="zone-stack">
                 <div class="split-panel split-panel--reverse">
                   <figure class="split-panel__media">
-                    <img :src="basePlaceholder(humanWorld.name, 'lg')" :alt="humanWorld.name" />
+                    <img :src="humanWorld.image" :alt="humanWorld.name" />
                   </figure>
                   <article class="split-panel__copy">
                     <span class="eyebrow">{{ humanWorld.type }}</span>
@@ -137,7 +137,7 @@
                   :to="`/areas/${area.slug}`"
                 >
                   <span class="tile-card__media">
-                    <img :src="basePlaceholder(area.name, 'md')" :alt="area.name" />
+                    <img :src="area.image" :alt="area.name" />
                     <span class="tile-card__badge is-none">{{ area.type }}</span>
                   </span>
                   <span class="tile-card__body">
@@ -151,7 +151,7 @@
             <section id="tree" class="guide-block">
               <h2>The Tree: spawn and respawn point</h2>
               <div class="object-panel">
-                <img :src="basePlaceholder(tree.name, 'lg')" :alt="tree.name" />
+                <img :src="tree.image" :alt="tree.name" />
                 <div class="object-panel__copy">
                   <span class="eyebrow">{{ tree.role }}</span>
                   <h3>{{ tree.name }}</h3>
@@ -171,7 +171,7 @@
               </p>
               <div class="facility-list">
                 <article v-for="object in mushroomObjects" :key="object.name" class="facility-row">
-                  <img :src="basePlaceholder(object.name, 'sm')" :alt="object.name" />
+                  <img :src="object.image" :alt="object.name" />
                   <div class="facility-row__copy">
                     <small>{{ object.role }}</small>
                     <h3>{{ object.name }}</h3>
@@ -192,7 +192,7 @@
             <section id="well" class="guide-block">
               <h2>The Well: craft backpack, pickaxe, metal bat, shoes, and potions</h2>
               <div class="object-panel object-panel--well">
-                <img :src="basePlaceholder(well.name, 'lg')" :alt="well.name" />
+                <img :src="well.image" :alt="well.name" />
                 <div class="object-panel__copy">
                   <span class="eyebrow">{{ well.role }}</span>
                   <h3>{{ well.name }}</h3>
@@ -269,27 +269,6 @@ import PageSidebar from '../components/PageSidebar.vue'
 import areasData from '../data/areasData'
 import baseData from '../data/baseData'
 
-const placeholderSizes = {
-  hero: [640, 360],
-  lg: [400, 280],
-  md: [300, 200],
-  sm: [88, 88],
-}
-
-function basePlaceholder(label, size = 'md') {
-  const [width, height] = placeholderSizes[size] ?? placeholderSizes.md
-  const text = String(label)
-    .replace(/[^a-zA-Z0-9 ]/g, '')
-    .trim()
-    .split(/\s+/)
-    .map((part) => part.charAt(0))
-    .join('')
-    .slice(0, 6)
-    .toUpperCase() || 'IMG'
-
-  return `https://placehold.co/${width}x${height}/f4e8c6/28724f?text=${encodeURIComponent(text)}`
-}
-
 const baseSidebarSections = [
   { id: 'gnome-world', label: 'Gnome World', href: '#gnome-world' },
   { id: 'human-world', label: 'Human World', href: '#human-world' },
@@ -305,12 +284,16 @@ const zones = baseData.find((section) => section.key === 'zones').items
 const objects = baseData.find((section) => section.key === 'objects').items
 const checklist = baseData.find((section) => section.key === 'checklist').items
 
-const gnomeWorld = zones.find((zone) => zone.name === 'Gnome World')
-const humanWorld = zones.find((zone) => zone.name === 'Human World')
-const tree = objects.find((object) => object.name === 'The Tree')
-const well = objects.find((object) => object.name === 'The Well')
-const mushroomObjects = ['Mushroom House', 'Storage Chest', 'Purple Crystal', 'Spirit Catcher', 'Bell']
-  .map((name) => objects.find((object) => object.name === name))
+function findById(items, id) {
+  return items.find((item) => item.id === id)
+}
+
+const gnomeWorld = findById(zones, 'gnome-world')
+const humanWorld = findById(zones, 'human-world')
+const tree = findById(objects, 'tree')
+const well = findById(objects, 'well')
+const mushroomObjects = ['mushroom-house', 'storage-chest', 'purple-crystal', 'spirit-catcher', 'bell']
+  .map((id) => findById(objects, id))
   .filter(Boolean)
 </script>
 

@@ -13,7 +13,7 @@
             </p>
           </div>
           <figure class="hero-art">
-            <img src="/images/updates-page-01.webp" alt="Burglin' Gnomes update and extraction bell" />
+            <img src="/images/page-08.webp" alt="Burglin' Gnomes update and extraction bell" />
           </figure>
         </div>
 
@@ -37,9 +37,29 @@
                   <span>Fact</span>
                   <span>Value</span>
                 </div>
-                <div v-for="fact in releaseFacts" :key="fact.label" class="table-row release-row">
-                  <strong>{{ fact.label }}</strong>
-                  <span>{{ fact.value }}</span>
+                <div class="table-row release-row">
+                  <strong>Release date</strong>
+                  <span>June 10, 2026</span>
+                </div>
+                <div class="table-row release-row">
+                  <strong>Store</strong>
+                  <span>Steam app 3844970</span>
+                </div>
+                <div class="table-row release-row">
+                  <strong>Supported platform</strong>
+                  <span>Windows PC</span>
+                </div>
+                <div class="table-row release-row">
+                  <strong>Player count</strong>
+                  <span>1-6 players online co-op</span>
+                </div>
+                <div class="table-row release-row">
+                  <strong>Developer / publisher</strong>
+                  <span>Fobri</span>
+                </div>
+                <div class="table-row release-row">
+                  <strong>Core loop</strong>
+                  <span>Complete five listed tasks when possible, finish at least three, extract, bank loot, craft upgrades, repeat</span>
                 </div>
               </div>
             </section>
@@ -51,18 +71,58 @@
                 crafting links, outdoor routes, and enemy behavior have the highest impact on live runs.
               </p>
               <div class="preview-grid" aria-label="Release guide priorities">
-                <RouterLink
-                  v-for="(item, index) in releasePreview"
-                  :key="item.title"
-                  :to="item.path"
-                  class="preview-card"
-                >
-                  <img :src="updatesPlaceholder(item.title, 'sm')" :alt="item.title" />
+                <RouterLink to="/beginner#first-tasks" class="preview-card">
+                  <img src="https://placehold.co/40x40/ffdac1/6B9B7B?text=" alt="Full-release task loop" />
                   <div>
-                    <small>{{ String(index + 1).padStart(2, '0') }} / {{ item.type }}</small>
-                    <h3>{{ item.title }}</h3>
-                    <p>{{ item.detail }}</p>
-                    <span class="preview-card__target">{{ item.target }}</span>
+                    <small>01 / Task routing</small>
+                    <h3>Full-release task loop</h3>
+                    <p>Each day gives a task list. Three completed tasks are the practical safety line before extraction; five tasks are the clean route goal when the house stays under control.</p>
+                    <span class="preview-card__target">Beginner task guide</span>
+                  </div>
+                </RouterLink>
+                <RouterLink to="/items" class="preview-card">
+                  <img src="https://placehold.co/40x40/ffdac1/6B9B7B?text=" alt="House weapons and storage loot" />
+                  <div>
+                    <small>02 / Items</small>
+                    <h3>House weapons and storage loot</h3>
+                    <p>Gun, Taser, Pepper Spray, Grenade, Rocket Launcher, Landmine, Firework, Chainsaw, utensils, and task items now need item pages linked to rooms and storage routes.</p>
+                    <span class="preview-card__target">Items database</span>
+                  </div>
+                </RouterLink>
+                <RouterLink to="/crafting" class="preview-card">
+                  <img src="https://placehold.co/40x40/ffdac1/6B9B7B?text=" alt="Crafting stations and base objects" />
+                  <div>
+                    <small>03 / Crafting</small>
+                    <h3>Crafting stations and base objects</h3>
+                    <p>The Well, Potion Table, Repackager, crystal, bell, and storage all affect pre-run planning. Recipe pages should link back to materials, tools, and areas.</p>
+                    <span class="preview-card__target">Crafting pages</span>
+                  </div>
+                </RouterLink>
+                <RouterLink to="/bestiary" class="preview-card">
+                  <img src="https://placehold.co/40x40/ffdac1/6B9B7B?text=" alt="NPCs, enemies, and outdoor animals" />
+                  <div>
+                    <small>04 / Bestiary</small>
+                    <h3>NPCs, enemies, and outdoor animals</h3>
+                    <p>Human, Fairy, Cat, Rat, Cockroach, Evil Gnome, Vacuum Robot, Mole, Boar, Pitbull, Sealman, Seagull, Jonathan, and Bibi now have route pages or watch-list notes.</p>
+                    <span class="preview-card__target">NPCs and enemies</span>
+                  </div>
+                </RouterLink>
+                <RouterLink to="/areas/human-house" class="preview-card">
+                  <img src="https://placehold.co/40x40/ffdac1/6B9B7B?text=" alt="Outdoor entry and area pages" />
+                  <div>
+                    <small>05 / Areas</small>
+                    <h3>Outdoor entry and area pages</h3>
+                    <p>Vine windows, lawn paths, greenhouse and garden routes, garage/shed storage, weapon-safe checks, kitchen, bathroom, and cabinet pages now connect items to where they are found.</p>
+                    <span class="preview-card__target">Area guide pages</span>
+                  </div>
+                </RouterLink>
+                <RouterLink to="/beginner#death-revival" class="preview-card">
+                  <img src="https://placehold.co/40x40/ffdac1/6B9B7B?text=" alt="Co-op revive and performance checks" />
+                  <div>
+                    <small>06 / Co-op</small>
+                    <h3>Co-op revive and performance checks</h3>
+                    <p>Crystal revival, teammate rescue, all-dead failure, lag, disconnects, and virtual memory fixes remain high-search beginner topics after launch.</p>
+                    <span class="preview-card__target">Beginner fixes</span>
                   </div>
                 </RouterLink>
               </div>
@@ -82,9 +142,45 @@
           <p>Use this list before copying an old route into the current build, especially after AI, task, item, or network changes.</p>
         </div>
         <div class="data-table">
-          <div v-for="(item, index) in patchChecklist" :key="item" class="table-row queue-row">
-            <strong>{{ String(index + 1).padStart(2, '0') }}</strong>
-            <span>{{ item }}</span>
+          <div class="table-row queue-row">
+            <strong>01</strong>
+            <span>Daily task count, three-task extraction rule, all-dead fail behavior, and task completion triggers.</span>
+          </div>
+          <div class="table-row queue-row">
+            <strong>02</strong>
+            <span>Tutorial task sequence: Break TV, Climb Kitchen Counter, Clonk Tutorial, Open Cabinet, and Open Window.</span>
+          </div>
+          <div class="table-row queue-row">
+            <strong>03</strong>
+            <span>Backpack, Pickaxe, Metal Bat, Spring Shoes, Potion Table, Repackager, and Gnomium Gloves recipe costs.</span>
+          </div>
+          <div class="table-row queue-row">
+            <strong>04</strong>
+            <span>Metal Bat, Marble Gun, Blowgun, potion darts, and enemy response after combat patches.</span>
+          </div>
+          <div class="table-row queue-row">
+            <strong>05</strong>
+            <span>Cabinet and drawer loot behavior, including weapons, cigarettes, task items, and special ingredients.</span>
+          </div>
+          <div class="table-row queue-row">
+            <strong>06</strong>
+            <span>Potion duration, dart delivery, valid targets, and Repackager output count.</span>
+          </div>
+          <div class="table-row queue-row">
+            <strong>07</strong>
+            <span>Medical Terminal charges, CPR revive reliability, and all-dead fail behavior.</span>
+          </div>
+          <div class="table-row queue-row">
+            <strong>08</strong>
+            <span>Human, Cat, Rat, Cockroach, Evil Gnome, Vacuum Robot, Mole, Boar, Pitbull, Jonathan, Bibi, Sealman, and Seagull behavior.</span>
+          </div>
+          <div class="table-row queue-row">
+            <strong>09</strong>
+            <span>Vine window entry reliability across house variants and backup exits.</span>
+          </div>
+          <div class="table-row queue-row">
+            <strong>10</strong>
+            <span>Fire, flooded toilet, ragdoll, and other physics hazards after network patches.</span>
           </div>
         </div>
       </div>
@@ -99,9 +195,29 @@
           <h2>Which systems can change your route first</h2>
         </div>
         <div class="card-grid">
-          <article v-for="item in patchRules" :key="item.title" class="guide-card">
-            <h3>{{ item.title }}</h3>
-            <p>{{ item.detail }}</p>
+          <article class="guide-card">
+            <h3>Tasks</h3>
+            <p>Task wording, valid objects, room hints, objective counts, and completion triggers are the first things to verify after patches.</p>
+          </article>
+          <article class="guide-card">
+            <h3>Items</h3>
+            <p>Weapons, materials, potion ingredients, ammo, cigarettes, utensils, and special loot can change route value when storage pools shift.</p>
+          </article>
+          <article class="guide-card">
+            <h3>Crafting</h3>
+            <p>Recipe costs, station unlocks, gear effects, potion output, and Repackager dart counts should match the current build before guides quote them.</p>
+          </article>
+          <article class="guide-card">
+            <h3>NPCs and enemies</h3>
+            <p>Detection range, pursuit, grabs, rescue windows, hiding spots, and line of sight can invalidate old survival advice quickly.</p>
+          </article>
+          <article class="guide-card">
+            <h3>Areas</h3>
+            <p>Vine windows, outdoor paths, kitchen cabinets, bathroom storage, garage/shed routes, weapon-safe routes, and extraction lines drive item discovery.</p>
+          </article>
+          <article class="guide-card">
+            <h3>Co-op stability</h3>
+            <p>Object sync, ragdolls, teammate rescue, disconnects, lag, and virtual memory fixes affect whether a route works in a real squad.</p>
           </article>
         </div>
       </div>
@@ -112,26 +228,6 @@
 
 <script setup>
 import PageSidebar from '../components/PageSidebar.vue'
-import updatesData from '../data/updatesData'
-
-const placeholderSizes = {
-  hero: [640, 360],
-  sm: [88, 88],
-}
-
-function updatesPlaceholder(label, size = 'sm') {
-  const [width, height] = placeholderSizes[size] ?? placeholderSizes.sm
-  const text = String(label)
-    .replace(/[^a-zA-Z0-9 ]/g, '')
-    .trim()
-    .split(/\s+/)
-    .map((part) => part.charAt(0))
-    .join('')
-    .slice(0, 6)
-    .toUpperCase() || 'IMG'
-
-  return `https://placehold.co/${width}x${height}/f4e8c6/28724f?text=${encodeURIComponent(text)}`
-}
 
 const updatesSidebarSections = [
   { id: 'release-facts', label: 'Release facts', href: '#release-facts' },
@@ -139,11 +235,6 @@ const updatesSidebarSections = [
   { id: 'patch-checklist', label: 'Post-patch checklist', href: '#patch-checklist' },
   { id: 'patch-rules', label: 'When patches drop', href: '#patch-rules' },
 ]
-
-const releaseFacts = updatesData.find((section) => section.key === 'releaseFacts').items
-const releasePreview = updatesData.find((section) => section.key === 'releasePreview').items
-const patchChecklist = updatesData.find((section) => section.key === 'patchChecklist').items
-const patchRules = updatesData.find((section) => section.key === 'patchRules').items
 </script>
 
 <style scoped>

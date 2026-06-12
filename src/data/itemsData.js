@@ -1,6 +1,14 @@
 import { buildItemPageMeta } from '../utils/contentLabels.js'
 
-const icon = (slug) => `/images/items/item-${slug}.png`
+/**
+ * 物品数据结构说明：
+ * - slug：URL 路径，如 /items/metal-bat
+ * - name：页面显示名称
+ * - image：图片路径，写在字段里，与 slug 无关
+ *   改 slug/name 时请保留 image，或手动改成实际文件名
+ * - 未写 image 时用 DEFAULT_ITEM_IMAGE 占位
+ */
+const DEFAULT_ITEM_IMAGE = 'https://placehold.co/40x40/ffdac1/6B9B7B?text='
 
 const withItemTdk = (items) => items.map((item) => ({ ...item, tdk: buildItemPageMeta(item) }))
 
@@ -31,7 +39,7 @@ function makeItem({
   source,
   use,
   advice,
-  image = icon(slug),
+  image = DEFAULT_ITEM_IMAGE,
   relatedItems = [],
   areas = [],
   acquisition = [],
@@ -58,12 +66,25 @@ function makeItem({
   }
 }
 
-function recipeItem({ slug, name, category, type, priority, materials, use, advice, relatedItems = [], sections = [] }) {
+function recipeItem({
+  slug,
+  name,
+  image,
+  category,
+  type,
+  priority,
+  materials,
+  use,
+  advice,
+  relatedItems = [],
+  sections = [],
+}) {
   const recipeText = sentenceList(materials)
 
   return makeItem({
     slug,
     name,
+    image: image ?? `/images/items/item-${slug}.png`,
     category,
     type,
     priority,
@@ -78,11 +99,13 @@ function recipeItem({ slug, name, category, type, priority, materials, use, advi
   })
 }
 
-function potionItem({ key, ingredient, effectName, priority, use }) {
+function potionItem({ key, ingredient, effectName, priority, use, image }) {
+  const slug = `${key}-potion`
   const name = `${titleCase(key)} Potion`
   return makeItem({
-    slug: `${key}-potion`,
+    slug,
     name,
+    image: image ?? `/images/items/item-${slug}.png`,
     category: 'Potions',
     type: 'Potion / consumable',
     priority,
@@ -104,11 +127,13 @@ function potionItem({ key, ingredient, effectName, priority, use }) {
   })
 }
 
-function dartItem({ key, effectName, priority }) {
+function dartItem({ key, effectName, priority, image }) {
+  const slug = `${key}-dart`
   const name = `${titleCase(key)} Dart`
   return makeItem({
-    slug: `${key}-dart`,
+    slug,
     name,
+    image: image ?? `/images/items/item-${slug}.png`,
     category: 'Ammo',
     type: 'Blowgun ammo',
     priority,
@@ -134,6 +159,7 @@ const materials = [
   makeItem({
     slug: 'ceramics',
     name: 'Ceramics',
+    image: '/images/items/item-ceramics.png',
     category: 'Materials',
     type: 'Core resource',
     priority: 'Very high',
@@ -157,6 +183,7 @@ const materials = [
   makeItem({
     slug: 'chemicals',
     name: 'Chemicals',
+    image: '/images/items/item-chemicals.png',
     category: 'Materials',
     type: 'Core resource',
     priority: 'High',
@@ -176,6 +203,7 @@ const materials = [
   makeItem({
     slug: 'fabric',
     name: 'Fabric',
+    image: '/images/items/item-fabric.png',
     category: 'Materials',
     type: 'Core resource',
     priority: 'High',
@@ -195,6 +223,7 @@ const materials = [
   makeItem({
     slug: 'metal',
     name: 'Metal',
+    image: '/images/items/item-metal.png',
     category: 'Materials',
     type: 'Core resource',
     priority: 'High',
@@ -218,6 +247,7 @@ const materials = [
   makeItem({
     slug: 'plastic',
     name: 'Plastic',
+    image: '/images/items/item-plastic.png',
     category: 'Materials',
     type: 'Core resource',
     priority: 'High',
@@ -237,6 +267,7 @@ const materials = [
   makeItem({
     slug: 'gnomium',
     name: 'Gnomium',
+    image: '/images/items/item-gnomium.png',
     category: 'Materials',
     type: 'Rare resource',
     priority: 'Very high',
@@ -260,6 +291,7 @@ const materials = [
   makeItem({
     slug: 'poopling',
     name: 'Poopling',
+    image: '/images/items/item-poopling.png',
     category: 'Materials',
     type: 'Special potion ingredient',
     priority: 'Potion dependent',
@@ -275,6 +307,7 @@ const materials = [
   makeItem({
     slug: 'scraplings',
     name: 'Scraplings',
+    image: '/images/items/item-scraplings.png',
     category: 'Materials',
     type: 'Special potion ingredient',
     priority: 'Potion dependent',
@@ -290,6 +323,7 @@ const materials = [
   makeItem({
     slug: 'tusk',
     name: 'Tusk',
+    image: '/images/items/item-tusk.png',
     category: 'Materials',
     type: 'Special potion ingredient',
     priority: 'Potion dependent',
@@ -308,6 +342,7 @@ const weapons = [
   recipeItem({
     slug: 'metal-bat',
     name: 'Metal Bat',
+    image: '/images/items/item-metal-bat.png',
     category: 'Weapons',
     type: 'Hand weapon',
     priority: 'High after resource setup',
@@ -326,6 +361,7 @@ const weapons = [
   makeItem({
     slug: 'branch',
     name: 'Branch',
+    image: '/images/items/item-branch.png',
     category: 'Weapons',
     type: 'Improvised hand item',
     priority: 'Situational',
@@ -341,6 +377,7 @@ const weapons = [
   recipeItem({
     slug: 'slingshot',
     name: 'Slingshot',
+    image: '/images/items/item-slingshot.png',
     category: 'Weapons',
     type: 'Ranged weapon',
     priority: 'Route dependent',
@@ -353,6 +390,7 @@ const weapons = [
   recipeItem({
     slug: 'marble-gun',
     name: 'Marble Gun',
+    image: '/images/items/item-marble-gun.png',
     category: 'Weapons',
     type: 'Ranged weapon',
     priority: 'High if you have Marble ammo',
@@ -374,6 +412,7 @@ const weapons = [
   recipeItem({
     slug: 'boxing-gloves',
     name: 'Boxing Gloves',
+    image: '/images/items/item-boxing-gloves.png',
     category: 'Weapons',
     type: 'Hand weapon',
     priority: 'Situational',
@@ -386,6 +425,7 @@ const weapons = [
   recipeItem({
     slug: 'blowgun',
     name: 'Blowgun',
+    image: '/images/items/item-blowgun.png',
     category: 'Weapons',
     type: 'Status ranged weapon',
     priority: 'High if preparing darts',
@@ -739,6 +779,7 @@ const tools = [
   recipeItem({
     slug: 'pickaxe',
     name: 'Pickaxe',
+    image: '/images/items/item-pickaxe.png',
     category: 'Tools',
     type: 'Resource / object tool',
     priority: 'High for resource farming',
@@ -760,6 +801,7 @@ const tools = [
   recipeItem({
     slug: 'eyeglass',
     name: 'Eyeglass',
+    image: '/images/items/item-eyeglass.png',
     category: 'Tools',
     type: 'Inspection tool',
     priority: 'Information dependent',
@@ -778,6 +820,7 @@ const tools = [
   recipeItem({
     slug: 'grappling-hook',
     name: 'Grappling Hook',
+    image: '/images/items/item-grappling-hook.png',
     category: 'Tools',
     type: 'Mobility tool',
     priority: 'High on vertical routes',
@@ -802,6 +845,7 @@ const gear = [
   recipeItem({
     slug: 'backpack',
     name: 'Backpack',
+    image: '/images/items/item-backpack.png',
     category: 'Gear',
     type: 'Carry gear',
     priority: 'Top early craft',
@@ -814,6 +858,7 @@ const gear = [
   recipeItem({
     slug: 'spring-shoes',
     name: 'Spring Shoes',
+    image: '/images/items/item-spring-shoes.png',
     category: 'Gear',
     type: 'Mobility gear',
     priority: 'Route dependent',
@@ -829,6 +874,7 @@ const gear = [
   recipeItem({
     slug: 'gnomium-gloves',
     name: 'Gnomium Gloves',
+    image: '/images/items/item-gnomium-gloves.png',
     category: 'Gear',
     type: 'Hand gear',
     priority: 'High for Gnomium interaction routes',
@@ -850,6 +896,7 @@ const gear = [
   recipeItem({
     slug: 'glider',
     name: 'Glider',
+    image: '/images/items/item-glider.png',
     category: 'Gear',
     type: 'Air mobility gear',
     priority: 'High on height-heavy routes',
@@ -871,6 +918,7 @@ const gear = [
   recipeItem({
     slug: 'helmet',
     name: 'Helmet',
+    image: '/images/items/item-helmet.png',
     category: 'Gear',
     type: 'Protective wearable',
     priority: 'Threat dependent',
@@ -889,6 +937,7 @@ const gear = [
   recipeItem({
     slug: 'glue-gloves',
     name: 'Glue Gloves',
+    image: '/images/items/item-glue-gloves.png',
     category: 'Gear',
     type: 'Climbing hand gear',
     priority: 'Route dependent',
@@ -910,6 +959,7 @@ const gear = [
   makeItem({
     slug: 'fairywings',
     name: 'Fairywings',
+    image: '/images/items/item-fairywings.png',
     category: 'Gear',
     type: 'Special gear',
     priority: 'Special-source dependent',
@@ -935,6 +985,7 @@ const taskItems = [
   makeItem({
     slug: 'music-box',
     name: 'Music Box',
+    image: '/images/items/item-music-box.png',
     category: 'Task Items',
     type: 'Special carried item',
     priority: 'Task dependent',
@@ -950,6 +1001,7 @@ const taskItems = [
   makeItem({
     slug: 'cigarette',
     name: 'Cigarette',
+    image: '/images/items/item-cigarette.png',
     category: 'Task Items',
     type: 'Small carried item',
     priority: 'Task dependent',
@@ -965,6 +1017,7 @@ const taskItems = [
   makeItem({
     slug: 'papyrus',
     name: 'Papyrus',
+    image: '/images/items/item-papyrus.png',
     category: 'Task Items',
     type: 'Special document item',
     priority: 'Task dependent',
@@ -1044,6 +1097,7 @@ const ammo = [
   makeItem({
     slug: 'marble',
     name: 'Marble',
+    image: '/images/items/item-marble.png',
     category: 'Ammo',
     type: 'Projectile ammo',
     priority: 'High with Marble Gun',

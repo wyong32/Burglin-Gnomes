@@ -3,10 +3,7 @@ import areasData from '../data/areasData.js'
 import baseData from '../data/baseData.js'
 import craftingData from '../data/craftingData.js'
 import enemiesData from '../data/enemiesData.js'
-import homeData from '../data/homeData.js'
 import itemsData from '../data/itemsData.js'
-import updatesData from '../data/updatesData.js'
-import wikiData from '../data/wikiData.js'
 import { routeSeo } from '../router/routeSeo.js'
 
 function getSectionItems(data, key) {
@@ -64,15 +61,15 @@ function buildSearchIndex() {
   })
 
   const zoneAreaPaths = {
-    'Gnome World': '/areas/gnome-world',
-    'Human World': '/areas/human-house',
+    'gnome-world': '/areas/gnome-world',
+    'human-world': '/areas/human-house',
   }
 
   getSectionItems(baseData, 'zones').forEach((entry) => {
     addEntry(entries, {
       title: entry.name,
       summary: entry.summary,
-      path: zoneAreaPaths[entry.name] ?? '/base-building#zones',
+      path: zoneAreaPaths[entry.id] ?? '/base-building#zones',
       type: 'Base',
       image: entry.image,
       parts: [entry.type, 'base building zone'],
@@ -190,42 +187,6 @@ function buildSearchIndex() {
     })
   })
 
-  getSectionItems(wikiData, 'indexes').forEach((entry) => {
-    addEntry(entries, {
-      title: entry.title,
-      summary: entry.scope,
-      path: entry.path,
-      type: 'Wiki',
-    })
-  })
-
-  getSectionItems(wikiData, 'deepIndexes').forEach((entry) => {
-    addEntry(entries, {
-      title: entry.title,
-      summary: joinParts(entry.parent, entry.scope),
-      path: entry.path,
-      type: 'Wiki',
-    })
-  })
-
-  getSectionItems(wikiData, 'labels').forEach((entry) => {
-    addEntry(entries, {
-      title: entry.label,
-      summary: entry.meaning,
-      path: '/wiki',
-      type: 'Wiki',
-    })
-  })
-
-  getSectionItems(wikiData, 'officialFacts').forEach((entry) => {
-    addEntry(entries, {
-      title: entry.fact,
-      summary: entry.value,
-      path: '/wiki',
-      type: 'Wiki',
-    })
-  })
-
   getSectionItems(beginnerData, 'coreLoop').forEach((entry) => {
     addEntry(entries, {
       title: entry.label,
@@ -339,131 +300,6 @@ function buildSearchIndex() {
       summary: entry.fix,
       path: '/beginner#mistakes',
       type: 'Guide',
-    })
-  })
-
-  getSectionItems(updatesData, 'releaseFacts').forEach((entry) => {
-    addEntry(entries, {
-      title: entry.label,
-      summary: entry.value,
-      path: '/updates#release-facts',
-      type: 'Updates',
-      parts: [entry.status],
-    })
-  })
-
-  getSectionItems(updatesData, 'releasePreview').forEach((entry) => {
-    addEntry(entries, {
-      title: entry.title,
-      summary: entry.detail,
-      path: entry.path,
-      type: 'Updates',
-      image: entry.image,
-      parts: [entry.type, entry.priority, entry.status, entry.target],
-    })
-  })
-
-  getSectionItems(updatesData, 'patchChecklist').forEach((item, index) => {
-    addEntry(entries, {
-      title: `Patch checklist ${index + 1}`,
-      summary: item,
-      path: '/updates#patch-checklist',
-      type: 'Updates',
-    })
-  })
-
-  getSectionItems(updatesData, 'patchRules').forEach((entry) => {
-    addEntry(entries, {
-      title: entry.title,
-      summary: entry.detail,
-      path: '/updates#patch-rules',
-      type: 'Updates',
-    })
-  })
-
-  getSectionItems(homeData, 'quickLinks').forEach((entry) => {
-    addEntry(entries, {
-      title: entry.label,
-      summary: entry.note,
-      path: entry.path,
-      type: 'Page',
-    })
-  })
-
-  getSectionItems(homeData, 'runPlan').forEach((entry) => {
-    addEntry(entries, {
-      title: entry.title,
-      summary: entry.detail,
-      path: '/beginner',
-      type: 'Guide',
-      parts: [entry.step],
-    })
-  })
-
-  getSectionItems(homeData, 'searchIntent').forEach((entry) => {
-    addEntry(entries, {
-      title: entry.title,
-      summary: entry.detail,
-      path: '/',
-      type: 'Guide',
-    })
-  })
-
-  getSectionItems(homeData, 'priorityTable').forEach((entry) => {
-    addEntry(entries, {
-      title: entry.target,
-      summary: joinParts(entry.room, entry.action),
-      path: '/beginner#first-tasks',
-      type: 'Guide',
-      parts: [entry.status],
-    })
-  })
-
-  getSectionItems(homeData, 'firstTasks').forEach((entry) => {
-    addEntry(entries, {
-      title: entry.task,
-      summary: joinParts(entry.route, entry.note),
-      path: '/beginner#first-tasks',
-      type: 'Task',
-      parts: [entry.target, entry.status],
-    })
-  })
-
-  const toolPaths = {
-    'Vine Window': '/beginner#human-world',
-    Backpack: '/crafting/backpack',
-    Pickaxe: '/crafting/pickaxe',
-    'Metal Bat': '/crafting/metal-bat',
-    'Potion Table': '/areas/potion-table',
-    Cat: '/bestiary/cat',
-    'Outdoor Map Leads': '/updates#release-preview',
-  }
-
-  getSectionItems(homeData, 'toolsToLearn').forEach((entry) => {
-    addEntry(entries, {
-      title: entry.name,
-      summary: joinParts(entry.role, entry.note),
-      path: toolPaths[entry.name] ?? '/',
-      type: 'Guide',
-      image: entry.image,
-    })
-  })
-
-  getSectionItems(homeData, 'faq').forEach((entry) => {
-    addEntry(entries, {
-      title: entry.question,
-      summary: entry.answer,
-      path: '/beginner',
-      type: 'FAQ',
-    })
-  })
-
-  getSectionItems(homeData, 'facts').forEach((entry) => {
-    addEntry(entries, {
-      title: entry.label,
-      summary: joinParts(entry.value, entry.note),
-      path: '/',
-      type: 'Page',
     })
   })
 

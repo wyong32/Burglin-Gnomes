@@ -13,7 +13,7 @@
             </p>
           </div>
           <figure class="hero-art">
-            <img src="/images/crafting-page-01.webp" alt="Burglin' Gnomes crafting well and recipe guide" />
+            <img src="/images/page-05.webp" alt="Burglin' Gnomes crafting well and recipe guide" />
           </figure>
         </div>
 

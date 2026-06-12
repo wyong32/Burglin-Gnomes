@@ -13,7 +13,7 @@
             </p>
           </div>
           <figure class="hero-art">
-            <img src="/images/steam-shot-2.jpg" alt="Burglin' Gnomes gameplay screenshot" />
+            <img src="/images/page-03.webp" alt="Burglin' Gnomes gameplay screenshot" />
           </figure>
         </div>
 
@@ -34,9 +34,37 @@
                 Enemies for threat counters, and Updates after patches land.
               </p>
               <div class="card-grid">
-                <RouterLink v-for="entry in indexes" :key="entry.path" class="guide-card wiki-card" :to="entry.path">
-                  <strong>{{ entry.title }}</strong>
-                  <span>{{ entry.scope }}</span>
+                <RouterLink to="/beginner" class="guide-card wiki-card">
+                  <strong>Beginner Guide</strong>
+                  <span>First route, tasks, doors and windows, revive rules, and co-op fixes.</span>
+                </RouterLink>
+                <RouterLink to="/beginner#first-tasks" class="guide-card wiki-card">
+                  <strong>Tasks</strong>
+                  <span>How High-Gnome jobs work and which rooms to hit first.</span>
+                </RouterLink>
+                <RouterLink to="/items" class="guide-card wiki-card">
+                  <strong>Items</strong>
+                  <span>Loot, materials, weapons, tools, and what each item is for in a run.</span>
+                </RouterLink>
+                <RouterLink to="/crafting" class="guide-card wiki-card">
+                  <strong>Crafting</strong>
+                  <span>Recipes, gear upgrades, and the craft order we use on co-op nights.</span>
+                </RouterLink>
+                <RouterLink to="/base-building" class="guide-card wiki-card">
+                  <strong>Base Building</strong>
+                  <span>Gnome world, storage, purple crystal, bell extraction, and the crafting well.</span>
+                </RouterLink>
+                <RouterLink to="/wiki#area-guides" class="guide-card wiki-card">
+                  <strong>Area Guides</strong>
+                  <span>Gnome world, human house rooms, outdoor routes, and where items or threats show up.</span>
+                </RouterLink>
+                <RouterLink to="/bestiary" class="guide-card wiki-card">
+                  <strong>NPCs &amp; Enemies Bestiary</strong>
+                  <span>Humans, cats, pests, grabs, hazards, and how we survive them.</span>
+                </RouterLink>
+                <RouterLink to="/updates" class="guide-card wiki-card">
+                  <strong>Updates</strong>
+                  <span>Release facts and what we recheck after patches.</span>
                 </RouterLink>
               </div>
             </section>
@@ -80,10 +108,75 @@
                   <span>Parent page</span>
                   <span>What it answers</span>
                 </div>
-                <RouterLink v-for="entry in deepIndexes" :key="entry.title" class="table-row topic-row topic-link" :to="entry.path">
-                  <strong>{{ entry.title }}</strong>
-                  <span>{{ entry.parent }}</span>
-                  <span>{{ entry.scope }}</span>
+                <RouterLink to="/beginner#human-world" class="table-row topic-row topic-link">
+                  <strong>How to Enter the Human World</strong>
+                  <span>Beginner Guide</span>
+                  <span>Gnome-world start, inviting friends, vine window entry, and exit discipline.</span>
+                </RouterLink>
+                <RouterLink to="/beginner#first-tasks" class="table-row topic-row topic-link">
+                  <strong>First Five Tasks</strong>
+                  <span>Beginner</span>
+                  <span>Break TV, climb counter, hit practice, open cabinet, and open window routing.</span>
+                </RouterLink>
+                <RouterLink to="/beginner#first-tasks" class="table-row topic-row topic-link">
+                  <strong>Cabinet and Window Route</strong>
+                  <span>Beginner</span>
+                  <span>Container checks, kitchen counter movement, window entry, and early exit control.</span>
+                </RouterLink>
+                <RouterLink to="/beginner#first-tasks" class="table-row topic-row topic-link">
+                  <strong>Kitchen Route</strong>
+                  <span>Beginner</span>
+                  <span>Fork locations, counters, drawers, and timing around the human.</span>
+                </RouterLink>
+                <RouterLink to="/items#items-tools" class="table-row topic-row topic-link">
+                  <strong>Route Tools</strong>
+                  <span>Items</span>
+                  <span>Pickaxe, Eyeglass, Grappling Hook, and tools that change farming or movement routes.</span>
+                </RouterLink>
+                <RouterLink to="/items#items-weapons" class="table-row topic-row topic-link">
+                  <strong>Weapons That Need Practice</strong>
+                  <span>Items</span>
+                  <span>Metal Bat, Marble Gun, Blowgun, Boxing Gloves, and dart ammo before clean runs.</span>
+                </RouterLink>
+                <RouterLink to="/crafting#materials" class="table-row topic-row topic-link">
+                  <strong>Crafting Materials</strong>
+                  <span>Crafting</span>
+                  <span>Clonk, Basic Junk, Rag Strips, Plastic Blocks, and linked recipes.</span>
+                </RouterLink>
+                <RouterLink to="/base-building#mushroom-house" class="table-row topic-row topic-link">
+                  <strong>Gnome-World Base Objects</strong>
+                  <span>Base Building</span>
+                  <span>Tree, mushroom house, storage, purple crystal, bell, and crafting well.</span>
+                </RouterLink>
+                <RouterLink to="/areas/kitchen" class="table-row topic-row topic-link">
+                  <strong>Kitchen Route</strong>
+                  <span>Areas</span>
+                  <span>Counters, drawers, utensils, and timing around the human.</span>
+                </RouterLink>
+                <RouterLink to="/areas/outdoor-lawn" class="table-row topic-row topic-link">
+                  <strong>Outdoor Lawn</strong>
+                  <span>Areas</span>
+                  <span>Cat routes, Fairy trades, exterior carries, and extraction timing.</span>
+                </RouterLink>
+                <RouterLink to="/bestiary/cat" class="table-row topic-row topic-link">
+                  <strong>Surviving the Cat</strong>
+                  <span>Bestiary</span>
+                  <span>Floor control, safe distance, and gear that buys space.</span>
+                </RouterLink>
+                <RouterLink to="/bestiary/human-homeowner" class="table-row topic-row topic-link">
+                  <strong>Surviving the Human</strong>
+                  <span>Bestiary</span>
+                  <span>Line of sight, when to drop loot, and tools that create escape windows.</span>
+                </RouterLink>
+                <RouterLink to="/bestiary/vacuum-robot" class="table-row topic-row topic-link">
+                  <strong>Vacuum Robot Hazard</strong>
+                  <span>Bestiary</span>
+                  <span>Moving machine behavior, blocking risk, and route workarounds.</span>
+                </RouterLink>
+                <RouterLink to="/updates#patch-checklist" class="table-row topic-row topic-link">
+                  <strong>Post-Patch Checklist</strong>
+                  <span>Updates</span>
+                  <span>Outdoor routes, glider, ranged weapons, protective gear, and large humanoid grabs.</span>
                 </RouterLink>
               </div>
             </section>
@@ -102,9 +195,25 @@
           <p>We play the game, log what works, and say plainly when a tip still needs more time in the live build.</p>
         </div>
         <div class="card-grid">
-          <article v-for="label in labels" :key="label.label" class="guide-card">
-            <strong>{{ label.label }}</strong>
-            <p>{{ label.meaning }}</p>
+          <article class="guide-card">
+            <strong>Verified</strong>
+            <p>Matches Steam, developer posts, or behavior that has stayed stable across our sessions.</p>
+          </article>
+          <article class="guide-card">
+            <strong>Seen in-game</strong>
+            <p>Matches repeatable player sessions, but still needs more samples before it is treated as final.</p>
+          </article>
+          <article class="guide-card">
+            <strong>Still testing</strong>
+            <p>Useful tip, but we would not bet a clean run on it yet.</p>
+          </article>
+          <article class="guide-card">
+            <strong>May change with patches</strong>
+            <p>AI, items, tasks, or recipes can shift after an update — recheck before you route around it.</p>
+          </article>
+          <article class="guide-card">
+            <strong>Early notes</strong>
+            <p>Useful for routing, but not stable enough to treat as final after patches or balance changes.</p>
           </article>
         </div>
       </div>
@@ -124,9 +233,25 @@
             <span>Fact</span>
             <span>Value</span>
           </div>
-          <div v-for="fact in officialFacts" :key="fact.fact" class="table-row facts-row">
-            <strong>{{ fact.fact }}</strong>
-            <span>{{ fact.value }}</span>
+          <div class="table-row facts-row">
+            <strong>Steam app id</strong>
+            <span>3844970</span>
+          </div>
+          <div class="table-row facts-row">
+            <strong>Developer / publisher</strong>
+            <span>Fobri (© Qubrion Ltd Oy)</span>
+          </div>
+          <div class="table-row facts-row">
+            <strong>Genre tags</strong>
+            <span>Co-op, Multiplayer, First-Person, Heist, Stealth, Loot, Crafting</span>
+          </div>
+          <div class="table-row facts-row">
+            <strong>Core loop</strong>
+            <span>Break in, steal, complete High-Gnome tasks, craft equipment, upgrade home, survive threats</span>
+          </div>
+          <div class="table-row facts-row">
+            <strong>PC requirements</strong>
+            <span>Windows 10, 4 GB RAM minimum, 7 GB storage</span>
           </div>
         </div>
       </div>
@@ -138,7 +263,6 @@
 <script setup>
 import PageSidebar from '../components/PageSidebar.vue'
 import areasData from '../data/areasData'
-import wikiData from '../data/wikiData'
 
 const wikiSidebarSections = [
   { id: 'wiki-directory', label: 'Guide pages', href: '#wiki-directory' },
@@ -149,10 +273,6 @@ const wikiSidebarSections = [
 ]
 
 const areas = areasData.find((section) => section.key === 'areas').items
-const indexes = wikiData.find((section) => section.key === 'indexes').items
-const deepIndexes = wikiData.find((section) => section.key === 'deepIndexes').items
-const labels = wikiData.find((section) => section.key === 'labels').items
-const officialFacts = wikiData.find((section) => section.key === 'officialFacts').items
 </script>
 
 <style scoped>

@@ -14,7 +14,7 @@
             </p>
           </div>
           <figure class="hero-art">
-            <img src="/images/steam-shot-1.jpg" alt="Burglin' Gnomes entry route screenshot" />
+            <img src="/images/page-02.webp" alt="Burglin' Gnomes entry route screenshot" />
           </figure>
         </div>
 
@@ -107,8 +107,7 @@
                   <span>Method</span>
                 </div>
                 <div v-for="task in firstTasks" :key="task.name" class="table-row first-task-row">
-                  <RouterLink class="table-title task-link" :to="task.path">
-                    <img :src="task.image" :alt="task.name" />
+                  <RouterLink class="task-link" :to="task.path">
                     <strong>{{ task.name }}</strong>
                   </RouterLink>
                   <span>{{ task.target }}</span>
@@ -412,19 +411,6 @@ const interfaceNotes = beginnerData.find((section) => section.key === 'interface
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
-}
-
-.table-title {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.table-title img {
-  width: 42px;
-  height: 42px;
-  border-radius: 10px;
-  object-fit: cover;
 }
 
 .task-link {

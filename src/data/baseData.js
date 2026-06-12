@@ -1,11 +1,17 @@
+/**
+ * Base Building 页面数据
+ * - id：稳定标识，页面用 id 关联，不要随意修改
+ * - name：显示名称，可随意改，不影响页面逻辑
+ */
 export default [
   {
     key: 'zones',
     items: [
       {
+        id: 'gnome-world',
         name: 'Gnome World',
         type: 'Safe zone',
-        image: '/images/extracted/area-gnome-tree.png',
+        image: '/images/the-tree.webp',
         summary:
           'Pre-run island hub for storage, invites, crafting, and bell starts. Full routing notes live on the area page.',
         links: [
@@ -14,9 +20,10 @@ export default [
         ],
       },
       {
+        id: 'human-world',
         name: 'Human World',
         type: 'Task zone',
-        image: '/images/extracted/area-kitchen.png',
+        image: '/images/human-world.webp',
         summary:
           'Active task zone with extraction pressure. Room-by-room guides start on the Human House area page.',
         links: [
@@ -30,10 +37,11 @@ export default [
     key: 'objects',
     items: [
       {
+        id: 'tree',
         name: 'The Tree',
         role: 'Spawn and respawn point',
         location: 'Gnome-world island',
-        image: '/images/extracted/area-gnome-tree.png',
+        image: '/images/the-tree.webp',
         status: 'Observed',
         detail:
           'Players begin near the tree. It also works as the practical anchor point after death or failed pressure, so use it as the team regroup call.',
@@ -43,10 +51,11 @@ export default [
         ],
       },
       {
+        id: 'mushroom-house',
         name: 'Mushroom House',
         role: 'Storage and lobby utility',
         location: 'Gnome-world island',
-        image: '/images/extracted/area-gnome-tree.png',
+        image: '/images/extracted/mushroom-house.png',
         status: 'Observed',
         detail:
           'The mushroom house is where base utility belongs: storage, friend setup, and pre-run cleanup. Empty your inventory before starting a task route.',
@@ -56,10 +65,11 @@ export default [
         ],
       },
       {
+        id: 'storage-chest',
         name: 'Storage Chest',
         role: 'Loot and material storage',
         location: 'Inside or near the mushroom house',
-        image: '/images/extracted/area-cupboard.png',
+        image: '/images/extracted/storage-chest.png',
         status: 'Observed',
         detail:
           'Use the chest to bank stolen materials and task loot. A clean inventory makes it easier to carry tools, potion ingredients, weapons, and emergency items.',
@@ -69,10 +79,11 @@ export default [
         ],
       },
       {
+        id: 'purple-crystal',
         name: 'Purple Crystal',
         role: 'Friend invite and lobby utility',
         location: 'Gnome world and human-world run space',
-        image: '/images/extracted/area-crystal.png',
+        image: '/images/extracted/purple-crystal.png',
         status: 'Observed',
         detail:
           'On the island, the purple crystal is used for Steam friend invite flow and squad setup. Treat revival planning separately through the Spirit Catcher / Medical Terminal system.',
@@ -83,10 +94,11 @@ export default [
         links: [{ label: 'Death and revival', path: '/beginner#death-revival' }],
       },
       {
+        id: 'spirit-catcher',
         name: 'Spirit Catcher',
         role: 'Limited respawn furniture',
         location: 'Gnome-world base setup',
-        image: '/images/extracted/area-crystal.png',
+        image: 'https://placehold.co/40x40/ffdac1/6B9B7B?text=Spirit Catcher',
         status: 'Observed',
         detail:
           'The Medical Terminal / Spirit Catcher handles limited respawns during a day. Multiplayer has three charges, while solo play has one charge.',
@@ -97,10 +109,11 @@ export default [
         links: [{ label: 'Death and revival', path: '/beginner#death-revival' }],
       },
       {
+        id: 'bell',
         name: 'Bell',
         role: 'Start and extraction call',
         location: 'Gnome world and human-world run space',
-        image: '/images/extracted/area-bell.png',
+        image: '/images/extracted/bell.png',
         status: 'Observed',
         detail:
           'On the island, the bell starts the run. In the human world, the bell calls extraction back to the island after the team has enough task progress.',
@@ -111,6 +124,7 @@ export default [
         links: [{ label: 'Core loop', path: '/beginner#core-loop' }],
       },
       {
+        id: 'well',
         name: 'The Well',
         role: 'Crafting station',
         location: 'Gnome-world island',

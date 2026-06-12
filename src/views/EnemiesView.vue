@@ -13,7 +13,7 @@
             </p>
           </div>
           <figure class="hero-art">
-            <img src="/images/bestiary-page-01.webp" alt="Burglin' Gnomes NPCs enemies and hazards bestiary" />
+            <img src="/images/page-07.webp" alt="Burglin' Gnomes NPCs enemies and hazards bestiary" />
           </figure>
         </div>
 

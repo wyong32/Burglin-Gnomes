@@ -7,7 +7,7 @@ const areas = [
     slug: 'gnome-world',
     name: 'Gnome World',
     type: 'Safe base',
-    image: '/images/extracted/area-gnome-tree.png',
+    image: 'https://placehold.co/300x200/ffdac1/6B9B7B?text=Gnome World',
     summary:
       'The pre-run island where you store loot, craft equipment, invite teammates, manage respawns, and start the next house run.',
     routeUse:
@@ -79,7 +79,7 @@ const areas = [
     slug: 'repackager',
     name: 'Repackager',
     type: 'Dart station',
-    image: '/images/extracted/area-tools-board.png',
+    image: 'https://placehold.co/300x200/ffdac1/6B9B7B?text=Repackager',
     summary:
       'A base furniture craft that turns one matching potion into five darts for Blowgun routes.',
     routeUse:
@@ -103,7 +103,7 @@ const areas = [
     slug: 'human-house',
     name: 'Human House',
     type: 'Main task area',
-    image: '/images/extracted/area-kitchen.png',
+    image: '/images/human-world.webp',
     summary:
       'The active run area where the team completes five generated tasks, steals useful loot, finds weapons, and extracts before time runs out.',
     routeUse:
@@ -127,7 +127,7 @@ const areas = [
     slug: 'cabinets-drawers',
     name: 'Cabinets and Drawers',
     type: 'Indoor storage',
-    image: '/images/extracted/area-cupboard.png',
+    image: '/images/extracted/area-drawer.png',
     summary:
       'Small storage spots for cigarettes, weapons, utensils, potion ingredients, materials, and task loot.',
     routeUse:
@@ -151,7 +151,7 @@ const areas = [
     slug: 'kitchen',
     name: 'Kitchen',
     type: 'Indoor room',
-    image: '/images/extracted/area-kitchen.png',
+    image: 'https://placehold.co/300x200/ffdac1/6B9B7B?text=Kitchen',
     summary:
       'High-density room for food, utensils, kitchenware, breakable objects, rats, and several task interactions.',
     routeUse:
@@ -175,7 +175,7 @@ const areas = [
     slug: 'bathroom',
     name: 'Bathroom',
     type: 'Indoor room',
-    image: '/images/extracted/area-bathroom.png',
+    image: 'https://placehold.co/300x200/ffdac1/6B9B7B?text=Bathroom',
     summary:
       'Bathroom storage, toilet tasks, hygiene loot, cigarettes, and sometimes high-value weapon searches.',
     routeUse:
@@ -199,7 +199,7 @@ const areas = [
     slug: 'bedroom-living-room',
     name: 'Bedroom and Living Room',
     type: 'Indoor rooms',
-    image: '/images/extracted/area-refrigerator.png',
+    image: 'https://placehold.co/300x200/ffdac1/6B9B7B?text=Bedroom and Living Room',
     summary:
       'Common route spaces for TV, music box, books, toys, fabric-like objects, valuables, and human patrol overlap.',
     routeUse:
@@ -223,7 +223,7 @@ const areas = [
     slug: 'outdoor-lawn',
     name: 'Outdoor Lawn',
     type: 'Exterior route',
-    image: '/images/extracted/area-garden.png',
+    image: 'https://placehold.co/300x200/ffdac1/6B9B7B?text=Outdoor Lawn',
     summary:
       'Exterior area for vine windows, outdoor threats, Fairy-style interactions, cat danger, and garden-adjacent task routes.',
     routeUse:
@@ -247,7 +247,7 @@ const areas = [
     slug: 'garage-shed',
     name: 'Garage and Shed',
     type: 'Heavy storage',
-    image: '/images/extracted/area-tools-board.png',
+    image: 'https://placehold.co/300x200/ffdac1/6B9B7B?text=Garage and Shed',
     summary:
       'Heavy storage areas for tools, explosives, vehicle parts, chainsaw routes, garage remote tasks, and late-run material value.',
     routeUse:
@@ -271,7 +271,7 @@ const areas = [
     slug: 'greenhouse-garden',
     name: 'Greenhouse and Garden',
     type: 'Outdoor task area',
-    image: '/images/extracted/area-garden.png',
+    image: 'https://placehold.co/300x200/ffdac1/6B9B7B?text=Greenhouse and Garden',
     summary:
       'Plant, watering, cutting, bee, and garden-tool routes with outdoor exposure and task-specific value.',
     routeUse:
@@ -295,7 +295,7 @@ const areas = [
     slug: 'weapon-safe',
     name: 'Weapon Safe',
     type: 'Special loot point',
-    image: 'https://placehold.co/40x40/ffdac1/6B9B7B?text=SAFE',
+    image: 'https://placehold.co/300x200/ffdac1/6B9B7B?text=Weapon Safe',
     summary:
       'Special weapon-storage route tied to Unlock weaponsafe and high-value firearms or heavy weapons.',
     routeUse:
