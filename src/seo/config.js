@@ -4,7 +4,7 @@
 export const seoConfig = {
   fullDomain: 'https://burglin-gnomes.org',
   siteName: "Burglin' Gnomes Guide",
-  defaultOgImage: '/images/logo.webp',
+  defaultOgImage: '/images/logo.jpg',
   defaults: {
     title: "Burglin' Gnomes Guide — Tasks, Items, Crafting & Co-op Tips",
     description:
