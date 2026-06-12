@@ -70,60 +70,66 @@
                 Start here when a patch lands or a route feels different: task flow, house weapons,
                 crafting links, outdoor routes, and enemy behavior have the highest impact on live runs.
               </p>
-              <div class="preview-grid" aria-label="Release guide priorities">
-                <RouterLink to="/beginner#first-tasks" class="preview-card">
-                  <img src="https://placehold.co/40x40/ffdac1/6B9B7B?text=" alt="Full-release task loop" />
-                  <div>
-                    <small>01 / Task routing</small>
-                    <h3>Full-release task loop</h3>
-                    <p>Each day gives a task list. Three completed tasks are the practical safety line before extraction; five tasks are the clean route goal when the house stays under control.</p>
-                    <span class="preview-card__target">Beginner task guide</span>
-                  </div>
+              <div class="data-table change-table" aria-label="Release guide priorities">
+                <div class="table-row table-head change-row">
+                  <span>#</span>
+                  <span>System</span>
+                  <span>What changed</span>
+                  <span>Guide</span>
+                </div>
+                <RouterLink to="/beginner#first-tasks" class="table-row change-row change-link">
+                  <strong>01</strong>
+                  <span class="change-system">Task routing</span>
+                  <span class="change-copy">
+                    <strong>Full-release task loop</strong>
+                    <span>Each day gives a task list. Three completed tasks are the practical safety line before extraction; five tasks are the clean route goal when the house stays under control.</span>
+                  </span>
+                  <span class="change-dest">Beginner task guide</span>
                 </RouterLink>
-                <RouterLink to="/items" class="preview-card">
-                  <img src="https://placehold.co/40x40/ffdac1/6B9B7B?text=" alt="House weapons and storage loot" />
-                  <div>
-                    <small>02 / Items</small>
-                    <h3>House weapons and storage loot</h3>
-                    <p>Gun, Taser, Pepper Spray, Grenade, Rocket Launcher, Landmine, Firework, Chainsaw, utensils, and task items now need item pages linked to rooms and storage routes.</p>
-                    <span class="preview-card__target">Items database</span>
-                  </div>
+                <RouterLink to="/items" class="table-row change-row change-link">
+                  <strong>02</strong>
+                  <span class="change-system">Items</span>
+                  <span class="change-copy">
+                    <strong>House weapons and storage loot</strong>
+                    <span>Gun, Taser, Pepper Spray, Grenade, Rocket Launcher, Landmine, Firework, Chainsaw, utensils, and task items now need item pages linked to rooms and storage routes.</span>
+                  </span>
+                  <span class="change-dest">Items database</span>
                 </RouterLink>
-                <RouterLink to="/crafting" class="preview-card">
-                  <img src="https://placehold.co/40x40/ffdac1/6B9B7B?text=" alt="Crafting stations and base objects" />
-                  <div>
-                    <small>03 / Crafting</small>
-                    <h3>Crafting stations and base objects</h3>
-                    <p>The Well, Potion Table, Repackager, crystal, bell, and storage all affect pre-run planning. Recipe pages should link back to materials, tools, and areas.</p>
-                    <span class="preview-card__target">Crafting pages</span>
-                  </div>
+                <RouterLink to="/crafting" class="table-row change-row change-link">
+                  <strong>03</strong>
+                  <span class="change-system">Crafting</span>
+                  <span class="change-copy">
+                    <strong>Crafting stations and base objects</strong>
+                    <span>The Well, Potion Table, Repackager, crystal, bell, and storage all affect pre-run planning. Recipe pages should link back to materials, tools, and areas.</span>
+                  </span>
+                  <span class="change-dest">Crafting pages</span>
                 </RouterLink>
-                <RouterLink to="/bestiary" class="preview-card">
-                  <img src="https://placehold.co/40x40/ffdac1/6B9B7B?text=" alt="NPCs, enemies, and outdoor animals" />
-                  <div>
-                    <small>04 / Bestiary</small>
-                    <h3>NPCs, enemies, and outdoor animals</h3>
-                    <p>Human, Fairy, Cat, Rat, Cockroach, Evil Gnome, Vacuum Robot, Mole, Boar, Pitbull, Sealman, Seagull, Jonathan, and Bibi now have route pages or watch-list notes.</p>
-                    <span class="preview-card__target">NPCs and enemies</span>
-                  </div>
+                <RouterLink to="/bestiary" class="table-row change-row change-link">
+                  <strong>04</strong>
+                  <span class="change-system">Bestiary</span>
+                  <span class="change-copy">
+                    <strong>NPCs, enemies, and outdoor animals</strong>
+                    <span>Human, Fairy, Cat, Rat, Cockroach, Evil Gnome, Vacuum Robot, Mole, Boar, Pitbull, Sealman, Seagull, Jonathan, and Bibi now have route pages or watch-list notes.</span>
+                  </span>
+                  <span class="change-dest">NPCs and enemies</span>
                 </RouterLink>
-                <RouterLink to="/areas/human-house" class="preview-card">
-                  <img src="https://placehold.co/40x40/ffdac1/6B9B7B?text=" alt="Outdoor entry and area pages" />
-                  <div>
-                    <small>05 / Areas</small>
-                    <h3>Outdoor entry and area pages</h3>
-                    <p>Vine windows, lawn paths, greenhouse and garden routes, garage/shed storage, weapon-safe checks, kitchen, bathroom, and cabinet pages now connect items to where they are found.</p>
-                    <span class="preview-card__target">Area guide pages</span>
-                  </div>
+                <RouterLink to="/areas/human-house" class="table-row change-row change-link">
+                  <strong>05</strong>
+                  <span class="change-system">Areas</span>
+                  <span class="change-copy">
+                    <strong>Outdoor entry and area pages</strong>
+                    <span>Vine windows, lawn paths, greenhouse and garden routes, garage/shed storage, weapon-safe checks, kitchen, bathroom, and cabinet pages now connect items to where they are found.</span>
+                  </span>
+                  <span class="change-dest">Area guide pages</span>
                 </RouterLink>
-                <RouterLink to="/beginner#death-revival" class="preview-card">
-                  <img src="https://placehold.co/40x40/ffdac1/6B9B7B?text=" alt="Co-op revive and performance checks" />
-                  <div>
-                    <small>06 / Co-op</small>
-                    <h3>Co-op revive and performance checks</h3>
-                    <p>Crystal revival, teammate rescue, all-dead failure, lag, disconnects, and virtual memory fixes remain high-search beginner topics after launch.</p>
-                    <span class="preview-card__target">Beginner fixes</span>
-                  </div>
+                <RouterLink to="/beginner#death-revival" class="table-row change-row change-link">
+                  <strong>06</strong>
+                  <span class="change-system">Co-op</span>
+                  <span class="change-copy">
+                    <strong>Co-op revive and performance checks</strong>
+                    <span>Crystal revival, teammate rescue, all-dead failure, lag, disconnects, and virtual memory fixes remain high-search beginner topics after launch.</span>
+                  </span>
+                  <span class="change-dest">Beginner fixes</span>
                 </RouterLink>
               </div>
             </section>
@@ -242,6 +248,66 @@ const updatesSidebarSections = [
   grid-template-columns: 1fr 1.5fr;
 }
 
+.change-row {
+  grid-template-columns: 52px 0.85fr 2fr 0.9fr;
+  align-items: start;
+}
+
+.change-row > strong {
+  color: var(--color-accent);
+  font-size: 1.05rem;
+  line-height: 1.2;
+}
+
+.change-system {
+  color: var(--color-ink);
+  font-size: 0.92rem;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.change-copy {
+  display: grid;
+  gap: 6px;
+}
+
+.change-copy > strong {
+  color: var(--color-ink);
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.change-copy > span {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.change-dest {
+  color: var(--color-primary);
+  font-size: 0.88rem;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.change-link {
+  transition:
+    background 180ms ease,
+    border-color 180ms ease;
+}
+
+.change-link:hover,
+.change-link:focus-visible {
+  background: var(--color-panel-2);
+  outline: none;
+}
+
+.change-link:hover .change-dest,
+.change-link:focus-visible .change-dest {
+  color: var(--color-ink);
+}
+
 .queue-row {
   grid-template-columns: 72px minmax(0, 1fr);
 }
@@ -251,13 +317,25 @@ const updatesSidebarSections = [
 }
 
 @media (max-width: 768px) {
-  .preview-card {
-    grid-template-columns: 72px minmax(0, 1fr);
+  .change-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
   }
 
-  .preview-card img {
-    width: 72px;
-    height: 72px;
+  .change-row > strong {
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .change-row > strong::before {
+    content: '# ';
+    color: var(--color-muted);
+    font-weight: 800;
+  }
+
+  .change-dest::after {
+    content: ' →';
   }
 }
 </style>
