@@ -158,6 +158,8 @@ const router = createRouter({
     { path: '/bestiary/scraplings', redirect: '/items/scraplings' },
     { path: '/items/scrapling', redirect: '/items/scraplings' },
     { path: '/items/bee', redirect: '/bestiary/bee' },
+    { path: '/items/metal', redirect: '/items/clonk' },
+    { path: '/items/ceramics', redirect: '/items/fraggles' },
     { path: '/bestiary/bibi', redirect: '/bestiary/tall-humanoid' },
     { path: '/bestiary/mole', redirect: '/bestiary/groundhog' },
     { path: '/bestiary/roomba', redirect: '/bestiary/vacuum-robot' },

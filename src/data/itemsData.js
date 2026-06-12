@@ -109,14 +109,14 @@ function potionItem({ key, ingredient, effectName, priority, use, image }) {
     category: 'Potions',
     type: 'Potion / consumable',
     priority,
-    source: `${potionSource}: 1 ${ingredient.name} + 1 Ceramics`,
+    source: `${potionSource}: 1 ${ingredient.name} + 1 Fraggles`,
     use,
     advice: `Drink it to apply the ${effectName} potion status to the player, or convert it into ${titleCase(key)} Darts for Blowgun delivery.`,
-    relatedItems: [ingredient.slug, 'ceramics', `${key}-dart`],
+    relatedItems: [ingredient.slug, 'fraggles', `${key}-dart`],
     sections: [
       {
         heading: `How to get ${name}`,
-        body: `Craft it at the Potion Table with 1 ${ingredient.name} and 1 Ceramics.`,
+        body: `Craft it at the Potion Table with 1 ${ingredient.name} and 1 Fraggles.`,
       },
       {
         heading: 'Use and properties',
@@ -157,21 +157,21 @@ function dartItem({ key, effectName, priority, image }) {
 
 const materials = [
   makeItem({
-    slug: 'ceramics',
-    name: 'Ceramics',
-    image: '/images/items/item-ceramics.png',
+    slug: 'fraggles',
+    name: 'Fraggles',
+    image: '/images/items/item-metal.png',
     category: 'Materials',
     type: 'Core resource',
     priority: 'Very high',
     source: resourceSource,
     use: 'Required by every potion recipe and by Gnomium Gloves, Glider, and Eyeglass-related crafting.',
-    advice: 'Treat Ceramics as a universal bottleneck because all eight potion recipes consume it.',
+    advice: 'Treat Fraggles as a universal bottleneck because all eight potion recipes consume it.',
     relatedItems: ['flight-potion', 'health-potion', 'gnomium-gloves', 'glider'],
     sections: [
       {
-        heading: 'How to get Ceramics',
+        heading: 'How to get Fraggles',
         body:
-          'Break or steal household objects that drop Ceramics, then carry the resource home or deposit it in storage before crafting.',
+          'Break or steal household objects that drop Fraggles, then carry the resource home or deposit it in storage before crafting.',
       },
       {
         heading: 'Recipe uses',
@@ -221,21 +221,21 @@ const materials = [
     ],
   }),
   makeItem({
-    slug: 'metal',
-    name: 'Metal',
-    image: '/images/items/item-metal.png',
+    slug: 'clonk',
+    name: 'Clonk',
+    image: '/images/items/item-clonk.png',
     category: 'Materials',
     type: 'Core resource',
     priority: 'High',
     source: resourceSource,
     use: 'Used for Metal Bat, Spring Shoes, Pickaxe, Grappling Hook, Marble Gun, and Sleep Potion.',
-    advice: 'Metal is the main tool and weapon resource; reserve it when planning Pickaxe, Grappling Hook, or Marble Gun.',
+    advice: 'Clonk is the main tool and weapon resource; reserve it when planning Pickaxe, Grappling Hook, or Marble Gun.',
     relatedItems: ['metal-bat', 'spring-shoes', 'pickaxe', 'grappling-hook', 'marble-gun', 'sleep-potion'],
     sections: [
       {
-        heading: 'How to get Metal',
+        heading: 'How to get Clonk',
         body:
-          'Gather it from metal household objects, kitchenware, tools, or breakable loot. Pickaxe routes can turn heavy objects into easier resource drops.',
+          'Gather it from clonk household objects, kitchenware, tools, or breakable loot. Pickaxe routes can turn heavy objects into easier resource drops.',
       },
       {
         heading: 'Recipe uses',
@@ -296,12 +296,12 @@ const materials = [
     type: 'Special potion ingredient',
     priority: 'Potion dependent',
     source: `${allItemsSource}`,
-    use: 'Required with Ceramics to craft Fart Potion.',
+    use: 'Required with Fraggles to craft Fart Potion.',
     advice: 'Keep it if the route needs Fart Potion or Fart Darts.',
     relatedItems: ['fart-potion', 'fart-dart'],
     sections: [
       { heading: 'How to get Poopling', body: 'Keep it as special loot when the route is preparing the matching potion; exact room spawns can vary by house layout.' },
-      { heading: 'Recipe use', body: 'Use 1 Poopling and 1 Ceramics to craft Fart Potion.' },
+      { heading: 'Recipe use', body: 'Use 1 Poopling and 1 Fraggles to craft Fart Potion.' },
     ],
   }),
   makeItem({
@@ -312,12 +312,12 @@ const materials = [
     type: 'Special potion ingredient',
     priority: 'Potion dependent',
     source: `${allItemsSource}`,
-    use: 'Required with Ceramics to craft Health Potion.',
+    use: 'Required with Fraggles to craft Health Potion.',
     advice: 'Keep it for healing routes or Health Dart preparation.',
     relatedItems: ['health-potion', 'health-dart'],
     sections: [
       { heading: 'How to get Scraplings', body: 'Keep it as special loot when the route is preparing the matching potion; exact room spawns can vary by house layout.' },
-      { heading: 'Recipe use', body: 'Use 1 Scraplings and 1 Ceramics to craft Health Potion.' },
+      { heading: 'Recipe use', body: 'Use 1 Scraplings and 1 Fraggles to craft Health Potion.' },
     ],
   }),
   makeItem({
@@ -328,12 +328,12 @@ const materials = [
     type: 'Special potion ingredient',
     priority: 'Potion dependent',
     source: `${allItemsSource}`,
-    use: 'Required with Ceramics to craft Strength Potion.',
+    use: 'Required with Fraggles to craft Strength Potion.',
     advice: 'Save it when a route needs Strength Potion or Strength Darts.',
     relatedItems: ['strength-potion', 'strength-dart'],
     sections: [
       { heading: 'How to get Tusk', body: 'Keep it as special loot when the route is preparing the matching potion; exact room spawns can vary by house layout.' },
-      { heading: 'Recipe use', body: 'Use 1 Tusk and 1 Ceramics to craft Strength Potion.' },
+      { heading: 'Recipe use', body: 'Use 1 Tusk and 1 Fraggles to craft Strength Potion.' },
     ],
   }),
 ]
@@ -346,7 +346,7 @@ const weapons = [
     category: 'Weapons',
     type: 'Hand weapon',
     priority: 'High after resource setup',
-    materials: [{ slug: 'metal', name: 'Metal', quantity: 3 }],
+    materials: [{ slug: 'clonk', name: 'Clonk', quantity: 3 }],
     use: 'Melee equipment that sends MetalBat hit messages to hittable targets.',
     advice: 'Use it for close-range defense and object hits; do not confuse it with older guide names.',
     relatedItems: ['pickaxe', 'branch'],
@@ -396,7 +396,7 @@ const weapons = [
     priority: 'High if you have Marble ammo',
     materials: [
       { slug: 'plastic', name: 'Plastic', quantity: 3 },
-      { slug: 'metal', name: 'Metal', quantity: 2 },
+      { slug: 'clonk', name: 'Clonk', quantity: 2 },
     ],
     use: 'Shoots Marble ammo as a projectile and can damage or knock targets that accept hits.',
     advice: 'Craft it together with a Marble supply; it consumes one Marble per shot.',
@@ -418,9 +418,9 @@ const weapons = [
     priority: 'Situational',
     materials: [{ slug: 'fabric', name: 'Fabric', quantity: 3 }],
     use: 'Hand equipment tied to punch-style close interaction.',
-    advice: 'A Fabric-only combat craft is useful when Metal is reserved for tools.',
+    advice: 'A Fabric-only combat craft is useful when Clonk is reserved for tools.',
     relatedItems: ['fabric', 'metal-bat', 'gnomium-gloves'],
-    sections: [{ heading: 'Use and properties', body: 'Use Boxing Gloves when the route needs close-range interaction and Fabric is easier to spend than Metal.' }],
+    sections: [{ heading: 'Use and properties', body: 'Use Boxing Gloves when the route needs close-range interaction and Fabric is easier to spend than Clonk.' }],
   }),
   recipeItem({
     slug: 'blowgun',
@@ -784,12 +784,12 @@ const tools = [
     type: 'Resource / object tool',
     priority: 'High for resource farming',
     materials: [
-      { slug: 'metal', name: 'Metal', quantity: 3 },
+      { slug: 'clonk', name: 'Clonk', quantity: 3 },
       { slug: 'plastic', name: 'Plastic', quantity: 1 },
     ],
     use: 'Hits eligible stealable objects and can break them into resource drops.',
     advice: 'Use it when extracting the whole object is slower than breaking it for materials.',
-    relatedItems: ['metal', 'plastic'],
+    relatedItems: ['clonk', 'plastic'],
     sections: [
       {
         heading: 'Use and properties',
@@ -805,10 +805,10 @@ const tools = [
     category: 'Tools',
     type: 'Inspection tool',
     priority: 'Information dependent',
-    materials: [{ slug: 'ceramics', name: 'Ceramics', quantity: 2 }],
+    materials: [{ slug: 'fraggles', name: 'Fraggles', quantity: 2 }],
     use: 'Shows the resource reward values of a stealable object you are looking at.',
     advice: 'Use it before spending time moving or breaking objects, especially when farming a specific resource.',
-    relatedItems: ['ceramics'],
+    relatedItems: ['fraggles'],
     sections: [
       {
         heading: 'Use and properties',
@@ -825,12 +825,12 @@ const tools = [
     type: 'Mobility tool',
     priority: 'High on vertical routes',
     materials: [
-      { slug: 'metal', name: 'Metal', quantity: 3 },
+      { slug: 'clonk', name: 'Clonk', quantity: 3 },
       { slug: 'gnomium', name: 'Gnomium', quantity: 2 },
     ],
     use: 'Shoots a hook toward valid surfaces and holds an active grapple target while the use input is held.',
     advice: 'Save Gnomium for it when a route has strong vertical shortcuts or recovery lines.',
-    relatedItems: ['gnomium', 'metal', 'glider'],
+    relatedItems: ['gnomium', 'clonk', 'glider'],
     sections: [
       {
         heading: 'Use and properties',
@@ -863,12 +863,12 @@ const gear = [
     type: 'Mobility gear',
     priority: 'Route dependent',
     materials: [
-      { slug: 'metal', name: 'Metal', quantity: 1 },
+      { slug: 'clonk', name: 'Clonk', quantity: 1 },
       { slug: 'plastic', name: 'Plastic', quantity: 2 },
     ],
     use: 'Mobility gear for jumps, drops, and vertical routes.',
-    advice: 'Use for routes where vertical movement is worth the Metal and Plastic cost.',
-    relatedItems: ['metal', 'plastic', 'glider'],
+    advice: 'Use for routes where vertical movement is worth the Clonk and Plastic cost.',
+    relatedItems: ['clonk', 'plastic', 'glider'],
     sections: [{ heading: 'Use and properties', body: 'Use Spring Shoes when the route rewards vertical movement, but practice noisy jumps and awkward landings first.' }],
   }),
   recipeItem({
@@ -880,11 +880,11 @@ const gear = [
     priority: 'High for Gnomium interaction routes',
     materials: [
       { slug: 'gnomium', name: 'Gnomium', quantity: 3 },
-      { slug: 'ceramics', name: 'Ceramics', quantity: 2 },
+      { slug: 'fraggles', name: 'Fraggles', quantity: 2 },
     ],
     use: 'Lets the player push compatible objects and interact with Gnomium glove targets.',
     advice: 'Craft only when the route has objects or interactables that justify the Gnomium cost.',
-    relatedItems: ['gnomium', 'ceramics'],
+    relatedItems: ['gnomium', 'fraggles'],
     sections: [
       {
         heading: 'Use and properties',
@@ -902,11 +902,11 @@ const gear = [
     priority: 'High on height-heavy routes',
     materials: [
       { slug: 'fabric', name: 'Fabric', quantity: 3 },
-      { slug: 'ceramics', name: 'Ceramics', quantity: 2 },
+      { slug: 'fraggles', name: 'Fraggles', quantity: 2 },
     ],
     use: 'Enables gliding movement when airborne, jumping, unpinned, or under the Fart potion status.',
     advice: 'Pair it with high entry points, escape drops, or routes where controlled descent saves time.',
-    relatedItems: ['fabric', 'ceramics', 'fart-potion'],
+    relatedItems: ['fabric', 'fraggles', 'fart-potion'],
     sections: [
       {
         heading: 'Use and properties',
@@ -1063,7 +1063,7 @@ const potionDefinitions = [
   },
   {
     key: 'sleep',
-    ingredient: { slug: 'metal', name: 'Metal' },
+    ingredient: { slug: 'clonk', name: 'Clonk' },
     effectName: 'SLEEP',
     priority: 'Target dependent',
     use: 'Applies the Sleep potion status.',
@@ -1137,10 +1137,10 @@ const defaultAreasByCategory = {
 }
 
 const itemAreaOverrides = {
-  ceramics: ['human-house', 'kitchen', 'bathroom'],
+  fraggles: ['human-house', 'kitchen', 'bathroom'],
   chemicals: ['human-house', 'bathroom', 'garage-shed'],
   fabric: ['human-house', 'bedroom-living-room'],
-  metal: ['human-house', 'kitchen', 'garage-shed'],
+  clonk: ['human-house', 'kitchen', 'garage-shed'],
   plastic: ['human-house', 'kitchen', 'bathroom'],
   gnomium: ['gnome-world', 'outdoor-lawn'],
   poopling: ['human-house', 'bathroom'],

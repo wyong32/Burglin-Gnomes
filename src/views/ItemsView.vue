@@ -100,7 +100,7 @@ const itemCardSource = (item) => (item.source === 'Unknown source' ? item.use : 
 
 const categoryIntro = (category) =>
   ({
-    Materials: 'Metal, cloth, and junk you need for early crafts and task overlap.',
+    Materials: 'Clonk, Fraggles, cloth, and junk you need for early crafts and task overlap.',
     Weapons: 'Crafted weapons and house weapons, including firearms, explosives, stun tools, and close-range options.',
     Tools: 'Pickaxe, Eyeglass, Grappling Hook, and tools that change farming or movement routes.',
     Gear: 'Wearables that change carrying, movement, hands, and survival odds.',

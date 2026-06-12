@@ -141,7 +141,7 @@
                 <RouterLink to="/crafting#materials" class="table-row topic-row topic-link">
                   <strong>Crafting Materials</strong>
                   <span>Crafting</span>
-                  <span>Clonk, Basic Junk, Rag Strips, Plastic Blocks, and linked recipes.</span>
+                  <span>Clonk, Fraggles, Basic Junk, Rag Strips, Plastic Blocks, and linked recipes.</span>
                 </RouterLink>
                 <RouterLink to="/base-building#mushroom-house" class="table-row topic-row topic-link">
                   <strong>Gnome-World Base Objects</strong>

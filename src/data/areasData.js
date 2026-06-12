@@ -47,7 +47,7 @@ const areas = [
       {
         heading: 'Material discipline',
         body:
-          'Metal, Plastic, Fabric, Ceramics, Chemicals, and Gnomium overlap across many recipes. A good route chooses one craft target before spending resources.',
+          'Clonk, Plastic, Fabric, Fraggles, Chemicals, and Gnomium overlap across many recipes. A good route chooses one craft target before spending resources.',
       },
     ],
   },
@@ -57,16 +57,16 @@ const areas = [
     type: 'Potion station',
     image: '/images/extracted/area-tools-board.png',
     summary:
-      'The station for turning special ingredients and Ceramics into potions such as Health, Sleep, Strength, Mobility, and Flight.',
+      'The station for turning special ingredients and Fraggles into potions such as Health, Sleep, Strength, Mobility, and Flight.',
     routeUse:
-      'Build it once Ceramics and potion ingredients are appearing often enough to support planned potion routes.',
+      'Build it once Fraggles and potion ingredients are appearing often enough to support planned potion routes.',
     dangers: ['Potions are expensive if the effect does not solve the current route problem.'],
     tasks: ['Craft potions', 'Prepare status effects', 'Feed Repackager dart routes'],
     sections: [
       {
         heading: 'What to craft at the Potion Table',
         body:
-          'All eight potion recipes use Ceramics plus one ingredient. Health, Sleep, Mobility, and Flight are usually easier to justify than random effect testing.',
+          'All eight potion recipes use Fraggles plus one ingredient. Health, Sleep, Mobility, and Flight are usually easier to justify than random effect testing.',
       },
       {
         heading: 'Potion planning',

@@ -232,7 +232,7 @@
           <div class="table-row priority-row">
             <strong>Crafting materials</strong>
             <span>Loot path</span>
-            <span>Bank Metal, Fabric, Plastic, Ceramics, Chemicals, and Gnomium</span>
+            <span>Bank Clonk, Fabric, Plastic, Fraggles, Chemicals, and Gnomium</span>
           </div>
           <div class="table-row priority-row">
             <strong>Backpack</strong>
