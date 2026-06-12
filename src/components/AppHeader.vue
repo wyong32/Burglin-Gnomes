@@ -104,7 +104,6 @@ const links = primaryNavLinks
 }
 
 .brand strong {
-  font-family: "Bricolage Grotesque", "Nunito", sans-serif;
   font-size: 1.02rem;
   color: var(--color-ink);
 }

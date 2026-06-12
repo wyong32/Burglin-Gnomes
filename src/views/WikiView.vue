@@ -301,7 +301,6 @@ const areas = areasData.find((section) => section.key === 'areas').items
 
 .area-link strong {
   color: var(--color-ink);
-  font-family: "Bricolage Grotesque", "Nunito", sans-serif;
 }
 
 .area-link {

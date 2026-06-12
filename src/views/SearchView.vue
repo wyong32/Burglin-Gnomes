@@ -218,7 +218,6 @@ function searchHint(hint) {
   place-items: center;
   background: linear-gradient(135deg, rgba(255, 218, 193, 0.72), rgba(232, 246, 216, 0.7));
   color: var(--color-accent);
-  font-family: "Bricolage Grotesque", "Nunito", sans-serif;
   font-size: 1.4rem;
   font-weight: 900;
 }

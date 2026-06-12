@@ -1,6 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Nunito:wght@500;700;800;900&display=swap');
-
 :root {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --color-bg: #f4e8c6;
   --color-surface: #fff8e8;
   --color-surface-strong: #fff0c7;
@@ -34,7 +33,7 @@ html {
   min-height: 100%;
   background: var(--color-bg);
   color: var(--color-text);
-  font-family: "Nunito", ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-sans);
   scroll-behavior: smooth;
 }
 
@@ -58,7 +57,7 @@ h5,
 h6 {
   margin: 0;
   color: var(--color-ink);
-  font-family: "Bricolage Grotesque", "Nunito", ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-sans);
   letter-spacing: 0;
   line-height: 1.05;
 }
@@ -164,6 +163,7 @@ img {
   position: relative;
   overflow: hidden;
   width: 100%;
+  aspect-ratio: 595 / 340;
   margin: 0;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
@@ -171,8 +171,9 @@ img {
 }
 
 .hero-art img {
+  display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: contain;
 }
 
@@ -217,7 +218,6 @@ img {
 .guide-card strong,
 .guide-card h3 {
   color: var(--color-ink);
-  font-family: "Bricolage Grotesque", "Nunito", sans-serif;
   font-size: 1.14rem;
   line-height: 1.12;
 }
@@ -269,7 +269,6 @@ img {
 .page-sidebar__title {
   margin: -2px 0 0;
   color: var(--color-ink);
-  font-family: "Bricolage Grotesque", "Nunito", sans-serif;
   font-size: 1.08rem;
   line-height: 1.15;
 }
@@ -603,7 +602,6 @@ img {
 
 .tile-card__body strong {
   color: var(--color-ink);
-  font-family: "Bricolage Grotesque", "Nunito", sans-serif;
   font-size: 1rem;
   line-height: 1.12;
 }
@@ -655,7 +653,6 @@ img {
 
 .recipe-tile strong {
   color: var(--color-ink);
-  font-family: "Bricolage Grotesque", "Nunito", sans-serif;
   font-size: 0.92rem;
   line-height: 1.15;
 }
@@ -733,7 +730,6 @@ img {
   border-radius: var(--radius-sm);
   background: rgba(223, 91, 50, 0.12);
   color: var(--color-accent);
-  font-family: "Bricolage Grotesque", "Nunito", sans-serif;
   font-size: 0.92rem;
   font-weight: 800;
   transition: background 140ms ease;
@@ -853,7 +849,6 @@ img {
 
 .entry-copy strong {
   color: var(--color-ink);
-  font-family: "Bricolage Grotesque", "Nunito", sans-serif;
   font-size: 1rem;
   line-height: 1.15;
 }
@@ -902,7 +897,6 @@ img {
 .link-list__item strong {
   display: block;
   color: var(--color-ink);
-  font-family: "Bricolage Grotesque", "Nunito", sans-serif;
   font-size: 1rem;
   line-height: 1.15;
 }

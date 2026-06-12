@@ -87,7 +87,6 @@ const legalLinks = legalNavLinks
 .footer-nav strong {
   display: block;
   color: #fffaf0;
-  font-family: "Bricolage Grotesque", "Nunito", sans-serif;
 }
 
 .footer-logo strong {

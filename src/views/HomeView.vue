@@ -29,7 +29,14 @@
           </div>
         </div>
         <figure class="hero-art">
-          <img src="/images/page-01.webp" alt="Burglin' Gnomes official Steam key art" />
+          <img
+            src="/images/page-01.webp"
+            alt="Burglin' Gnomes official Steam key art"
+            width="595"
+            height="340"
+            decoding="async"
+            fetchpriority="high"
+          />
         </figure>
       </div>
     </div>
@@ -579,7 +586,6 @@ const learnNext = [
   display: block;
   margin-top: 6px;
   color: var(--color-ink);
-  font-family: "Bricolage Grotesque", "Nunito", sans-serif;
   font-size: clamp(1.35rem, 2vw, 2rem);
 }
 

@@ -2,15 +2,15 @@
   "version": 1,
   "urls": {
     "/": {
-      "hash": "e953679f0c2d2ca9",
+      "hash": "fdfd9d04cb3da131",
       "lastmod": "2026-06-12"
     },
     "/search": {
-      "hash": "0cc19f73b54da6fa",
+      "hash": "6e74f3c1fe95ac5e",
       "lastmod": "2026-06-12"
     },
     "/wiki": {
-      "hash": "f539d7723a79970d",
+      "hash": "9a17beaea49a55d2",
       "lastmod": "2026-06-12"
     },
     "/beginner": {
@@ -18,11 +18,11 @@
       "lastmod": "2026-06-12"
     },
     "/items": {
-      "hash": "9fa39649a818b63a",
+      "hash": "179c50d3a23c5c77",
       "lastmod": "2026-06-12"
     },
     "/crafting": {
-      "hash": "ceefb9f9133f0299",
+      "hash": "3745101638885b28",
       "lastmod": "2026-06-12"
     },
     "/base-building": {
@@ -490,7 +490,7 @@
       "lastmod": "2026-06-12"
     },
     "/items/fraggles": {
-      "hash": "7cf4ec3d20a5f7b1",
+      "hash": "a8ddf744907f7f73",
       "lastmod": "2026-06-12"
     },
     "/items/clonk": {
