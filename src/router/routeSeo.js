@@ -5,7 +5,7 @@ export const routeSeo = {
   home: {
     title: "Burglin' Gnomes Guide — Tasks, Items, Crafting & Co-op Tips",
     description:
-      "The definitive, database-driven Burglin' Gnomes wiki. Access patch-verified item spawn tables, co-op task routes, and survival mechanics.",
+      "Burglin' Gnomes guide for tasks, item locations, crafting routes, co-op survival, enemies, and mechanics that may change after patches.",
     keywords: 'Burglin Gnomes guide, Burglin Gnomes wiki, co-op tips, beginner route',
   },
   search: {
@@ -20,16 +20,22 @@ export const routeSeo = {
       "Browse every Burglin' Gnomes guide in one place: beginner routes, tasks, items, crafting, enemies, and what to recheck after patches.",
     keywords: 'Burglin Gnomes wiki, guide index, tasks, items, crafting',
   },
+  guides: {
+    title: "Burglin' Gnomes Guides — Routes, Loot & Co-op",
+    description:
+      "Browse Burglin' Gnomes guides for task routes, loot searches, crafting order, revive rules, co-op survival, and beginner-friendly house runs.",
+    keywords: 'Burglin Gnomes guides, route guide, loot guide, co-op guide',
+  },
   beginner: {
     title: "Beginner Guide — First Tasks & Safe Routes | Burglin' Gnomes",
     description:
-      "Stop failing your early runs. Follow our patch-verified 5-task starting route. Includes window entry mechanics, co-op desync fixes, and revive rules.",
+      "Learn the 5-task starting route in Burglin' Gnomes, with window entry mechanics, co-op desync fixes, revive rules, and early survival tips.",
     keywords: 'Burglin Gnomes beginner guide, first tasks, co-op route',
   },
   items: {
     title: "All Items — Materials, Weapons, Tools & Gear | Burglin' Gnomes",
     description:
-      "Full Burglin' Gnomes item list from our runs: materials, weapons, tools, gear, task loot, where to find each one, and which recipes they feed.",
+      "Full Burglin' Gnomes item list with materials, weapons, tools, gear, task loot, where to find each one, and which recipes they feed.",
     keywords: 'Burglin Gnomes items, materials, weapons, tools, gear',
   },
   crafting: {
@@ -47,13 +53,13 @@ export const routeSeo = {
   bestiary: {
     title: "Bestiary — NPCs, Enemies & Hazards | Burglin' Gnomes",
     description:
-      "Know what kills a run: humans, cats, pests, hostile gnomes, and household hazards in Burglin' Gnomes, with survival tips from our playtesting.",
+      "Know what kills a run: humans, cats, pests, hostile gnomes, and household hazards in Burglin' Gnomes, with practical survival tips.",
     keywords: 'Burglin Gnomes enemies, bestiary, cat, human homeowner',
   },
   updates: {
     title: "Updates & Patch Notes — Release Date | Burglin' Gnomes",
     description:
-      "Burglin' Gnomes release facts, what changed in patches, and which routes, items, and enemies we recheck after updates.",
+      "Burglin' Gnomes release facts, patch notes, and the routes, items, crafting rules, enemies, and co-op mechanics to review after updates.",
     keywords: 'Burglin Gnomes updates, release date, patch notes',
   },
   'legal-privacy': {

@@ -6,6 +6,7 @@ export const primaryNavLinks = [
   { label: 'Crafting', path: '/crafting' },
   { label: 'Base Building', path: '/base-building' },
   { label: 'NPCs & Enemies Bestiary', path: '/bestiary' },
+  { label: 'Guides', path: '/guides' },
   { label: 'Updates', path: '/updates' },
 ]
 

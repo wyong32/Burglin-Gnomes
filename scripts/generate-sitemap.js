@@ -6,6 +6,7 @@ import { fileURLToPath } from 'node:url'
 import areasData from '../src/data/areasData.js'
 import craftingData from '../src/data/craftingData.js'
 import enemiesData from '../src/data/enemiesData.js'
+import guidesData from '../src/data/guides.js'
 import itemsData from '../src/data/itemsData.js'
 import { seoConfig } from '../src/seo/config.js'
 import { sitemapStaticRoutes } from '../src/seo/sitemapRoutes.js'
@@ -23,6 +24,7 @@ const staticSourceMap = {
   '/': ['src/views/HomeView.vue'],
   '/search': ['src/views/SearchView.vue', 'src/utils/searchIndex.js'],
   '/wiki': ['src/views/WikiView.vue', 'src/data/areasData.js'],
+  '/guides': ['src/views/GuidesView.vue', 'src/data/guides.js'],
   '/beginner': ['src/views/BeginnerGuideView.vue', 'src/data/beginnerData.js'],
   '/items': ['src/views/ItemsView.vue', 'src/data/itemsData.js'],
   '/crafting': ['src/views/CraftingView.vue', 'src/data/craftingData.js'],
@@ -191,6 +193,14 @@ function generate() {
     const date = resolveLastmod(areaPath, contentHash, state, today, stats)
     activePaths.add(areaPath)
     xml += `\n${urlNode(areaPath, date, getChangefreq('area-detail'), getPriority('area-detail'))}`
+  }
+
+  for (const guide of guidesData.filter((entry) => entry.addressBar)) {
+    const guidePath = `/guides/${guide.addressBar}`
+    const contentHash = hashEntry(guide, 'src/views/GuideDetailView.vue')
+    const date = resolveLastmod(guidePath, contentHash, state, today, stats)
+    activePaths.add(guidePath)
+    xml += `\n${urlNode(guidePath, date, getChangefreq('guide-detail'), getPriority('guide-detail'))}`
   }
 
   for (const entry of getSectionItems(enemiesData, 'entries')) {

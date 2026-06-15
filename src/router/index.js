@@ -6,6 +6,8 @@ import BestiaryDetailView from '../views/BestiaryDetailView.vue'
 import CraftingView from '../views/CraftingView.vue'
 import CraftingDetailView from '../views/CraftingDetailView.vue'
 import EnemiesView from '../views/EnemiesView.vue'
+import GuideDetailView from '../views/GuideDetailView.vue'
+import GuidesView from '../views/GuidesView.vue'
 import HomeView from '../views/HomeView.vue'
 import SearchView from '../views/SearchView.vue'
 import ItemDetailView from '../views/ItemDetailView.vue'
@@ -21,6 +23,7 @@ import WikiView from '../views/WikiView.vue'
 import areasData from '../data/areasData.js'
 import craftingData from '../data/craftingData.js'
 import enemiesData from '../data/enemiesData.js'
+import guidesData from '../data/guides.js'
 import itemsData from '../data/itemsData.js'
 import { seoConfig } from '../seo/config.js'
 import {
@@ -40,6 +43,7 @@ const items = getSectionItems(itemsData, 'items')
 const recipes = getSectionItems(craftingData, 'recipes')
 const bestiaryEntries = getSectionItems(enemiesData, 'entries')
 const areaEntries = getSectionItems(areasData, 'areas')
+const guideEntries = guidesData.filter((entry) => entry.addressBar)
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -72,6 +76,13 @@ const router = createRouter({
       component: WikiView,
       meta: routeMeta('wiki'),
     },
+    {
+      path: '/guides',
+      name: 'guides',
+      component: GuidesView,
+      meta: routeMeta('guides'),
+    },
+    { path: '/guides/:slug', name: 'guide-detail', component: GuideDetailView },
     {
       path: '/beginner',
       name: 'beginner',
@@ -185,6 +196,10 @@ router.beforeEach((to) => {
   if (to.name === 'area-detail' && slug && !areaEntries.some((entry) => entry.slug === slug)) {
     return { path: '/base-building', replace: true }
   }
+
+  if (to.name === 'guide-detail' && slug && !guideEntries.some((entry) => entry.addressBar === slug)) {
+    return { path: '/guides', replace: true }
+  }
 })
 
 router.afterEach((to) => {
@@ -263,6 +278,31 @@ router.afterEach((to) => {
         description: area.tdk.description,
         url: resolveCanonicalUrl(path),
         imageUrl: area.image,
+      }),
+    })
+    return
+  }
+
+  if (to.name === 'guide-detail') {
+    const guide = guideEntries.find((item) => item.addressBar === to.params.slug)
+    if (!guide) return
+
+    const path = `/guides/${guide.addressBar}`
+    const title = guide.seo?.title || `${guide.title} | Burglin' Gnomes`
+    const description = guide.seo?.description || guide.description
+    applyDocumentSeo({
+      path,
+      title,
+      description,
+      keywords: guide.seo?.keywords,
+      ogImage: guide.imageUrl,
+      ogType: 'article',
+      jsonLd: buildArticleJsonLd({
+        headline: title,
+        description,
+        url: resolveCanonicalUrl(path),
+        imageUrl: guide.imageUrl,
+        datePublished: guide.publishDate,
       }),
     })
     return

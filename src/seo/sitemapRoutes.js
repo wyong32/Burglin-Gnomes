@@ -5,6 +5,7 @@ export const sitemapStaticRoutes = [
   { path: '/', name: 'home' },
   { path: '/search', name: 'search' },
   { path: '/wiki', name: 'wiki' },
+  { path: '/guides', name: 'guides' },
   { path: '/beginner', name: 'beginner' },
   { path: '/items', name: 'items' },
   { path: '/crafting', name: 'crafting' },

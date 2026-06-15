@@ -756,7 +756,7 @@ const houseWeapons = [
     use: 'Cutting tool tied to plant routes and Cut entity with shears tasks.',
     advice: 'Pick it up when plant, garden, or shears tasks appear; otherwise treat it as tool clutter.',
     image: 'https://placehold.co/40x40/ffdac1/6B9B7B?text=SH',
-    relatedItems: ['chainsaw', 'knife', 'watering-can'],
+    relatedItems: ['chainsaw', 'knife'],
     areas: ['greenhouse-garden', 'garage-shed', 'outdoor-lawn'],
     acquisition: ['Check greenhouse, garden, and shed routes.'],
     stats: ['Cutting tool', 'Task relevant'],
@@ -937,7 +937,7 @@ const gear = [
   recipeItem({
     slug: 'glue-gloves',
     name: 'Glue Gloves',
-    image: '/images/items/item-glue-gloves.png',
+    image: '/images/items/item-ceramics.png',
     category: 'Gear',
     type: 'Climbing hand gear',
     priority: 'Route dependent',

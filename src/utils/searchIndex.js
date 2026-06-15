@@ -3,6 +3,7 @@ import areasData from '../data/areasData.js'
 import baseData from '../data/baseData.js'
 import craftingData from '../data/craftingData.js'
 import enemiesData from '../data/enemiesData.js'
+import guidesData from '../data/guides.js'
 import itemsData from '../data/itemsData.js'
 import { routeSeo } from '../router/routeSeo.js'
 import { getSectionItems } from './sectionData.js'
@@ -34,6 +35,7 @@ function buildSearchIndex() {
     { key: 'home', path: '/', type: 'Page' },
     { key: 'search', path: '/search', type: 'Page' },
     { key: 'wiki', path: '/wiki', type: 'Wiki' },
+    { key: 'guides', path: '/guides', type: 'Guide' },
     { key: 'beginner', path: '/beginner', type: 'Guide' },
     { key: 'items', path: '/items', type: 'Items' },
     { key: 'crafting', path: '/crafting', type: 'Crafting' },
@@ -102,6 +104,19 @@ function buildSearchIndex() {
       parts: [entry.type, entry.routeUse, entry.tasks, entry.dangers, sectionText(entry.sections)],
     })
   })
+
+  guidesData
+    .filter((guide) => guide.addressBar)
+    .forEach((guide) => {
+      addEntry(entries, {
+        title: guide.title,
+        summary: guide.description,
+        path: `/guides/${guide.addressBar}`,
+        type: 'Guide',
+        image: guide.imageUrl,
+        parts: [guide.category, guide.tags, guide.seo?.keywords, guide.detailsHtml],
+      })
+    })
 
   getSectionItems(itemsData, 'items').forEach((item) => {
     addEntry(entries, {

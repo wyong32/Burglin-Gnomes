@@ -64,7 +64,7 @@
                 </RouterLink>
                 <RouterLink to="/updates" class="guide-card wiki-card">
                   <strong>Updates</strong>
-                  <span>Release facts and what we recheck after patches.</span>
+                  <span>Release facts and what to review after patches.</span>
                 </RouterLink>
               </div>
             </section>

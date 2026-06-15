@@ -47,7 +47,7 @@ function itemDescription(item) {
   const sourceHint =
     item.source && !item.source.startsWith('House-run loot:')
       ? item.source
-      : item.advice || 'Check linked areas, recipes, and route notes from our runs.'
+      : item.advice || 'Check linked areas, recipes, and route notes before planning the run.'
 
   if (item.category === 'Materials') {
     return joinMeta(`${item.name} material in ${BRAND}:`, item.use, sourceHint)

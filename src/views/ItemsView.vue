@@ -7,7 +7,7 @@
             <span class="eyebrow">All items</span>
             <h1>All Items — Materials, Weapons, Tools &amp; Gear | Burglin' Gnomes</h1>
             <p>
-              Every item we track from our runs: materials, weapons, tools, gear, task loot, base
+              Every item currently covered here: materials, weapons, tools, gear, task loot, base
               objects, and utility items. Pick a category, then open a page for where to find it,
               what it is for, and which recipes it feeds.
             </p>

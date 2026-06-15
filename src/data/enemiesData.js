@@ -292,7 +292,7 @@ aliases: ['bibi', 'tall humanoid'],
         danger: 'Unknown',
         location: 'Likely outdoor or special-event route; exact spawn is still being mapped',
         behavior:
-          'Bibi appears in the game files and matches the large-humanoid route note players have been asking about. Treat the grab behavior as unfinished until you can reproduce it in a live run.',
+          'Bibi matches the large-humanoid route note players have been asking about. Treat the grab behavior as unfinished until you can reproduce it in a live run.',
         counter: 'Test grab range, release conditions, line-of-sight rules, and whether gear prevents the hold before routing around it.',
         recommendedItems: ['gnomium-gloves', 'mobility-potion'],
         relatedGuides: [
@@ -321,7 +321,7 @@ aliases: ['mole', 'groundhog'],
         danger: 'Unknown',
         location: 'Outdoor lawn and garden-style routes',
         behavior:
-          'The extracted entity list includes Mole, which lines up with player reports of underground movement outside. Its exact attack, if any, still needs clean route confirmation.',
+          'Mole lines up with player reports of underground movement outside. Its exact attack, if any, still needs clean route confirmation.',
         counter: 'Do not path heavy loot through moving ground effects until the team knows whether the creature can interrupt carrying or damage players.',
         recommendedItems: [],
         relatedGuides: [
@@ -377,7 +377,7 @@ aliases: ['mole', 'groundhog'],
         danger: 'Unknown',
         location: 'Outdoor, garden, or yard-style routes',
         behavior:
-          'Boar is present in the extracted entity list. Until the route is confirmed, assume it can disrupt outdoor movement and carry paths.',
+          'Boar is an outdoor animal to watch for. Until the route is confirmed, assume it can disrupt outdoor movement and carry paths.',
         counter: 'Avoid heavy exterior carries near the animal and keep a window or pipe return line ready.',
         recommendedItems: ['spring-shoes', 'glider'],
         relatedGuides: [
@@ -405,7 +405,7 @@ aliases: ['mole', 'groundhog'],
         danger: 'High if active',
         location: 'House exterior or pet-related spaces',
         behavior:
-          'Pitbull assets exist in the game data. Because dog enemies usually punish exposed routes, do not assume the lawn is safe when this entity is active.',
+          'Pitbull should be treated as a possible outdoor pressure check. Because dog threats usually punish exposed routes, do not assume the lawn is safe when it is active.',
         counter: 'Stay inside, close doors and windows, and avoid long outdoor carries until the dog route is understood.',
         recommendedItems: ['spring-shoes', 'mobility-potion', 'glider'],
         relatedGuides: [
@@ -433,7 +433,7 @@ aliases: ['mole', 'groundhog'],
         danger: 'Unknown',
         location: 'Unmapped special route',
         behavior:
-          'Sealman appears in the extracted entity list, but the live-game route and player interaction are not clear enough for a final guide.',
+          'Sealman is a special entity, but the live-game route and player interaction are not clear enough for a final guide.',
         counter: 'Record the room, task wording, and whether it moves, attacks, trades, or simply appears as set dressing.',
         recommendedItems: [],
         relatedGuides: [{ label: 'Updates', path: '/updates#patch-checklist' }],

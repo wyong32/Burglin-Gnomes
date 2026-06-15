@@ -1,21 +1,63 @@
 import { buildRecipePageMeta } from '../utils/contentLabels.js'
 
 const withRecipeTdk = (recipes) => recipes.map((recipe) => ({ ...recipe, tdk: buildRecipePageMeta(recipe) }))
-const itemImage = (slug) => `/images/items/item-${slug}.png`
-const materialImageOverrides = {
-  fraggles: '/images/items/item-metal.png',
-}
-const materialSources = {
-  fraggles: 'Break or steal fragile household objects, then bank the resource for potions and gear.',
-  chemicals: 'Search chemical-looking household loot and save it for ranged gear or movement potions.',
-  fabric: 'Gather from cloth-like and soft household objects before spending it on carry or movement gear.',
-  clonk: 'Farm clonk-looking household objects; reserve it for tools, weapons, and Sleep Potion.',
-  plastic: 'Collect plastic household objects and containers for mobility, defense, and ranged recipes.',
-  gnomium: 'Pick up rare purple Gnomium crystals and spend them only on expensive route-changing gear.',
-  poopling: 'Keep this special ingredient when preparing Fart Potion.',
-  scraplings: 'Keep this special ingredient when preparing Health Potion.',
-  tusk: 'Keep this special ingredient when preparing Strength Potion.',
-}
+
+const materials = [
+  {
+    item: 'fraggles',
+    name: 'Fraggles',
+    image: '/images/items/item-metal.png',
+    source: 'Break or steal fragile household objects, then bank the resource for potions and gear.',
+  },
+  {
+    item: 'chemicals',
+    name: 'Chemicals',
+    image: '/images/items/item-chemicals.png',
+    source: 'Search chemical-looking household loot and save it for ranged gear or movement potions.',
+  },
+  {
+    item: 'fabric',
+    name: 'Fabric',
+    image: '/images/items/item-fabric.png',
+    source: 'Gather from cloth-like and soft household objects before spending it on carry or movement gear.',
+  },
+  {
+    item: 'clonk',
+    name: 'Clonk',
+    image: '/images/items/item-clonk.png',
+    source: 'Farm clonk-looking household objects; reserve it for tools, weapons, and Sleep Potion.',
+  },
+  {
+    item: 'plastic',
+    name: 'Plastic',
+    image: '/images/items/item-plastic.png',
+    source: 'Collect plastic household objects and containers for mobility, defense, and ranged recipes.',
+  },
+  {
+    item: 'gnomium',
+    name: 'Gnomium',
+    image: '/images/items/item-gnomium.png',
+    source: 'Pick up rare purple Gnomium crystals and spend them only on expensive route-changing gear.',
+  },
+  {
+    item: 'poopling',
+    name: 'Poopling',
+    image: '/images/items/item-poopling.png',
+    source: 'Keep this special ingredient when preparing Fart Potion.',
+  },
+  {
+    item: 'scraplings',
+    name: 'Scraplings',
+    image: '/images/items/item-scraplings.png',
+    source: 'Keep this special ingredient when preparing Health Potion.',
+  },
+  {
+    item: 'tusk',
+    name: 'Tusk',
+    image: '/images/items/item-tusk.png',
+    source: 'Keep this special ingredient when preparing Strength Potion.',
+  },
+]
 
 function ingredient(item, name, quantity) {
   return { item, name, quantity }
@@ -33,7 +75,7 @@ function recipe({
   mechanic,
   scenario,
   warning,
-  image = itemImage(outputItem),
+  image,
   areas = [],
   relatedBestiary = [],
   sections = [],
@@ -62,6 +104,7 @@ const equipmentRecipes = [
     slug: 'metal-bat',
     name: 'Metal Bat',
     category: 'Weapons',
+    image: '/images/items/item-metal-bat.png',
     priority: 'High after basic carry gear',
     materials: [ingredient('clonk', 'Clonk', 3)],
     effect: 'A close-range weapon for pest control, object hits, and emergency space-making.',
@@ -75,6 +118,7 @@ const equipmentRecipes = [
     slug: 'backpack',
     name: 'Backpack',
     category: 'Gear',
+    image: '/images/items/item-backpack.png',
     priority: 'Top early craft',
     materials: [ingredient('fabric', 'Fabric', 2)],
     effect: 'Carry gear that reduces repeated trips through dangerous rooms.',
@@ -88,6 +132,7 @@ const equipmentRecipes = [
     slug: 'spring-shoes',
     name: 'Spring Shoes',
     category: 'Gear',
+    image: '/images/items/item-spring-shoes.png',
     priority: 'High on vertical routes',
     materials: [ingredient('clonk', 'Clonk', 1), ingredient('plastic', 'Plastic', 2)],
     effect: 'Mobility gear for jumps, drops, windows, counters, and awkward vertical exits.',
@@ -101,6 +146,7 @@ const equipmentRecipes = [
     slug: 'helmet',
     name: 'Helmet',
     category: 'Gear',
+    image: '/images/items/item-helmet.png',
     priority: 'Threat dependent',
     materials: [ingredient('plastic', 'Plastic', 2)],
     effect: 'Protective wearable for rough movement, impacts, and physics-heavy rooms.',
@@ -114,6 +160,7 @@ const equipmentRecipes = [
     slug: 'pickaxe',
     name: 'Pickaxe',
     category: 'Tools',
+    image: '/images/items/item-pickaxe.png',
     priority: 'High for resource farming',
     materials: [ingredient('clonk', 'Clonk', 3), ingredient('plastic', 'Plastic', 1)],
     effect: 'Breaks suitable stolen objects into resources without hauling the whole object home.',
@@ -126,6 +173,7 @@ const equipmentRecipes = [
     slug: 'eyeglass',
     name: 'Eyeglass',
     category: 'Tools',
+    image: '/images/items/item-eyeglass.png',
     priority: 'Information dependent',
     materials: [ingredient('fraggles', 'Fraggles', 2)],
     effect: 'Inspection tool for deciding whether a stealable object is worth moving or breaking.',
@@ -138,6 +186,7 @@ const equipmentRecipes = [
     slug: 'glue-gloves',
     name: 'Glue Gloves',
     category: 'Gear',
+    image: '/images/items/item-ceramics.png',
     priority: 'Route dependent',
     materials: [ingredient('plastic', 'Plastic', 3), ingredient('fabric', 'Fabric', 1)],
     effect: 'Climbing hand gear for wall routes and vertical recovery.',
@@ -151,6 +200,7 @@ const equipmentRecipes = [
     slug: 'boxing-gloves',
     name: 'Boxing Gloves',
     category: 'Weapons',
+    image: '/images/items/item-boxing-gloves.png',
     priority: 'Situational',
     materials: [ingredient('fabric', 'Fabric', 3)],
     effect: 'Hand equipment for close-range punch-style interaction.',
@@ -164,6 +214,7 @@ const equipmentRecipes = [
     slug: 'gnomium-gloves',
     name: 'Gnomium Gloves',
     category: 'Gear',
+    image: '/images/items/item-gnomium-gloves.png',
     priority: 'Expensive route craft',
     materials: [ingredient('gnomium', 'Gnomium', 3), ingredient('fraggles', 'Fraggles', 2)],
     effect: 'Hand-control gear for pushing, handling, and special interactions.',
@@ -177,6 +228,7 @@ const equipmentRecipes = [
     slug: 'slingshot',
     name: 'Slingshot',
     category: 'Weapons',
+    image: '/images/items/item-slingshot.png',
     priority: 'Route dependent',
     materials: [ingredient('chemicals', 'Chemicals', 2)],
     effect: 'Light ranged weapon for routes that need distance without spending Clonk.',
@@ -190,6 +242,7 @@ const equipmentRecipes = [
     slug: 'blowgun',
     name: 'Blowgun',
     category: 'Weapons',
+    image: '/images/items/item-blowgun.png',
     priority: 'High if preparing darts',
     materials: [ingredient('chemicals', 'Chemicals', 1)],
     effect: 'Fires potion darts and applies potion effects from range.',
@@ -203,6 +256,7 @@ const equipmentRecipes = [
     slug: 'grappling-hook',
     name: 'Grappling Hook',
     category: 'Tools',
+    image: '/images/items/item-grappling-hook.png',
     priority: 'High on vertical routes',
     materials: [ingredient('clonk', 'Clonk', 3), ingredient('gnomium', 'Gnomium', 2)],
     effect: 'Mobility tool for vertical shortcuts, recovery lines, and escape paths.',
@@ -216,6 +270,7 @@ const equipmentRecipes = [
     slug: 'glider',
     name: 'Glider',
     category: 'Gear',
+    image: '/images/items/item-glider.png',
     priority: 'High on height-heavy routes',
     materials: [ingredient('fabric', 'Fabric', 3), ingredient('fraggles', 'Fraggles', 2)],
     effect: 'Air mobility gear for controlled drops and high routes.',
@@ -229,6 +284,7 @@ const equipmentRecipes = [
     slug: 'marble-gun',
     name: 'Marble Gun',
     category: 'Weapons',
+    image: '/images/items/item-marble-gun.png',
     priority: 'High with Marble ammo',
     materials: [ingredient('plastic', 'Plastic', 3), ingredient('clonk', 'Clonk', 2)],
     effect: 'Ranged weapon that spends Marble ammo for hard hits and knockback.',
@@ -245,6 +301,7 @@ const potionRecipes = [
     slug: 'fart-potion',
     name: 'Fart Potion',
     category: 'Potions',
+    image: '/images/items/item-fart-potion.png',
     priority: 'Route dependent',
     materials: [ingredient('poopling', 'Poopling', 1), ingredient('fraggles', 'Fraggles', 1)],
     effect: 'Temporary potion effect for odd movement, air-control, or route experiments.',
@@ -257,6 +314,7 @@ const potionRecipes = [
     slug: 'health-potion',
     name: 'Health Potion',
     category: 'Potions',
+    image: '/images/items/item-health-potion.png',
     priority: 'High on risky routes',
     materials: [ingredient('scraplings', 'Scraplings', 1), ingredient('fraggles', 'Fraggles', 1)],
     effect: 'Survival potion for rescue routes, failed escapes, and threat-heavy rooms.',
@@ -270,6 +328,7 @@ const potionRecipes = [
     slug: 'confusion-potion',
     name: 'Confusion Potion',
     category: 'Potions',
+    image: '/images/items/item-confusion-potion.png',
     priority: 'Target dependent',
     materials: [ingredient('plastic', 'Plastic', 1), ingredient('fraggles', 'Fraggles', 1)],
     effect: 'Control potion for routes where disrupting a target is safer than fighting it.',
@@ -283,6 +342,7 @@ const potionRecipes = [
     slug: 'mobility-potion',
     name: 'Mobility Potion',
     category: 'Potions',
+    image: '/images/items/item-mobility-potion.png',
     priority: 'Route dependent',
     materials: [ingredient('chemicals', 'Chemicals', 1), ingredient('fraggles', 'Fraggles', 1)],
     effect: 'Movement support for speed, recovery, and routes where timing is tight.',
@@ -295,6 +355,7 @@ const potionRecipes = [
     slug: 'sleep-potion',
     name: 'Sleep Potion',
     category: 'Potions',
+    image: '/images/items/item-sleep-potion.png',
     priority: 'Target dependent',
     materials: [ingredient('clonk', 'Clonk', 1), ingredient('fraggles', 'Fraggles', 1)],
     effect: 'Disable-style potion for safer target control.',
@@ -308,6 +369,7 @@ const potionRecipes = [
     slug: 'stamina-potion',
     name: 'Stamina Potion',
     category: 'Potions',
+    image: '/images/items/item-stamina-potion.png',
     priority: 'Route dependent',
     materials: [ingredient('chemicals', 'Chemicals', 1), ingredient('fraggles', 'Fraggles', 1)],
     effect: 'Stamina support for longer movement, carrying, and escape chains.',
@@ -320,6 +382,7 @@ const potionRecipes = [
     slug: 'strength-potion',
     name: 'Strength Potion',
     category: 'Potions',
+    image: '/images/items/item-strength-potion.png',
     priority: 'Threat dependent',
     materials: [ingredient('tusk', 'Tusk', 1), ingredient('fraggles', 'Fraggles', 1)],
     effect: 'Strength support for force-heavy interaction and pressure routes.',
@@ -332,6 +395,7 @@ const potionRecipes = [
     slug: 'flight-potion',
     name: 'Flight Potion',
     category: 'Potions',
+    image: '/images/items/item-flight-potion.png',
     priority: 'High on vertical routes',
     materials: [ingredient('fabric', 'Fabric', 1), ingredient('fraggles', 'Fraggles', 1)],
     effect: 'Vertical movement support for high drops, windows, and escape lines.',
@@ -403,19 +467,13 @@ export default [
   },
   {
     key: 'materials',
-    items: Object.entries(materialSources).map(([item, source]) => ({
-      name: item
-        .split('-')
-        .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-        .join(' '),
-      item,
-      role: item === 'gnomium' ? 'Rare resource' : item.includes('ling') || item === 'tusk' ? 'Special ingredient' : 'Core resource',
-      source,
+    items: materials.map((material) => ({
+      ...material,
+      role: material.item === 'gnomium' ? 'Rare resource' : material.item.includes('ling') || material.item === 'tusk' ? 'Special ingredient' : 'Core resource',
       note: recipes
-        .filter((entry) => entry.materials.some((material) => material.item === item))
+        .filter((entry) => entry.materials.some((entryMaterial) => entryMaterial.item === material.item))
         .map((entry) => entry.name)
         .join(', '),
-      image: materialImageOverrides[item] ?? itemImage(item),
     })),
   },
 ]

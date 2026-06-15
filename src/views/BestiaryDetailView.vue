@@ -93,7 +93,7 @@
             <section v-if="sameCategoryEntries.length" id="related-category" class="guide-block">
               <h2>More {{ entry.category }} in the bestiary</h2>
               <p>
-                Other {{ entry.category.toLowerCase() }} entries we track — open a page for danger level,
+                Other {{ entry.category.toLowerCase() }} entries — open a page for danger level,
                 behavior notes, and survival tips.
               </p>
               <div class="tile-grid">
