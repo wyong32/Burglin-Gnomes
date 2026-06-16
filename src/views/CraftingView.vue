@@ -17,6 +17,8 @@
           </figure>
         </div>
 
+        <GptAd unit="banner2" />
+
         <div class="guide-layout">
           <PageSidebar
             label="On this page"
@@ -59,6 +61,8 @@
               </div>
             </section>
 
+            <GptAd unit="banner3" />
+
             <section id="recipes" class="guide-block recipe-board-section">
               <div class="section-heading">
                 <span class="eyebrow">Recipes</span>
@@ -84,6 +88,8 @@
               </div>
             </section>
 
+            <GptAd unit="banner1" />
+
             <section id="materials" class="guide-block materials-section">
               <div class="section-heading">
                 <span class="eyebrow">Materials</span>
@@ -105,6 +111,8 @@
                 </div>
               </div>
             </section>
+
+            <GptAd unit="banner2" />
           </div>
         </div>
       </div>

@@ -13,6 +13,8 @@
           </figure>
         </div>
 
+        <GptAd unit="banner1" />
+
         <div class="guide-layout">
           <PageSidebar
             label="On this page"
@@ -41,6 +43,7 @@
                 </RouterLink>
               </div>
             </section>
+            
 
             <section id="output" class="guide-block">
               <h2>{{ recipe.name }} output and use</h2>
@@ -55,6 +58,8 @@
               </div>
               <p>{{ recipe.bestUse }}</p>
             </section>
+
+            <GptAd unit="banner2" />
 
             <section id="areas" class="guide-block">
               <h2>Where to craft or route {{ recipe.name }}</h2>
@@ -87,6 +92,8 @@
               </div>
             </section>
 
+            <GptAd unit="banner3" />
+
             <section v-if="recipeGuideLink" id="guide" class="guide-block">
               <h2>Guide for {{ recipe.name }} and similar gear</h2>
               <RouterLink class="link-list__item" :to="recipeGuideLink.path">
@@ -110,6 +117,8 @@
                 </RouterLink>
               </div>
             </section>
+
+            <GptAd unit="banner1" />
 
             <section id="notes" class="guide-block">
               <h2>{{ recipe.name }} route notes</h2>

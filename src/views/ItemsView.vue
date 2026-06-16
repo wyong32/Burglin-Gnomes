@@ -17,6 +17,8 @@
           </figure>
         </div>
 
+        <GptAd unit="banner1" />
+
         <div class="guide-layout">
           <PageSidebar
             label="Categories"
@@ -26,6 +28,7 @@
           />
 
           <div class="guide-main">
+            
             <section id="items-overview" class="guide-block item-list-section" aria-label="Items by category">
               <div class="section-heading">
                 <span class="eyebrow">By category</span>
@@ -72,6 +75,9 @@
                       <span>{{ itemCardSource(item) }}</span>
                     </div>
                   </div>
+
+                  <GptAd unit="banner2" />
+  
                 </section>
               </div>
             </section>

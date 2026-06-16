@@ -13,6 +13,8 @@
           </figure>
         </div>
 
+        <GptAd unit="banner1" />
+
         <div class="guide-layout">
           <PageSidebar
             label="On this page"
@@ -39,6 +41,8 @@
                 </div>
               </div>
             </section>
+            
+            <GptAd unit="banner2" />
 
             <section id="items" class="guide-block">
               <h2>Items and weapons found in {{ area.name }}</h2>
@@ -57,6 +61,8 @@
               </div>
             </section>
 
+            <GptAd unit="banner3" />
+
             <section id="recipes" class="guide-block">
               <h2>Recipes connected to {{ area.name }}</h2>
               <p>
@@ -73,6 +79,8 @@
                 </RouterLink>
               </div>
             </section>
+
+            <GptAd unit="banner1" />
 
             <section id="tasks" class="guide-block">
               <h2>Tasks and danger checks in {{ area.name }}</h2>
@@ -92,6 +100,8 @@
               </div>
             </section>
 
+            <GptAd unit="banner2" />
+
             <section id="notes" class="guide-block">
               <h2>How to route {{ area.name }}</h2>
               <article v-for="section in area.sections" :key="section.heading" class="note-panel">
@@ -99,6 +109,7 @@
                 <p>{{ section.body }}</p>
               </article>
             </section>
+            
           </div>
         </div>
       </div>
@@ -110,6 +121,8 @@
           <RouterLink to="/base-building">Back to base and areas</RouterLink>
         </div>
       </div>
+
+      <GptAd unit="banner3" />
     </div>
   </section>
 </template>

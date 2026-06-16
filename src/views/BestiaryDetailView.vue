@@ -13,6 +13,8 @@
           </figure>
         </div>
 
+        <GptAd unit="banner3" />
+
         <div class="guide-layout">
           <PageSidebar
             label="On this page"
@@ -32,6 +34,8 @@
               </div>
             </section>
 
+            
+
             <section id="behavior" class="guide-block">
               <h2>{{ entry.name }} behavior and attack pattern</h2>
               <p>{{ entry.behavior }}</p>
@@ -42,6 +46,8 @@
                 </div>
               </div>
             </section>
+
+            <GptAd unit="banner1" />
 
             <section id="counters" class="guide-block">
               <h2>How to survive {{ entry.name }}</h2>
@@ -75,6 +81,8 @@
                 </RouterLink>
               </div>
             </section>
+
+            <GptAd unit="banner2" />
 
             <section id="notes" class="guide-block">
               <h2>{{ entry.name }} route notes</h2>
@@ -117,6 +125,8 @@
                 View all {{ entry.category }}
               </RouterLink>
             </section>
+
+            <GptAd unit="banner3" />
           </div>
         </div>
       </div>

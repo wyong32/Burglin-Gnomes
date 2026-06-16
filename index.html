@@ -95,6 +95,37 @@
       }
     </script>
 
+    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" crossorigin="anonymous"></script>
+    <script>
+      window.googletag = window.googletag || { cmd: [] };
+      googletag.cmd.push(function () {
+        var anchorSlot = googletag.defineOutOfPageSlot(
+          '/23346398271/burglin-gnomes.org_0615_all/burglin-gnomes.org_0615_anchor_1',
+          googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR
+        );
+        if (anchorSlot) anchorSlot.addService(googletag.pubads());
+        window.__gptAnchorSlot = anchorSlot;
+      });
+    </script>
+    <script>
+      googletag.cmd.push(function () {
+        var interstitialSlot = googletag.defineOutOfPageSlot(
+          '/23346398271/burglin-gnomes.org_0615_all/burglin-gnomes.org_0615_inter_1',
+          googletag.enums.OutOfPageFormat.INTERSTITIAL
+        );
+        if (interstitialSlot) {
+          interstitialSlot.addService(googletag.pubads());
+        }
+        window.__gptInterstitialSlot = interstitialSlot;
+        googletag.setConfig({
+          centering: true,
+          disableInitialLoad: true,
+          singleRequest: true,
+        });
+        googletag.enableServices();
+      });
+    </script>
+
     <script>
       window.addEventListener('load', function () {
         setTimeout(function () {
@@ -115,5 +146,19 @@
   <body>
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
+    <script>
+      googletag.cmd.push(function () {
+        var oopSlots = [];
+        if (window.__gptAnchorSlot) {
+          googletag.display(window.__gptAnchorSlot);
+          oopSlots.push(window.__gptAnchorSlot);
+        }
+        if (window.__gptInterstitialSlot) {
+          googletag.display(window.__gptInterstitialSlot);
+          oopSlots.push(window.__gptInterstitialSlot);
+        }
+        if (oopSlots.length) googletag.pubads().refresh(oopSlots);
+      });
+    </script>
   </body>
 </html>

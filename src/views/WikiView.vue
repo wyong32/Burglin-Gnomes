@@ -17,6 +17,8 @@
           </figure>
         </div>
 
+        <GptAd unit="banner1" />
+
         <div class="guide-layout">
           <PageSidebar
             label="On this page"
@@ -77,6 +79,8 @@
               </div>
             </section>
 
+            <GptAd unit="banner2" />
+
             <section id="area-guides" class="guide-block">
               <h2>Area guides for items, routes, and threats</h2>
               <p>
@@ -102,6 +106,8 @@
                 </RouterLink>
               </div>
             </section>
+
+            <GptAd unit="banner3" />
 
             <section id="wiki-topics" class="guide-block">
               <h2>Popular questions by topic</h2>
@@ -194,6 +200,8 @@
     </div>
   </section>
 
+  <GptAd unit="banner1" />
+
   <section id="guide-labels" class="labels-section page-section">
     <div class="container">
       <div class="labels-content page-content">
@@ -227,6 +235,8 @@
       </div>
     </div>
   </section>
+
+  <GptAd unit="banner2" />
 
   <section id="official-facts" class="facts-section page-section">
     <div class="container">
@@ -265,6 +275,8 @@
       </div>
     </div>
   </section>
+
+  <GptAd unit="banner3" />
   </div>
 </template>
 

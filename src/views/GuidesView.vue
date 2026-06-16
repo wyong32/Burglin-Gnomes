@@ -16,6 +16,8 @@
           </figure>
         </div>
 
+        <GptAd unit="banner1" />
+
         <section v-if="categoryOptions.length" class="guide-filter-section">
           <div class="guide-filter-content" aria-label="Guide categories">
             <button
@@ -72,6 +74,8 @@
             </nav>
           </div>
         </section>
+
+        <GptAd unit="banner2" />
       </div>
     </div>
   </section>

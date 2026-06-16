@@ -17,6 +17,8 @@
           </figure>
         </div>
 
+        <GptAd unit="banner2" />
+
         <div class="guide-layout">
           <PageSidebar
             label="On this page"
@@ -63,6 +65,8 @@
                 </div>
               </div>
             </section>
+
+            <GptAd unit="banner3" />
 
             <section id="release-preview" class="guide-block">
               <h2>What changed from early tests to the full release</h2>
@@ -133,6 +137,8 @@
                 </RouterLink>
               </div>
             </section>
+
+            <GptAd unit="banner1" />
           </div>
         </div>
       </div>
@@ -193,6 +199,8 @@
     </div>
   </section>
 
+  <GptAd unit="banner2" />
+
   <section id="patch-rules" class="rules-section page-section">
     <div class="container">
       <div class="rules-content page-content">
@@ -229,6 +237,8 @@
       </div>
     </div>
   </section>
+
+  <GptAd unit="banner3" />
   </div>
 </template>
 

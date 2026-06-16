@@ -25,6 +25,8 @@
             </div>
           </div>
 
+          <GptAd unit="banner3" />
+
           <section v-if="query" class="search-results-section" aria-label="Search results">
             <div class="section-heading">
               <span class="eyebrow">Results</span>
@@ -62,6 +64,8 @@
               <button v-for="hint in hints" :key="hint" type="button" @click="searchHint(hint)">{{ hint }}</button>
             </div>
           </section>
+
+          <GptAd unit="banner1" />
         </div>
       </div>
     </section>

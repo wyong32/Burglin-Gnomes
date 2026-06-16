@@ -18,6 +18,8 @@
           </figure>
         </div>
 
+        <GptAd unit="banner2" />
+
         <div class="guide-layout">
           <PageSidebar
             label="On this page"
@@ -56,6 +58,8 @@
               </div>
             </section>
 
+            <GptAd unit="banner3" />
+
             <section id="controls" class="guide-block">
               <h2>Basic controls that actually decide runs</h2>
               <p>
@@ -77,6 +81,8 @@
               </div>
             </section>
 
+            <GptAd unit="banner1" />
+
             <section id="first-route" class="guide-block">
               <h2>Best first route for new players</h2>
               <p>
@@ -93,6 +99,8 @@
                 </article>
               </div>
             </section>
+
+            <GptAd unit="banner2" />
 
             <section id="first-tasks" class="guide-block">
               <h2>First task list new players should learn</h2>
@@ -119,6 +127,8 @@
                 </div>
               </div>
             </section>
+
+            <GptAd unit="banner3" />
 
             <section id="task-system" class="guide-block">
               <h2>Daily task pool, group limits, and difficulty by day</h2>
@@ -171,6 +181,8 @@
               </div>
             </section>
 
+            <GptAd unit="banner1" />
+
             <section id="doors-windows" class="guide-block">
               <h2>How to open doors, climb windows, and avoid getting stuck</h2>
               <p>
@@ -208,6 +220,8 @@
               </div>
             </section>
 
+            <GptAd unit="banner2" />
+
             <section id="death-revival" class="guide-block">
               <h2>Death and revival mechanics: CPR, Spirit Catcher, and failed days</h2>
               <p>
@@ -241,6 +255,8 @@
               </div>
             </section>
 
+            <GptAd unit="banner3" />
+
             <section id="bug-fixes" class="guide-block">
               <h2>Muscle weakness bug, co-op lag, disconnects, and virtual memory setup</h2>
               <p>
@@ -273,6 +289,8 @@
               </div>
             </section>
 
+            <GptAd unit="banner1" />
+
             <section id="settings" class="guide-block">
               <h2>Settings and controls worth checking before the first run</h2>
               <p>
@@ -287,6 +305,8 @@
                 </article>
               </div>
             </section>
+
+            <GptAd unit="banner2" />
 
             <section id="room-order" class="guide-block">
               <h2>Recommended room order</h2>
@@ -308,6 +328,8 @@
     </div>
   </section>
 
+  <GptAd unit="banner3" />
+
   <section id="checklist" class="route-section page-section">
     <div class="container">
       <div class="route-content page-content">
@@ -325,6 +347,8 @@
     </div>
   </section>
 
+  <GptAd unit="banner1" />
+
   <section id="mistakes" class="mistakes-section page-section">
     <div class="container">
       <div class="mistakes-content page-content">
@@ -341,6 +365,8 @@
       </div>
     </div>
   </section>
+
+  <GptAd unit="banner2" />
   </div>
 </template>
 

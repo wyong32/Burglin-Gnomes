@@ -13,6 +13,8 @@
           </figure>
         </div>
 
+        <GptAd unit="banner2" />
+
         <div class="guide-layout">
           <PageSidebar
             label="On this page"
@@ -56,6 +58,8 @@
               </div>
             </section>
 
+            <GptAd unit="banner3" />
+
             <section id="recipes" class="guide-block">
               <h2>Recipes that craft or use {{ item.name }}</h2>
               <p>{{ item.use }}</p>
@@ -76,6 +80,8 @@
                 </RouterLink>
               </div>
             </section>
+
+            <GptAd unit="banner1" />
 
             <section id="related" class="guide-block">
               <h2>Items related to {{ item.name }}</h2>
@@ -101,6 +107,8 @@
               </RouterLink>
             </section>
 
+            <GptAd unit="banner2" />
+
             <section id="notes" class="guide-block">
               <h2>How to use {{ item.name }} in a run</h2>
               <article v-for="section in item.sections" :key="section.heading" class="note-panel">
@@ -119,6 +127,8 @@
           <RouterLink to="/items">Back to all items</RouterLink>
         </div>
       </div>
+
+      <GptAd unit="banner3" />
     </div>
   </section>
 </template>

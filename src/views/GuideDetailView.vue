@@ -20,6 +20,8 @@
           </figure>
         </div>
 
+        <GptAd unit="banner2" />
+
         <div class="guide-layout guide-detail-layout">
           <article class="guide-main guide-article">
             <div class="guide-tags" aria-label="Guide topics">
@@ -27,6 +29,8 @@
             </div>
 
             <div class="guide-body" v-html="guide.detailsHtml"></div>
+
+            <GptAd unit="banner3" />
 
             <section v-if="guidePager.length" class="related-guides-section">
               <div class="section-heading">
@@ -46,6 +50,7 @@
               </div>
             </section>
           </article>
+          
 
           <aside class="guide-sidebar" aria-label="Guide information">
             <div class="guide-sidebar-panel">

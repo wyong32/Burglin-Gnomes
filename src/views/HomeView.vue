@@ -42,6 +42,8 @@
     </div>
   </section>
 
+  <GptAd unit="banner3" />
+
   <section class="facts-section page-section">
     <div class="container">
       <div class="facts-content page-content">
@@ -80,6 +82,8 @@
     </div>
   </section>
 
+  <GptAd unit="banner1" />
+
   <section class="intro-band">
     <div class="container">
       <div class="intro-band__inner">
@@ -97,6 +101,8 @@
       </div>
     </div>
   </section>
+
+  <GptAd unit="banner2" />
 
   <section class="quicklinks-section page-section">
     <div class="container">
@@ -148,6 +154,8 @@
     </div>
   </section>
 
+  <GptAd unit="banner3" />
+
   <section class="plan-section page-section">
     <div class="container">
       <div class="plan-content page-content">
@@ -191,6 +199,8 @@
     </div>
   </section>
 
+  <GptAd unit="banner1" />
+
   <section class="overview-section page-section">
     <div class="container">
       <div class="overview-content page-content">
@@ -220,6 +230,8 @@
       </div>
     </div>
   </section>
+
+  <GptAd unit="banner2" />
 
   <section class="priority-section page-section">
     <div class="container">
@@ -263,6 +275,8 @@
       </div>
     </div>
   </section>
+
+  <GptAd unit="banner3" />
 
   <section class="first-tasks-section page-section">
     <div class="container">
@@ -317,6 +331,8 @@
     </div>
   </section>
 
+  <GptAd unit="banner1" />
+
   <section class="tools-section page-section">
     <div class="container">
       <div class="tools-content page-content">
@@ -344,6 +360,8 @@
       </div>
     </div>
   </section>
+
+  <GptAd unit="banner2" />
 
   <section class="systems-section page-section">
     <div class="container">
@@ -375,6 +393,8 @@
     </div>
   </section>
 
+  <GptAd unit="banner3" />
+
   <section class="faq-section page-section" id="faq">
     <div class="container">
       <div class="faq-content page-content">
@@ -403,6 +423,8 @@
       </div>
     </div>
   </section>
+  
+  <GptAd unit="banner1" />
   </div>
 </template>
 

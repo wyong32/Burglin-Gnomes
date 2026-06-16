@@ -2,40 +2,40 @@
   "version": 1,
   "urls": {
     "/": {
-      "hash": "51ec7d201b2b112a",
+      "hash": "3efbbf8b9d65c2a7",
       "lastmod": "2026-06-16"
     },
     "/search": {
-      "hash": "9c01732b4acff576",
-      "lastmod": "2026-06-15"
+      "hash": "dea5242a7921d77e",
+      "lastmod": "2026-06-16"
     },
     "/wiki": {
-      "hash": "9386ba3fea503628",
+      "hash": "4c3152c0c9a7c1dc",
       "lastmod": "2026-06-16"
     },
     "/beginner": {
-      "hash": "4f28bf28cb4cea2c",
+      "hash": "5165175921ae0332",
       "lastmod": "2026-06-16"
     },
     "/items": {
-      "hash": "949a3a04df94326c",
+      "hash": "7b7cfca6b3730dce",
       "lastmod": "2026-06-16"
     },
     "/crafting": {
-      "hash": "058539c455d406c8",
+      "hash": "8137a41a9cafbd4a",
       "lastmod": "2026-06-16"
     },
     "/base-building": {
-      "hash": "2be9d30a9d938479",
+      "hash": "067f795e9ebfc970",
       "lastmod": "2026-06-16"
     },
     "/bestiary": {
-      "hash": "1fe8e4f1b5b23215",
+      "hash": "583acaae640c7046",
       "lastmod": "2026-06-16"
     },
     "/updates": {
-      "hash": "2d01bdf105bf2ab2",
-      "lastmod": "2026-06-12"
+      "hash": "0fc3fceb91b6bdfe",
+      "lastmod": "2026-06-16"
     },
     "/legal/privacy-policy": {
       "hash": "d937976f3c3dbf4a",
@@ -58,455 +58,455 @@
       "lastmod": "2026-06-12"
     },
     "/items/chemicals": {
-      "hash": "e12d800f00661583",
+      "hash": "dbff251c8ab72cc3",
       "lastmod": "2026-06-16"
     },
     "/items/fabric": {
-      "hash": "52fdcee87ff63ba0",
+      "hash": "cb7f5211c4321b58",
       "lastmod": "2026-06-16"
     },
     "/items/plastic": {
-      "hash": "dc23793475be639d",
+      "hash": "f473685f1f5b29d8",
       "lastmod": "2026-06-16"
     },
     "/items/gnomium": {
-      "hash": "ecb6d89e28da4d66",
+      "hash": "508add9afad0f63d",
       "lastmod": "2026-06-16"
     },
     "/items/poopling": {
-      "hash": "2eb06986473a80ca",
+      "hash": "8bd78fe0762cb9f1",
       "lastmod": "2026-06-16"
     },
     "/items/scraplings": {
-      "hash": "7e763dea8807f144",
+      "hash": "44c40afe35e5ecae",
       "lastmod": "2026-06-16"
     },
     "/items/tusk": {
-      "hash": "13b7fc92631c7201",
+      "hash": "e6b45b3144aa7aba",
       "lastmod": "2026-06-16"
     },
     "/items/metal-bat": {
-      "hash": "52cfccbee6399c53",
+      "hash": "96aa5b903bcd2291",
       "lastmod": "2026-06-16"
     },
     "/items/branch": {
-      "hash": "16bb8c316e316af4",
+      "hash": "7c27f4f6db559da0",
       "lastmod": "2026-06-16"
     },
     "/items/slingshot": {
-      "hash": "5979b306f5fe12e6",
+      "hash": "27079e0bec256870",
       "lastmod": "2026-06-16"
     },
     "/items/marble-gun": {
-      "hash": "fb7d874156a49cfb",
+      "hash": "85d7caf6d69f55b3",
       "lastmod": "2026-06-16"
     },
     "/items/boxing-gloves": {
-      "hash": "b7d669934e7b026d",
+      "hash": "6bd604e1b5600f0f",
       "lastmod": "2026-06-16"
     },
     "/items/blowgun": {
-      "hash": "46eee48d4b8bca04",
+      "hash": "2a10f9560d0b2450",
       "lastmod": "2026-06-16"
     },
     "/items/gun": {
-      "hash": "7000e8d5a35f3391",
+      "hash": "d98b633917428dbf",
       "lastmod": "2026-06-16"
     },
     "/items/shotgun": {
-      "hash": "d3dbb30e81c29a74",
+      "hash": "b354a139a2517066",
       "lastmod": "2026-06-16"
     },
     "/items/grenade": {
-      "hash": "b0700fe4e8594c1b",
+      "hash": "85f631043bb1fe24",
       "lastmod": "2026-06-16"
     },
     "/items/taser": {
-      "hash": "d7559f9139a9355d",
+      "hash": "0bb7fd8017c0ecb5",
       "lastmod": "2026-06-16"
     },
     "/items/pepper-spray": {
-      "hash": "62c9c7139e924cca",
+      "hash": "da0b7661f4387360",
       "lastmod": "2026-06-16"
     },
     "/items/knife": {
-      "hash": "27ab53a0cc778844",
+      "hash": "dc31eb8b3cce7a42",
       "lastmod": "2026-06-16"
     },
     "/items/fork": {
-      "hash": "a45b8807ec50a510",
+      "hash": "4e8b71464c8d8f61",
       "lastmod": "2026-06-16"
     },
     "/items/spoon": {
-      "hash": "773fcec428eba46e",
+      "hash": "b8bf694a8f5e0c35",
       "lastmod": "2026-06-16"
     },
     "/items/rocket-launcher": {
-      "hash": "c92758136f089074",
+      "hash": "92ee6e593a97341b",
       "lastmod": "2026-06-16"
     },
     "/items/landmine": {
-      "hash": "c8c63fd639e5838c",
+      "hash": "1263b0b669022a44",
       "lastmod": "2026-06-16"
     },
     "/items/firework": {
-      "hash": "c6797487bcb87c06",
+      "hash": "7fd1741cb3925c7e",
       "lastmod": "2026-06-16"
     },
     "/items/chainsaw": {
-      "hash": "5b889b4df376e506",
+      "hash": "7a9eb38b7c333f4f",
       "lastmod": "2026-06-16"
     },
     "/items/gardening-shears": {
-      "hash": "0af7f11d8883e1ce",
+      "hash": "ce6fe8e4499b5db8",
       "lastmod": "2026-06-16"
     },
     "/items/pickaxe": {
-      "hash": "35ab108bd9a1734e",
+      "hash": "102ca20b98835415",
       "lastmod": "2026-06-16"
     },
     "/items/eyeglass": {
-      "hash": "b3e6fb02ff97ede2",
+      "hash": "fe9353d8ac4d9095",
       "lastmod": "2026-06-16"
     },
     "/items/grappling-hook": {
-      "hash": "3a2fb0b1c30d0822",
+      "hash": "6dbd40740185ae5d",
       "lastmod": "2026-06-16"
     },
     "/items/backpack": {
-      "hash": "52731cffa09d93b9",
+      "hash": "3fbe849071d1c396",
       "lastmod": "2026-06-16"
     },
     "/items/spring-shoes": {
-      "hash": "ad3224a2a480e07d",
+      "hash": "5113c5407e37f4fb",
       "lastmod": "2026-06-16"
     },
     "/items/gnomium-gloves": {
-      "hash": "c2c975b6b8253d0e",
+      "hash": "01a6a83be4d9a1ad",
       "lastmod": "2026-06-16"
     },
     "/items/glider": {
-      "hash": "215f5d96f72934f1",
+      "hash": "5ec3dc548fc79ae3",
       "lastmod": "2026-06-16"
     },
     "/items/helmet": {
-      "hash": "e641f4b83d41a27b",
+      "hash": "a143d836391b787a",
       "lastmod": "2026-06-16"
     },
     "/items/glue-gloves": {
-      "hash": "1e3c0ee06aa4768d",
+      "hash": "f34e4e0bbfc31636",
       "lastmod": "2026-06-16"
     },
     "/items/fairywings": {
-      "hash": "8920b487ce973520",
+      "hash": "2cd978bfec299830",
       "lastmod": "2026-06-16"
     },
     "/items/music-box": {
-      "hash": "ff00fa0dbbb023cc",
+      "hash": "f8e5d0dc325236be",
       "lastmod": "2026-06-16"
     },
     "/items/cigarette": {
-      "hash": "14e6b78da3068bf6",
+      "hash": "d03d51b4c63194ab",
       "lastmod": "2026-06-16"
     },
     "/items/papyrus": {
-      "hash": "30bad5d06eee25df",
+      "hash": "24f7ef81547657b2",
       "lastmod": "2026-06-16"
     },
     "/items/fart-potion": {
-      "hash": "bb5b3bceb250a356",
+      "hash": "9a7b48dc4ab22b0c",
       "lastmod": "2026-06-16"
     },
     "/items/health-potion": {
-      "hash": "f2358f9f73b5f5af",
+      "hash": "b539d340bd025a9c",
       "lastmod": "2026-06-16"
     },
     "/items/confusion-potion": {
-      "hash": "0c30d35e304ad133",
+      "hash": "8421a402da1cd1c4",
       "lastmod": "2026-06-16"
     },
     "/items/mobility-potion": {
-      "hash": "ffe69fe198d8793b",
+      "hash": "f77ef6a325dbe7f3",
       "lastmod": "2026-06-16"
     },
     "/items/sleep-potion": {
-      "hash": "eb6e38ac9f338b66",
+      "hash": "e32e5c55ca4f7eb2",
       "lastmod": "2026-06-16"
     },
     "/items/stamina-potion": {
-      "hash": "a8e438d68e37e472",
+      "hash": "9ed581e6e169cd05",
       "lastmod": "2026-06-16"
     },
     "/items/strength-potion": {
-      "hash": "0d4580ca8c28c429",
+      "hash": "66ac3b7af1a7844e",
       "lastmod": "2026-06-16"
     },
     "/items/flight-potion": {
-      "hash": "814b0c366873c27e",
+      "hash": "6bf2969208ff1975",
       "lastmod": "2026-06-16"
     },
     "/items/marble": {
-      "hash": "e78dafc93843a862",
+      "hash": "1f057e93ba037f02",
       "lastmod": "2026-06-16"
     },
     "/items/confusion-dart": {
-      "hash": "dd6c13ee979faf67",
+      "hash": "78f5f8ead64eb855",
       "lastmod": "2026-06-16"
     },
     "/items/fart-dart": {
-      "hash": "c575e9ec1a058918",
+      "hash": "63bb9e36c48cbdbf",
       "lastmod": "2026-06-16"
     },
     "/items/flight-dart": {
-      "hash": "fffc59077b937ed2",
+      "hash": "709e81d7f11eb69e",
       "lastmod": "2026-06-16"
     },
     "/items/health-dart": {
-      "hash": "1ec752cb37767260",
+      "hash": "9c7fe5501536b9ad",
       "lastmod": "2026-06-16"
     },
     "/items/mobility-dart": {
-      "hash": "7eee736c1a7a4450",
+      "hash": "0ba2e081b722d96a",
       "lastmod": "2026-06-16"
     },
     "/items/sleep-dart": {
-      "hash": "eb0ed030c4b1fe81",
+      "hash": "d949e14ed7082ee0",
       "lastmod": "2026-06-16"
     },
     "/items/stamina-dart": {
-      "hash": "b5d7843bd947bb42",
+      "hash": "4eb31746e2de9de6",
       "lastmod": "2026-06-16"
     },
     "/items/strength-dart": {
-      "hash": "4983c7e4ffe61585",
+      "hash": "e8fb9fbf03094662",
       "lastmod": "2026-06-16"
     },
     "/crafting/metal-bat": {
-      "hash": "e2364f6c25ac915b",
+      "hash": "5d05f59da5a1bbb1",
       "lastmod": "2026-06-16"
     },
     "/crafting/backpack": {
-      "hash": "7f7c76fc5f055f88",
+      "hash": "b254f3329de0a395",
       "lastmod": "2026-06-16"
     },
     "/crafting/spring-shoes": {
-      "hash": "35dc5c6a53899b48",
+      "hash": "73feb8d91774b71e",
       "lastmod": "2026-06-16"
     },
     "/crafting/helmet": {
-      "hash": "46141ab10863cbe5",
+      "hash": "c4370d03a394af73",
       "lastmod": "2026-06-16"
     },
     "/crafting/pickaxe": {
-      "hash": "a1226e3af8f1b1af",
+      "hash": "2b10db2632b8f13c",
       "lastmod": "2026-06-16"
     },
     "/crafting/eyeglass": {
-      "hash": "48c9ecfb1adf7527",
+      "hash": "4659dde670812d33",
       "lastmod": "2026-06-16"
     },
     "/crafting/glue-gloves": {
-      "hash": "c1f542f485239735",
+      "hash": "f655ae362bc7a2f4",
       "lastmod": "2026-06-16"
     },
     "/crafting/boxing-gloves": {
-      "hash": "3d8ddd6df18cb671",
+      "hash": "b3a828d9207b33fe",
       "lastmod": "2026-06-16"
     },
     "/crafting/gnomium-gloves": {
-      "hash": "50386d8a4ad865db",
+      "hash": "d6650f43ec649b03",
       "lastmod": "2026-06-16"
     },
     "/crafting/slingshot": {
-      "hash": "93f5ee88f7384f4d",
+      "hash": "3870cc1c66cc2bef",
       "lastmod": "2026-06-16"
     },
     "/crafting/blowgun": {
-      "hash": "8e3ce911243b22f0",
+      "hash": "bcf63f8ab813f155",
       "lastmod": "2026-06-16"
     },
     "/crafting/grappling-hook": {
-      "hash": "e1d48d1f6801734b",
+      "hash": "e3a44accdf74abde",
       "lastmod": "2026-06-16"
     },
     "/crafting/glider": {
-      "hash": "395b2a958dcaabb3",
+      "hash": "2fbe0638fc30afd6",
       "lastmod": "2026-06-16"
     },
     "/crafting/marble-gun": {
-      "hash": "72de3732166128fa",
+      "hash": "5b7639369daf1f11",
       "lastmod": "2026-06-16"
     },
     "/crafting/fart-potion": {
-      "hash": "1c36833c5cc0b152",
+      "hash": "ab304f288ac66977",
       "lastmod": "2026-06-16"
     },
     "/crafting/health-potion": {
-      "hash": "e1f8339a6d306b08",
+      "hash": "6e2478f91ee918a9",
       "lastmod": "2026-06-16"
     },
     "/crafting/confusion-potion": {
-      "hash": "dd78c4832de78c75",
+      "hash": "a3fcab2d2a2af334",
       "lastmod": "2026-06-16"
     },
     "/crafting/mobility-potion": {
-      "hash": "2085e74db39195a3",
+      "hash": "183917b0d3bf07b7",
       "lastmod": "2026-06-16"
     },
     "/crafting/sleep-potion": {
-      "hash": "f5f1f60dae5b42a6",
+      "hash": "5922cc7a4d889c15",
       "lastmod": "2026-06-16"
     },
     "/crafting/stamina-potion": {
-      "hash": "80c8c56050f92eef",
+      "hash": "377259d800185503",
       "lastmod": "2026-06-16"
     },
     "/crafting/strength-potion": {
-      "hash": "c37b80f7d577fc28",
+      "hash": "c8a372d41c16fb71",
       "lastmod": "2026-06-16"
     },
     "/crafting/flight-potion": {
-      "hash": "759b52db0700ea55",
+      "hash": "da39bd9b8a3a904a",
       "lastmod": "2026-06-16"
     },
     "/areas/gnome-world": {
-      "hash": "5d3852d2dd06eed8",
-      "lastmod": "2026-06-15"
+      "hash": "e7e88f92b086ff51",
+      "lastmod": "2026-06-16"
     },
     "/areas/well": {
-      "hash": "91e51ed1521fc6b6",
-      "lastmod": "2026-06-15"
+      "hash": "0d0886dc92be4df4",
+      "lastmod": "2026-06-16"
     },
     "/areas/potion-table": {
-      "hash": "bd10952987cc77b0",
-      "lastmod": "2026-06-15"
+      "hash": "d80bd389e2c45ca7",
+      "lastmod": "2026-06-16"
     },
     "/areas/repackager": {
-      "hash": "f334c3732c076b61",
-      "lastmod": "2026-06-15"
+      "hash": "cf17f2a8fe10b274",
+      "lastmod": "2026-06-16"
     },
     "/areas/human-house": {
-      "hash": "7225a84a3b9a99bf",
-      "lastmod": "2026-06-15"
+      "hash": "9ff4bf4b64cbf29d",
+      "lastmod": "2026-06-16"
     },
     "/areas/cabinets-drawers": {
-      "hash": "ea950f190f8ccaf0",
-      "lastmod": "2026-06-15"
+      "hash": "1119bba2ad163694",
+      "lastmod": "2026-06-16"
     },
     "/areas/kitchen": {
-      "hash": "c654c5db82a4476c",
-      "lastmod": "2026-06-15"
+      "hash": "a776cacf008009b0",
+      "lastmod": "2026-06-16"
     },
     "/areas/bathroom": {
-      "hash": "e260e0cd5ffea55c",
-      "lastmod": "2026-06-15"
+      "hash": "e9be04a1d8219527",
+      "lastmod": "2026-06-16"
     },
     "/areas/bedroom-living-room": {
-      "hash": "28b493b3bb245f29",
-      "lastmod": "2026-06-15"
+      "hash": "dba4ac8576a1ca07",
+      "lastmod": "2026-06-16"
     },
     "/areas/outdoor-lawn": {
-      "hash": "bb83b4e886fac167",
-      "lastmod": "2026-06-15"
+      "hash": "6ad7aa2d6607b11a",
+      "lastmod": "2026-06-16"
     },
     "/areas/garage-shed": {
-      "hash": "71d9971fd6cfd1ab",
-      "lastmod": "2026-06-15"
+      "hash": "02adb2dc1d1aeaf4",
+      "lastmod": "2026-06-16"
     },
     "/areas/greenhouse-garden": {
-      "hash": "9cdd1227421b648b",
-      "lastmod": "2026-06-15"
+      "hash": "f7e71ceccd413c62",
+      "lastmod": "2026-06-16"
     },
     "/areas/weapon-safe": {
-      "hash": "c28fd76bdb0dbc36",
-      "lastmod": "2026-06-15"
+      "hash": "4d3dbbf0ff2c31d7",
+      "lastmod": "2026-06-16"
     },
     "/bestiary/high-gnome": {
-      "hash": "2b334003a67bf7ca",
+      "hash": "817e4517e54aae7f",
       "lastmod": "2026-06-16"
     },
     "/bestiary/fairy": {
-      "hash": "c41857ae4af812fd",
-      "lastmod": "2026-06-15"
+      "hash": "9ebcf60fb866301c",
+      "lastmod": "2026-06-16"
     },
     "/bestiary/human-homeowner": {
-      "hash": "a5dae33ac4440e78",
+      "hash": "47e228900cb85ec1",
       "lastmod": "2026-06-16"
     },
     "/bestiary/cat": {
-      "hash": "d9e5991dde26f176",
+      "hash": "63f0a356b1ccdce6",
       "lastmod": "2026-06-16"
     },
     "/bestiary/rat": {
-      "hash": "dba5eff7b35b248d",
+      "hash": "7f317afa25239fd7",
       "lastmod": "2026-06-16"
     },
     "/bestiary/cockroach": {
-      "hash": "5075b84c4db66c66",
+      "hash": "11c1cb06aa7ae9b5",
       "lastmod": "2026-06-16"
     },
     "/bestiary/evil-gnome": {
-      "hash": "685f484c1bf58706",
+      "hash": "e228c82d3b07994c",
       "lastmod": "2026-06-16"
     },
     "/bestiary/vacuum-robot": {
-      "hash": "2884401669c63169",
+      "hash": "9362f034c2abeca0",
       "lastmod": "2026-06-16"
     },
     "/bestiary/tall-humanoid": {
-      "hash": "7e4a50cd6b253ab3",
-      "lastmod": "2026-06-15"
+      "hash": "86408a835edb3dae",
+      "lastmod": "2026-06-16"
     },
     "/bestiary/groundhog": {
-      "hash": "a48cf48846e95ba4",
-      "lastmod": "2026-06-15"
+      "hash": "aa31dc60f654738f",
+      "lastmod": "2026-06-16"
     },
     "/bestiary/jonathan": {
-      "hash": "f078caa108ee2ad6",
-      "lastmod": "2026-06-15"
+      "hash": "328ecf76cb8a12c6",
+      "lastmod": "2026-06-16"
     },
     "/bestiary/boar": {
-      "hash": "2a8f23c0e24f9c23",
-      "lastmod": "2026-06-15"
+      "hash": "19a57a1e01f83347",
+      "lastmod": "2026-06-16"
     },
     "/bestiary/pitbull": {
-      "hash": "a73b8fcf48faf857",
-      "lastmod": "2026-06-15"
+      "hash": "11d5490153a82c15",
+      "lastmod": "2026-06-16"
     },
     "/bestiary/sealman": {
-      "hash": "2192efb062bc9242",
-      "lastmod": "2026-06-15"
+      "hash": "c591962340f9741b",
+      "lastmod": "2026-06-16"
     },
     "/bestiary/bee": {
-      "hash": "c5fbaba26d7d771f",
-      "lastmod": "2026-06-15"
+      "hash": "9241ad676284aff4",
+      "lastmod": "2026-06-16"
     },
     "/bestiary/seagull": {
-      "hash": "7797b413ad8a16d3",
-      "lastmod": "2026-06-15"
+      "hash": "2a4e1bb0a59bbe90",
+      "lastmod": "2026-06-16"
     },
     "/bestiary/environmental-hazards": {
-      "hash": "156148d641bfb60b",
+      "hash": "976ace080ee6d53a",
       "lastmod": "2026-06-16"
     },
     "/items/fraggles": {
-      "hash": "5af7db48a179b3e6",
+      "hash": "8281a1ba9a62c746",
       "lastmod": "2026-06-16"
     },
     "/items/clonk": {
-      "hash": "d062ab2986161364",
+      "hash": "3788aa9257dda5d8",
       "lastmod": "2026-06-16"
     },
     "/guides": {
-      "hash": "d118baf7390d48ce",
+      "hash": "340734db4e4492d3",
       "lastmod": "2026-06-16"
     },
     "/guides/burglin-gnomes-complete-beginners-guide": {
-      "hash": "006b1fc0ec33786c",
+      "hash": "e565d79bce798f53",
       "lastmod": "2026-06-16"
     },
     "/guides/burglin-gnomes-official-gear-weapons-directory": {
-      "hash": "4c8cf099433c73a2",
+      "hash": "5b52973edfdeda47",
       "lastmod": "2026-06-16"
     }
   }

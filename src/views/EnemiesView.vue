@@ -17,6 +17,8 @@
           </figure>
         </div>
 
+        <GptAd unit="banner3" />
+
         <div class="guide-layout">
           <PageSidebar
             label="Categories"
@@ -53,7 +55,11 @@
                   </span>
                 </RouterLink>
               </div>
+
+              <GptAd unit="banner1" />
             </section>
+
+            
           </div>
         </div>
       </div>
