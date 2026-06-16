@@ -200,9 +200,11 @@
                   <ul>
                     <li v-for="tip in well.tips" :key="tip">{{ tip }}</li>
                   </ul>
-                  <RouterLink v-if="well.links?.[0]" class="facility-row__links" :to="well.links[0].path">
-                    {{ well.links[0].label }}
-                  </RouterLink>
+                  <div v-if="well.links?.length" class="facility-row__links">
+                    <RouterLink v-for="link in well.links" :key="link.path" :to="link.path">
+                      {{ link.label }}
+                    </RouterLink>
+                  </div>
                 </div>
               </div>
               <div class="link-list craft-links">

@@ -87,6 +87,17 @@
               </div>
             </section>
 
+            <section v-if="recipeGuideLink" id="guide" class="guide-block">
+              <h2>Guide for {{ recipe.name }} and similar gear</h2>
+              <RouterLink class="link-list__item" :to="recipeGuideLink.path">
+                <span>
+                  <strong>{{ recipeGuideLink.label }}</strong>
+                  <span>{{ recipeGuideLink.note }}</span>
+                </span>
+                <span class="entry-chevron" aria-hidden="true">→</span>
+              </RouterLink>
+            </section>
+
             <section id="bestiary" class="guide-block">
               <h2>Threats {{ recipe.name }} helps handle</h2>
               <div class="link-list">
@@ -140,14 +151,17 @@ const areas = areasData.find((section) => section.key === 'areas').items
 
 const recipe = computed(() => recipes.find((entry) => entry.slug === route.params.slug))
 
-const recipeSidebarSections = [
-  { id: 'materials', label: 'Materials', href: '#materials' },
-  { id: 'output', label: 'What you craft', href: '#output' },
-  { id: 'areas', label: 'Crafting area', href: '#areas' },
-  { id: 'mechanics', label: 'Mechanics', href: '#mechanics' },
-  { id: 'bestiary', label: 'Helps against', href: '#bestiary' },
-  { id: 'notes', label: 'Route notes', href: '#notes' },
-]
+const recipeSidebarSections = computed(() =>
+  [
+    { id: 'materials', label: 'Materials', href: '#materials' },
+    { id: 'output', label: 'What you craft', href: '#output' },
+    { id: 'areas', label: 'Crafting area', href: '#areas' },
+    { id: 'mechanics', label: 'Mechanics', href: '#mechanics' },
+    recipeGuideLink.value && { id: 'guide', label: 'Related guide', href: '#guide' },
+    { id: 'bestiary', label: 'Helps against', href: '#bestiary' },
+    { id: 'notes', label: 'Route notes', href: '#notes' },
+  ].filter(Boolean),
+)
 const outputItem = computed(() => items.find((item) => item.slug === recipe.value?.outputItem))
 const recipeAreas = computed(() => (recipe.value?.areas || []).map((slug) => areas.find((area) => area.slug === slug)).filter(Boolean))
 const materials = computed(() =>
@@ -158,6 +172,15 @@ const materials = computed(() =>
   })),
 )
 const relatedBestiary = computed(() => (recipe.value?.relatedBestiary || []).map((slug) => bestiary.find((entry) => entry.slug === slug)).filter(Boolean))
+const recipeGuideLink = computed(() => {
+  if (!['Weapons', 'Gear', 'Tools'].includes(recipe.value?.category)) return null
+
+  return {
+    label: 'Weapons, gear, and gadget crafting directory',
+    path: '/guides/burglin-gnomes-official-gear-weapons-directory',
+    note: 'Use the directory when comparing craft cost, equipment slots, utility, and route value.',
+  }
+})
 </script>
 
 <style scoped>

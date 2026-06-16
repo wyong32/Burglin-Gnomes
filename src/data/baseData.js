@@ -17,6 +17,7 @@ export default [
         links: [
           { label: 'Crafting', path: '/crafting' },
           { label: 'Beginner route', path: '/beginner#core-loop' },
+          { label: 'Complete survival guide', path: '/guides/burglin-gnomes-complete-beginners-guide' },
         ],
       },
       {
@@ -29,6 +30,7 @@ export default [
         links: [
           { label: 'Entry methods', path: '/beginner#human-world' },
           { label: 'Bestiary', path: '/bestiary' },
+          { label: 'Complete survival guide', path: '/guides/burglin-gnomes-complete-beginners-guide' },
         ],
       },
     ],
@@ -136,7 +138,10 @@ export default [
           'Craft Backpack and Pickaxe before greedy loot routes.',
           'Practice combat gear away from progression runs.',
         ],
-        links: [{ label: 'Crafting recipes', path: '/crafting' }],
+        links: [
+          { label: 'Crafting recipes', path: '/crafting' },
+          { label: 'Weapons and gear directory', path: '/guides/burglin-gnomes-official-gear-weapons-directory' },
+        ],
       },
     ],
   },

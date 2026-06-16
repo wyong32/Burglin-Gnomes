@@ -47,7 +47,7 @@
                 <p>{{ guide.description }}</p>
                 <span class="guide-card-meta">
                   <b>{{ guide.publishDate }}</b>
-                  <em>{{ guide.tags.join(' / ') }}</em>
+                  <em>{{ guide.author }}</em>
                 </span>
               </span>
             </RouterLink>

@@ -38,6 +38,10 @@
                   <strong>Beginner Guide</strong>
                   <span>First route, tasks, doors and windows, revive rules, and co-op fixes.</span>
                 </RouterLink>
+                <RouterLink to="/guides/burglin-gnomes-complete-beginners-guide" class="guide-card wiki-card">
+                  <strong>Complete Survival Guide</strong>
+                  <span>Core loop, Gnome Haven setup, inventory rules, upgrades, and camp management.</span>
+                </RouterLink>
                 <RouterLink to="/beginner#first-tasks" class="guide-card wiki-card">
                   <strong>Tasks</strong>
                   <span>How High-Gnome jobs work and which rooms to hit first.</span>
@@ -49,6 +53,10 @@
                 <RouterLink to="/crafting" class="guide-card wiki-card">
                   <strong>Crafting</strong>
                   <span>Recipes, gear upgrades, and the craft order we use on co-op nights.</span>
+                </RouterLink>
+                <RouterLink to="/guides/burglin-gnomes-official-gear-weapons-directory" class="guide-card wiki-card">
+                  <strong>Weapons &amp; Gear Directory</strong>
+                  <span>Weapons, equipment slots, mobility gear, tools, and crafting costs.</span>
                 </RouterLink>
                 <RouterLink to="/base-building" class="guide-card wiki-card">
                   <strong>Base Building</strong>

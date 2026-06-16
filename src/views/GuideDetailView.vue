@@ -28,15 +28,20 @@
 
             <div class="guide-body" v-html="guide.detailsHtml"></div>
 
-            <section v-if="relatedGuides.length" class="related-guides-section">
+            <section v-if="guidePager.length" class="related-guides-section">
               <div class="section-heading">
-                <span class="eyebrow">Read next</span>
-                <h2>Related Burglin' Gnomes guides</h2>
+                <span class="eyebrow">Guide Navigation</span>
+                <h2>Previous and next guides</h2>
               </div>
               <div class="related-guide-grid">
-                <RouterLink v-for="item in relatedGuides" :key="item.id" class="guide-card" :to="`/guides/${item.addressBar}`">
-                  <strong>{{ item.title }}</strong>
-                  <span>{{ item.description }}</span>
+                <RouterLink
+                  v-for="item in guidePager"
+                  :key="item.type"
+                  class="guide-card"
+                  :to="`/guides/${item.guide.addressBar}`"
+                >
+                  <small>{{ item.label }}</small>
+                  <strong>{{ item.guide.title }}</strong>
                 </RouterLink>
               </div>
             </section>
@@ -91,12 +96,23 @@ import guidesData from '../data/guides.js'
 const route = useRoute()
 const guides = guidesData.filter((item) => item.addressBar)
 const guide = computed(() => guides.find((item) => item.addressBar === route.params.slug))
-const relatedGuides = computed(() => {
+const guidePager = computed(() => {
   if (!guide.value) return []
-  return guides
-    .filter((item) => item.addressBar !== guide.value.addressBar)
-    .filter((item) => item.category === guide.value.category || item.tags?.some((tag) => guide.value.tags?.includes(tag)))
-    .slice(0, 3)
+  const currentIndex = guides.findIndex((item) => item.addressBar === guide.value.addressBar)
+  if (currentIndex < 0) return []
+
+  return [
+    guides[currentIndex - 1] && {
+      type: 'previous',
+      label: 'Previous guide',
+      guide: guides[currentIndex - 1],
+    },
+    guides[currentIndex + 1] && {
+      type: 'next',
+      label: 'Next guide',
+      guide: guides[currentIndex + 1],
+    },
+  ].filter(Boolean)
 })
 </script>
 
@@ -325,6 +341,20 @@ const relatedGuides = computed(() => {
   line-height: 1.72;
 }
 
+.guide-body :deep(a) {
+  color: var(--color-primary);
+  font-weight: 950;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.guide-body :deep(a:hover),
+.guide-body :deep(a:focus-visible) {
+  color: var(--color-accent);
+  outline: none;
+}
+
 .guide-body :deep(ul),
 .guide-body :deep(ol) {
   display: grid;
@@ -341,8 +371,29 @@ const relatedGuides = computed(() => {
 
 .related-guide-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
+}
+
+.related-guide-grid .guide-card {
+  display: grid;
+  gap: 8px;
+}
+
+.related-guide-grid strong {
+  display: -webkit-box;
+  min-height: 2.4em;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.related-guide-grid small {
+  color: var(--color-primary);
+  font-size: 0.72rem;
+  font-weight: 950;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 @media (max-width: 1024px) {

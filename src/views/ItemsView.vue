@@ -36,6 +36,14 @@
                 </p>
               </div>
 
+              <RouterLink
+                class="guide-card item-guide-link"
+                to="/guides/burglin-gnomes-official-gear-weapons-directory"
+              >
+                <strong>Weapons, gear, and gadget crafting directory</strong>
+                <span>Use this when you are comparing equipment slots, weapons, mobility gear, and tool costs.</span>
+              </RouterLink>
+
               <div class="item-category-stack">
                 <section
                   v-for="group in categoryGroups"
@@ -118,6 +126,22 @@ const categoryIntro = (category) =>
 .item-category-stack {
   display: grid;
   gap: 24px;
+}
+
+.item-guide-link {
+  margin-bottom: 18px;
+  transition:
+    border-color 180ms ease,
+    transform 180ms ease,
+    background 180ms ease;
+}
+
+.item-guide-link:hover,
+.item-guide-link:focus-visible {
+  border-color: var(--color-primary);
+  background: var(--color-surface-strong);
+  outline: none;
+  transform: translateY(-2px);
 }
 
 .item-category-block {

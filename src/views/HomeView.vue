@@ -111,6 +111,10 @@
             <strong>Beginner</strong>
             <span>First route, tasks, doors and windows, revive rules, and co-op fixes.</span>
           </RouterLink>
+          <RouterLink to="/guides/burglin-gnomes-complete-beginners-guide" class="guide-card quick-card">
+            <strong>Complete Survival Guide</strong>
+            <span>Core loop, Gnome Haven setup, inventory rules, camp upgrades, and first-week survival.</span>
+          </RouterLink>
           <RouterLink to="/wiki" class="guide-card quick-card">
             <strong>Wiki</strong>
             <span>Every guide topic in one index when you need a fast answer mid-run.</span>
@@ -122,6 +126,10 @@
           <RouterLink to="/crafting" class="guide-card quick-card">
             <strong>Crafting</strong>
             <span>Well recipes, Potion Table recipes, Repackager darts, and linked materials.</span>
+          </RouterLink>
+          <RouterLink to="/guides/burglin-gnomes-official-gear-weapons-directory" class="guide-card quick-card">
+            <strong>Weapons &amp; Gear Directory</strong>
+            <span>Crafting costs, equipment slots, melee weapons, mobility gear, and industrial tools.</span>
           </RouterLink>
           <RouterLink to="/base-building" class="guide-card quick-card">
             <strong>Base Building</strong>

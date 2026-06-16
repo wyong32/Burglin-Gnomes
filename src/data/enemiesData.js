@@ -23,6 +23,7 @@ export default [
         relatedGuides: [
           { label: 'First task list', path: '/beginner#first-tasks' },
           { label: 'Core loop', path: '/beginner#core-loop' },
+          { label: 'Complete survival guide', path: '/guides/burglin-gnomes-complete-beginners-guide' },
         ],
         status: 'Confirmed',
         image: '/images/extracted/npc-gnome.png',
@@ -86,6 +87,7 @@ export default [
           { label: 'Death and revival', path: '/beginner#death-revival' },
           { label: 'Doors and windows', path: '/beginner#doors-windows' },
           { label: 'Marble Gun', path: '/items/marble-gun' },
+          { label: 'Weapons and gear directory', path: '/guides/burglin-gnomes-official-gear-weapons-directory' },
         ],
         status: 'Observed',
         image: '/images/extracted/npc-human.png',
@@ -130,6 +132,7 @@ export default [
         relatedGuides: [
           { label: 'Death and revival', path: '/beginner#death-revival' },
           { label: 'Spring Shoes', path: '/crafting/spring-shoes' },
+          { label: 'Complete survival guide', path: '/guides/burglin-gnomes-complete-beginners-guide' },
         ],
         status: 'Inferred',
         image: '/images/extracted/npc-cat.png',
@@ -163,6 +166,7 @@ export default [
         relatedGuides: [
           { label: 'Metal Bat', path: '/crafting/metal-bat' },
           { label: 'Kitchen route', path: '/beginner#first-tasks' },
+          { label: 'Weapons and gear directory', path: '/guides/burglin-gnomes-official-gear-weapons-directory' },
         ],
         status: 'Observed',
         image: '/images/extracted/npc-rat.png',
@@ -194,6 +198,7 @@ export default [
         relatedGuides: [
           { label: 'First task list', path: '/beginner#first-tasks' },
           { label: 'Metal Bat', path: '/crafting/metal-bat' },
+          { label: 'Weapons and gear directory', path: '/guides/burglin-gnomes-official-gear-weapons-directory' },
         ],
         status: 'Observed',
         image: '/images/extracted/npc-roach.png',
@@ -227,6 +232,7 @@ export default [
         relatedGuides: [
           { label: 'Metal Bat', path: '/crafting/metal-bat' },
           { label: 'Vacuum Robot', path: '/bestiary/vacuum-robot' },
+          { label: 'Weapons and gear directory', path: '/guides/burglin-gnomes-official-gear-weapons-directory' },
         ],
         status: 'Observed',
         image: '/images/extracted/npc-redcap.png',
@@ -265,6 +271,7 @@ aliases: ['roomba'],
         relatedGuides: [
           { label: 'Doors and windows', path: '/beginner#doors-windows' },
           { label: 'Metal Bat', path: '/crafting/metal-bat' },
+          { label: 'Weapons and gear directory', path: '/guides/burglin-gnomes-official-gear-weapons-directory' },
         ],
         status: 'Observed',
         image: '/images/extracted/npc-vacuum.png',
@@ -526,6 +533,7 @@ aliases: ['mole', 'groundhog'],
         relatedGuides: [
           { label: 'Bug fixes', path: '/beginner#bug-fixes' },
           { label: 'Spring Shoes', path: '/crafting/spring-shoes' },
+          { label: 'Complete survival guide', path: '/guides/burglin-gnomes-complete-beginners-guide' },
         ],
         status: 'Patch Sensitive',
         image: '/images/extracted/area-bathroom.png',

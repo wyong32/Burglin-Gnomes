@@ -35,6 +35,13 @@
                   mobility, hand control, and material farming each solve a different route problem.
                 </p>
               </div>
+              <RouterLink
+                class="guide-card crafting-guide-link"
+                to="/guides/burglin-gnomes-official-gear-weapons-directory"
+              >
+                <strong>Open the weapons, gear, and gadgets directory</strong>
+                <span>Compare equipment slots, weapon utility, mobility gear, and tool costs before crafting.</span>
+              </RouterLink>
               <div class="timeline">
                 <RouterLink
                   v-for="item in craftOrder"
@@ -126,6 +133,22 @@ const materialCardSource = (material) => (material.source === 'Unknown' ? materi
 <style scoped>
 .material-row {
   grid-template-columns: 1fr 1.15fr 1.65fr;
+}
+
+.crafting-guide-link {
+  margin-bottom: 16px;
+  transition:
+    border-color 180ms ease,
+    transform 180ms ease,
+    background 180ms ease;
+}
+
+.crafting-guide-link:hover,
+.crafting-guide-link:focus-visible {
+  border-color: var(--color-primary);
+  background: var(--color-surface-strong);
+  outline: none;
+  transform: translateY(-2px);
 }
 
 .table-title {

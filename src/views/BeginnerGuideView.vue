@@ -50,6 +50,9 @@
                   Beginner rule: stop chasing valuables until three tasks are done, the exit is known,
                   and at least one player can call the route back to the bell.
                 </p>
+                <RouterLink to="/guides/burglin-gnomes-complete-beginners-guide">
+                  Open the complete survival and camp management guide
+                </RouterLink>
               </div>
             </section>
 
@@ -424,6 +427,20 @@ const interfaceNotes = beginnerData.find((section) => section.key === 'interface
 .task-link:hover,
 .task-link:focus-visible {
   color: var(--color-primary);
+  outline: none;
+}
+
+.note-panel a {
+  color: var(--color-primary);
+  font-weight: 900;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.note-panel a:hover,
+.note-panel a:focus-visible {
+  color: var(--color-accent);
   outline: none;
 }
 
