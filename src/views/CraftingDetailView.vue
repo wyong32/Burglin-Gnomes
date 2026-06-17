@@ -27,11 +27,11 @@
             <section id="materials" class="guide-block">
               <h2>{{ recipe.name }} materials</h2>
               <div class="entry-list">
-                <RouterLink
+                <a
                   v-for="material in materials"
                   :key="material.item"
                   class="entry-row"
-                  :to="`/items/${material.item}`"
+                  :href="`/items/${material.item}`"
                 >
                   <img :src="material.image" :alt="material.name" />
                   <span class="entry-copy">
@@ -40,7 +40,7 @@
                     <em>{{ material.source }}</em>
                   </span>
                   <span class="entry-chevron" aria-hidden="true">→</span>
-                </RouterLink>
+                </a>
               </div>
             </section>
             
@@ -48,13 +48,13 @@
             <section id="output" class="guide-block">
               <h2>{{ recipe.name }} output and use</h2>
               <div v-if="outputItem" class="link-list">
-                <RouterLink class="link-list__item" :to="`/items/${outputItem.slug}`">
+                <a class="link-list__item" :href="`/items/${outputItem.slug}`">
                   <span>
                     <strong>{{ outputItem.name }}</strong>
                     <span>{{ outputItem.use }}</span>
                   </span>
                   <span class="entry-chevron" aria-hidden="true">→</span>
-                </RouterLink>
+                </a>
               </div>
               <p>{{ recipe.bestUse }}</p>
             </section>
@@ -64,13 +64,13 @@
             <section id="areas" class="guide-block">
               <h2>Where to craft or route {{ recipe.name }}</h2>
               <div class="link-list">
-                <RouterLink v-for="area in recipeAreas" :key="area.slug" class="link-list__item" :to="`/areas/${area.slug}`">
+                <a v-for="area in recipeAreas" :key="area.slug" class="link-list__item" :href="`/areas/${area.slug}`">
                   <span>
                     <strong>{{ area.name }}</strong>
                     <span>{{ area.routeUse }}</span>
                   </span>
                   <span class="entry-chevron" aria-hidden="true">→</span>
-                </RouterLink>
+                </a>
               </div>
             </section>
 
@@ -96,25 +96,25 @@
 
             <section v-if="recipeGuideLink" id="guide" class="guide-block">
               <h2>Guide for {{ recipe.name }} and similar gear</h2>
-              <RouterLink class="link-list__item" :to="recipeGuideLink.path">
+              <a class="link-list__item" :href="recipeGuideLink.path">
                 <span>
                   <strong>{{ recipeGuideLink.label }}</strong>
                   <span>{{ recipeGuideLink.note }}</span>
                 </span>
                 <span class="entry-chevron" aria-hidden="true">→</span>
-              </RouterLink>
+              </a>
             </section>
 
             <section id="bestiary" class="guide-block">
               <h2>Threats {{ recipe.name }} helps handle</h2>
               <div class="link-list">
-                <RouterLink v-for="entry in relatedBestiary" :key="entry.slug" class="link-list__item" :to="`/bestiary/${entry.slug}`">
+                <a v-for="entry in relatedBestiary" :key="entry.slug" class="link-list__item" :href="`/bestiary/${entry.slug}`">
                   <span>
                     <strong>{{ entry.name }}</strong>
                     <span>{{ entry.counter }}</span>
                   </span>
                   <span class="entry-chevron" aria-hidden="true">→</span>
-                </RouterLink>
+                </a>
               </div>
             </section>
 
@@ -135,7 +135,7 @@
         <div class="guide-card">
           <h1>Crafting Recipes | Burglin' Gnomes</h1>
           <p>That crafting page does not exist yet. Browse all recipes or send us a correction.</p>
-          <RouterLink to="/crafting">Back to all recipes</RouterLink>
+          <a href="/crafting">Back to all recipes</a>
         </div>
       </div>
     </div>

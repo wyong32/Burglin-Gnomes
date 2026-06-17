@@ -59,26 +59,26 @@
                 </div>
               </div>
               <div class="link-list">
-                <RouterLink v-for="item in recommendedItems" :key="item.slug" class="link-list__item" :to="`/items/${item.slug}`">
+                <a v-for="item in recommendedItems" :key="item.slug" class="link-list__item" :href="`/items/${item.slug}`">
                   <span>
                     <strong>{{ item.name }}</strong>
                     <span>{{ item.use }}</span>
                   </span>
                   <span class="entry-chevron" aria-hidden="true">→</span>
-                </RouterLink>
+                </a>
               </div>
             </section>
 
             <section id="related-guides" class="guide-block">
               <h2>Related pages for {{ entry.name }}</h2>
               <div class="link-list">
-                <RouterLink v-for="guide in entry.relatedGuides" :key="guide.path" class="link-list__item" :to="guide.path">
+                <a v-for="guide in entry.relatedGuides" :key="guide.path" class="link-list__item" :href="guide.path">
                   <span>
                     <strong>{{ guide.label }}</strong>
                     <span>Open the connected route, item, crafting, or mechanics page.</span>
                   </span>
                   <span class="entry-chevron" aria-hidden="true">→</span>
-                </RouterLink>
+                </a>
               </div>
             </section>
 
@@ -105,11 +105,11 @@
                 behavior notes, and survival tips.
               </p>
               <div class="tile-grid">
-                <RouterLink
+                <a
                   v-for="related in sameCategoryEntries"
                   :key="related.slug"
                   class="tile-card"
-                  :to="`/bestiary/${related.slug}`"
+                  :href="`/bestiary/${related.slug}`"
                 >
                   <span class="tile-card__media">
                     <img :src="related.image" :alt="related.name" />
@@ -119,11 +119,11 @@
                     <small>{{ related.role }}</small>
                     <strong>{{ related.name }}</strong>
                   </span>
-                </RouterLink>
+                </a>
               </div>
-              <RouterLink class="category-back-link" :to="`/bestiary#${categorySlug(entry.category)}`">
+              <a class="category-back-link" :href="`/bestiary#${categorySlug(entry.category)}`">
                 View all {{ entry.category }}
-              </RouterLink>
+              </a>
             </section>
 
             <GptAd unit="banner3" />
@@ -135,7 +135,7 @@
         <div class="guide-card">
           <h1>Bestiary | Burglin' Gnomes</h1>
           <p>That enemy or NPC page does not exist yet. Browse the full bestiary or send us a tip.</p>
-          <RouterLink to="/bestiary">Back to the bestiary</RouterLink>
+          <a href="/bestiary">Back to the bestiary</a>
         </div>
       </div>
     </div>

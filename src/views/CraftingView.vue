@@ -37,19 +37,19 @@
                   mobility, hand control, and material farming each solve a different route problem.
                 </p>
               </div>
-              <RouterLink
+              <a
                 class="guide-card crafting-guide-link"
-                to="/guides/burglin-gnomes-official-gear-weapons-directory"
+                href="/guides/burglin-gnomes-official-gear-weapons-directory"
               >
                 <strong>Open the weapons, gear, and gadgets directory</strong>
                 <span>Compare equipment slots, weapon utility, mobility gear, and tool costs before crafting.</span>
-              </RouterLink>
+              </a>
               <div class="timeline">
-                <RouterLink
+                <a
                   v-for="item in craftOrder"
                   :key="item.rank"
                   class="timeline__item"
-                  :to="`/crafting/${item.recipe}`"
+                  :href="`/crafting/${item.recipe}`"
                 >
                   <strong class="timeline__rank">{{ item.rank }}</strong>
                   <span class="timeline__copy">
@@ -57,7 +57,7 @@
                     <p>{{ item.reason }}</p>
                     <em>{{ item.timing }}</em>
                   </span>
-                </RouterLink>
+                </a>
               </div>
             </section>
 
@@ -70,11 +70,11 @@
                 <p>Open a recipe for exact materials, what you craft, when we make it first, and what still needs more playtime.</p>
               </div>
               <div class="recipe-tile-grid">
-                <RouterLink
+                <a
                   v-for="recipe in recipes"
                   :key="recipe.slug"
                   class="recipe-tile"
-                  :to="`/crafting/${recipe.slug}`"
+                  :href="`/crafting/${recipe.slug}`"
                 >
                   <img :src="recipe.image" :alt="recipe.name" />
                   <small>{{ recipe.category }}</small>
@@ -84,7 +84,7 @@
                       {{ material.quantity }} {{ material.name }}
                     </span>
                   </span>
-                </RouterLink>
+                </a>
               </div>
             </section>
 
@@ -102,10 +102,10 @@
                   <span>Used for</span>
                 </div>
                 <div v-for="material in materials" :key="material.name" class="table-row material-row">
-                  <RouterLink class="table-title" :to="material.item ? `/items/${material.item}` : '/items'">
+                  <a class="table-title" :href="material.item ? `/items/${material.item}` : '/items'">
                     <img :src="material.image" :alt="material.name" />
                     <strong>{{ material.name }}</strong>
-                  </RouterLink>
+                  </a>
                   <span>{{ materialCardSource(material) }}</span>
                   <span>{{ material.note }}</span>
                 </div>

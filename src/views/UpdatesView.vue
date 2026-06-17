@@ -81,7 +81,7 @@
                   <span>What changed</span>
                   <span>Guide</span>
                 </div>
-                <RouterLink to="/beginner#first-tasks" class="table-row change-row change-link">
+                <a href="/beginner#first-tasks" class="table-row change-row change-link">
                   <strong>01</strong>
                   <span class="change-system">Task routing</span>
                   <span class="change-copy">
@@ -89,8 +89,8 @@
                     <span>Each day gives a task list. Three completed tasks are the practical safety line before extraction; five tasks are the clean route goal when the house stays under control.</span>
                   </span>
                   <span class="change-dest">Beginner task guide</span>
-                </RouterLink>
-                <RouterLink to="/items" class="table-row change-row change-link">
+                </a>
+                <a href="/items" class="table-row change-row change-link">
                   <strong>02</strong>
                   <span class="change-system">Items</span>
                   <span class="change-copy">
@@ -98,8 +98,8 @@
                     <span>Gun, Taser, Pepper Spray, Grenade, Rocket Launcher, Landmine, Firework, Chainsaw, utensils, and task items now need item pages linked to rooms and storage routes.</span>
                   </span>
                   <span class="change-dest">Items database</span>
-                </RouterLink>
-                <RouterLink to="/crafting" class="table-row change-row change-link">
+                </a>
+                <a href="/crafting" class="table-row change-row change-link">
                   <strong>03</strong>
                   <span class="change-system">Crafting</span>
                   <span class="change-copy">
@@ -107,8 +107,8 @@
                     <span>The Well, Potion Table, Repackager, crystal, bell, and storage all affect pre-run planning. Recipe pages should link back to materials, tools, and areas.</span>
                   </span>
                   <span class="change-dest">Crafting pages</span>
-                </RouterLink>
-                <RouterLink to="/bestiary" class="table-row change-row change-link">
+                </a>
+                <a href="/bestiary" class="table-row change-row change-link">
                   <strong>04</strong>
                   <span class="change-system">Bestiary</span>
                   <span class="change-copy">
@@ -116,8 +116,8 @@
                     <span>Human, Fairy, Cat, Rat, Cockroach, Evil Gnome, Vacuum Robot, Mole, Boar, Pitbull, Sealman, Seagull, Jonathan, and Bibi now have route pages or watch-list notes.</span>
                   </span>
                   <span class="change-dest">NPCs and enemies</span>
-                </RouterLink>
-                <RouterLink to="/areas/human-house" class="table-row change-row change-link">
+                </a>
+                <a href="/areas/human-house" class="table-row change-row change-link">
                   <strong>05</strong>
                   <span class="change-system">Areas</span>
                   <span class="change-copy">
@@ -125,8 +125,8 @@
                     <span>Vine windows, lawn paths, greenhouse and garden routes, garage/shed storage, weapon-safe checks, kitchen, bathroom, and cabinet pages now connect items to where they are found.</span>
                   </span>
                   <span class="change-dest">Area guide pages</span>
-                </RouterLink>
-                <RouterLink to="/beginner#death-revival" class="table-row change-row change-link">
+                </a>
+                <a href="/beginner#death-revival" class="table-row change-row change-link">
                   <strong>06</strong>
                   <span class="change-system">Co-op</span>
                   <span class="change-copy">
@@ -134,7 +134,7 @@
                     <span>Crystal revival, teammate rescue, all-dead failure, lag, disconnects, and virtual memory fixes remain high-search beginner topics after launch.</span>
                   </span>
                   <span class="change-dest">Beginner fixes</span>
-                </RouterLink>
+                </a>
               </div>
             </section>
 

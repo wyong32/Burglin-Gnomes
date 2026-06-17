@@ -41,24 +41,24 @@
                     <h3>{{ gnomeWorld.name }}</h3>
                     <p>{{ gnomeWorld.summary }}</p>
                     <div class="link-list zone-links">
-                      <RouterLink class="link-list__item" to="/areas/gnome-world">
+                      <a class="link-list__item" href="/areas/gnome-world">
                         <span>
                           <strong>Open Gnome World area guide</strong>
                           <span>Tasks, linked items, and route notes</span>
                         </span>
                         <span class="entry-chevron" aria-hidden="true">→</span>
-                      </RouterLink>
-                      <RouterLink
+                      </a>
+                      <a
                         v-for="link in gnomeWorld.links"
                         :key="link.path"
                         class="link-list__item"
-                        :to="link.path"
+                        :href="link.path"
                       >
                         <span>
                           <strong>{{ link.label }}</strong>
                         </span>
                         <span class="entry-chevron" aria-hidden="true">→</span>
-                      </RouterLink>
+                      </a>
                     </div>
                   </article>
                   <figure class="split-panel__media">
@@ -95,24 +95,24 @@
                     <h3>{{ humanWorld.name }}</h3>
                     <p>{{ humanWorld.summary }}</p>
                     <div class="link-list zone-links">
-                      <RouterLink class="link-list__item" to="/areas/human-house">
+                      <a class="link-list__item" href="/areas/human-house">
                         <span>
                           <strong>Open Human House area guide</strong>
                           <span>Room routes, weapons, and task overlap</span>
                         </span>
                         <span class="entry-chevron" aria-hidden="true">→</span>
-                      </RouterLink>
-                      <RouterLink
+                      </a>
+                      <a
                         v-for="link in humanWorld.links"
                         :key="link.path"
                         class="link-list__item"
-                        :to="link.path"
+                        :href="link.path"
                       >
                         <span>
                           <strong>{{ link.label }}</strong>
                         </span>
                         <span class="entry-chevron" aria-hidden="true">→</span>
-                      </RouterLink>
+                      </a>
                     </div>
                   </article>
                 </div>
@@ -136,11 +136,11 @@
                 to the items, weapons, and recipes connected to that location.
               </p>
               <div class="tile-grid">
-                <RouterLink
+                <a
                   v-for="area in areas"
                   :key="area.slug"
                   class="tile-card"
-                  :to="`/areas/${area.slug}`"
+                  :href="`/areas/${area.slug}`"
                 >
                   <span class="tile-card__media">
                     <img :src="area.image" :alt="area.name" />
@@ -150,7 +150,7 @@
                     <small>Area guide</small>
                     <strong>{{ area.name }}</strong>
                   </span>
-                </RouterLink>
+                </a>
               </div>
             </section>
 
@@ -188,9 +188,9 @@
                       <li v-for="tip in object.tips" :key="tip">{{ tip }}</li>
                     </ul>
                     <div v-if="object.links?.length" class="facility-row__links">
-                      <RouterLink v-for="link in object.links" :key="link.path" :to="link.path">
+                      <a v-for="link in object.links" :key="link.path" :href="link.path">
                         {{ link.label }}
-                      </RouterLink>
+                      </a>
                     </div>
                   </div>
                 </article>
@@ -211,48 +211,48 @@
                     <li v-for="tip in well.tips" :key="tip">{{ tip }}</li>
                   </ul>
                   <div v-if="well.links?.length" class="facility-row__links">
-                    <RouterLink v-for="link in well.links" :key="link.path" :to="link.path">
+                    <a v-for="link in well.links" :key="link.path" :href="link.path">
                       {{ link.label }}
-                    </RouterLink>
+                    </a>
                   </div>
                 </div>
               </div>
               <div class="link-list craft-links">
-                <RouterLink class="link-list__item" to="/crafting/backpack">
+                <a class="link-list__item" href="/crafting/backpack">
                   <span>
                     <strong>Backpack</strong>
                     <span>Fewer return trips when farming materials through the house.</span>
                   </span>
                   <span class="entry-chevron" aria-hidden="true">→</span>
-                </RouterLink>
-                <RouterLink class="link-list__item" to="/crafting/pickaxe">
+                </a>
+                <a class="link-list__item" href="/crafting/pickaxe">
                   <span>
                     <strong>Pickaxe</strong>
                     <span>Break objects into resources instead of hauling everything home.</span>
                   </span>
                   <span class="entry-chevron" aria-hidden="true">→</span>
-                </RouterLink>
-                <RouterLink class="link-list__item" to="/crafting/metal-bat">
+                </a>
+                <a class="link-list__item" href="/crafting/metal-bat">
                   <span>
                     <strong>Metal Bat</strong>
                     <span>Basic defense and object hits for pests and emergency routes.</span>
                   </span>
                   <span class="entry-chevron" aria-hidden="true">→</span>
-                </RouterLink>
-                <RouterLink class="link-list__item" to="/crafting/spring-shoes">
+                </a>
+                <a class="link-list__item" href="/crafting/spring-shoes">
                   <span>
                     <strong>Spring Shoes</strong>
                     <span>Vertical movement for windows, furniture, and exterior routes.</span>
                   </span>
                   <span class="entry-chevron" aria-hidden="true">→</span>
-                </RouterLink>
-                <RouterLink class="link-list__item" to="/areas/potion-table">
+                </a>
+                <a class="link-list__item" href="/areas/potion-table">
                   <span>
                     <strong>Potion Table</strong>
                     <span>Unlock potion crafting before Blowgun dart routes.</span>
                   </span>
                   <span class="entry-chevron" aria-hidden="true">→</span>
-                </RouterLink>
+                </a>
               </div>
             </section>
 

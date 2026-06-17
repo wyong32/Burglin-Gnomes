@@ -2,12 +2,12 @@
   <header class="app-header">
     <div class="container">
       <div class="app-header-content">
-        <RouterLink class="brand" to="/" aria-label="Burglin' Gnomes guide home">
+        <a class="brand" href="/" aria-label="Burglin' Gnomes guide home">
           <img class="brand-mark" src="/images/logo.webp" alt="" width="42" height="42" />
           <span>
             <strong>Burglin' Gnomes</strong>
           </span>
-        </RouterLink>
+        </a>
 
         <button type="button" :aria-expanded="isOpen" aria-label="Toggle navigation" @click="isOpen = !isOpen">
           <span aria-hidden="true"></span>
@@ -16,9 +16,15 @@
         </button>
 
         <nav class="nav-links" aria-label="Primary navigation">
-          <RouterLink v-for="link in links" :key="link.path" :to="link.path" @click="isOpen = false">
+          <a
+            v-for="link in links"
+            :key="link.path"
+            :href="link.path"
+            :class="{ 'is-active': isNavActive(link.path) }"
+            @click="isOpen = false"
+          >
             {{ link.label }}
-          </RouterLink>
+          </a>
         </nav>
       </div>
     </div>
@@ -27,10 +33,17 @@
 
 <script setup>
 import { ref } from 'vue'
+import { useRoute } from 'vue-router'
 import { primaryNavLinks } from '../data/navLinks.js'
 
+const route = useRoute()
 const isOpen = ref(false)
 const links = primaryNavLinks
+
+const isNavActive = (path) => {
+  if (path === '/') return route.path === '/'
+  return route.path === path || route.path.startsWith(`${path}/`)
+}
 </script>
 
 <style scoped>
@@ -140,7 +153,7 @@ const links = primaryNavLinks
 
 .nav-links a:hover,
 .nav-links a:focus-visible,
-.nav-links a.router-link-active {
+.nav-links a.is-active {
   border-color: var(--color-ink);
   background: var(--color-panel-2);
   color: var(--color-ink);
@@ -148,13 +161,13 @@ const links = primaryNavLinks
   transform: translateY(-1px);
 }
 
-.nav-links a:nth-child(3n + 2).router-link-active,
+.nav-links a:nth-child(3n + 2).is-active,
 .nav-links a:nth-child(3n + 2):hover,
 .nav-links a:nth-child(3n + 2):focus-visible {
   background: var(--color-surface-strong);
 }
 
-.nav-links a:nth-child(3n).router-link-active,
+.nav-links a:nth-child(3n).is-active,
 .nav-links a:nth-child(3n):hover,
 .nav-links a:nth-child(3n):focus-visible {
   background: #f5d8c4;

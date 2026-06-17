@@ -24,8 +24,8 @@
             </div>
           </form>
           <div class="hero-actions" aria-label="Primary guide links">
-            <RouterLink to="/beginner">Start with Beginner Guide</RouterLink>
-            <RouterLink to="/items">Browse all items</RouterLink>
+            <a href="/beginner">Start with Beginner Guide</a>
+            <a href="/items">Browse all items</a>
           </div>
         </div>
         <figure class="hero-art">
@@ -93,7 +93,7 @@
           <p>
             Chasing raw loot before task progress is the fastest way to lose a clean day. Read the High-Gnome list, secure three tasks, then decide whether extra loot is worth the risk.
           </p>
-          <RouterLink class="intro-band__cta" to="/beginner">Read the beginner route guide</RouterLink>
+          <a class="intro-band__cta" href="/beginner">Read the beginner route guide</a>
         </article>
         <figure class="intro-band__visual">
           <img src="/images/page-02.webp" alt="Burglin' Gnomes kitchen route and house item guide" />
@@ -113,42 +113,42 @@
           <p>Jump from your first clean run into tasks, loot, crafting, enemies, and post-patch changes.</p>
         </div>
         <div class="card-grid">
-          <RouterLink to="/beginner" class="guide-card quick-card">
+          <a href="/beginner" class="guide-card quick-card">
             <strong>Beginner</strong>
             <span>First route, tasks, doors and windows, revive rules, and co-op fixes.</span>
-          </RouterLink>
-          <RouterLink to="/guides/burglin-gnomes-complete-beginners-guide" class="guide-card quick-card">
+          </a>
+          <a href="/guides/burglin-gnomes-complete-beginners-guide" class="guide-card quick-card">
             <strong>Complete Survival Guide</strong>
             <span>Core loop, Gnome Haven setup, inventory rules, camp upgrades, and first-week survival.</span>
-          </RouterLink>
-          <RouterLink to="/wiki" class="guide-card quick-card">
+          </a>
+          <a href="/wiki" class="guide-card quick-card">
             <strong>Wiki</strong>
             <span>Every guide topic in one index when you need a fast answer mid-run.</span>
-          </RouterLink>
-          <RouterLink to="/items" class="guide-card quick-card">
+          </a>
+          <a href="/items" class="guide-card quick-card">
             <strong>Items &amp; Loot</strong>
             <span>Materials, weapons, tools, task items, potions, ammo, and where to find them.</span>
-          </RouterLink>
-          <RouterLink to="/crafting" class="guide-card quick-card">
+          </a>
+          <a href="/crafting" class="guide-card quick-card">
             <strong>Crafting</strong>
             <span>Well recipes, Potion Table recipes, Repackager darts, and linked materials.</span>
-          </RouterLink>
-          <RouterLink to="/guides/burglin-gnomes-official-gear-weapons-directory" class="guide-card quick-card">
+          </a>
+          <a href="/guides/burglin-gnomes-official-gear-weapons-directory" class="guide-card quick-card">
             <strong>Weapons &amp; Gear Directory</strong>
             <span>Crafting costs, equipment slots, melee weapons, mobility gear, and industrial tools.</span>
-          </RouterLink>
-          <RouterLink to="/base-building" class="guide-card quick-card">
+          </a>
+          <a href="/base-building" class="guide-card quick-card">
             <strong>Base Building</strong>
             <span>Gnome-world objects, storage, crystal revival, bell extraction, and the crafting well.</span>
-          </RouterLink>
-          <RouterLink to="/bestiary" class="guide-card quick-card">
+          </a>
+          <a href="/bestiary" class="guide-card quick-card">
             <strong>NPCs &amp; Enemies</strong>
             <span>Humans, Fairy, Cat, Rat, Cockroach, Evil Gnome, Roomba, and outdoor entities.</span>
-          </RouterLink>
-          <RouterLink to="/updates" class="guide-card quick-card">
+          </a>
+          <a href="/updates" class="guide-card quick-card">
             <strong>Updates</strong>
             <span>Full-release notes and what to recheck after patches land.</span>
-          </RouterLink>
+          </a>
         </div>
       </div>
     </div>
@@ -345,17 +345,17 @@
           </p>
         </div>
         <div class="tool-grid">
-          <RouterLink
+          <a
             v-for="item in learnNext"
             :key="item.path"
-            :to="item.path"
+            :href="item.path"
             class="guide-card tool-card"
           >
             <img :src="item.image" :alt="item.name" />
             <span>{{ item.role }}</span>
             <h3>{{ item.name }}</h3>
             <p>{{ item.note }}</p>
-          </RouterLink>
+          </a>
         </div>
       </div>
     </div>

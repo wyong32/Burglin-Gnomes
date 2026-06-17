@@ -52,9 +52,9 @@
                   Beginner rule: stop chasing valuables until three tasks are done, the exit is known,
                   and at least one player can call the route back to the bell.
                 </p>
-                <RouterLink to="/guides/burglin-gnomes-complete-beginners-guide">
+                <a href="/guides/burglin-gnomes-complete-beginners-guide">
                   Open the complete survival and camp management guide
-                </RouterLink>
+                </a>
               </div>
             </section>
 
@@ -118,9 +118,9 @@
                   <span>Method</span>
                 </div>
                 <div v-for="task in firstTasks" :key="task.name" class="table-row first-task-row">
-                  <RouterLink class="task-link" :to="task.path">
+                  <a class="task-link" :href="task.path">
                     <strong>{{ task.name }}</strong>
-                  </RouterLink>
+                  </a>
                   <span>{{ task.target }}</span>
                   <span>{{ task.room }}</span>
                   <span>{{ task.method }}</span>
@@ -172,12 +172,12 @@
                 does not open cleanly from outside, so new players should learn three entry methods.
               </p>
               <div class="entry-grid">
-                <RouterLink v-for="entry in entryMethods" :key="entry.name" class="guide-card" :to="entry.path">
+                <a v-for="entry in entryMethods" :key="entry.name" class="guide-card" :href="entry.path">
                   <h3>{{ entry.name }}</h3>
                   <p><strong>{{ entry.route }}</strong></p>
                   <p>{{ entry.method }}</p>
                   <p>{{ entry.risk }}</p>
-                </RouterLink>
+                </a>
               </div>
             </section>
 

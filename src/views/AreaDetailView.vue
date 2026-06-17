@@ -52,12 +52,12 @@
                 back to recipes and locations.
               </p>
               <div class="recipe-tile-grid area-item-grid">
-                <RouterLink v-for="item in areaItems" :key="item.slug" class="recipe-tile" :to="`/items/${item.slug}`">
+                <a v-for="item in areaItems" :key="item.slug" class="recipe-tile" :href="`/items/${item.slug}`">
                   <img :src="item.image" :alt="item.name" />
                   <small>{{ item.category }}</small>
                   <strong>{{ item.name }}</strong>
                   <span class="recipe-tile__pill">{{ item.type }}</span>
-                </RouterLink>
+                </a>
               </div>
             </section>
 
@@ -70,13 +70,13 @@
                 here, or the materials are commonly routed from this area.
               </p>
               <div class="link-list">
-                <RouterLink v-for="recipe in areaRecipes" :key="recipe.slug" class="link-list__item" :to="`/crafting/${recipe.slug}`">
+                <a v-for="recipe in areaRecipes" :key="recipe.slug" class="link-list__item" :href="`/crafting/${recipe.slug}`">
                   <span>
                     <strong>{{ recipe.name }}</strong>
                     <span>{{ recipe.materials.map((material) => `${material.quantity} ${material.name}`).join(' + ') }}</span>
                   </span>
                   <span class="entry-chevron" aria-hidden="true">→</span>
-                </RouterLink>
+                </a>
               </div>
             </section>
 
@@ -118,7 +118,7 @@
         <div class="guide-card">
           <h1>Areas | Burglin' Gnomes</h1>
           <p>That area page does not exist yet. Return to the base guide and choose a known route area.</p>
-          <RouterLink to="/base-building">Back to base and areas</RouterLink>
+          <a href="/base-building">Back to base and areas</a>
         </div>
       </div>
 

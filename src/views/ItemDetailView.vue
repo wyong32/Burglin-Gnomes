@@ -42,13 +42,13 @@
               <h2>Where to find {{ item.name }}</h2>
               <p>{{ item.advice }}</p>
               <div class="link-list">
-                <RouterLink v-for="area in itemAreas" :key="area.slug" class="link-list__item" :to="`/areas/${area.slug}`">
+                <a v-for="area in itemAreas" :key="area.slug" class="link-list__item" :href="`/areas/${area.slug}`">
                   <span>
                     <strong>{{ area.name }}</strong>
                     <span>{{ area.summary }}</span>
                   </span>
                   <span class="entry-chevron" aria-hidden="true">→</span>
-                </RouterLink>
+                </a>
               </div>
               <div v-if="item.acquisition?.length" class="data-table">
                 <div v-for="tip in item.acquisition" :key="tip" class="table-row detail-row">
@@ -64,20 +64,20 @@
               <h2>Recipes that craft or use {{ item.name }}</h2>
               <p>{{ item.use }}</p>
               <div class="link-list">
-                <RouterLink v-for="craft in outputCrafts" :key="craft.slug" class="link-list__item" :to="`/crafting/${craft.slug}`">
+                <a v-for="craft in outputCrafts" :key="craft.slug" class="link-list__item" :href="`/crafting/${craft.slug}`">
                   <span>
                     <strong>Craft {{ craft.name }}</strong>
                     <span>{{ craft.materials.map((material) => `${material.quantity} ${material.name}`).join(' + ') }}</span>
                   </span>
                   <span class="entry-chevron" aria-hidden="true">→</span>
-                </RouterLink>
-                <RouterLink v-for="craft in ingredientCrafts" :key="craft.slug" class="link-list__item" :to="`/crafting/${craft.slug}`">
+                </a>
+                <a v-for="craft in ingredientCrafts" :key="craft.slug" class="link-list__item" :href="`/crafting/${craft.slug}`">
                   <span>
                     <strong>Used for {{ craft.name }}</strong>
                     <span>{{ craft.materials.map((material) => `${material.quantity} ${material.name}`).join(' + ') }}</span>
                   </span>
                   <span class="entry-chevron" aria-hidden="true">→</span>
-                </RouterLink>
+                </a>
               </div>
             </section>
 
@@ -86,25 +86,25 @@
             <section id="related" class="guide-block">
               <h2>Items related to {{ item.name }}</h2>
               <div class="link-list">
-                <RouterLink v-for="related in relatedItems" :key="related.slug" class="link-list__item" :to="`/items/${related.slug}`">
+                <a v-for="related in relatedItems" :key="related.slug" class="link-list__item" :href="`/items/${related.slug}`">
                   <span>
                     <strong>{{ related.name }}</strong>
                     <span>{{ related.type }}</span>
                   </span>
                   <span class="entry-chevron" aria-hidden="true">→</span>
-                </RouterLink>
+                </a>
               </div>
             </section>
 
             <section v-if="itemGuideLink" id="guide" class="guide-block">
               <h2>Guide for using {{ item.name }}</h2>
-              <RouterLink class="link-list__item" :to="itemGuideLink.path">
+              <a class="link-list__item" :href="itemGuideLink.path">
                 <span>
                   <strong>{{ itemGuideLink.label }}</strong>
                   <span>{{ itemGuideLink.note }}</span>
                 </span>
                 <span class="entry-chevron" aria-hidden="true">→</span>
-              </RouterLink>
+              </a>
             </section>
 
             <GptAd unit="banner2" />
@@ -124,7 +124,7 @@
         <div class="guide-card">
           <h1>All Items | Burglin' Gnomes</h1>
           <p>That item page does not exist yet. Browse the full list or tell us what is missing.</p>
-          <RouterLink to="/items">Back to all items</RouterLink>
+          <a href="/items">Back to all items</a>
         </div>
       </div>
 

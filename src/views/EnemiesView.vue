@@ -39,11 +39,11 @@
                 <h2>{{ categoryHeading(category) }}</h2>
               </div>
               <div class="tile-grid">
-                <RouterLink
+                <a
                   v-for="entry in entriesByCategory(category)"
                   :key="entry.slug"
                   class="tile-card"
-                  :to="`/bestiary/${entry.slug}`"
+                  :href="`/bestiary/${entry.slug}`"
                 >
                   <span class="tile-card__media">
                     <img :src="entry.image" :alt="entry.name" />
@@ -53,7 +53,7 @@
                     <small>{{ entry.role }}</small>
                     <strong>{{ entry.name }}</strong>
                   </span>
-                </RouterLink>
+                </a>
               </div>
 
               <GptAd unit="banner1" />

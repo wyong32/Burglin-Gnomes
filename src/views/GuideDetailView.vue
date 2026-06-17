@@ -5,9 +5,9 @@
         <div class="page-hero guide-detail-hero">
           <div class="page-hero-copy">
             <nav class="guide-breadcrumb" aria-label="Breadcrumb">
-              <RouterLink to="/">Home</RouterLink>
+              <a href="/">Home</a>
               <span aria-hidden="true">/</span>
-              <RouterLink to="/guides">Guides</RouterLink>
+              <a href="/guides">Guides</a>
               <span aria-hidden="true">/</span>
               <strong>{{ guide.title }}</strong>
             </nav>
@@ -38,15 +38,15 @@
                 <h2>Previous and next guides</h2>
               </div>
               <div class="related-guide-grid">
-                <RouterLink
+                <a
                   v-for="item in guidePager"
                   :key="item.type"
                   class="guide-card"
-                  :to="`/guides/${item.guide.addressBar}`"
+                  :href="`/guides/${item.guide.addressBar}`"
                 >
                   <small>{{ item.label }}</small>
                   <strong>{{ item.guide.title }}</strong>
-                </RouterLink>
+                </a>
               </div>
             </section>
           </article>
@@ -77,7 +77,7 @@
               </div>
             </div>
 
-            <RouterLink class="guide-back-link" to="/guides">Browse all guides</RouterLink>
+            <a class="guide-back-link" href="/guides">Browse all guides</a>
           </aside>
         </div>
       </div>
@@ -86,7 +86,7 @@
         <div class="guide-card">
           <h1>Guides | Burglin' Gnomes</h1>
           <p>That guide does not exist yet. Browse the full guide list.</p>
-          <RouterLink to="/guides">Back to guides</RouterLink>
+          <a href="/guides">Back to guides</a>
         </div>
       </div>
     </div>

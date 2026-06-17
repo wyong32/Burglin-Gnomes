@@ -39,13 +39,13 @@
                 </p>
               </div>
 
-              <RouterLink
+              <a
                 class="guide-card item-guide-link"
-                to="/guides/burglin-gnomes-official-gear-weapons-directory"
+                href="/guides/burglin-gnomes-official-gear-weapons-directory"
               >
                 <strong>Weapons, gear, and gadget crafting directory</strong>
                 <span>Use this when you are comparing equipment slots, weapons, mobility gear, and tool costs.</span>
-              </RouterLink>
+              </a>
 
               <div class="item-category-stack">
                 <section
@@ -67,10 +67,10 @@
                       <span>Where to get it or why it matters</span>
                     </div>
                     <div v-for="item in group.items" :key="item.slug" class="table-row item-row">
-                      <RouterLink class="table-title" :to="`/items/${item.slug}`">
+                      <a class="table-title" :href="`/items/${item.slug}`">
                         <img :src="item.image" :alt="item.name" />
                         <h3>{{ item.name }}</h3>
-                      </RouterLink>
+                      </a>
                       <span>{{ item.type }}</span>
                       <span>{{ itemCardSource(item) }}</span>
                     </div>

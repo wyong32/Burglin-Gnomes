@@ -4,25 +4,22 @@
     <p v-if="title" class="page-sidebar__title">{{ title }}</p>
 
     <nav class="page-sidebar__nav">
-      <component
-        :is="linkComponent(section)"
+      <a
         v-for="section in sections"
         :key="section.id"
-        :to="section.to"
-        :href="section.href"
+        :href="section.href || section.to"
         class="page-sidebar__link"
         :class="{ 'is-active': isActive(section) }"
       >
         <span class="page-sidebar__text">{{ section.label }}</span>
         <span v-if="section.count != null" class="page-sidebar__count">{{ section.count }}</span>
-      </component>
+      </a>
     </nav>
   </aside>
 </template>
 
 <script setup>
 import { computed } from 'vue'
-import { RouterLink } from 'vue-router'
 import { useSectionSpy } from '../composables/useSectionSpy'
 
 const props = defineProps({
@@ -56,10 +53,5 @@ const { activeId: spyActiveId } = useSectionSpy(hashSectionIds)
 
 const resolvedActiveId = computed(() => props.activeId || spyActiveId.value)
 
-const linkComponent = (section) => (section.to ? RouterLink : 'a')
-
-const isActive = (section) => {
-  if (section.to) return false
-  return resolvedActiveId.value === section.id
-}
+const isActive = (section) => resolvedActiveId.value === section.id
 </script>

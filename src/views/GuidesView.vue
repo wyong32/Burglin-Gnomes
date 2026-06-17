@@ -34,11 +34,11 @@
 
         <section class="guide-list-section">
           <div v-if="filteredGuides.length" class="guide-list-content">
-            <RouterLink
+            <a
               v-for="guide in filteredGuides"
               :key="guide.id"
               class="guide-card-link"
-              :to="`/guides/${guide.addressBar}`"
+              :href="`/guides/${guide.addressBar}`"
             >
               <figure>
                 <img :src="guide.imageUrl" :alt="guide.imageAlt || guide.title" />
@@ -52,7 +52,7 @@
                   <em>{{ guide.author }}</em>
                 </span>
               </span>
-            </RouterLink>
+            </a>
           </div>
 
           <div v-else class="guide-empty-content" role="status">
@@ -67,10 +67,10 @@
               </p>
             </div>
             <nav class="guide-empty-actions" aria-label="Useful Burglin' Gnomes pages">
-              <RouterLink to="/beginner">Beginner Route</RouterLink>
-              <RouterLink to="/wiki">Wiki Index</RouterLink>
-              <RouterLink to="/items">Items</RouterLink>
-              <RouterLink to="/crafting">Crafting</RouterLink>
+              <a href="/beginner">Beginner Route</a>
+              <a href="/wiki">Wiki Index</a>
+              <a href="/items">Items</a>
+              <a href="/crafting">Crafting</a>
             </nav>
           </div>
         </section>

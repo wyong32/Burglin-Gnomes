@@ -38,11 +38,11 @@
             </div>
 
             <div v-if="results.length" class="search-results">
-              <RouterLink
+              <a
                 v-for="result in results"
                 :key="result.id"
                 class="search-result"
-                :to="result.path"
+                :href="result.path"
               >
                 <img v-if="result.image" :src="result.image" alt="" />
                 <span v-else class="search-result-fallback" aria-hidden="true">{{ result.type.slice(0, 1) }}</span>
@@ -51,7 +51,7 @@
                   <h3>{{ result.title }}</h3>
                   <p>{{ result.summary }}</p>
                 </span>
-              </RouterLink>
+              </a>
             </div>
           </section>
 

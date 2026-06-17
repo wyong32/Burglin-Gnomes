@@ -3,12 +3,12 @@
     <div class="container">
       <div class="app-footer-content">
         <div class="footer-brand">
-          <RouterLink class="footer-logo" to="/" aria-label="Burglin' Gnomes guide home">
+          <a class="footer-logo" href="/" aria-label="Burglin' Gnomes guide home">
             <img class="footer-mark" src="/images/logo.webp" alt="" width="48" height="48" />
             <span>
               <strong>Burglin' Gnomes</strong>
             </span>
-          </RouterLink>
+          </a>
           <p>
             Player-written routes, task calls, item notes, crafting priorities, enemy counters,
             and patch updates for Burglin' Gnomes — from burglin-gnomes.org.
@@ -18,15 +18,15 @@
         <div class="footer-nav" aria-label="Footer navigation">
           <nav aria-label="Footer primary navigation">
             <strong>Navigate</strong>
-            <RouterLink v-for="link in navigateLinks" :key="link.path" :to="link.path">
+            <a v-for="link in navigateLinks" :key="link.path" :href="link.path">
               {{ link.label }}
-            </RouterLink>
+            </a>
           </nav>
           <nav aria-label="Footer legal navigation">
             <strong>Legal</strong>
-            <RouterLink v-for="link in legalLinks" :key="link.path" :to="link.path">
+            <a v-for="link in legalLinks" :key="link.path" :href="link.path">
               {{ link.label }}
-            </RouterLink>
+            </a>
           </nav>
         </div>
       </div>
