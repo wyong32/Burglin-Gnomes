@@ -13,7 +13,9 @@
           </figure>
         </div>
 
-        <GptAd unit="banner2" />
+        <!-- <GptAd unit="banner2" /> -->
+
+        <AffiliateAd />
 
         <div class="guide-layout">
           <PageSidebar
@@ -58,7 +60,9 @@
               </div>
             </section>
 
-            <GptAd unit="banner3" />
+            <!-- <GptAd unit="banner3" /> -->
+
+            <AffiliateAd />
 
             <section id="recipes" class="guide-block">
               <h2>Recipes that craft or use {{ item.name }}</h2>
@@ -81,7 +85,9 @@
               </div>
             </section>
 
-            <GptAd unit="banner1" />
+            <!-- <GptAd unit="banner1" /> -->
+
+            <AffiliateAd />
 
             <section id="related" class="guide-block">
               <h2>Items related to {{ item.name }}</h2>
@@ -107,7 +113,9 @@
               </a>
             </section>
 
-            <GptAd unit="banner2" />
+            <!-- <GptAd unit="banner2" /> -->
+
+            <AffiliateAd />
 
             <section id="notes" class="guide-block">
               <h2>How to use {{ item.name }} in a run</h2>
@@ -128,7 +136,9 @@
         </div>
       </div>
 
-      <GptAd unit="banner3" />
+      <!-- <GptAd unit="banner3" /> -->
+
+      <AffiliateAd />
     </div>
   </section>
 </template>

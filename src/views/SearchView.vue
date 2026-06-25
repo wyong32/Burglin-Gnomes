@@ -25,7 +25,10 @@
             </div>
           </div>
 
-          <GptAd unit="banner3" />
+          <!-- <GptAd unit="banner3" /> -->
+
+
+          <AffiliateAd />
 
           <section v-if="query" class="search-results-section" aria-label="Search results">
             <div class="section-heading">
@@ -65,7 +68,10 @@
             </div>
           </section>
 
-          <GptAd unit="banner1" />
+          <!-- <GptAd unit="banner1" /> -->
+
+
+          <AffiliateAd />
         </div>
       </div>
     </section>

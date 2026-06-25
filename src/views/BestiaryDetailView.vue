@@ -13,7 +13,9 @@
           </figure>
         </div>
 
-        <GptAd unit="banner3" />
+        <!-- <GptAd unit="banner3" /> -->
+
+        <AffiliateAd />
 
         <div class="guide-layout">
           <PageSidebar
@@ -47,7 +49,9 @@
               </div>
             </section>
 
-            <GptAd unit="banner1" />
+            <!-- <GptAd unit="banner1" /> -->
+
+            <AffiliateAd />
 
             <section id="counters" class="guide-block">
               <h2>How to survive {{ entry.name }}</h2>
@@ -82,7 +86,9 @@
               </div>
             </section>
 
-            <GptAd unit="banner2" />
+            <!-- <GptAd unit="banner2" /> -->
+
+            <AffiliateAd />
 
             <section id="notes" class="guide-block">
               <h2>{{ entry.name }} route notes</h2>
@@ -126,7 +132,9 @@
               </a>
             </section>
 
-            <GptAd unit="banner3" />
+            <!-- <GptAd unit="banner3" /> -->
+
+            <AffiliateAd />
           </div>
         </div>
       </div>

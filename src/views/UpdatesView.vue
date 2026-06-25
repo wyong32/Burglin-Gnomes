@@ -17,7 +17,9 @@
           </figure>
         </div>
 
-        <GptAd unit="banner2" />
+        <!-- <GptAd unit="banner2" /> -->
+
+        <AffiliateAd />
 
         <div class="guide-layout">
           <PageSidebar
@@ -66,7 +68,9 @@
               </div>
             </section>
 
-            <GptAd unit="banner3" />
+            <!-- <GptAd unit="banner3" /> -->
+
+            <AffiliateAd />
 
             <section id="release-preview" class="guide-block">
               <h2>What changed from early tests to the full release</h2>
@@ -138,7 +142,9 @@
               </div>
             </section>
 
-            <GptAd unit="banner1" />
+            <!-- <GptAd unit="banner1" /> -->
+
+            <AffiliateAd />
           </div>
         </div>
       </div>
@@ -199,7 +205,9 @@
     </div>
   </section>
 
-  <GptAd unit="banner2" />
+  <!-- <GptAd unit="banner2" /> -->
+
+  <AffiliateAd />
 
   <section id="patch-rules" class="rules-section page-section">
     <div class="container">
@@ -238,7 +246,9 @@
     </div>
   </section>
 
-  <GptAd unit="banner3" />
+  <!-- <GptAd unit="banner3" /> -->
+
+  <AffiliateAd />
   </div>
 </template>
 
