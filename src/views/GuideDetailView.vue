@@ -313,11 +313,13 @@ const guidePager = computed(() => {
 
 .guide-article {
   max-width: none;
+  min-width: 0;
 }
 
 .guide-body {
   display: grid;
   gap: 16px;
+  min-width: 0;
   border: 1px solid var(--color-border);
   border-radius: 24px;
   padding: clamp(20px, 3vw, 34px);
@@ -364,6 +366,32 @@ const guidePager = computed(() => {
   outline: none;
 }
 
+.guide-body :deep(figure) {
+  overflow: hidden;
+  margin: 4px 0 8px;
+  border: 1px solid rgba(36, 51, 45, 0.18);
+  border-radius: 18px;
+  background: rgba(255, 248, 232, 0.78);
+  box-shadow: var(--shadow-card);
+}
+
+.guide-body :deep(figure img) {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.guide-body :deep(figcaption) {
+  border-top: 1px solid rgba(36, 51, 45, 0.12);
+  padding: 10px 14px;
+  background: rgba(223, 240, 198, 0.42);
+  color: var(--color-ink-soft);
+  font-size: 0.84rem;
+  font-weight: 900;
+  line-height: 1.45;
+}
+
 .guide-body :deep(ul),
 .guide-body :deep(ol) {
   display: grid;
@@ -376,6 +404,80 @@ const guidePager = computed(() => {
   font-weight: 800;
   line-height: 1.55;
   list-style: disc;
+}
+
+.guide-body :deep(table) {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: auto;
+  border: 1px solid rgba(36, 51, 45, 0.18);
+  border-radius: 16px;
+  border-spacing: 0;
+  background: rgba(255, 248, 232, 0.78);
+  box-shadow: 5px 6px 0 rgba(36, 51, 45, 0.08);
+  white-space: nowrap;
+}
+
+.guide-body :deep(thead),
+.guide-body :deep(tbody) {
+  display: table;
+  width: 100%;
+  min-width: 720px;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.guide-body :deep(th),
+.guide-body :deep(td) {
+  border-right: 1px solid rgba(36, 51, 45, 0.12);
+  border-bottom: 1px solid rgba(36, 51, 45, 0.12);
+  padding: 12px 14px;
+  color: var(--color-text);
+  font-size: 0.92rem;
+  font-weight: 850;
+  line-height: 1.45;
+  text-align: left;
+  vertical-align: top;
+  white-space: normal;
+}
+
+.guide-body :deep(th) {
+  background:
+    linear-gradient(180deg, rgba(40, 114, 79, 0.96), rgba(36, 51, 45, 0.98));
+  color: var(--color-surface);
+  font-size: 0.78rem;
+  font-weight: 950;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.guide-body :deep(td) {
+  background: rgba(255, 248, 232, 0.72);
+}
+
+.guide-body :deep(tbody tr:nth-child(even) td) {
+  background: rgba(223, 240, 198, 0.38);
+}
+
+.guide-body :deep(th:last-child),
+.guide-body :deep(td:last-child) {
+  border-right: 0;
+}
+
+.guide-body :deep(tbody tr:last-child td) {
+  border-bottom: 0;
+}
+
+.guide-body :deep(td:first-child) {
+  color: var(--color-ink);
+  font-weight: 950;
+}
+
+.guide-body :deep(td a) {
+  white-space: normal;
 }
 
 .related-guide-grid {

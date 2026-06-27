@@ -282,6 +282,290 @@ export default [
       <p><br>
       
       </p>`,
+      },
+
+      {
+        id: 3,
+        title: "Burglin Gnomes Complete Monster Guide: Karma, Spawns, Counters, and Drops",
+        description: "A field-tested monster guide for Burglin Gnomes covering the Karma Observer spawn system, Human/Homeowner grabs, Red Cap stun pressure, Roomba shutdowns, Sealman sneak attacks, BB grabs, Bee stings, Dog yard releases, Cat rushes, Seagull egg routes, Rats, Cockroaches, Boars, and Moles. Use this as the quick counter table before committing to a risky task route.",
+        category: 'Bestiary',
+        tags: ['Monsters', 'Bestiary', 'Combat', 'Karma', 'Threats'],
+        author: 'Burglin Gnomes Fan Guide Team',
+        publishDate: "2026-06-27",
+        imageUrl: "/images/guides/monster-guide-karma-observer.webp",
+        imageAlt: "Burglin Gnomes Karma Observer monster spawn guide",
+        seo: {
+          title: "Burglin Gnomes Monster Guide - Counters & Drops",
+          description: "Burglin Gnomes monster guide with Karma Observer rules, enemy counters, map spawns, Bee stings, Seagull eggs, Boar tusk drops, and Roomba shutdowns.",
+          keywords: "Burglin Gnomes monster guide, enemy counters, Karma Observer, Bee, Roomba, Boar tusk"
+        },
+        addressBar: "burglin-gnomes-complete-monster-guide-karma-counters",
+        detailsHtml: `<p>By: Frontline Pathfinder | Lead Content Tester, GameguideHub
+      </p>
+      <p>Tested on Version: Current public build | Status: <strong>FIELD TESTED / PATCH SENSITIVE</strong>. Exact spawn rates and hit breakpoints can change after updates.
+      </p>
+      <p>Fast answer: treat monsters as route pressure, not optional fights. Finish the 3-task minimum first, then fight only when the enemy blocks a required objective, drops a needed item, or threatens extraction. The safest generic counter set is a <a href="/items/sleep-dart">Sleep Dart</a> or other control tool, a real melee weapon such as the <a href="/items/metal-bat">Metal Bat</a>, and one human weapon if the house has spawned one.
+      </p>
+      <figure>
+      <img src="/images/guides/monster-guide-karma-observer.webp" alt="Burglin Gnomes Karma Observer furniture for monster spawn pressure" title="Burglin Gnomes Karma Observer monster spawn pressure" loading="lazy">
+      <figcaption>Karma Observer routing matters because extra creature kills can raise monster pressure on later days.</figcaption>
+      </figure>
+      <h2>Monster System: Karma Observer and Spawn Pressure
+      </h2>
+      <p>Field tests identify a base furniture item translated as the <strong>Nightforce Observer / Karma Observer</strong>. It tracks monster pressure through a karma value. When non-player creatures die, karma rises. Karma does not behave like a clean new-enemy unlock by itself; it works more like a multiplier that raises the refresh rate for eligible monsters.
+      </p>
+      <ul>
+      <li><strong>Observer tiers:</strong> the furniture has three observed levels. Higher pressure means more monster refreshes, not safer routes.
+      </li>
+      <li><strong>Karma trigger:</strong> deaths of creatures other than players increase the value.
+      </li>
+      <li><strong>Practical rule:</strong> farming monsters early can make later days noisier. Kill for task value, drops, or survival. Do not clear the whole map for no reason.
+      </li>
+      <li><strong>Patch note:</strong> the first-five-days and next-five-days monster pool wording is still noisy. Treat the exact day breakpoints as INFERRED until retested in a clean save.
+      </li>
+      </ul>
+      <h2>Quick Counter Table
+      </h2>
+      <table>
+      <thead>
+      <tr><th>Threat</th><th>Where It Matters</th><th>Main Danger</th><th>Best Counter</th></tr>
+      </thead>
+      <tbody>
+      <tr><td><a href="/bestiary/human-homeowner">Human / Homeowner</a></td><td><a href="/areas/human-house">Human House</a>, later wider routes</td><td>Grabs, disposal hazards, human weapons</td><td>Break sight, hide, use sleep/control, steal human weapons first</td></tr>
+      <tr><td><a href="/bestiary/evil-gnome">Red Cap / Evil Gnome</a></td><td>Combat routes</td><td>Stun chance, lethal pressure after repeated hits</td><td>Flashlight/hypnosis first, then melee or <a href="/items/marble-gun">Marble Gun</a> cleanup</td></tr>
+      <tr><td><a href="/bestiary/vacuum-robot">Roomba / Vacuum Robot</a></td><td>Indoor floors</td><td>Sucks players in and forces rescue</td><td>Hit it or jump on top and press the button to shut it down briefly</td></tr>
+      <tr><td><a href="/bestiary/sealman">Sealman</a></td><td>Special route</td><td>Sneak wall-hug stun</td><td>Turn on the scream cue, or use sleep/control and heavy damage</td></tr>
+      <tr><td>BB</td><td>High-pressure monster pool</td><td>Ties the player until death</td><td>Do not approach; use hypnosis/control or human weapons</td></tr>
+      <tr><td><a href="/bestiary/bee">Bee</a></td><td>Eaves, <a href="/areas/greenhouse-garden">garden</a>, outdoor tasks</td><td>One sting, chaos effect, sticks to player</td><td>Dodge into ground/walls, let teammate remove it, or weaponize the bee</td></tr>
+      <tr><td><a href="/bestiary/pitbull">Dog / Pitbull</a></td><td>Swamp dog yard</td><td>Rush and bite after the yard opens</td><td>Keep the yard closed, hypnotize, then commit with melee or human weapons</td></tr>
+      <tr><td><a href="/bestiary/cat">Cat</a></td><td>Suburbs and exterior routes</td><td>Very fast chase</td><td>Avoid exposed lawn routes; do not carry heavy loot outside when active</td></tr>
+      <tr><td><a href="/bestiary/seagull">Seagull</a></td><td>Seaside nest and egg tasks</td><td>Follows if eggs are stolen</td><td>Use control, mobility, or human weapons before stealing eggs</td></tr>
+      <tr><td><a href="/bestiary/rat">Rat</a></td><td><a href="/areas/kitchen">Kitchen</a> cabinets</td><td>Bite before fleeing to mouse hole</td><td>Three solid melee hits, hypnosis, mouse trap, or human weapon</td></tr>
+      <tr><td><a href="/bestiary/cockroach">Cockroach</a></td><td>Random human-house rooms</td><td>Group bites</td><td>One clean heavy hit usually removes one; avoid swarms</td></tr>
+      <tr><td><a href="/bestiary/boar">Boar</a></td><td>Forest fence route</td><td>Ram launches players</td><td>Dodge, sleep/stun, or steal tusk while it sleeps</td></tr>
+      <tr><td><a href="/bestiary/groundhog">Mole / Groundhog</a></td><td>Grassland ground routes</td><td>Fast bite chase</td><td>Get off the ground to despawn it, or use human weapons</td></tr>
+      </tbody>
+      </table>
+      <h2>Human / Homeowner Counter
+      </h2>
+      <p>The <a href="/bestiary/human-homeowner">Human</a> starts as the default indoor threat. Later routes can put him across more of the Human World. His main attack is not raw DPS; it is route displacement. If he grabs a gnome, he can carry them to oven, microwave, refrigerator, toilet, door, or window hazards. He may also use human weapons.
+      </p>
+      <ul>
+      <li><strong>Best opening:</strong> get a human weapon before he controls the room, then decide whether killing him is worth the karma and spawn pressure.
+      </li>
+      <li><strong>Safe reset:</strong> break line of sight around pillars, furniture, sofas, beds, windowsills, and mouse holes.
+      </li>
+      <li><strong>Control option:</strong> <a href="/items/sleep-dart">Sleep Darts</a> and <a href="/items/confusion-dart">Confusion Darts</a> are safer than standing in grab range.
+      </li>
+      </ul>
+      <h2>Red Cap, Sealman, BB, and Roomba
+      </h2>
+      <figure>
+      <img src="/images/guides/monster-guide-red-cap-counter.webp" alt="Burglin Gnomes Red Cap stun counter with melee weapons" title="Burglin Gnomes Red Cap stun counter guide" loading="lazy">
+      <figcaption>Red Cap pressure is dangerous because the stun window can turn a small mistake into a forced revive.</figcaption>
+      </figure>
+      <h3>Red Cap / Evil Gnome
+      </h3>
+      <p>Red Cap pressure looks similar to <a href="/items/boxing-gloves">Boxing Gloves</a> impact: it can stun and repeated hits can kill. Our current route notes mark three hits as lethal pressure. Do not trade face-to-face unless the team has a real weapon route. Flashlight or hypnosis first, then mace/<a href="/items/metal-bat">Metal Bat</a>-style melee, <a href="/items/boxing-gloves">Boxing Gloves</a>, or <a href="/items/marble-gun">Marble Gun</a> is the cleaner line.
+      </p>
+      <h3>Roomba / Vacuum Robot
+      </h3>
+      <p>The <a href="/bestiary/vacuum-robot">Roomba</a> can pull a player into its body. That player is not instantly gone; nearby teammates can rescue them. A melee hit can shut it down for a short window. The cleaner shutdown is to jump onto the top button and press it, then move before the robot recovers.
+      </p>
+      <h3>Sealman
+      </h3>
+      <p><a href="/bestiary/sealman">Sealman</a> uses a sneak attack described as a wall-hug style strike. The audio cue matters: when it screams before attacking, turning toward it can repel the sneak attempt. In testing, this counter can bug out. If the repel fails, use sleep/control and finish with heavy melee hits or human weapons.
+      </p>
+      <h3>BB
+      </h3>
+      <p>BB is the least cleanly mapped threat in this batch. It can tie a player up until death, but its lock-on behavior is inconsistent. Do not walk into its range to test it during a clean day. Use hypnosis/control, a full damage combo, or human weapons from outside the grab range. If your team is still mapping equipment, cross-check the <a href="/guides/burglin-gnomes-official-gear-weapons-directory">gear and weapons directory</a> before spending rare materials.
+      </p>
+      <h2>Outdoor Threats: Bee, Dog, Cat, Seagull, Boar, Mole
+      </h2>
+      <figure>
+      <img src="/images/guides/monster-guide-bee-counter.webp" alt="Burglin Gnomes Bee sting counter near outdoor route" title="Burglin Gnomes Bee sting counter and outdoor route guide" loading="lazy">
+      <figcaption>Bee routes are task-driven. Only commit to garden and eave paths when the objective is worth the sting risk.</figcaption>
+      </figure>
+      <h3>Bee
+      </h3>
+      <p><a href="/bestiary/bee">Bees</a> appear under eaves and around <a href="/areas/outdoor-lawn">outdoor routes</a>. A bee stings once, applies a chaos-style effect, then sticks to the player. When it dives, sidestep so it hits ground, wall, or building collision. If it sticks, only a teammate can remove it. The removed bee can be carried and thrown as a weapon; throw it at an enemy, a wall, or the ground depending on whether you want to keep using it.
+      </p>
+      <h3>Dog / Pitbull
+      </h3>
+      <p>The dog is fixed to the Swamp map dog yard in current route tests. The yard starts closed, and the dog releases only when the yard door opens. That makes prevention the best counter. If it is out, use flashlight/hypnosis first, then commit to repeated melee hits or human weapons. Do not kite it through a loot carry.
+      </p>
+      <h3>Cat
+      </h3>
+      <p>The <a href="/bestiary/cat">Cat</a> appears on Suburbs routes but not every run. Current testing gives one reliable rule: it is very fast and has few practical counters. Treat the lawn as unsafe when it is active.
+      </p>
+      <h3>Seagull
+      </h3>
+      <p><a href="/bestiary/seagull">Seagulls</a> are fixed to the Seaside map. They appear near nests with eggs and leave when you exit the range. If you steal the eggs, the seagull follows. For egg routes, bring <a href="/items/mobility-potion">Mobility Potion</a>, <a href="/items/flight-potion">Flight Potion</a>, or control first; hypnosis into melee cleanup works, and human weapons are the safer finish if available.
+      </p>
+      <h3>Boar
+      </h3>
+      <p>The <a href="/bestiary/boar">Boar</a> is fixed to the Forest map and starts sleeping near a fence. Its ram is not instantly fatal in current tests, but it launches players and can ruin carry routes. You can dodge the charge, control it, or kill it with human weapons. It drops <a href="/items/tusk">Boar Tusk</a> on death. The riskier but faster play is stealing the tusk while it sleeps without waking it.
+      </p>
+      <h3>Mole / Groundhog
+      </h3>
+      <p>The <a href="/bestiary/groundhog">Mole</a> spawns on grassland routes and does not appear every game. It only pressures players while they are on the ground. It runs slightly faster than an unbuffed player. Climb or get off the ground to make it disappear, or end it with human weapons.
+      </p>
+      <h2>Indoor Small Threats: Rat and Cockroach
+      </h2>
+      <h3>Rat
+      </h3>
+      <p><a href="/bestiary/rat">Rats</a> can appear in <a href="/areas/cabinets-drawers">kitchen cabinets</a>. When a cabinet opens, the rat may run toward a mouse hole but attack first. Three solid melee hits are enough to kill it in normal cases. Safer options are hypnosis/control, mouse trap, <a href="/items/boxing-gloves">Boxing Gloves</a>, or human weapons.
+      </p>
+      <h3>Cockroach
+      </h3>
+      <p><a href="/bestiary/cockroach">Cockroaches</a> spawn randomly in human houses. One cockroach is usually not fatal, but groups can chew time and health. Use weapons to smash them quickly; one heavy hit or a clean full-set attack can remove a roach. Leave once the task objective registers.
+      </p>
+      <h2>Pathfinder's Rules for Clean Runs
+      </h2>
+      <ol>
+      <li><strong>Do not raise karma for free.</strong> Monster kills can increase future pressure, so fight for route value, not boredom.
+      </li>
+      <li><strong>Control before damage.</strong> Flashlight, hypnosis, sleep darts, and human weapons beat panic melee in almost every dangerous matchup.
+      </li>
+      <li><strong>Know the map-specific threats.</strong> Dog yard on Swamp, Boar on Forest, Seagull on Seaside, Mole on grassland, and Cat on Suburbs change route planning before the team even enters the house.
+      </li>
+      <li><strong>Mark uncertain mechanics.</strong> BB lock-on, Observer day thresholds, and Sealman repel bugs should be retested after patches.
+      </li>
+      </ol>
+      <h2>Related Guides and Data Pages
+      </h2>
+      <ul>
+      <li><a href="/bestiary">Burglin Gnomes Bestiary</a> - individual enemy pages for behavior, counters, and patch-sensitive notes.
+      </li>
+      <li><a href="/guides/burglin-gnomes-official-gear-weapons-directory">Official Gear, Weapons, and Gadgets Directory</a> - exact gear roles before crafting combat tools.
+      </li>
+      <li><a href="/items/sleep-dart">Sleep Dart</a> - control option for human, Sealman, BB, Seagull, and cabinet fights.
+      </li>
+      <li><a href="/items/marble-gun">Marble Gun</a> - safer ranged pressure when melee trades are bad.
+      </li>
+      <li><a href="/areas/human-house">Human House Route Notes</a> - room pressure, indoor hazards, and pathing context.
+      </li>
+      <li><a href="/guides/burglin-gnomes-complete-beginners-guide">Complete Beginner Survival Guide</a> - task-first routing before optional monster fights.
+      </li>
+      </ul>`,
+      },
+
+      {
+        id: 4,
+        title: "Burglin Gnomes Complete NPC Guide: Bob, Fairy, Jonathan, Rewards, and Risks",
+        description: "A field-tested NPC guide for Burglin Gnomes covering Bob hauling support, Fairy item trades and wing drops, and Jonathan bodyguard behavior. Use it before committing to NPC reward routes, friendly-fire tests, or Music Box collection.",
+        category: 'NPCs',
+        tags: ['NPCs', 'Bob', 'Fairy', 'Jonathan', 'Rewards'],
+        author: 'Burglin Gnomes Fan Guide Team',
+        publishDate: "2026-06-27",
+        imageUrl: "/images/guides/npc-guide-bob-hauling.webp",
+        imageAlt: "Burglin Gnomes Bob NPC hauling stolen items near the gnome home",
+        seo: {
+          title: "Burglin Gnomes NPC Guide - Bob, Fairy, Jonathan",
+          description: "Burglin Gnomes NPC guide for Bob hauling, Fairy trades and wings, and Jonathan bodyguard routes, with rewards, drops, and hostility triggers.",
+          keywords: "Burglin Gnomes NPC guide, Bob, Fairy, Jonathan, Fairy Wings, Music Box, NPC rewards"
+        },
+        addressBar: "burglin-gnomes-complete-npc-guide-bob-fairy-jonathan",
+        detailsHtml: `<p>By: Frontline Pathfinder | Lead Content Tester, GameguideHub
+      </p>
+      <p>Tested on Version: Current public build | Status: <strong>FIELD TESTED / PATCH SENSITIVE</strong>. NPC rewards, spawn odds, and friendly-fire rules can shift after balance patches.
+      </p>
+      <p>Fast answer: use Bob as a loot hauler, use the <a href="/bestiary/fairy">Fairy</a> as a trade NPC unless you specifically need <a href="/items/fairywings">Fairy Wings</a>, and use <a href="/bestiary/jonathan">Jonathan</a> as a temporary bodyguard until friendly fire or control effects turn the route unstable.
+      </p>
+      <figure>
+      <img src="/images/guides/npc-guide-bob-hauling.webp" alt="Burglin Gnomes Bob NPC hauling stolen items near the gnome home" title="Burglin Gnomes Bob NPC hauling guide" loading="lazy">
+      <figcaption>Bob is route value, not DPS. Let him move stolen items, but do not overload the path with loose loot.</figcaption>
+      </figure>
+      <h2>NPC Quick Table
+      </h2>
+      <table>
+      <thead>
+      <tr><th>NPC</th><th>Best Use</th><th>Trigger</th><th>Reward or Risk</th></tr>
+      </thead>
+      <tbody>
+      <tr><td>Bob / BOb</td><td>Loot hauling support</td><td>Appears with the player on Human World routes</td><td>Can stall when too many stolen items crowd the path</td></tr>
+      <tr><td><a href="/bestiary/fairy">Fairy</a></td><td>Item exchange and wing route</td><td>Give requested items, or damage her to force combat</td><td>Materials/equipment rewards; <a href="/items/fairywings">Fairy Wings</a> if killed</td></tr>
+      <tr><td><a href="/bestiary/jonathan">Jonathan</a></td><td>Follower and bodyguard</td><td>Knock three times on his small hut door when he spawns</td><td>Helps attack enemies, but can become hostile; can drop <a href="/items/music-box">Music Box</a></td></tr>
+      </tbody>
+      </table>
+      <h2>Bob: Hauling Support, Not a Fighter
+      </h2>
+      <p>Bob has no reliable attack pattern in current testing. Treat him as a utility NPC. His main function is transporting stolen objects, which makes him valuable when the team is clearing task items from the <a href="/areas/human-house">Human House</a> back toward the <a href="/areas/gnome-world">Gnome World</a>.
+      </p>
+      <ul>
+      <li><strong>Best route:</strong> use Bob after the task cluster is known, not while the team is still scouting.
+      </li>
+      <li><strong>Known failure case:</strong> when too many stolen items stack in the same path, Bob can get stuck and stop moving cleanly.
+      </li>
+      <li><strong>Practical rule:</strong> feed him fewer, higher-value carries instead of dumping a full room of junk at once.
+      </li>
+      </ul>
+      <h2>Fairy: Trade First, Kill Only for Wings
+      </h2>
+      <figure>
+      <img src="/images/guides/npc-guide-fairy-rewards.webp" alt="Burglin Gnomes Fairy NPC reward trade and laser eye counter" title="Burglin Gnomes Fairy rewards and laser eye counter" loading="lazy">
+      <figcaption>The Fairy is normally friendly, but any damage can flip her into laser-eye retaliation.</figcaption>
+      </figure>
+      <p>The <a href="/bestiary/fairy">Fairy</a> is a reward NPC before she is a combat target. She can ask for specific items, then pay out materials or equipment after the requirement is met. Current route notes put her near the home area, with a chance to refresh during Human World days.
+      </p>
+      <ul>
+      <li><strong>Friendly state:</strong> do the trade if the requested item is cheap or already on the route.
+      </li>
+      <li><strong>Retaliation trigger:</strong> damage from the player or another creature can make her fire laser-eye attacks.
+      </li>
+      <li><strong>Drop route:</strong> killing her can drop <a href="/items/fairywings">Fairy Wings</a>. Equip the wings for flight utility.
+      </li>
+      </ul>
+      <p>If you are forcing the wing route, do not trade hits in open space. The clean line is <a href="/items/blowgun">Blowgun</a> into <a href="/items/sleep-dart">Sleep Dart</a>, attack during sleep, then refresh sleep before the control window expires. The faster but louder option is a human explosive such as <a href="/items/landmine">Landmine</a>, <a href="/items/grenade">Grenade</a>, or <a href="/items/firework">Firework</a>.
+      </p>
+      <h2>Jonathan: Bodyguard Until He Is Not
+      </h2>
+      <figure>
+      <img src="/images/guides/npc-guide-jonathan-bodyguard.webp" alt="Burglin Gnomes Jonathan NPC hut spawn and bodyguard route" title="Burglin Gnomes Jonathan bodyguard and Music Box guide" loading="lazy">
+      <figcaption>Jonathan is called from a small hut by knocking three times, then follows close enough to function like a guard.</figcaption>
+      </figure>
+      <p><a href="/bestiary/jonathan">Jonathan</a> is the strongest helper in this NPC set because he follows the player and attacks enemies. That makes him useful on routes where the team expects creature pressure but still needs hands free for loot or task items.
+      </p>
+      <ul>
+      <li><strong>Spawn rule:</strong> he has a chance to appear in a small hut. Knock three times to call him out.
+      </li>
+      <li><strong>Friendly behavior:</strong> he tails the player and can intercept enemies, similar to a bodyguard.
+      </li>
+      <li><strong>Hostility trigger:</strong> if the player attacks him, he can swap from friendly to hostile and attack the player.
+      </li>
+      <li><strong>Chaos risk:</strong> after being attacked or affected by control, he can enter confused aggression. Keep him away from tight loot stacks.
+      </li>
+      </ul>
+      <p>Jonathan can drop the <a href="/items/music-box">Music Box</a> when disabled, controlled, launched, slept, or killed. Current utility is limited: pick it up if a route or collection plan needs it, but do not throw a stable bodyguard route just to force the drop.
+      </p>
+      <h2>Pathfinder Rules for NPC Routes
+      </h2>
+      <ol>
+      <li><strong>Do not convert every NPC into a fight.</strong> Bob and Jonathan save time when left functional; the Fairy pays out through trades before combat.
+      </li>
+      <li><strong>Control before friendly-fire tests.</strong> If you are testing Fairy Wings or Music Box drops, bring <a href="/items/sleep-dart">Sleep Darts</a> or an explosive backup.
+      </li>
+      <li><strong>Do not overload follower pathing.</strong> Bob can stall on loot piles, and Jonathan can cause problems in cramped rooms if he flips hostile.
+      </li>
+      <li><strong>Separate reward runs from clean task runs.</strong> Finish the three required tasks first if extraction is the priority.
+      </li>
+      </ol>
+      <h2>Related Guides and Data Pages
+      </h2>
+      <ul>
+      <li><a href="/bestiary/fairy">Fairy Bestiary Page</a> - behavior, reward notes, and Fairy Wings context.
+      </li>
+      <li><a href="/bestiary/jonathan">Jonathan Bestiary Page</a> - follower behavior and Music Box route context.
+      </li>
+      <li><a href="/items/fairywings">Fairy Wings</a> - mobility value after a successful wing route.
+      </li>
+      <li><a href="/items/music-box">Music Box</a> - current utility and collection context.
+      </li>
+      <li><a href="/guides/burglin-gnomes-complete-monster-guide-karma-counters">Monster Guide</a> - route pressure before bringing Jonathan into fights.
+      </li>
+      <li><a href="/guides/burglin-gnomes-official-gear-weapons-directory">Gear and Weapons Directory</a> - control tools and explosive options before risky NPC tests.
+      </li>
+      </ul>`,
       }
 
 
