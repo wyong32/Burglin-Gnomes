@@ -566,6 +566,147 @@ export default [
       <li><a href="/guides/burglin-gnomes-official-gear-weapons-directory">Gear and Weapons Directory</a> - control tools and explosive options before risky NPC tests.
       </li>
       </ul>`,
+      },
+
+      {
+        id: 5,
+        title: "Burglin Gnomes All Task Guide: Daily Routes, Objectives, and Extraction",
+        description: "A field-tested all task guide for Burglin Gnomes covering five-task rolls, three-task clears, entry routes, Break TV, cabinet, garden, toilet, combat, and extraction routing.",
+        category: 'Tasks',
+        tags: ['Tasks', 'Routes', 'Beginner', 'Human World', 'Extraction'],
+        author: 'Burglin Gnomes Fan Guide Team',
+        publishDate: "2026-06-27",
+        imageUrl: "/images/guides/all-task-guide-cover.webp",
+        imageAlt: "Burglin Gnomes all task guide cover with gnome near seaside nest",
+        seo: {
+          title: "Burglin Gnomes All Task Guide - Daily Routes",
+          description: "Burglin Gnomes all task guide covering five-task rolls, three-task clears, window entry, Break TV, cabinet, garden, toilet, combat, and extraction routes.",
+          keywords: "Burglin Gnomes task guide, all tasks, Break TV, cabinet, window, toilet, garden, extraction"
+        },
+        addressBar: "burglin-gnomes-all-task-guide",
+        detailsHtml: `<p>By: Frontline Pathfinder | Lead Content Tester, GameguideHub
+      </p>
+      <p>Tested on Version: Current public build | Status: <strong>FIELD TESTED / PATCH SENSITIVE</strong>. Task names, difficulty rolls, and exact object interactions can change after updates.
+      </p>
+      <p>Fast answer: every clean day starts by reading the High-Gnome task list, choosing the safest three objectives, then extracting. Do not full-clear the <a href="/areas/human-house">Human House</a> before the third task is done. Small tasks, window entry, cabinets, Break TV, toilet routes, and garden overlap are usually safer than deep combat or heavy hauling.
+      </p>
+      <figure>
+      <img src="/images/guides/all-task-guide-cover.webp" alt="Burglin Gnomes all task guide cover for daily objective routing" title="Burglin Gnomes all task guide and daily route planner" loading="lazy">
+      <figcaption>Task routing is the run. Loot only matters after three objectives are secured.</figcaption>
+      </figure>
+      <h2>Daily Task Rules
+      </h2>
+      <table>
+      <thead>
+      <tr><th>Rule</th><th>Field-Tested Value</th><th>Route Impact</th></tr>
+      </thead>
+      <tbody>
+      <tr><td>Daily roll</td><td>5 tasks</td><td>Read all five before touching loot.</td></tr>
+      <tr><td>Clear requirement</td><td>3 completed tasks</td><td>After the third task, extraction becomes the default call.</td></tr>
+      <tr><td>Failure condition</td><td>Timer expires below the task minimum</td><td>Greedy looting can wipe progress even if the backpack is full.</td></tr>
+      <tr><td>Best early route</td><td>Entry, container, break, movement, and small-object tasks</td><td>These finish fast and avoid long combat exposure.</td></tr>
+      </tbody>
+      </table>
+      <h2>Entry Tasks: Windows, Doors, and Safe First Rooms
+      </h2>
+      <figure>
+      <img src="/images/guides/all-task-guide-window-entry.webp" alt="Burglin Gnomes window entry route for early task access" title="Burglin Gnomes window entry task route" loading="lazy">
+      <figcaption>Window entry is usually safer than forcing a noisy front-door route before the task list is mapped.</figcaption>
+      </figure>
+      <p>Start with entry verbs. If the task list mentions windows, doors, cabinets, or first-room objects, do not sprint deep into the house. Use the outside approach to identify a forgiving entry point, then send one light player in first while the rest hold route safety.
+      </p>
+      <ul>
+      <li><strong>Window entry:</strong> use <a href="/areas/outdoor-lawn">outdoor routes</a> and vine/window angles when the house layout allows it.
+      </li>
+      <li><strong>Door/bolt interactions:</strong> treat them as setup tasks. Open the route, then decide whether the same room supports another objective.
+      </li>
+      <li><strong>First-room rule:</strong> complete nearby container or break tasks before hauling anything heavy.
+      </li>
+      </ul>
+      <h2>Task Type Table
+      </h2>
+      <table>
+      <thead>
+      <tr><th>Task Type</th><th>Best First Area</th><th>Clean Method</th><th>Risk</th></tr>
+      </thead>
+      <tbody>
+      <tr><td>Break TV / break object</td><td><a href="/areas/bedroom-living-room">Bedroom and Living Room</a></td><td>Throw sturdy objects or use safe impact tools</td><td>Noise and route exposure</td></tr>
+      <tr><td>Open Cabinet / drawer search</td><td><a href="/areas/cabinets-drawers">Cabinets and Drawers</a>, <a href="/areas/kitchen">Kitchen</a></td><td>Open only task-value storage first</td><td>Rats, wasted search time</td></tr>
+      <tr><td>Steal item / category loot</td><td>Room named by the task</td><td>Carry small target items before heavy valuables</td><td>Slow extraction if over-carried</td></tr>
+      <tr><td>Garden / plant / bee routes</td><td><a href="/areas/greenhouse-garden">Greenhouse Garden</a></td><td>Bring the exact tool, avoid long lawn movement</td><td><a href="/bestiary/bee">Bee</a>, Cat, outdoor exposure</td></tr>
+      <tr><td>Toilet / bathroom route</td><td><a href="/areas/bathroom">Bathroom</a></td><td>Do the toilet verb, then leave unless storage also matters</td><td>Human pathing and tight exits</td></tr>
+      <tr><td>Weapon safe / firearms</td><td><a href="/areas/weapon-safe">Weapon Safe</a></td><td>Open only when tasked or when combat is already planned</td><td>Time loss before third task</td></tr>
+      <tr><td>Combat task</td><td>Target-specific room or exterior route</td><td>Use control first, then burst damage</td><td>Deaths, karma pressure, failed extraction</td></tr>
+      </tbody>
+      </table>
+      <h2>Break TV and Object Damage Tasks
+      </h2>
+      <figure>
+      <img src="/images/guides/all-task-guide-break-tv-route.webp" alt="Burglin Gnomes Break TV objective route inside human house" title="Burglin Gnomes Break TV and object damage task route" loading="lazy">
+      <figcaption>Break tasks are fast when the room already has throwable mass. Do not hunt the whole house for a perfect tool.</figcaption>
+      </figure>
+      <p>Break tasks are usually worth doing early if the target is nearby. For TV-style objectives, pick up a sturdy object and throw from a safe angle. If the object does not break after the first hit, stop trading time unless the room is already under control.
+      </p>
+      <ul>
+      <li><strong>Good overlap:</strong> Break TV plus steal valuable objects in the same living-room route.
+      </li>
+      <li><strong>Bad overlap:</strong> Break object while the <a href="/bestiary/human-homeowner">Human</a> patrol is already on top of the team.
+      </li>
+      <li><strong>Tool check:</strong> heavy improvised objects beat fragile clutter for break tasks.
+      </li>
+      </ul>
+      <h2>Cabinet, Kitchen, and Small-Item Tasks
+      </h2>
+      <p><a href="/areas/kitchen">Kitchen</a> and <a href="/areas/cabinets-drawers">Cabinets and Drawers</a> are high-value because they stack several task families: open container, utensils, small loot, cigarettes, food, weapons, and occasional pest interactions. Search like a route tester, not a loot addict: open the task-value storage first, call what you found, then move.
+      </p>
+      <ul>
+      <li><strong>Utensil route:</strong> <a href="/items/knife">Knife</a>, <a href="/items/fork">Fork</a>, and <a href="/items/spoon">Spoon</a> are task-relevant only when the verb asks for them.
+      </li>
+      <li><strong>Small-object route:</strong> carry compact task objects before large valuables.
+      </li>
+      <li><strong>Pest check:</strong> if a <a href="/bestiary/rat">Rat</a> or <a href="/bestiary/cockroach">Cockroach</a> appears, finish the objective and leave unless the task names the pest.
+      </li>
+      </ul>
+      <h2>Combat, Rescue, and Hazard Tasks
+      </h2>
+      <p>Combat tasks should not be your first choice unless the list forces them. Bring control before damage: <a href="/items/sleep-dart">Sleep Dart</a>, <a href="/items/blowgun">Blowgun</a>, <a href="/items/marble-gun">Marble Gun</a>, or a human weapon if the house already gave you one. If a teammate is trapped in oven, toilet, or other hazard routes, rescue beats extra loot every time.
+      </p>
+      <ul>
+      <li><strong>Human kill routes:</strong> use firearms or burst tools; do not melee-trade near disposal hazards.
+      </li>
+      <li><strong>Bee tasks:</strong> route garden/eaves only when the list requires it, then exit the lawn quickly.
+      </li>
+      <li><strong>Toilet tasks:</strong> complete the bathroom verb, then reassess. Bathrooms are tight and bad for long fights.
+      </li>
+      </ul>
+      <h2>Pathfinder's Three-Task Routing Order
+      </h2>
+      <ol>
+      <li><strong>Call the five tasks out loud.</strong> One player owns the list; everyone else routes by that call.
+      </li>
+      <li><strong>Pick the safest three.</strong> Entry, cabinet, break, and small-object tasks beat deep combat on most days.
+      </li>
+      <li><strong>Cluster by room.</strong> Kitchen, living room, bathroom, garden, and garage each have different task density.
+      </li>
+      <li><strong>Extract after three unless the fourth is free.</strong> A nearby fourth task is fine. A deep-room fourth task is how clean days die.
+      </li>
+      </ol>
+      <h2>Related Guides and Data Pages
+      </h2>
+      <ul>
+      <li><a href="/guides/burglin-gnomes-complete-beginners-guide">Complete Beginner Survival Guide</a> - first route, task minimum, revive, and extraction basics.
+      </li>
+      <li><a href="/areas/human-house">Human House Route Notes</a> - room pressure, objectives, and extraction planning.
+      </li>
+      <li><a href="/areas/kitchen">Kitchen</a> - utensils, storage, break objects, rats, and small-task overlap.
+      </li>
+      <li><a href="/areas/greenhouse-garden">Greenhouse Garden</a> - plant, watering, cutting, Bee, and outdoor task routes.
+      </li>
+      <li><a href="/guides/burglin-gnomes-complete-monster-guide-karma-counters">Monster Guide</a> - combat and hazard routes when tasks force a fight.
+      </li>
+      <li><a href="/guides/burglin-gnomes-official-gear-weapons-directory">Gear and Weapons Directory</a> - tools, control items, and explosive options for hard objectives.
+      </li>
+      </ul>`,
       }
 
 

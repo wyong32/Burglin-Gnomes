@@ -498,7 +498,7 @@
       "lastmod": "2026-06-27"
     },
     "/guides": {
-      "hash": "82ad03e1443701d1",
+      "hash": "471efa4c90d96f9b",
       "lastmod": "2026-06-27"
     },
     "/guides/burglin-gnomes-complete-beginners-guide": {
@@ -515,6 +515,10 @@
     },
     "/guides/burglin-gnomes-complete-npc-guide-bob-fairy-jonathan": {
       "hash": "cbd27d82bd649b00",
+      "lastmod": "2026-06-27"
+    },
+    "/guides/burglin-gnomes-all-task-guide": {
+      "hash": "8fd0b4fd82ff719b",
       "lastmod": "2026-06-27"
     }
   }

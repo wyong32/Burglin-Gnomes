@@ -13,9 +13,12 @@
     "lint": "run-s lint:*",
     "lint:oxlint": "oxlint . --fix",
     "lint:eslint": "eslint . --fix --cache",
-    "format": "prettier --write --experimental-cli src/"
+    "format": "prettier --write --experimental-cli src/",
+    "youtube:auth": "node scripts/youtube-auth.js",
+    "youtube:upload": "node scripts/youtube-upload.js"
   },
   "dependencies": {
+    "googleapis": "^173.0.0",
     "vue": "^3.5.32",
     "vue-router": "^5.0.4"
   },

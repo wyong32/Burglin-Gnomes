@@ -674,6 +674,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://burglin-gnomes.org/guides/burglin-gnomes-all-task-guide</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://burglin-gnomes.org/bestiary/high-gnome</loc>
     <lastmod>2026-06-27</lastmod>
     <changefreq>monthly</changefreq>

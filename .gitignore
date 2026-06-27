@@ -41,3 +41,8 @@ __screenshots__/
 # AI tooling (not part of the site)
 .cursor/
 .codex/
+
+# YouTube OAuth / channel sync secrets
+.env.youtube
+config/youtube-token.json
+config/youtube-playlists.json
