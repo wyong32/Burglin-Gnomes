@@ -707,6 +707,289 @@ export default [
       <li><a href="/guides/burglin-gnomes-official-gear-weapons-directory">Gear and Weapons Directory</a> - tools, control items, and explosive options for hard objectives.
       </li>
       </ul>`,
+      },
+
+      {
+        id: 6,
+        title: "Burglin' Gnomes Co-op Guide: Multiplayer, Friends, and Team Play",
+        description: "A route-tested Burglin' Gnomes co-op guide for multiplayer teams, friend lobbies, role splits, shared objectives, rescue calls, and clean three-task clears.",
+        category: 'Co-op',
+        tags: ['Co-op', 'Multiplayer', 'Friends', 'Team Play', 'Tasks'],
+        author: 'Burglin Gnomes Fan Guide Team',
+        publishDate: "2026-06-29",
+        imageUrl: "/images/task-list.webp",
+        imageAlt: "Burglin Gnomes multiplayer co-op task list route planning",
+        seo: {
+          title: "Burglin Gnomes Co-op Guide - Team Play",
+          description: "Burglin Gnomes co-op guide for multiplayer teams, friend lobbies, role splits, shared tasks, rescue calls, and clean three-task routes.",
+          keywords: "Burglin Gnomes co-op, multiplayer, coop, invite friends, team play"
+        },
+        addressBar: "burglin-gnomes-multiplayer-co-op",
+        detailsHtml: `<p>By: Frontline Pathfinder | Lead Content Tester, GameguideHub
+      </p>
+      <p>Tested on Version: Current public build | Status: <strong>FIELD TESTED / PATCH SENSITIVE</strong>. Lobby behavior, revive reliability, and co-op desync can change after multiplayer patches.
+      </p>
+      <p>Fast answer: treat co-op as a routing system, not just extra bodies. One player owns the task list, one keeps the return route open, and the rest carry only what helps the three-task clear. The biggest multiplayer mistake is splitting before the team has called the five daily tasks, picked the safest three, and agreed on the extraction trigger.
+      </p>
+      <figure>
+      <img src="/images/task-list.webp" alt="Burglin Gnomes multiplayer co-op task list route planning" title="Burglin Gnomes co-op task list and team route planning" loading="lazy">
+      <figcaption>Co-op starts at the task list. Call the five tasks first, then assign players to the safest three-objective route.</figcaption>
+      </figure>
+      <h2>Does Burglin' Gnomes have multiplayer?
+      </h2>
+      <p>Yes. Burglin' Gnomes supports co-op runs where players share the daily pressure of scouting rooms, finishing tasks, carrying loot, rescuing teammates, and extracting before the day fails. Extra players make the route stronger only when the team avoids duplicate jobs.
+      </p>
+      <table>
+      <thead>
+      <tr><th>Co-op Rule</th><th>Best Practice</th><th>Failure Pattern</th></tr>
+      </thead>
+      <tbody>
+      <tr><td>Task owner</td><td>One player reads the five tasks and calls the safest three.</td><td>Everyone chases a different room.</td></tr>
+      <tr><td>Route captain</td><td>One player decides when the team pivots from scouting to execution.</td><td>The team keeps looting after the run is already won.</td></tr>
+      <tr><td>Carrier split</td><td>One carrier handles heavy task objects while another keeps hands free.</td><td>Two slow players carry duplicate junk.</td></tr>
+      <tr><td>Rescue call</td><td>Stabilize danger before reviving or recovering a teammate.</td><td>One death becomes a chain wipe.</td></tr>
+      </tbody>
+      </table>
+      <h3>How co-op works
+      </h3>
+      <p>A clean co-op run starts with shared intent. Before anyone grabs loot, nominate a route captain who reads the five daily tasks, calls the safest three, and decides when the group stops scouting. Everyone else should repeat the current objective in short calls so the run does not split into four unrelated plans.
+      </p>
+      <p>Use the <a href="/guides/burglin-gnomes-all-task-guide">All Task Guide</a> as the route baseline. It keeps the team focused on the three-task minimum before optional loot, combat, or NPC reward routes.
+      </p>
+      <h3>Team size and roles
+      </h3>
+      <p>Build roles around risk. Smaller teams can merge jobs, but the route captain should still exist so extraction calls stay clear.
+      </p>
+      <table>
+      <thead>
+      <tr><th>Team Size</th><th>Recommended Split</th><th>Route Note</th></tr>
+      </thead>
+      <tbody>
+      <tr><td>2 players</td><td>Caller plus carrier</td><td>One reads tasks and watches danger; one handles objective objects.</td></tr>
+      <tr><td>3 players</td><td>Caller, carrier, safety</td><td>Add a player who watches enemies, exits, and rescue paths.</td></tr>
+      <tr><td>4 players</td><td>Caller, carrier, safety, flex</td><td>The fourth player swaps between rescue, loot, and secondary tasks.</td></tr>
+      </tbody>
+      </table>
+      <figure>
+      <img src="/images/guides/guides01.webp" alt="Burglin Gnomes co-op survival route through the Human World" title="Burglin Gnomes multiplayer route roles" loading="lazy">
+      <figcaption>Extra players are useful when they cover separate failure cases: task calls, carrying, safety, and rescue.</figcaption>
+      </figure>
+      <h2>Best co-op tips
+      </h2>
+      <h3>Communication basics
+      </h3>
+      <p>Use short calls: task, room, timer, danger, extract. Long explanations waste seconds during a live <a href="/areas/human-house">Human World</a> route. A good call sounds like: "Two tasks done, cabinet next, do not loot bedroom, extract after bell." That gives every player a job and stops the common co-op failure where half the team keeps looting after the run is already safe.
+      </p>
+      <ul>
+      <li><strong>Task call:</strong> name the next objective, not the whole plan.
+      </li>
+      <li><strong>Room call:</strong> use stable room names such as <a href="/areas/kitchen">Kitchen</a>, <a href="/areas/bathroom">Bathroom</a>, or <a href="/areas/greenhouse-garden">Garden</a>.
+      </li>
+      <li><strong>Danger call:</strong> say the threat and the exit, not a long story.
+      </li>
+      <li><strong>Extract call:</strong> after the third task, extraction becomes the default unless the fourth task is free.
+      </li>
+      </ul>
+      <h3>Sharing resources and objectives
+      </h3>
+      <p>Do not let every player craft the same early utility. Share materials toward items that protect the whole route first: carrying capacity, control tools, and safe traversal. If one player already has the key tool for the current room, the next resource spend should cover a different failure case.
+      </p>
+      <table>
+      <thead>
+      <tr><th>Resource Choice</th><th>Team Value</th><th>When to Prioritize</th></tr>
+      </thead>
+      <tbody>
+      <tr><td><a href="/items/backpack">Backpack</a></td><td>More safe carrying capacity</td><td>Early task-object and loot routes.</td></tr>
+      <tr><td><a href="/items/blowgun">Blowgun</a> plus control darts</td><td>Safer rescues and threat control</td><td>When enemies block tasks.</td></tr>
+      <tr><td><a href="/items/grappling-hook">Grappling Hook</a></td><td>Fast vertical rescue or scout movement</td><td>When the route uses high furniture or awkward exits.</td></tr>
+      <tr><td><a href="/items/glider">Glider</a></td><td>Safer falls and room crossing</td><td>When movement is the main failure point.</td></tr>
+      </tbody>
+      </table>
+      <h3>Do not split too early
+      </h3>
+      <p>Parallel work becomes strong only after the route is known. Splitting before the task cluster is chosen creates duplicate carrying, missed rescue calls, and players stuck deep in rooms with no extraction path. The first minute should be shared planning; the middle of the run can split; the final phase should regroup.
+      </p>
+      <figure>
+      <img src="/images/guides/all-task-guide-window-entry.webp" alt="Burglin Gnomes co-op window entry route for multiplayer task runs" title="Burglin Gnomes co-op window entry route" loading="lazy">
+      <figcaption>Split after the entry route is stable. Early solo dives create rescue debt.</figcaption>
+      </figure>
+      <h2>Co-op route order
+      </h2>
+      <ol>
+      <li><strong>Read all five tasks.</strong> The route captain calls the safest three.
+      </li>
+      <li><strong>Assign roles.</strong> Caller, carrier, safety, flex. Do not add a second greedy carrier before adding safety.
+      </li>
+      <li><strong>Cluster rooms.</strong> Prefer tasks that share <a href="/areas/kitchen">Kitchen</a>, cabinet, bathroom, or garden movement.
+      </li>
+      <li><strong>Regroup after task two.</strong> Recheck timer, loot weight, and rescue risk before the third objective.
+      </li>
+      <li><strong>Extract after task three.</strong> A free fourth task is fine. A deep fourth task is how clean co-op days die.
+      </li>
+      </ol>
+      <h2>FAQ
+      </h2>
+      <h3>Does Burglin' Gnomes have multiplayer?
+      </h3>
+      <p>Yes. Multiplayer is strongest when the team assigns roles, shares task calls, and avoids duplicate carrying.
+      </p>
+      <h3>How do you play co-op in Burglin' Gnomes?
+      </h3>
+      <p>Invite teammates, assign a route captain, choose the safest three tasks, split roles by risk, and extract when the minimum clear is secured.
+      </p>
+      <h2>Related Guides and Data Pages
+      </h2>
+      <ul>
+      <li><a href="/guides/burglin-gnomes-complete-beginners-guide">Complete Beginner Survival Guide</a> - first route, save rules, and co-op basics.
+      </li>
+      <li><a href="/guides/burglin-gnomes-all-task-guide">All Task Guide</a> - daily objective routing and extraction discipline.
+      </li>
+      <li><a href="/guides/burglin-gnomes-death-revive-rescue">Death and Revive Guide</a> - rescue calls when co-op routes go bad.
+      </li>
+      <li><a href="/guides/burglin-gnomes-official-gear-weapons-directory">Gear and Weapons Directory</a> - team utility, control tools, and traversal picks.
+      </li>
+      </ul>`,
+      },
+
+      {
+        id: 7,
+        title: "Burglin' Gnomes Death and Revive Guide: How Rescue and Recovery Work",
+        description: "A practical Burglin' Gnomes death and revive guide for rescue calls, recovery windows, chain-death prevention, task progress, and when to extract instead.",
+        category: 'Survival',
+        tags: ['Death', 'Revive', 'Rescue', 'Recovery', 'Co-op'],
+        author: 'Burglin Gnomes Fan Guide Team',
+        publishDate: "2026-06-29",
+        imageUrl: "/images/guides/monster-guide-red-cap-counter.webp",
+        imageAlt: "Burglin Gnomes death revive rescue guide with Red Cap pressure",
+        seo: {
+          title: "Burglin Gnomes Death Revive Guide - Rescue",
+          description: "Burglin Gnomes death and revive guide covering rescue calls, recovery windows, chain-death prevention, task progress, and extract decisions.",
+          keywords: "Burglin Gnomes revive, death, rescue, recovery, teammate down"
+        },
+        addressBar: "burglin-gnomes-death-revive-rescue",
+        detailsHtml: `<p>By: Frontline Pathfinder | Lead Content Tester, GameguideHub
+      </p>
+      <p>Tested on Version: Current public build | Status: <strong>FIELD TESTED / PATCH SENSITIVE</strong>. Revive charges, recovery timing, ragdoll bugs, and multiplayer stability can shift after patches.
+      </p>
+      <p>Fast answer: a downed teammate is a route decision. Rescue them if the path is stable and the team still has time for the three-task minimum. Abandon the rescue if the attempt would turn one loss into a full wipe.
+      </p>
+      <figure>
+      <img src="/images/guides/monster-guide-red-cap-counter.webp" alt="Burglin Gnomes death revive rescue guide with Red Cap pressure" title="Burglin Gnomes death revive and rescue route" loading="lazy">
+      <figcaption>Death pressure steals time, attention, and route control. Stabilize before touching the body.</figcaption>
+      </figure>
+      <h2>What happens when you die in Burglin' Gnomes
+      </h2>
+      <p>Death costs more than the item on the floor. It costs timer control, task momentum, and at least one teammate's attention. If the team has not reached the three-task minimum, every rescue attempt should be judged against one question: does this save help finish the day, or does it delay the clear?
+      </p>
+      <table>
+      <thead>
+      <tr><th>Death Cost</th><th>Why It Matters</th><th>Route Call</th></tr>
+      </thead>
+      <tbody>
+      <tr><td>Timer loss</td><td>Rescue movement consumes the same time needed for tasks.</td><td>Rescue only if the route remains stable.</td></tr>
+      <tr><td>Task momentum</td><td>The team often stops objective progress to recover one player.</td><td>Keep one player on task progress when possible.</td></tr>
+      <tr><td>Loot control</td><td>Dropped items can bait the team into bad rooms.</td><td>Recover critical gear first; leave junk.</td></tr>
+      <tr><td>Attention drain</td><td>Enemies and hazards punish tunnel vision.</td><td>Clear danger before revive movement.</td></tr>
+      </tbody>
+      </table>
+      <h3>What progress is at risk
+      </h3>
+      <p>The run is at risk when a body falls in a room with active enemies, tight exits, or a long return route. Abandoned loot is sometimes the correct call. A clean three-task clear with one lost object beats a rescue attempt that fails the whole day.
+      </p>
+      <p>For task timing, pair this page with the <a href="/guides/burglin-gnomes-all-task-guide">All Task Guide</a>. If the rescue blocks the third task, downgrade the rescue plan.
+      </p>
+      <h3>When a teammate can still recover the run
+      </h3>
+      <p>A teammate can recover the run when the rescue window is stable: the nearest threat is controlled, the timer still supports the route, and at least one player can continue task progress while recovery happens. If all three are false, the rescue is probably a wipe trap.
+      </p>
+      <figure>
+      <img src="/images/guides/guides01-02.webp" alt="Burglin Gnomes revive recovery route through house progression" title="Burglin Gnomes teammate recovery route planning" loading="lazy">
+      <figcaption>A revive that breaks the route is not a save. Keep the day clearable first.</figcaption>
+      </figure>
+      <h2>How to rescue teammates safely
+      </h2>
+      <h3>When to disengage first
+      </h3>
+      <p>Disengage before rescuing when the room is still changing. Moving enemies, human patrol pressure, blocked exits, or active hazards mean the rescue path is not real yet. Back out, reset line of sight, and only return if the team can re-enter with control.
+      </p>
+      <table>
+      <thead>
+      <tr><th>Situation</th><th>Call</th><th>Why</th></tr>
+      </thead>
+      <tbody>
+      <tr><td>Body near controlled doorway</td><td>Rescue</td><td>Exit path is visible and short.</td></tr>
+      <tr><td>Body in active enemy room</td><td>Stabilize first</td><td>Rushing creates a second downed player.</td></tr>
+      <tr><td>Body beside task-critical item</td><td>Recover gear, then reassess</td><td>Task progress may matter more than full loot recovery.</td></tr>
+      <tr><td>Two failed rescue movements</td><td>Extract or finish tasks</td><td>The room is proving unstable.</td></tr>
+      </tbody>
+      </table>
+      <h3>How to avoid chain deaths
+      </h3>
+      <p>Avoid chain deaths by refusing single-file panic. One player approaches, one watches the exit, and one continues the objective or prepares extraction. If the first rescue movement fails, the team should downgrade the plan instead of sending the next player into the same angle.
+      </p>
+      <ul>
+      <li><strong>First call:</strong> "stabilize." Clear the immediate threat or reset the room.
+      </li>
+      <li><strong>Second call:</strong> "rescue" or "extract." The route captain makes the final call.
+      </li>
+      <li><strong>Hard stop:</strong> after two failed rescue movements, stop feeding the room unless the remaining task is impossible without the downed player.
+      </li>
+      </ul>
+      <h2>Tools that make rescue safer
+      </h2>
+      <p>Recovery is easier when the team has control and movement tools before the mistake happens. Do not wait for a death to decide who carries rescue utility.
+      </p>
+      <table>
+      <thead>
+      <tr><th>Tool or Page</th><th>Use</th><th>Best Timing</th></tr>
+      </thead>
+      <tbody>
+      <tr><td><a href="/items/sleep-dart">Sleep Dart</a></td><td>Stop a threat long enough to reach a body.</td><td>Before entering enemy-heavy rooms.</td></tr>
+      <tr><td><a href="/items/blowgun">Blowgun</a></td><td>Deliver control from safer distance.</td><td>When melee trades are too risky.</td></tr>
+      <tr><td><a href="/items/helmet">Helmet</a></td><td>Reduce head-hit and movement mistake risk.</td><td>Before jump or high-room routes.</td></tr>
+      <tr><td><a href="/guides/burglin-gnomes-complete-monster-guide-karma-counters">Monster Guide</a></td><td>Pick the right counter before a rescue route.</td><td>When enemies block the body.</td></tr>
+      </tbody>
+      </table>
+      <figure>
+      <img src="/images/guides/monster-guide-bee-counter.webp" alt="Burglin Gnomes rescue recovery route with Bee hazard pressure" title="Burglin Gnomes rescue route hazard control" loading="lazy">
+      <figcaption>Hazards do not pause for hero plays. Control the room, then recover.</figcaption>
+      </figure>
+      <h2>When to extract instead of revive
+      </h2>
+      <p>Extract when the team has already met the three-task minimum, the body is deep in a bad room, or the rescue would cost the remaining timer. This is not abandoning the run; it is protecting the progress that is still bankable.
+      </p>
+      <ol>
+      <li><strong>If three tasks are done:</strong> extraction is the default call.
+      </li>
+      <li><strong>If two tasks are done:</strong> rescue only if it helps finish the third task.
+      </li>
+      <li><strong>If one or zero tasks are done:</strong> stabilize first, then decide whether the day is still recoverable.
+      </li>
+      <li><strong>If everyone is split:</strong> regroup before sending anyone to the body.
+      </li>
+      </ol>
+      <h2>FAQ
+      </h2>
+      <h3>What happens when you die in Burglin' Gnomes?
+      </h3>
+      <p>Death puts loot, task progress, timer control, and team tempo at risk. Recovery depends on whether teammates can stabilize the room without creating another death.
+      </p>
+      <h3>How do you revive or rescue teammates in Burglin' Gnomes?
+      </h3>
+      <p>Clear immediate danger first, keep one player watching the exit, then attempt the rescue from a stable position. If the room remains unstable, finish tasks or extract instead.
+      </p>
+      <h2>Related Guides and Data Pages
+      </h2>
+      <ul>
+      <li><a href="/guides/burglin-gnomes-multiplayer-co-op">Co-op Guide</a> - team roles and communication before a rescue goes bad.
+      </li>
+      <li><a href="/guides/burglin-gnomes-complete-beginners-guide">Complete Beginner Survival Guide</a> - revive rules and first-day survival basics.
+      </li>
+      <li><a href="/guides/burglin-gnomes-all-task-guide">All Task Guide</a> - when task progress matters more than loot recovery.
+      </li>
+      <li><a href="/guides/burglin-gnomes-complete-monster-guide-karma-counters">Monster Guide</a> - counters for enemies that block recovery.
+      </li>
+      </ul>`,
       }
 
 

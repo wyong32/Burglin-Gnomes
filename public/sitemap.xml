@@ -680,6 +680,18 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://burglin-gnomes.org/guides/burglin-gnomes-multiplayer-co-op</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://burglin-gnomes.org/guides/burglin-gnomes-death-revive-rescue</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://burglin-gnomes.org/bestiary/high-gnome</loc>
     <lastmod>2026-06-29</lastmod>
     <changefreq>monthly</changefreq>
