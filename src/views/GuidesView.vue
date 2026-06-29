@@ -29,7 +29,8 @@
               :class="{ 'is-active': activeCategory === category.name }"
               @click="activeCategory = category.name"
             >
-              {{ category.name }} <b>{{ category.count }}</b>
+              {{ category.name }}
+              <span class="guide-filter-count">{{ category.count }}</span>
             </button>
           </div>
         </section>
@@ -42,18 +43,19 @@
               class="guide-card-link"
               :href="`/guides/${guide.addressBar}`"
             >
-              <figure>
+              <figure class="guide-card-media">
                 <img :src="guide.imageUrl" :alt="guide.imageAlt || guide.title" />
               </figure>
-              <span class="guide-card-copy">
-                <small>{{ guide.category }}</small>
+              <div class="guide-card-body">
+                <span class="guide-card-category">{{ guide.category }}</span>
                 <h2>{{ guide.title }}</h2>
                 <p>{{ guide.description }}</p>
-                <span class="guide-card-meta">
-                  <b>{{ guide.publishDate }}</b>
-                  <em>{{ guide.author }}</em>
-                </span>
-              </span>
+                <footer class="guide-card-byline">
+                  <time :datetime="guide.publishDate">{{ formatGuideDate(guide.publishDate) }}</time>
+                  <span class="guide-card-byline-sep" aria-hidden="true">·</span>
+                  <span class="guide-card-author">{{ guide.author }}</span>
+                </footer>
+              </div>
             </a>
           </div>
 
@@ -88,6 +90,7 @@
 <script setup>
 import { computed, ref } from 'vue'
 import guidesData from '../data/guides.js'
+import { formatGuideDate } from '../utils/formatDate.js'
 
 const guides = guidesData.filter((guide) => guide.addressBar)
 const categories = [...new Set(guides.map((guide) => guide.category).filter(Boolean))]
@@ -125,52 +128,72 @@ const filteredGuides = computed(() => {
 .guide-filter-content {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
 }
 
 .guide-filter-content button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   border: 1px solid var(--color-border);
   border-radius: 999px;
-  padding: 8px 12px;
+  padding: 8px 14px;
   background: var(--color-surface);
   color: var(--color-ink);
   cursor: pointer;
   font: inherit;
-  font-size: 0.84rem;
-  font-weight: 900;
-  box-shadow: 3px 4px 0 rgba(36, 51, 45, 0.1);
+  font-size: 0.86rem;
+  font-weight: 800;
   transition:
     background 160ms ease,
-    color 160ms ease,
-    transform 160ms ease;
+    border-color 160ms ease,
+    color 160ms ease;
 }
 
 .guide-filter-content button:hover,
 .guide-filter-content button:focus-visible,
 .guide-filter-content button.is-active {
-  background: var(--color-ink);
-  color: var(--color-surface);
+  border-color: rgba(40, 114, 79, 0.35);
+  background: rgba(223, 240, 198, 0.55);
+  color: var(--color-ink);
   outline: none;
-  transform: translateY(-2px);
 }
 
-.guide-filter-content button b {
-  color: var(--color-accent);
+.guide-filter-content button.is-active {
+  background: var(--color-ink);
+  border-color: var(--color-ink);
+  color: var(--color-surface);
+}
+
+.guide-filter-count {
+  min-width: 1.4rem;
+  border-radius: 999px;
+  padding: 2px 7px;
+  background: rgba(36, 51, 45, 0.08);
+  color: var(--color-muted);
+  font-size: 0.74rem;
+  font-weight: 800;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.guide-filter-content button.is-active .guide-filter-count {
+  background: rgba(255, 248, 232, 0.16);
+  color: var(--color-surface);
 }
 
 .guide-list-content {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
 }
 
 .guide-card-link {
-  position: relative;
   display: grid;
   grid-template-rows: auto 1fr;
   overflow: hidden;
   border: 1px solid var(--color-border);
-  border-radius: 18px;
+  border-radius: var(--radius-lg);
   background: var(--color-surface);
   box-shadow: var(--shadow-card);
   color: inherit;
@@ -180,94 +203,93 @@ const filteredGuides = computed(() => {
     transform 160ms ease;
 }
 
-.guide-card-link::before {
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 7px;
-  height: auto;
-  background:
-    linear-gradient(180deg, var(--color-accent), var(--color-primary));
-  content: "";
-}
-
 .guide-card-link:hover,
 .guide-card-link:focus-visible {
-  border-color: rgba(40, 114, 79, 0.42);
+  border-color: rgba(40, 114, 79, 0.35);
   box-shadow: var(--shadow-soft);
   outline: none;
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
 
-.guide-card-link figure {
+.guide-card-media {
   overflow: hidden;
   margin: 0;
-  background: rgba(223, 240, 198, 0.5);
+  background: rgba(223, 240, 198, 0.45);
 }
 
-.guide-card-link img {
+.guide-card-media img {
+  display: block;
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
+  transition: transform 220ms ease;
 }
 
-.guide-card-copy {
+.guide-card-link:hover .guide-card-media img,
+.guide-card-link:focus-visible .guide-card-media img {
+  transform: scale(1.03);
+}
+
+.guide-card-body {
   display: grid;
-  gap: 9px;
+  gap: 10px;
   align-content: start;
-  padding: clamp(16px, 2.4vw, 24px);
+  padding: 18px 18px 20px;
 }
 
-.guide-card-copy small {
+.guide-card-category {
+  width: fit-content;
+  border-radius: 999px;
+  padding: 4px 10px;
+  background: rgba(223, 240, 198, 0.65);
   color: var(--color-primary);
-  font-size: 0.74rem;
-  font-weight: 900;
-  letter-spacing: 0.06em;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
 }
 
-.guide-card-copy h2 {
-  font-size: clamp(1.12rem, 1.5vw, 1.32rem);
-  line-height: 1.08;
+.guide-card-body h2 {
+  font-size: clamp(1.08rem, 1.35vw, 1.24rem);
+  line-height: 1.2;
   display: -webkit-box;
-  min-height: 2.16em;
   overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
 }
 
-.guide-card-copy p {
+.guide-card-body p {
   display: -webkit-box;
   overflow: hidden;
-  color: var(--color-text);
-  font-weight: 800;
+  color: var(--color-muted);
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.55;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
 }
 
-.guide-card-meta {
+.guide-card-byline {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 6px;
   align-items: center;
   margin-top: 4px;
-  padding-top: 10px;
-  border-top: 1px dashed rgba(36, 51, 45, 0.16);
+  padding-top: 12px;
+  border-top: 1px solid rgba(36, 51, 45, 0.1);
+  color: var(--color-muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1.35;
 }
 
-.guide-card-meta b,
-.guide-card-meta em {
-  font-size: 0.78rem;
-  line-height: 1.25;
+.guide-card-byline time,
+.guide-card-author {
+  color: var(--color-muted);
 }
 
-.guide-card-meta b {
-  color: var(--color-ink-soft);
-}
-
-.guide-card-meta em {
-  color: var(--color-accent);
-  font-style: normal;
-  font-weight: 900;
+.guide-card-byline-sep {
+  color: rgba(104, 118, 109, 0.55);
 }
 
 .guide-empty-content {

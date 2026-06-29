@@ -14,6 +14,11 @@
             <span class="eyebrow">{{ guide.category || 'Guide' }}</span>
             <h1>{{ guide.title }}</h1>
             <p>{{ guide.description }}</p>
+            <p class="guide-hero-byline">
+              <time :datetime="guide.publishDate">Published {{ formatGuideDate(guide.publishDate) }}</time>
+              <span aria-hidden="true">·</span>
+              <span>{{ guide.author }}</span>
+            </p>
           </div>
           <figure class="hero-art">
             <img :src="guide.imageUrl" :alt="guide.imageAlt || guide.title" />
@@ -60,22 +65,23 @@
             <div class="guide-sidebar-panel">
               <span class="guide-sidebar-label">Category</span>
               <strong>{{ guide.category }}</strong>
-              <p>{{ guide.description }}</p>
             </div>
 
-            <div class="guide-sidebar-list">
-              <span>
-                <small>Updated</small>
-                <b>{{ guide.publishDate }}</b>
-              </span>
-              <span>
-                <small>Author</small>
-                <b>{{ guide.author }}</b>
-              </span>
-            </div>
+            <dl class="guide-sidebar-facts">
+              <div>
+                <dt>Published</dt>
+                <dd>
+                  <time :datetime="guide.publishDate">{{ formatGuideDate(guide.publishDate) }}</time>
+                </dd>
+              </div>
+              <div>
+                <dt>Author</dt>
+                <dd>{{ guide.author }}</dd>
+              </div>
+            </dl>
 
-            <div class="guide-topic-panel">
-              <small>Topics</small>
+            <div v-if="guide.tags?.length" class="guide-topic-panel">
+              <span class="guide-sidebar-label">Topics</span>
               <div>
                 <span v-for="tag in guide.tags" :key="tag">{{ tag }}</span>
               </div>
@@ -101,6 +107,7 @@
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import guidesData from '../data/guides.js'
+import { formatGuideDate } from '../utils/formatDate.js'
 
 const route = useRoute()
 const guides = guidesData.filter((item) => item.addressBar)
@@ -163,8 +170,29 @@ const guidePager = computed(() => {
 
 .guide-breadcrumb a:hover,
 .guide-breadcrumb a:focus-visible {
-  color: var(--color-accent);
+  color: var(--color-primary);
   outline: none;
+}
+
+.guide-hero-byline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-top: 4px;
+  color: var(--color-muted);
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.guide-hero-byline time,
+.guide-hero-byline span:not([aria-hidden]) {
+  color: var(--color-muted);
+}
+
+.guide-hero-byline span[aria-hidden] {
+  color: rgba(104, 118, 109, 0.55);
 }
 
 .guide-breadcrumb strong {
@@ -183,79 +211,68 @@ const guidePager = computed(() => {
   position: sticky;
   top: 96px;
   display: grid;
-  gap: 14px;
+  gap: 16px;
   align-self: start;
-  overflow: hidden;
-  border: 1px solid rgba(36, 51, 45, 0.2);
-  border-radius: 22px;
-  padding: 16px;
-  background:
-    linear-gradient(180deg, rgba(255, 240, 199, 0.78), rgba(255, 248, 232, 0.96)),
-    var(--color-surface);
-  box-shadow: var(--shadow-soft);
-}
-
-.guide-sidebar::before {
-  display: block;
-  width: 100%;
-  height: 8px;
-  border-radius: 999px;
-  background:
-    linear-gradient(90deg, var(--color-accent), var(--color-gold), var(--color-primary));
-  content: "";
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
 }
 
 .guide-sidebar-panel {
   display: grid;
-  gap: 8px;
-  padding: 2px 2px 8px;
+  gap: 6px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(36, 51, 45, 0.1);
 }
 
 .guide-sidebar strong {
   color: var(--color-ink);
-  font-size: 1.55rem;
-  line-height: 1.05;
+  font-size: 1.2rem;
+  line-height: 1.15;
 }
 
-.guide-sidebar p {
-  color: var(--color-text);
-  font-weight: 800;
-  line-height: 1.55;
-}
-
-.guide-sidebar-label,
-.guide-topic-panel small,
-.guide-sidebar-list small {
-  color: var(--color-primary);
+.guide-sidebar-label {
+  color: var(--color-muted);
   font-size: 0.72rem;
-  font-weight: 900;
-  letter-spacing: 0.06em;
+  font-weight: 800;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
-.guide-sidebar-list {
+.guide-sidebar-facts {
   display: grid;
-  gap: 10px;
+  gap: 12px;
+  margin: 0;
 }
 
-.guide-sidebar-list span {
+.guide-sidebar-facts div {
   display: grid;
   gap: 4px;
-  border: 1px solid rgba(36, 51, 45, 0.14);
-  border-radius: 14px;
-  padding: 12px;
-  background: rgba(255, 248, 232, 0.72);
 }
 
-.guide-sidebar-list b {
-  color: var(--color-ink);
-  font-size: 0.94rem;
-  line-height: 1.25;
+.guide-sidebar-facts dt {
+  color: var(--color-muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.guide-sidebar-facts dd {
+  margin: 0;
+  color: var(--color-ink-soft);
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.4;
 }
 
 .guide-topic-panel {
   display: grid;
-  gap: 9px;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(36, 51, 45, 0.1);
 }
 
 .guide-topic-panel div {
@@ -265,35 +282,34 @@ const guidePager = computed(() => {
 }
 
 .guide-topic-panel span {
-  border: 1px solid rgba(40, 114, 79, 0.22);
+  border: 1px solid rgba(36, 51, 45, 0.12);
   border-radius: 999px;
-  padding: 7px 10px;
-  background: rgba(223, 240, 198, 0.72);
-  color: var(--color-ink);
+  padding: 6px 10px;
+  background: rgba(223, 240, 198, 0.45);
+  color: var(--color-ink-soft);
   font-size: 0.78rem;
-  font-weight: 900;
+  font-weight: 800;
 }
 
 .guide-back-link {
   display: inline-flex;
   justify-content: center;
-  border: 1px solid var(--color-ink);
+  border: 1px solid var(--color-border);
   border-radius: 999px;
   padding: 11px 14px;
-  background: var(--color-ink);
-  color: var(--color-surface);
-  font-weight: 900;
-  box-shadow: 4px 5px 0 rgba(36, 51, 45, 0.14);
+  background: var(--color-surface-strong);
+  color: var(--color-ink);
+  font-weight: 800;
   transition:
     background 160ms ease,
-    transform 160ms ease;
+    border-color 160ms ease;
 }
 
 .guide-back-link:hover,
 .guide-back-link:focus-visible {
-  background: var(--color-primary);
+  border-color: rgba(40, 114, 79, 0.35);
+  background: rgba(223, 240, 198, 0.45);
   outline: none;
-  transform: translateY(-2px);
 }
 
 .guide-tags {
@@ -303,12 +319,13 @@ const guidePager = computed(() => {
 }
 
 .guide-tags span {
+  border: 1px solid rgba(36, 51, 45, 0.12);
   border-radius: 999px;
-  padding: 7px 11px;
-  background: rgba(223, 240, 198, 0.75);
-  color: var(--color-primary);
+  padding: 6px 10px;
+  background: rgba(223, 240, 198, 0.45);
+  color: var(--color-ink-soft);
   font-size: 0.78rem;
-  font-weight: 900;
+  font-weight: 800;
 }
 
 .guide-article {
@@ -489,21 +506,38 @@ const guidePager = computed(() => {
 .related-guide-grid .guide-card {
   display: grid;
   gap: 8px;
+  padding: 16px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  transition:
+    border-color 160ms ease,
+    background 160ms ease;
+}
+
+.related-guide-grid .guide-card:hover,
+.related-guide-grid .guide-card:focus-visible {
+  border-color: rgba(40, 114, 79, 0.35);
+  background: rgba(223, 240, 198, 0.28);
+  outline: none;
 }
 
 .related-guide-grid strong {
   display: -webkit-box;
   min-height: 2.4em;
   overflow: hidden;
+  color: var(--color-ink);
+  font-size: 1rem;
+  line-height: 1.25;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
 }
 
 .related-guide-grid small {
-  color: var(--color-primary);
+  color: var(--color-muted);
   font-size: 0.72rem;
-  font-weight: 950;
-  letter-spacing: 0.06em;
+  font-weight: 800;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
