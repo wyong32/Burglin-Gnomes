@@ -717,8 +717,8 @@ export default [
         tags: ['Co-op', 'Multiplayer', 'Friends', 'Team Play', 'Tasks'],
         author: 'Burglin Gnomes Fan Guide Team',
         publishDate: "2026-06-29",
-        imageUrl: "/images/task-list.webp",
-        imageAlt: "Burglin Gnomes multiplayer co-op task list route planning",
+        imageUrl: "/images/guides/coop-guide-friend-lobby.webp",
+        imageAlt: "Burglin Gnomes multiplayer co-op host and join game menu",
         seo: {
           title: "Burglin Gnomes Co-op Guide - Team Play",
           description: "Burglin Gnomes co-op guide for multiplayer teams, friend lobbies, role splits, shared tasks, rescue calls, and clean three-task routes.",
@@ -732,8 +732,8 @@ export default [
       <p>Fast answer: treat co-op as a routing system, not just extra bodies. One player owns the task list, one keeps the return route open, and the rest carry only what helps the three-task clear. The biggest multiplayer mistake is splitting before the team has called the five daily tasks, picked the safest three, and agreed on the extraction trigger.
       </p>
       <figure>
-      <img src="/images/task-list.webp" alt="Burglin Gnomes multiplayer co-op task list route planning" title="Burglin Gnomes co-op task list and team route planning" loading="lazy">
-      <figcaption>Co-op starts at the task list. Call the five tasks first, then assign players to the safest three-objective route.</figcaption>
+      <img src="/images/guides/coop-guide-friend-lobby.webp" alt="Burglin Gnomes multiplayer co-op host and join game menu" title="Burglin Gnomes co-op host game and join game menu" loading="lazy">
+      <figcaption>Co-op starts before the route: use Host Game or Join Game, then assign a caller before anyone starts looting.</figcaption>
       </figure>
       <h2>Does Burglin' Gnomes have multiplayer?
       </h2>
@@ -771,8 +771,8 @@ export default [
       </tbody>
       </table>
       <figure>
-      <img src="/images/guides/guides01.webp" alt="Burglin Gnomes co-op survival route through the Human World" title="Burglin Gnomes multiplayer route roles" loading="lazy">
-      <figcaption>Extra players are useful when they cover separate failure cases: task calls, carrying, safety, and rescue.</figcaption>
+      <img src="/images/guides/coop-guide-team-route.webp" alt="Burglin Gnomes co-op teammate route planning outside the house" title="Burglin Gnomes multiplayer team route outside the house" loading="lazy">
+      <figcaption>Extra players matter when they cover different jobs: one caller, one carrier, one safety player, and one flex rescue slot.</figcaption>
       </figure>
       <h2>Best co-op tips
       </h2>
@@ -810,8 +810,8 @@ export default [
       <p>Parallel work becomes strong only after the route is known. Splitting before the task cluster is chosen creates duplicate carrying, missed rescue calls, and players stuck deep in rooms with no extraction path. The first minute should be shared planning; the middle of the run can split; the final phase should regroup.
       </p>
       <figure>
-      <img src="/images/guides/all-task-guide-window-entry.webp" alt="Burglin Gnomes co-op window entry route for multiplayer task runs" title="Burglin Gnomes co-op window entry route" loading="lazy">
-      <figcaption>Split after the entry route is stable. Early solo dives create rescue debt.</figcaption>
+      <img src="/images/guides/coop-guide-shared-task.webp" alt="Burglin Gnomes co-op shared route with teammates near the house entrance" title="Burglin Gnomes co-op shared route before splitting tasks" loading="lazy">
+      <figcaption>Split only after the shared route is stable. Early solo dives create rescue debt.</figcaption>
       </figure>
       <h2>Co-op route order
       </h2>
@@ -859,8 +859,8 @@ export default [
         tags: ['Death', 'Revive', 'Rescue', 'Recovery', 'Co-op'],
         author: 'Burglin Gnomes Fan Guide Team',
         publishDate: "2026-06-29",
-        imageUrl: "/images/guides/monster-guide-red-cap-counter.webp",
-        imageAlt: "Burglin Gnomes death revive rescue guide with Red Cap pressure",
+        imageUrl: "/images/guides/revive-guide-rescue-approach.webp",
+        imageAlt: "Burglin Gnomes revive friends prompt for teammate rescue",
         seo: {
           title: "Burglin Gnomes Death Revive Guide - Rescue",
           description: "Burglin Gnomes death and revive guide covering rescue calls, recovery windows, chain-death prevention, task progress, and extract decisions.",
@@ -874,8 +874,8 @@ export default [
       <p>Fast answer: a downed teammate is a route decision. Rescue them if the path is stable and the team still has time for the three-task minimum. Abandon the rescue if the attempt would turn one loss into a full wipe.
       </p>
       <figure>
-      <img src="/images/guides/monster-guide-red-cap-counter.webp" alt="Burglin Gnomes death revive rescue guide with Red Cap pressure" title="Burglin Gnomes death revive and rescue route" loading="lazy">
-      <figcaption>Death pressure steals time, attention, and route control. Stabilize before touching the body.</figcaption>
+      <img src="/images/guides/revive-guide-rescue-approach.webp" alt="Burglin Gnomes revive friends prompt for teammate rescue" title="Burglin Gnomes revive friends prompt and rescue point" loading="lazy">
+      <figcaption>The revive prompt is the easy part. The hard part is deciding whether the team can reach it without creating a second death.</figcaption>
       </figure>
       <h2>What happens when you die in Burglin' Gnomes
       </h2>
@@ -903,7 +903,7 @@ export default [
       <p>A teammate can recover the run when the rescue window is stable: the nearest threat is controlled, the timer still supports the route, and at least one player can continue task progress while recovery happens. If all three are false, the rescue is probably a wipe trap.
       </p>
       <figure>
-      <img src="/images/guides/guides01-02.webp" alt="Burglin Gnomes revive recovery route through house progression" title="Burglin Gnomes teammate recovery route planning" loading="lazy">
+      <img src="/images/guides/revive-guide-downed-friend.webp" alt="Burglin Gnomes downed teammate recovery route in multiplayer" title="Burglin Gnomes downed teammate recovery route" loading="lazy">
       <figcaption>A revive that breaks the route is not a save. Keep the day clearable first.</figcaption>
       </figure>
       <h2>How to rescue teammates safely
@@ -951,8 +951,8 @@ export default [
       </tbody>
       </table>
       <figure>
-      <img src="/images/guides/monster-guide-bee-counter.webp" alt="Burglin Gnomes rescue recovery route with Bee hazard pressure" title="Burglin Gnomes rescue route hazard control" loading="lazy">
-      <figcaption>Hazards do not pause for hero plays. Control the room, then recover.</figcaption>
+      <img src="/images/guides/revive-guide-recovery-route.webp" alt="Burglin Gnomes teammate rescue route at the house entrance" title="Burglin Gnomes teammate rescue route and recovery exit" loading="lazy">
+      <figcaption>Hazards do not pause for hero plays. Control the entry route, then recover.</figcaption>
       </figure>
       <h2>When to extract instead of revive
       </h2>
