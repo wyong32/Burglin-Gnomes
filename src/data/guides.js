@@ -1000,8 +1000,8 @@ export default [
         tags: ['Classes', 'Roles', 'Beginner', 'Co-op', 'Loadouts'],
         author: 'Burglin Gnomes Fan Guide Team',
         publishDate: "2026-07-06",
-        imageUrl: "/images/guides/guides02.webp",
-        imageAlt: "Burglin Gnomes classes guide with gear roles and first picks",
+        imageUrl: "/images/guides/classes-loadout-base-steam.webp",
+        imageAlt: "Burglin Gnomes classes guide loadout base and first role picks",
         seo: {
           title: "Burglin Gnomes Classes Guide - First Picks",
           description: "Burglin Gnomes classes guide for role picks, beginner choices, co-op balance, and gear-based team jobs without wasting early materials.",
@@ -1015,7 +1015,7 @@ export default [
       <p><strong>Fast answer:</strong> pick your Burglin' Gnomes class or role around the job your team needs in the next <a href="/areas/human-house">Human World</a> run. New players should start with a safe runner/hauler role, not a fragile combat-first setup. In co-op, one player should focus on mobility and scouting, one on hauling task items, and one on control or rescue if the lobby has enough players.
       </p>
       <figure>
-      <img src="/images/guides/guides02.webp" alt="Burglin Gnomes classes guide gear and role selection" title="Burglin Gnomes classes and role selection guide" loading="lazy">
+      <img src="/images/guides/classes-coop-role-check-steam.webp" alt="Burglin Gnomes classes guide co-op role check before a run" title="Burglin Gnomes classes and co-op role selection guide" loading="lazy">
       <figcaption>Class value is practical: what can this gnome do when the timer is low and the third task is still unfinished?</figcaption>
       </figure>
       <h2>How classes work in Burglin' Gnomes
@@ -1042,7 +1042,7 @@ export default [
       <p>The best first pick is the role that keeps you alive while you learn task routing: <strong>Runner/Hauler</strong>. It teaches the two systems that decide most early runs: how to move through the house and when to stop looting. Pair a <a href="/items/backpack">Backpack</a> with conservative routes before spending rare materials on specialized combat gear.
       </p>
       <figure>
-      <img src="/images/guides/guides01-01.webp" alt="Burglin Gnomes beginner class first pick at Well of Creation" title="Burglin Gnomes beginner class first pick and crafting route" loading="lazy">
+      <img src="/images/guides/classes-well-progression-steam.webp" alt="Burglin Gnomes beginner class first pick near the Well of Creation" title="Burglin Gnomes beginner class first pick and Well progression route" loading="lazy">
       <figcaption>The Well of Creation decides your early role. Craft for the next task route, not for a fantasy build.</figcaption>
       </figure>
       <ul>
@@ -1120,8 +1120,8 @@ export default [
         tags: ['Progress', 'Lobby', 'Failure', 'Save', 'Mods'],
         author: 'Burglin Gnomes Fan Guide Team',
         publishDate: "2026-07-06",
-        imageUrl: "/images/guides/all-task-guide-cover.webp",
-        imageAlt: "Burglin Gnomes lobby progress after failed run guide",
+        imageUrl: "/images/guides/lobby-failed-run-task-reset-steam.webp",
+        imageAlt: "Burglin Gnomes lobby progress after failed run task reset route",
         seo: {
           title: "Burglin Gnomes Lobby Progress After Fail",
           description: "Does Burglin Gnomes keep lobby progress after fail? Learn what resets, what may stay, host save rules, and keep-progress mod cautions.",
@@ -1135,7 +1135,7 @@ export default [
       <p><strong>Fast answer:</strong> do not assume Burglin' Gnomes keeps lobby progress after a failed run. Current route notes and save testing point to a harsh failure model: missing the required daily tasks can wipe the day back to early progression, while normal host exits and successful clears are the safer way to preserve progress. If the run is failing, stop looting and secure the three-task minimum.
       </p>
       <figure>
-      <img src="/images/guides/all-task-guide-cover.webp" alt="Burglin Gnomes failed run lobby progress and task route" title="Burglin Gnomes lobby progress after failed run" loading="lazy">
+      <img src="/images/guides/lobby-exit-route-steam.webp" alt="Burglin Gnomes failed run lobby progress exit route planning" title="Burglin Gnomes lobby progress after failed run route planning" loading="lazy">
       <figcaption>Progress is protected by task completion first. A full backpack does not matter if the day fails.</figcaption>
       </figure>
       <h2>What happens to lobby progress after failing
@@ -1162,7 +1162,7 @@ export default [
       <p>Based on current survival-guide notes, failed-day penalties can affect the things players usually mean by "lobby progress": base upgrades, stored materials, crafted gear, route unlock momentum, and the day count. Client inventory can also become messy when players disconnect because items may drop into the <a href="/areas/gnome-world">Gnome Haven</a> instead of remaining on that player.
       </p>
       <figure>
-      <img src="/images/guides/all-task-guide-window-entry.webp" alt="Burglin Gnomes safe task route before failed run reset" title="Burglin Gnomes safe task route before progress loss" loading="lazy">
+      <img src="/images/guides/lobby-safe-route-steam.webp" alt="Burglin Gnomes safe task route before failed run progress reset" title="Burglin Gnomes safe task route before progress loss" loading="lazy">
       <figcaption>When progress is at risk, choose the short objective route. Deep loot is a trap before the clear condition.</figcaption>
       </figure>
       <ul>
