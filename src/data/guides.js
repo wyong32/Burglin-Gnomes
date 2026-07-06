@@ -990,6 +990,247 @@ export default [
       <li><a href="/guides/burglin-gnomes-complete-monster-guide-karma-counters">Monster Guide</a> - counters for enemies that block recovery.
       </li>
       </ul>`,
+      },
+
+      {
+        id: 8,
+        title: "Burglin' Gnomes Classes Guide: Roles and First Picks",
+        description: "Practical Burglin' Gnomes classes guide for first picks, co-op roles, gear roles, and beginner-safe team balance.",
+        category: 'Classes',
+        tags: ['Classes', 'Roles', 'Beginner', 'Co-op', 'Loadouts'],
+        author: 'Burglin Gnomes Fan Guide Team',
+        publishDate: "2026-07-06",
+        imageUrl: "/images/guides/guides02.webp",
+        imageAlt: "Burglin Gnomes classes guide with gear roles and first picks",
+        seo: {
+          title: "Burglin Gnomes Classes Guide - First Picks",
+          description: "Burglin Gnomes classes guide for role picks, beginner choices, co-op balance, and gear-based team jobs without wasting early materials.",
+          keywords: "Burglin Gnomes classes, class guide, roles, first pick, co-op team"
+        },
+        addressBar: "burglin-gnomes-classes-guide",
+        detailsHtml: `<p>By: Frontline Pathfinder | Lead Content Tester, GameguideHub
+      </p>
+      <p>Tested on Version: Current public build | Status: <strong>FIELD TESTED / PATCH SENSITIVE</strong>. Class names, perk wording, and role labels can change as the game updates.
+      </p>
+      <p><strong>Fast answer:</strong> pick your Burglin' Gnomes class or role around the job your team needs in the next <a href="/areas/human-house">Human World</a> run. New players should start with a safe runner/hauler role, not a fragile combat-first setup. In co-op, one player should focus on mobility and scouting, one on hauling task items, and one on control or rescue if the lobby has enough players.
+      </p>
+      <figure>
+      <img src="/images/guides/guides02.webp" alt="Burglin Gnomes classes guide gear and role selection" title="Burglin Gnomes classes and role selection guide" loading="lazy">
+      <figcaption>Class value is practical: what can this gnome do when the timer is low and the third task is still unfinished?</figcaption>
+      </figure>
+      <h2>How classes work in Burglin' Gnomes
+      </h2>
+      <h3>Class basics
+      </h3>
+      <p>For guide purposes, treat classes as <strong>run roles</strong>: movement, hauling, control, combat, and rescue. If your current build exposes a formal class selector, read its bonuses first. If it does not, build the same role through gear, inventory slots, and team assignment.
+      </p>
+      <table>
+      <thead>
+      <tr><th>Role</th><th>Best Job</th><th>Core Gear</th><th>Risk</th></tr>
+      </thead>
+      <tbody>
+      <tr><td>Runner</td><td>Scout rooms, tag safe routes, trigger quick objectives</td><td><a href="/items/spring-shoes">Spring Shoes</a>, <a href="/items/helmet">Helmet</a>, <a href="/items/glider">Glider</a></td><td>Fall damage and getting isolated</td></tr>
+      <tr><td>Hauler</td><td>Move task objects and stolen items back to route exits</td><td><a href="/items/backpack">Backpack</a>, safe hand slots</td><td>Over-carrying before three tasks are done</td></tr>
+      <tr><td>Controller</td><td>Stop threats long enough for tasks or rescue</td><td><a href="/items/blowgun">Blowgun</a>, <a href="/items/sleep-dart">Sleep Dart</a>, <a href="/items/marble-gun">Marble Gun</a></td><td>Ammo waste and missed control windows</td></tr>
+      <tr><td>Brawler</td><td>Handle Red Caps, rats, roaches, and forced fights</td><td><a href="/items/metal-bat">Metal Bat</a>, <a href="/items/boxing-gloves">Boxing Gloves</a>, Helmet</td><td>Bad into immune or high-threat enemies</td></tr>
+      </tbody>
+      </table>
+      <p><strong>INFERRED:</strong> community searches for Burglin' Gnomes classes often mix official class wording with practical role/loadout advice. Do not assume a fan role name is an official class unless it appears in your build.
+      </p>
+      <h3>Best first class for new players
+      </h3>
+      <p>The best first pick is the role that keeps you alive while you learn task routing: <strong>Runner/Hauler</strong>. It teaches the two systems that decide most early runs: how to move through the house and when to stop looting. Pair a <a href="/items/backpack">Backpack</a> with conservative routes before spending rare materials on specialized combat gear.
+      </p>
+      <figure>
+      <img src="/images/guides/guides01-01.webp" alt="Burglin Gnomes beginner class first pick at Well of Creation" title="Burglin Gnomes beginner class first pick and crafting route" loading="lazy">
+      <figcaption>The Well of Creation decides your early role. Craft for the next task route, not for a fantasy build.</figcaption>
+      </figure>
+      <ul>
+      <li><strong>Solo or new player:</strong> prioritize Backpack, Helmet, and safe movement tools before damage.
+      </li>
+      <li><strong>Two-player team:</strong> split Runner/Hauler and Controller. Do not make both players carry the same job.
+      </li>
+      <li><strong>Three-plus players:</strong> add a Brawler only after someone owns scouting and someone owns task hauling.
+      </li>
+      </ul>
+      <h2>Choosing classes for co-op
+      </h2>
+      <h3>Team role balance
+      </h3>
+      <p>Co-op class value is not equal distribution. It is coverage. A team with three damage-minded gnomes can still fail because nobody carried the task object, nobody watched the exit, and nobody had control ready when a teammate went down. Use the <a href="/guides/burglin-gnomes-multiplayer-co-op">co-op guide</a> for lobby setup, then assign roles before ringing the Haven Bell.
+      </p>
+      <table>
+      <thead>
+      <tr><th>Player Count</th><th>Recommended Split</th><th>Why It Works</th></tr>
+      </thead>
+      <tbody>
+      <tr><td>Solo</td><td>Runner/Hauler hybrid</td><td>You need survival, carrying capacity, and fast exits more than perfect damage.</td></tr>
+      <tr><td>2 players</td><td>Runner/Hauler + Controller</td><td>One player moves the objective while the other stabilizes threats.</td></tr>
+      <tr><td>3 players</td><td>Runner + Hauler + Controller</td><td>Cleaner task routing with a dedicated rescue/control slot.</td></tr>
+      <tr><td>4 players</td><td>Runner + Hauler + Controller + Brawler</td><td>Enough coverage to handle task routes, recovery, and forced fights.</td></tr>
+      </tbody>
+      </table>
+      <p>Before a hard route, compare your role split with the <a href="/guides/burglin-gnomes-all-task-guide">All Task Guide</a>. If the daily list is mostly cabinets, small objects, and Break TV, you need speed and hauling. If it forces combat, bring control and a proper counter from the <a href="/guides/burglin-gnomes-complete-monster-guide-karma-counters">Monster Guide</a>.
+      </p>
+      <h2>First-pick mistakes to avoid
+      </h2>
+      <ol>
+      <li><strong>Do not pick damage before mobility.</strong> A weapon does not help if you cannot reach the objective or escape.
+      </li>
+      <li><strong>Do not duplicate jobs in small teams.</strong> Two controllers and no hauler usually turns into slow task progress.
+      </li>
+      <li><strong>Do not spend rare materials on a role you cannot support.</strong> A high-risk combat build without control tools is just a faster death route.
+      </li>
+      <li><strong>Do not ignore revive coverage.</strong> If nobody can stabilize a rescue, read the <a href="/guides/burglin-gnomes-death-revive-rescue">Death and Revive Guide</a> before pushing deeper rooms.
+      </li>
+      </ol>
+      <h2>FAQ
+      </h2>
+      <h3>What classes are in Burglin' Gnomes?
+      </h3>
+      <p>Current player searches use "classes" to mean both formal class choices and practical team roles. The safest way to plan is by role: Runner, Hauler, Controller, and Brawler. Treat exact class names as patch-sensitive unless your build shows them directly.
+      </p>
+      <h3>Which class should beginners pick first?
+      </h3>
+      <p>Pick a Runner/Hauler style first. It teaches movement, carrying limits, task timing, and extraction discipline without forcing risky fights.
+      </p>
+      <h3>Do classes matter in co-op?
+      </h3>
+      <p>Yes, but only if the team covers different jobs. Co-op becomes cleaner when movement, hauling, control, and rescue are assigned before the run starts.
+      </p>
+      <h2>Related Guides and Data Pages
+      </h2>
+      <ul>
+      <li><a href="/guides/burglin-gnomes-complete-beginners-guide">Complete Beginner Survival Guide</a> - first-run priorities and base progression.
+      </li>
+      <li><a href="/guides/burglin-gnomes-multiplayer-co-op">Co-op Guide</a> - lobby setup, friend roles, and team communication.
+      </li>
+      <li><a href="/guides/burglin-gnomes-official-gear-weapons-directory">Gear and Weapons Directory</a> - craft costs and loadout tools for each role.
+      </li>
+      <li><a href="/items/backpack">Backpack</a> - the safest first craft for hauler and beginner roles.
+      </li>
+      </ul>`,
+      },
+
+      {
+        id: 9,
+        title: "Burglin' Gnomes Lobby Progress Guide: What Happens After a Failed Run",
+        description: "Clear answer on Burglin' Gnomes lobby progress after a failed run, what resets, what can be saved, and modded keep-progress intent.",
+        category: 'Progress',
+        tags: ['Progress', 'Lobby', 'Failure', 'Save', 'Mods'],
+        author: 'Burglin Gnomes Fan Guide Team',
+        publishDate: "2026-07-06",
+        imageUrl: "/images/guides/all-task-guide-cover.webp",
+        imageAlt: "Burglin Gnomes lobby progress after failed run guide",
+        seo: {
+          title: "Burglin Gnomes Lobby Progress After Fail",
+          description: "Does Burglin Gnomes keep lobby progress after fail? Learn what resets, what may stay, host save rules, and keep-progress mod cautions.",
+          keywords: "Burglin Gnomes keep lobby progress after fail, progress reset, save, mod"
+        },
+        addressBar: "burglin-gnomes-lobby-progress-after-fail",
+        detailsHtml: `<p>By: Frontline Pathfinder | Lead Content Tester, GameguideHub
+      </p>
+      <p>Tested on Version: Current public build | Status: <strong>FIELD TESTED / PATCH SENSITIVE</strong>. Save behavior and failure penalties are high-impact systems; verify after major patches.
+      </p>
+      <p><strong>Fast answer:</strong> do not assume Burglin' Gnomes keeps lobby progress after a failed run. Current route notes and save testing point to a harsh failure model: missing the required daily tasks can wipe the day back to early progression, while normal host exits and successful clears are the safer way to preserve progress. If the run is failing, stop looting and secure the three-task minimum.
+      </p>
+      <figure>
+      <img src="/images/guides/all-task-guide-cover.webp" alt="Burglin Gnomes failed run lobby progress and task route" title="Burglin Gnomes lobby progress after failed run" loading="lazy">
+      <figcaption>Progress is protected by task completion first. A full backpack does not matter if the day fails.</figcaption>
+      </figure>
+      <h2>What happens to lobby progress after failing
+      </h2>
+      <h3>Progress retention short answer
+      </h3>
+      <p>The practical answer is simple: <strong>treat failure as a progress-loss event</strong>. The game's core pressure comes from the daily task requirement, the timer, and the risk of losing structures, resources, crafted gear, and map momentum when the day collapses. Plan routes as if lobby progress is not safe until the day is cleared or the host exits cleanly from a stable state.
+      </p>
+      <table>
+      <thead>
+      <tr><th>Situation</th><th>Progress Risk</th><th>Correct Call</th></tr>
+      </thead>
+      <tbody>
+      <tr><td>Three tasks completed</td><td>Lower if the team extracts cleanly</td><td>Extract unless the fourth task is free.</td></tr>
+      <tr><td>Timer low, fewer than three tasks done</td><td>High</td><td>Drop greed routes and finish the fastest objective.</td></tr>
+      <tr><td>Host quits through menu after stable progress</td><td>Lower</td><td>Use the normal host exit flow, not a crash or forced close.</td></tr>
+      <tr><td>Failed day or wipe condition</td><td>High to severe</td><td>Expect lost lobby progress unless a future patch changes behavior.</td></tr>
+      </tbody>
+      </table>
+      <p>This is why the <a href="/guides/burglin-gnomes-all-task-guide">All Task Guide</a> pushes a three-task route before optional loot. The safest progress system in Burglin' Gnomes is not a mod. It is disciplined extraction.
+      </p>
+      <h3>What may reset after a failed run
+      </h3>
+      <p>Based on current survival-guide notes, failed-day penalties can affect the things players usually mean by "lobby progress": base upgrades, stored materials, crafted gear, route unlock momentum, and the day count. Client inventory can also become messy when players disconnect because items may drop into the <a href="/areas/gnome-world">Gnome Haven</a> instead of remaining on that player.
+      </p>
+      <figure>
+      <img src="/images/guides/all-task-guide-window-entry.webp" alt="Burglin Gnomes safe task route before failed run reset" title="Burglin Gnomes safe task route before progress loss" loading="lazy">
+      <figcaption>When progress is at risk, choose the short objective route. Deep loot is a trap before the clear condition.</figcaption>
+      </figure>
+      <ul>
+      <li><strong>High-risk reset bucket:</strong> day progress, structures, stored materials, and crafted route gear after a failed clear.
+      </li>
+      <li><strong>Recoverable bucket:</strong> dropped gear in the Gnome Haven after a normal client disconnect, if the host save remains intact.
+      </li>
+      <li><strong>Patch-sensitive bucket:</strong> map unlocks and edge-case lobby state after updates or crashes.
+      </li>
+      </ul>
+      <h2>How to protect progress before the fail state
+      </h2>
+      <p>Progress retention starts before the failure screen. Assign one player to task calls, one to route safety, and one to hauling if the lobby has enough players. The moment the timer or death count gets ugly, stop chasing optional loot.
+      </p>
+      <ol>
+      <li><strong>Read all five daily tasks before moving.</strong> Pick the safest three, not the richest three.
+      </li>
+      <li><strong>Cluster tasks by room.</strong> Kitchen, bathroom, garden, and living-room objectives often overlap.
+      </li>
+      <li><strong>Bank the day after three tasks.</strong> Extract unless another objective is already on the route.
+      </li>
+      <li><strong>Let the host exit cleanly.</strong> Do not rely on forced closes, crashes, or client-side assumptions to preserve lobby state.
+      </li>
+      </ol>
+      <h2>Modded progress retention
+      </h2>
+      <h3>Keep-progress mod intent
+      </h3>
+      <p>Searches for "Burglin' Gnomes mod keep lobby progress after fail" are understandable. The failure penalty is brutal. Still, keep-progress mods should be treated as save-file tools, not normal guide requirements. They can conflict with future patches, break progression logic, or hide the real cost of failed routing.
+      </p>
+      <table>
+      <thead>
+      <tr><th>Mod Question</th><th>Safe Answer</th><th>Risk</th></tr>
+      </thead>
+      <tbody>
+      <tr><td>Should I use a keep-progress mod?</td><td>Only on a backed-up save and only if the mod matches your build.</td><td>Save corruption or invalid progression state.</td></tr>
+      <tr><td>Does this page recommend a download?</td><td>No. Use official patch notes and trusted mod pages if you test anything.</td><td>Unsafe downloads and stale files.</td></tr>
+      <tr><td>Can a mod replace route discipline?</td><td>No. It may preserve state, but it will not teach task routing.</td><td>Bad habits and unreliable data.</td></tr>
+      </tbody>
+      </table>
+      <p><strong>INFERRED:</strong> if a keep-progress mod does not document save backup, supported game version, and rollback steps, do not test it on your main lobby. Make a duplicate save first.
+      </p>
+      <h2>FAQ
+      </h2>
+      <h3>Do you keep lobby progress after failing in Burglin' Gnomes?
+      </h3>
+      <p>Do not count on it. Treat a failed day as a progress-loss event and route around the three-task clear requirement first.
+      </p>
+      <h3>What resets after a failed run?
+      </h3>
+      <p>The risky bucket includes day progress, base state, stored materials, crafted gear, and route momentum. Exact boundaries can change by build, so verify after updates.
+      </p>
+      <h3>Is there a mod to keep lobby progress?
+      </h3>
+      <p>Player searches suggest mod intent exists, but this page does not recommend a download. If you test any keep-progress mod, back up the save and verify current build support first.
+      </p>
+      <h2>Related Guides and Data Pages
+      </h2>
+      <ul>
+      <li><a href="/guides/burglin-gnomes-complete-beginners-guide">Complete Beginner Survival Guide</a> - core failure, host save, and camp progression rules.
+      </li>
+      <li><a href="/guides/burglin-gnomes-all-task-guide">All Task Guide</a> - safest route logic for avoiding failed days.
+      </li>
+      <li><a href="/guides/burglin-gnomes-death-revive-rescue">Death and Revive Guide</a> - when rescue is worth the timer cost.
+      </li>
+      <li><a href="/guides/burglin-gnomes-multiplayer-co-op">Co-op Guide</a> - team assignments that reduce failed-run odds.
+      </li>
+      </ul>`,
       }
 
 

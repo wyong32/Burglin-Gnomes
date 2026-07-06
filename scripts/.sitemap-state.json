@@ -498,8 +498,8 @@
       "lastmod": "2026-06-29"
     },
     "/guides": {
-      "hash": "9eb9f393da8b2a93",
-      "lastmod": "2026-06-29"
+      "hash": "76e19fcfea5cb165",
+      "lastmod": "2026-07-06"
     },
     "/guides/burglin-gnomes-complete-beginners-guide": {
       "hash": "a8edf0bf416cd747",
@@ -528,6 +528,14 @@
     "/guides/burglin-gnomes-death-revive-rescue": {
       "hash": "bd8367bc4bb345ef",
       "lastmod": "2026-06-29"
+    },
+    "/guides/burglin-gnomes-classes-guide": {
+      "hash": "e488389371865dbf",
+      "lastmod": "2026-07-06"
+    },
+    "/guides/burglin-gnomes-lobby-progress-after-fail": {
+      "hash": "bf44b75e518b8e37",
+      "lastmod": "2026-07-06"
     }
   }
 }
