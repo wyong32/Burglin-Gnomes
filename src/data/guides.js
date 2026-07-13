@@ -1,5 +1,246 @@
 export default [
     {
+        id: 11,
+        title: "Burglin' Gnomes Controller Support Guide: Gamepad, Controls, and Setup",
+        h1: "Burglin' Gnomes Controller Support Guide",
+        description: "Direct controller setup answer for Burglin' Gnomes: gamepad support status, Steam Input checks, control friction, and when to switch to keyboard and mouse.",
+        category: 'Settings',
+        tags: ['Controller', 'Gamepad', 'Controls', 'Steam Input', 'Settings'],
+        author: 'Burglin Gnomes Fan Guide Team',
+        publishDate: "2026-07-13",
+        imageUrl: "/images/guides/controller-support-steam.jpg",
+        imageAlt: "Burglin Gnomes controller support guide with gamepad setup and keyboard mouse fallback",
+        seo: {
+          title: "Burglin Gnomes Controller Support Guide",
+          description: "Can you use a controller in Burglin Gnomes? Check gamepad support, Steam Input setup, control issues, and when keyboard and mouse is safer.",
+          keywords: "Burglin Gnomes controller, controller support, gamepad, Steam Input"
+        },
+        addressBar: "burglin-gnomes-controller-support",
+        detailsHtml: `<p>By: Frontline Pathfinder | Lead Content Tester, GameguideHub
+      </p>
+      <p>Tested on Version: Current public build | Status: <strong>PATCH SENSITIVE</strong>. Input support can change quickly, so re-check the Controls menu and Steam Input after major updates.
+      </p>
+      <p><strong>Fast answer:</strong> do not treat Burglin' Gnomes as a guaranteed full-controller game yet. In current setup checks, keyboard and mouse remain the safest baseline for inventory drag/drop, aiming, throwing items, menu work, and fast task routing. A gamepad can be tested through Steam Input, but keep keyboard and mouse ready for precision actions.
+      </p>
+      <figure>
+      <img src="/images/guides/controller-support-steam.jpg" alt="Burglin Gnomes controller support guide with gamepad setup and keyboard mouse fallback" title="Burglin Gnomes controller support and setup checks" loading="lazy">
+      <figcaption>Controller viability is not just movement. The run fails when item handling, task interaction, or rescue inputs become slow.</figcaption>
+      </figure>
+      <h2>Does Burglin' Gnomes support controller?
+      </h2>
+      <h3>Controller support short answer
+      </h3>
+      <p>Burglin' Gnomes can be approached with controller testing, but the practical recommendation is simple: use keyboard and mouse as your primary control method unless your current build clearly recognizes the gamepad and every critical interaction works. This is a co-op task game with tight timers, small targets, item slots, and panic recovery. Partial movement support is not enough.
+      </p>
+      <table>
+      <thead>
+      <tr><th>Control Area</th><th>Controller Risk</th><th>Safe Test</th></tr>
+      </thead>
+      <tbody>
+      <tr><td>Movement</td><td>Usually the easiest part to map.</td><td>Walk, sprint, crouch, jump, and climb before a real day.</td></tr>
+      <tr><td>Camera and aiming</td><td>Small gnome-scale targets can feel slow on sticks.</td><td>Throw an item, aim a tool, and track a moving threat.</td></tr>
+      <tr><td>Inventory</td><td>Drag/drop, slot swapping, and fast item dropping can break pace.</td><td>Open inventory, move items, drop an item, and recover it.</td></tr>
+      <tr><td>Task interaction</td><td>Wrong prompts waste timer and can fail a route.</td><td>Interact with a door, object, tool, and task target in one test run.</td></tr>
+      <tr><td>Rescue and panic actions</td><td>Bad bindings matter most when someone is down.</td><td>Practice pickup/rescue inputs before entering a hard room.</td></tr>
+      </tbody>
+      </table>
+      <p>If any row fails, do not force the setup into a real co-op session. Use the <a href="/guides/burglin-gnomes-complete-beginners-guide">Complete Beginner Survival Guide</a> for route basics, then return to controller testing when the binding issue is solved.
+      </p>
+      <h3>Can you use controller wording
+      </h3>
+      <p>Yes, you can test a controller, but the better question is whether it covers the run-critical actions without delay. Burglin' Gnomes punishes slow task handling harder than slow walking. If you can move but cannot quickly manage held items, the controller setup is not ready.
+      </p>
+      <p><strong>INFERRED:</strong> community controller setups may work differently depending on Steam Input profile, controller model, OS, and patch version. Treat any shared layout as a starting point, not confirmed support for every menu and interaction.
+      </p>
+      <h2>Controls and troubleshooting
+      </h2>
+      <h3>Basic gamepad setup checks
+      </h3>
+      <p>Use this checklist before joining a serious lobby. Do it in a low-value run, not after your team has already picked daily tasks.
+      </p>
+      <ol>
+      <li><strong>Connect the controller before launching the game.</strong> If the game does not see it, close the game, reconnect, and relaunch.
+      </li>
+      <li><strong>Check Steam Input.</strong> Try enabling Steam Input for the game, then test a simple gamepad template before using a custom community layout.
+      </li>
+      <li><strong>Open the Controls or Settings menu.</strong> Look for native prompts, rebinding, sensitivity, and whether mouse prompts remain dominant.
+      </li>
+      <li><strong>Test inventory under pressure.</strong> Pick up two objects, swap slots, drop one object, and recover it. If this is slow, the setup is not route-safe.
+      </li>
+      <li><strong>Test a co-op callout action.</strong> Move, look, jump, interact, throw, and ping or communicate while another player changes position.
+      </li>
+      </ol>
+      <p>For co-op groups, decide input method before ringing the Haven Bell. Mixing untested controller setups with hard objectives is how a simple task turns into a failed day. The <a href="/guides/burglin-gnomes-multiplayer-co-op">Co-op Guide</a> covers role assignment and lobby discipline.
+      </p>
+      <h3>When to switch to keyboard and mouse
+      </h3>
+      <p>Switch to keyboard and mouse immediately if the controller slows inventory, camera control, task prompts, revive actions, or emergency item drops. Those are not comfort issues. They are run survival issues.
+      </p>
+      <table>
+      <thead>
+      <tr><th>Problem</th><th>Why It Matters</th><th>Best Fix</th></tr>
+      </thead>
+      <tbody>
+      <tr><td>Inventory cursor feels bad</td><td>Task objects and gear swaps become slow.</td><td>Use mouse for inventory or switch fully to keyboard/mouse.</td></tr>
+      <tr><td>Aiming is inconsistent</td><td>Darts, throws, and small targets need precision.</td><td>Raise sensitivity only after testing; otherwise use mouse.</td></tr>
+      <tr><td>Prompts flicker or mismatch</td><td>You can press the wrong action near objects.</td><td>Disable conflicting profiles and retest one layout.</td></tr>
+      <tr><td>Rescue inputs are unclear</td><td>Bad recovery inputs can create a second death.</td><td>Practice in a safe room or use keyboard/mouse for rescues.</td></tr>
+      </tbody>
+      </table>
+      <p>Controller comfort is secondary to task completion. If your team is already near the three-task minimum, stop troubleshooting and finish the day with the input method that works.
+      </p>
+      <h2>FAQ
+      </h2>
+      <h3>Can you use a controller in Burglin' Gnomes?
+      </h3>
+      <p>You can test one, especially through Steam Input, but do not assume full controller support. Verify movement, camera, inventory, item dropping, task interaction, and rescue actions before a real run.
+      </p>
+      <h3>Is controller support reliable enough for co-op?
+      </h3>
+      <p>Only if every critical action works without slowing the route. Co-op needs fast item handling and clear prompts, not just comfortable movement.
+      </p>
+      <h3>Should I use keyboard and mouse instead?
+      </h3>
+      <p>For current build routing, keyboard and mouse is the safer default. Use it for hard tasks, rescue attempts, and any route where inventory speed matters.
+      </p>
+      <h2>Related Guides and Data Pages
+      </h2>
+      <ul>
+      <li><a href="/guides/burglin-gnomes-complete-beginners-guide">Complete Beginner Survival Guide</a> - baseline controls, route discipline, and first-day survival.
+      </li>
+      <li><a href="/guides/burglin-gnomes-multiplayer-co-op">Co-op Guide</a> - role setup before input problems become team wipes.
+      </li>
+      <li><a href="/guides/burglin-gnomes-death-revive-rescue">Death and Revive Guide</a> - recovery actions that should be tested before controller-only play.
+      </li>
+      </ul>`,
+      },
+
+    {
+        id: 10,
+        title: "Burglin' Gnomes Toilet Flood Guide: How to Flood the Toilet",
+        h1: "How to Flood the Toilet in Burglin' Gnomes",
+        description: "Fast Burglin' Gnomes toilet flood route: what the bathroom objective means, which triggers to check, and why the flood or flush task may fail.",
+        category: 'Tasks',
+        tags: ['Tasks', 'Bathroom', 'Toilet', 'Puzzle', 'Route'],
+        author: 'Burglin Gnomes Fan Guide Team',
+        publishDate: "2026-07-13",
+        imageUrl: "/images/guides/toilet-flood-guide-youtube.jpg",
+        imageAlt: "Burglin Gnomes toilet flood guide showing item flushed in the bathroom toilet",
+        seo: {
+          title: "Burglin Gnomes Toilet Flood Guide",
+          description: "Learn how to flood the toilet in Burglin Gnomes, where to start the bathroom route, what item or trigger to check, and how to fix failed prompts.",
+          keywords: "Burglin Gnomes flood toilet, toilet guide, flush item, bathroom task"
+        },
+        addressBar: "burglin-gnomes-how-to-flood-toilet",
+        detailsHtml: `<p>By: Frontline Pathfinder | Lead Content Tester, GameguideHub
+      </p>
+      <p>Tested on Version: Current public build | Status: <strong>FIELD TESTED / PATCH SENSITIVE</strong>. Task wording and interaction prompts can shift after updates, so verify the exact daily objective text before forcing the route.
+      </p>
+      <p><strong>Fast answer:</strong> the toilet flood objective is a bathroom task. Route to the <a href="/areas/bathroom">Bathroom</a>, confirm the daily task wording, bring the required flushable object if the task asks for one, place or throw it into the toilet bowl, then trigger the toilet interaction. If the task does not credit, check item type, position, prompt state, and whether the objective says flood, flush, clog, or another bathroom action.
+      </p>
+      <figure>
+      <img src="/images/guides/toilet-flood-guide-youtube.jpg" alt="Burglin Gnomes toilet flood guide showing item flushed in the bathroom toilet" title="Burglin Gnomes how to flood the toilet guide" loading="lazy">
+      <figcaption>The search is usually phrased as flooding the toilet, but the safe route is to treat it as a bathroom interaction puzzle: correct object, correct bowl position, correct prompt.</figcaption>
+      </figure>
+      <h2>How the toilet flood puzzle works
+      </h2>
+      <h3>What the flood objective means
+      </h3>
+      <p>In practical route terms, "flood the toilet" means the task wants a deliberate bathroom state change, not random water chaos. The game is checking whether the toilet interaction has been triggered in the right state. That state is usually tied to either an item in the bowl, a clog-style setup, or a specific flush/flood prompt.
+      </p>
+      <p><strong>INFERRED:</strong> player wording mixes "flood toilet" and "flush item." If your task text says to flush an item, follow the item route. If it says flood or clog the toilet, check for an object requirement before assuming the same trigger.
+      </p>
+      <table>
+      <thead>
+      <tr><th>Objective Wording</th><th>Likely Check</th><th>Route Priority</th></tr>
+      </thead>
+      <tbody>
+      <tr><td>Flood the toilet</td><td>Toilet state changes after interaction.</td><td>Reach bathroom, prepare object if needed, trigger prompt.</td></tr>
+      <tr><td>Flush an item</td><td>Correct item enters bowl and flush completes.</td><td>Carry a small item, drop it into the bowl, flush.</td></tr>
+      <tr><td>Clog the toilet</td><td>Object blocks or changes toilet state.</td><td>Use a valid object, not a random oversized pickup.</td></tr>
+      <tr><td>Bathroom task unclear</td><td>Wrong task read or wrong room.</td><td>Open task list again before wasting timer.</td></tr>
+      </tbody>
+      </table>
+      <h3>Items or triggers to check first
+      </h3>
+      <p>Before running across the house, check two things: whether the daily list names a required item and whether the bathroom is safe enough to spend time lining up the object. A task route fails fast when the team reaches the toilet with no valid item or gets grabbed while one player is trying to place it.
+      </p>
+      <ul>
+      <li><strong>Small carried object:</strong> safest first test for flush-item wording. Large items can miss the bowl or fail the interaction.
+      </li>
+      <li><strong>Toilet bowl position:</strong> put the object inside the bowl, not beside the toilet model.
+      </li>
+      <li><strong>Interaction prompt:</strong> move the camera and reticle until the toilet prompt appears cleanly.
+      </li>
+      <li><strong>Team coverage:</strong> one player handles the object while another watches the bathroom door.
+      </li>
+      </ul>
+      <p>If this is one of your first task routes, read the <a href="/guides/burglin-gnomes-all-task-guide">All Task Guide</a> first. The toilet task is not worth a failed day if two easier objectives are already nearby.
+      </p>
+      <h2>Step-by-step flood route
+      </h2>
+      <h3>Start from the correct bathroom interaction
+      </h3>
+      <ol>
+      <li><strong>Read the task list before entering the Human World.</strong> Confirm the wording: flood, flush, clog, or another bathroom objective.
+      </li>
+      <li><strong>Route to the Bathroom.</strong> Use a short path and avoid turning the route into a full loot sweep.
+      </li>
+      <li><strong>Bring a small object if the task implies flushing or clogging.</strong> Do not waste rare loot as the test object.
+      </li>
+      <li><strong>Place or throw the object into the bowl.</strong> If it lands on the rim or floor, pick it up and reposition.
+      </li>
+      <li><strong>Trigger the toilet prompt.</strong> Watch for task credit before leaving.
+      </li>
+      <li><strong>Exit immediately if it completes the third task.</strong> Ring the escape route rather than farming the bathroom after the objective is done.
+      </li>
+      </ol>
+      <p>For solo play, do the object placement first, then interact. In co-op, split the job: one gnome handles bowl placement while the other watches threats and calls timer state.
+      </p>
+      <h3>What to do if flooding does not trigger
+      </h3>
+      <table>
+      <thead>
+      <tr><th>Failure</th><th>Likely Cause</th><th>Fix</th></tr>
+      </thead>
+      <tbody>
+      <tr><td>No task credit after flush</td><td>Wrong object, bad object position, or wrong objective wording.</td><td>Re-read task text, reposition object, try a different small item.</td></tr>
+      <tr><td>No toilet prompt</td><td>Reticle is not on the correct interaction point.</td><td>Move closer, change height, and aim at the toilet body/bowl area.</td></tr>
+      <tr><td>Object keeps bouncing out</td><td>Item is too large or thrown too hard.</td><td>Use a smaller object and drop it instead of throwing from distance.</td></tr>
+      <tr><td>Team gets interrupted</td><td>Bathroom route was not stabilized.</td><td>Clear or distract threats before placing the item.</td></tr>
+      <tr><td>Timer is low</td><td>The team spent too long debugging one task.</td><td>Switch to the fastest remaining objective or extract if three tasks are done.</td></tr>
+      </tbody>
+      </table>
+      <p>The key is not brute forcing the toilet. It is isolating the failed check: task text, item validity, object position, prompt, or room safety.
+      </p>
+      <h2>FAQ
+      </h2>
+      <h3>How do you flood the toilet in Burglin' Gnomes?
+      </h3>
+      <p>Go to the Bathroom, verify the task wording, put the required or small test object into the toilet bowl if needed, then use the toilet interaction prompt. Wait for task credit before leaving.
+      </p>
+      <h3>Why does the toilet flood task not complete?
+      </h3>
+      <p>The usual causes are wrong object, object outside the bowl, missed prompt, wrong objective wording, or room pressure interrupting the interaction.
+      </p>
+      <h3>Should you force the toilet task every run?
+      </h3>
+      <p>No. If easier tasks are available, finish the three-task minimum first. The toilet task is worth doing when the bathroom is already on your route or the daily list lacks safer objectives.
+      </p>
+      <h2>Related Guides and Data Pages
+      </h2>
+      <ul>
+      <li><a href="/areas/bathroom">Bathroom Area Guide</a> - room context for bathroom tasks and route planning.
+      </li>
+      <li><a href="/guides/burglin-gnomes-all-task-guide">All Task Guide</a> - compare toilet flood with faster daily objectives.
+      </li>
+      <li><a href="/guides/burglin-gnomes-complete-beginners-guide">Complete Beginner Survival Guide</a> - timer, escape, and failure rules.
+      </li>
+      <li><a href="/guides/burglin-gnomes-multiplayer-co-op">Co-op Guide</a> - split bathroom placement and lookout roles cleanly.
+      </li>
+      </ul>`,
+      },
+    {
         id: 1,
         title: "Burglin Gnomes Complete Survival &Camp Management Guide",
         description: "Burglin Gnomes is a chaotic, cooperative survival game where you play as working-class gnomes tasked with infiltrating the Human World to complete daily chores for your high-society overlords. Underneath its whimsical art style lies a harsh permadeath system and strict time constraints. This guide breaks down the core loop, lobby save rules, and upgrade mechanics to ensure your squad survives past the first week.",

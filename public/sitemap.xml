@@ -21,7 +21,7 @@
   </url>
   <url>
     <loc>https://burglin-gnomes.org/guides</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -650,56 +650,68 @@
     <priority>0.76</priority>
   </url>
   <url>
+    <loc>https://burglin-gnomes.org/guides/burglin-gnomes-controller-support</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://burglin-gnomes.org/guides/burglin-gnomes-how-to-flood-toilet</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://burglin-gnomes.org/guides/burglin-gnomes-complete-beginners-guide</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/guides/burglin-gnomes-official-gear-weapons-directory</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/guides/burglin-gnomes-complete-monster-guide-karma-counters</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/guides/burglin-gnomes-complete-npc-guide-bob-fairy-jonathan</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/guides/burglin-gnomes-all-task-guide</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/guides/burglin-gnomes-multiplayer-co-op</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/guides/burglin-gnomes-death-revive-rescue</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/guides/burglin-gnomes-classes-guide</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/guides/burglin-gnomes-lobby-progress-after-fail</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

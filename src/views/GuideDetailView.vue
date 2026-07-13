@@ -12,7 +12,7 @@
               <strong>{{ guide.title }}</strong>
             </nav>
             <span class="eyebrow">{{ guide.category || 'Guide' }}</span>
-            <h1>{{ guide.title }}</h1>
+            <h1>{{ guide.h1 || guide.title }}</h1>
             <p>{{ guide.description }}</p>
             <p class="guide-hero-byline">
               <time :datetime="guide.publishDate">Published {{ formatGuideDate(guide.publishDate) }}</time>

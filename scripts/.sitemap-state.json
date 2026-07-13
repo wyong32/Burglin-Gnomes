@@ -498,44 +498,52 @@
       "lastmod": "2026-06-29"
     },
     "/guides": {
-      "hash": "6bb93ba86687d704",
-      "lastmod": "2026-07-06"
+      "hash": "8bfb9925b2f0d0c1",
+      "lastmod": "2026-07-13"
     },
     "/guides/burglin-gnomes-complete-beginners-guide": {
-      "hash": "a8edf0bf416cd747",
-      "lastmod": "2026-06-29"
+      "hash": "e6ba736c8b19f9cd",
+      "lastmod": "2026-07-13"
     },
     "/guides/burglin-gnomes-official-gear-weapons-directory": {
-      "hash": "9cc807218ce354cc",
-      "lastmod": "2026-06-29"
+      "hash": "2c0d9b818c313b6d",
+      "lastmod": "2026-07-13"
     },
     "/guides/burglin-gnomes-complete-monster-guide-karma-counters": {
-      "hash": "dc302b73ea17ab5e",
-      "lastmod": "2026-06-29"
+      "hash": "a19b3eb4d65e089d",
+      "lastmod": "2026-07-13"
     },
     "/guides/burglin-gnomes-complete-npc-guide-bob-fairy-jonathan": {
-      "hash": "7837485ed4312efe",
-      "lastmod": "2026-06-29"
+      "hash": "d6a42ac2ecfa0788",
+      "lastmod": "2026-07-13"
     },
     "/guides/burglin-gnomes-all-task-guide": {
-      "hash": "b9fd4f465275739c",
-      "lastmod": "2026-06-29"
+      "hash": "e0a266218ddf6c7a",
+      "lastmod": "2026-07-13"
     },
     "/guides/burglin-gnomes-multiplayer-co-op": {
-      "hash": "b27d1341aa3e8bcb",
-      "lastmod": "2026-06-29"
+      "hash": "9492049cd8943097",
+      "lastmod": "2026-07-13"
     },
     "/guides/burglin-gnomes-death-revive-rescue": {
-      "hash": "bd8367bc4bb345ef",
-      "lastmod": "2026-06-29"
+      "hash": "147a2078954f9121",
+      "lastmod": "2026-07-13"
     },
     "/guides/burglin-gnomes-classes-guide": {
-      "hash": "dbeb351c2fae2c4d",
-      "lastmod": "2026-07-06"
+      "hash": "388b48034ed7c6c4",
+      "lastmod": "2026-07-13"
     },
     "/guides/burglin-gnomes-lobby-progress-after-fail": {
-      "hash": "99d3a24dc29c104e",
-      "lastmod": "2026-07-06"
+      "hash": "16e2956fadacdbb8",
+      "lastmod": "2026-07-13"
+    },
+    "/guides/burglin-gnomes-controller-support": {
+      "hash": "5760534785f7cede",
+      "lastmod": "2026-07-13"
+    },
+    "/guides/burglin-gnomes-how-to-flood-toilet": {
+      "hash": "27e4d7c359877ac0",
+      "lastmod": "2026-07-13"
     }
   }
 }
