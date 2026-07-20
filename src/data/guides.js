@@ -1,5 +1,254 @@
 export default [
     {
+        id: 13,
+        title: "Burglin' Gnomes Items Guide: Slingshot, CPR & Tools",
+        h1: "How to Use Items in Burglin' Gnomes",
+        description: "Direct item-use guide for Burglin' Gnomes: Slingshot craft value, Music Box routes, CPR rescue limits, and item activation checks.",
+        category: 'Items',
+        tags: ['Items', 'Slingshot', 'Music Box', 'CPR', 'Tools'],
+        author: 'Burglin Gnomes Fan Guide Team',
+        publishDate: "2026-07-20",
+        imageUrl: "/images/guides/items-slingshot-guide-youtube.jpg",
+        imageAlt: "Burglin Gnomes items guide for Slingshot Music Box CPR and route tools",
+        seo: {
+          title: "Burglin Gnomes Items Guide - Slingshot & CPR",
+          description: "How to use items in Burglin Gnomes: Slingshot timing, Music Box and Boombox searches, CPR rescue limits, and fixes when tools fail.",
+          keywords: "Burglin Gnomes items, Slingshot, Boombox, CPR, Music Box"
+        },
+        addressBar: "burglin-gnomes-items-slingshot-guide",
+        detailsHtml: `<p>By: Frontline Pathfinder | Lead Content Tester, GameguideHub
+      </p>
+      <p>Tested on Version: Current public build | Status: <strong>FIELD TESTED / PATCH SENSITIVE</strong>. Item prompts, craft balance, and rescue charges can change after hotfixes.
+      </p>
+      <p><strong>Fast answer:</strong> use items for route control, not for noise. The <a href="/items/slingshot">Slingshot</a> costs 2 Chemicals and is a light ranged option when your team has spare Chemicals. The Music Box is a task/special carried item, often searched as "boombox". CPR is a rescue action, not a guaranteed save. If an item does not activate, check slot state, reticle target, stamina, ammo/materials, and whether the current task actually wants that item.
+      </p>
+      <figure>
+      <img src="/images/guides/items-slingshot-guide-youtube.jpg" alt="Burglin Gnomes items guide for Slingshot Music Box CPR and route tools" title="Burglin Gnomes Slingshot CPR and item use guide" loading="lazy">
+      <figcaption>Tools are only good when they solve a route problem: distance, carrying, control, recovery, or task completion.</figcaption>
+      </figure>
+      <h2>High-intent item searches
+      </h2>
+      <h3>How to use the slingshot
+      </h3>
+      <p>The Slingshot is a route-dependent ranged craft. It is not an automatic first craft. Build it when the day benefits from safer spacing and you can afford the <a href="/items/chemicals">Chemicals</a> without delaying higher-priority chemical crafts such as <a href="/items/blowgun">Blowgun</a>, Stamina Potion, or Mobility Potion.
+      </p>
+      <table>
+      <thead>
+      <tr><th>Check</th><th>What To Do</th><th>Why It Matters</th></tr>
+      </thead>
+      <tbody>
+      <tr><td>Craft cost</td><td>Spend 2 Chemicals only if the route needs ranged pressure.</td><td>Chemicals feed several stronger utility paths.</td></tr>
+      <tr><td>Spacing</td><td>Use it from a stable ledge, doorway, or retreat line.</td><td>A ranged tool is wasted if you fire while cornered.</td></tr>
+      <tr><td>Target choice</td><td>Use it for pest control, baiting, or cautious combat tests.</td><td>Do not test it on unknown high-threat enemies during a progression run.</td></tr>
+      <tr><td>Team role</td><td>Let the controller carry it while the hauler keeps task items free.</td><td>Inventory slots decide whether a tool helps or blocks the objective.</td></tr>
+      </tbody>
+      </table>
+      <p><strong>INFERRED:</strong> exact Slingshot input timing depends on the current control build. Treat it like other held tools: equip it, aim with a clear reticle, fire from safe spacing, then immediately reposition instead of standing still to confirm damage.
+      </p>
+      <h3>Boombox demand
+      </h3>
+      <p>Most "Burglin' Gnomes boombox" searches map cleanly to the <a href="/items/music-box">Music Box</a>. Route it as a special carried item, not a craft. It can matter for Jonathan routes, special loot checks, or objective-style item movement. Do not burn a stable run trying to force a single Music Box unless the daily task list or trade route needs it.
+      </p>
+      <table>
+      <thead>
+      <tr><th>Search Term</th><th>Use This Page/Item</th><th>Field Call</th></tr>
+      </thead>
+      <tbody>
+      <tr><td>Boombox</td><td><a href="/items/music-box">Music Box</a></td><td>Likely player wording for the special sound item.</td></tr>
+      <tr><td>Music Box</td><td>Task/special loot route</td><td>Carry only when the objective or Jonathan route justifies the slot.</td></tr>
+      <tr><td>Jonathan drop</td><td><a href="/guides/burglin-gnomes-npc-guide">NPC Guide</a></td><td>Do not turn a bodyguard into a fight unless the route demands it.</td></tr>
+      </tbody>
+      </table>
+      <h2>Support and item failures
+      </h2>
+      <h3>CPR-related searches
+      </h3>
+      <p>CPR is recovery, not a plan. The safest rule is to clear immediate danger first, then attempt rescue only if it protects task progress. Current site testing treats CPR-style rescue as a repeated chance rather than a fixed guaranteed timer. The Medical Terminal / Spirit Catcher system also has limited daily charges: three in multiplayer and one in solo.
+      </p>
+      <ol>
+      <li><strong>Stabilize the room.</strong> If the body is under an active threat, first create distance or control.
+      </li>
+      <li><strong>Keep one player on task progress.</strong> A full-team rescue pileup is how a bad death becomes a failed day.
+      </li>
+      <li><strong>Stop after the second failed movement.</strong> If the route keeps killing rescuers, extract or finish the third task instead.
+      </li>
+      <li><strong>Spend Spirit Catcher charges on the clear condition.</strong> Do not burn limited recovery on optional loot.
+      </li>
+      </ol>
+      <p>Use the <a href="/guides/burglin-gnomes-death-revive-rescue">Death and Revive Guide</a> for the full rescue decision tree.
+      </p>
+      <h3>Item does not activate
+      </h3>
+      <p>When a tool fails, isolate the failed check instead of mashing the input. Burglin' Gnomes has small targets, physics objects, carried-slot friction, and patch-sensitive prompts. The fix is usually one of five checks.
+      </p>
+      <table>
+      <thead>
+      <tr><th>Failure</th><th>Likely Cause</th><th>Fast Fix</th></tr>
+      </thead>
+      <tbody>
+      <tr><td>Nothing happens</td><td>Wrong slot, wrong hand state, or missing equip step.</td><td>Re-equip, swap hands, and test on a safe target.</td></tr>
+      <tr><td>Prompt does not show</td><td>Reticle is not on the valid interaction point.</td><td>Move closer, crouch or change height, and aim at the object center.</td></tr>
+      <tr><td>Tool fires but gives no value</td><td>Bad target, blocked line, or wrong route job.</td><td>Test on a known low-risk target before spending the run.</td></tr>
+      <tr><td>Inventory blocks objective</td><td>Too many tools, not enough task-item space.</td><td>Drop optional gear after the route role is decided.</td></tr>
+      <tr><td>Rescue fails</td><td>Threat still controls the body or charges are gone.</td><td>Clear danger first, then decide whether CPR is still worth it.</td></tr>
+      </tbody>
+      </table>
+      <h2>FAQ
+      </h2>
+      <h3>How do you use the Slingshot in Burglin' Gnomes?
+      </h3>
+      <p>Craft it for 2 Chemicals, equip it as the team's ranged/control tool, aim from safe spacing, fire only when the shot creates route value, then move. Do not craft it before Backpack, Helmet, or task-critical utility if Chemicals are tight.
+      </p>
+      <h3>Is the Boombox the same as Music Box?
+      </h3>
+      <p>For current search intent, yes: treat "boombox" as Music Box demand unless your build shows a separate Boombox item. The Music Box is a special carried item, not a normal craft.
+      </p>
+      <h3>How does CPR work?
+      </h3>
+      <p>CPR-style rescue is not guaranteed. Stabilize the room first, then attempt recovery only if it helps preserve the clear. Spirit Catcher charges are limited, so do not spend them on greedy loot mistakes.
+      </p>
+      <h2>Related Guides and Data Pages
+      </h2>
+      <ul>
+      <li><a href="/items/slingshot">Slingshot Item Page</a> - craft cost, materials, and related ranged options.
+      </li>
+      <li><a href="/items/music-box">Music Box Item Page</a> - special carried item context for boombox searches.
+      </li>
+      <li><a href="/guides/burglin-gnomes-official-gear-weapons-directory">Gear and Weapons Directory</a> - compare Slingshot with higher-impact crafts.
+      </li>
+      <li><a href="/guides/burglin-gnomes-death-revive-rescue">Death and Revive Guide</a> - CPR and teammate recovery calls.
+      </li>
+      </ul>`,
+      },
+
+      {
+        id: 12,
+        title: "Burglin' Gnomes Save File Guide: Location & Progress",
+        h1: "Burglin' Gnomes Save File and Progress Guide",
+        description: "Save file location and progress rules for Burglin' Gnomes: Steam Cloud path, backup checks, failed-run resets, and recovery cautions.",
+        category: 'Progress',
+        tags: ['Save File', 'Progress', 'Backup', 'Failed Runs', 'Steam Cloud'],
+        author: 'Burglin Gnomes Fan Guide Team',
+        publishDate: "2026-07-20",
+        imageUrl: "/images/guides/save-file-progress-guide-youtube.jpg",
+        imageAlt: "Burglin Gnomes save file location progress and failed run backup guide",
+        seo: {
+          title: "Burglin Gnomes Save File Location Guide",
+          description: "Find the Burglin Gnomes save file path, learn what happens after failed runs, and back up progress safely before testing recovery.",
+          keywords: "Burglin Gnomes save file, save location, progress reset, speicherort"
+        },
+        addressBar: "burglin-gnomes-save-file-progress-guide",
+        detailsHtml: `<p>By: Frontline Pathfinder | Lead Content Tester, GameguideHub
+      </p>
+      <p>Tested on Version: Current public build | Status: <strong>FIELD TESTED / PATCH SENSITIVE</strong>. Save behavior is high-impact and can change after patches, especially around failed days, host exits, and Steam Cloud sync.
+      </p>
+      <p><strong>Fast answer:</strong> on Windows, check <code>%USERPROFILE%&#92;AppData&#92;LocalLow&#92;GamesByFobri&#92;Gnomium&#92;SaveGames</code> for <code>*.bgsave</code> files. Burglin' Gnomes can preserve normal progress through clean saves, but a failed day or missed task minimum can reset the run. Back up the folder only after a stable clear or clean host exit, never while Steam Cloud is actively syncing.
+      </p>
+      <figure>
+      <img src="/images/guides/save-file-progress-guide-youtube.jpg" alt="Burglin Gnomes save file location progress and failed run backup guide" title="Burglin Gnomes save file location and progress reset guide" loading="lazy">
+      <figcaption>Save safety is boring by design: locate the folder, exit cleanly, duplicate the file, then test. Do not debug backups after the fail screen.</figcaption>
+      </figure>
+      <h2>Where Burglin' Gnomes saves progress
+      </h2>
+      <h3>Save file location
+      </h3>
+      <p>The practical Windows save path is:
+      </p>
+      <table>
+      <thead>
+      <tr><th>Platform</th><th>Folder</th><th>File Pattern</th></tr>
+      </thead>
+      <tbody>
+      <tr><td>Windows</td><td><code>%USERPROFILE%&#92;AppData&#92;LocalLow&#92;GamesByFobri&#92;Gnomium&#92;SaveGames</code></td><td><code>*.bgsave</code></td></tr>
+      <tr><td>macOS</td><td><code>~/Library/Application Support/unity.GamesByFobri.Gnomium.SaveGames</code></td><td>Patch-sensitive Steam Cloud override</td></tr>
+      <tr><td>Linux</td><td><code>~/.config/unity3d/GamesByFobri/Gnomium/SaveGames</code></td><td>Patch-sensitive Steam Cloud override</td></tr>
+      </tbody>
+      </table>
+      <p>If you are searching with German wording such as "Burglin' Gnomes speicherort", this is the same intent: the save location / Speicherort. On Windows, paste the path into File Explorer after replacing <code>%USERPROFILE%</code> with your user folder, or press <code>Win + R</code> and open <code>%USERPROFILE%&#92;AppData&#92;LocalLow&#92;GamesByFobri&#92;Gnomium&#92;SaveGames</code>.
+      </p>
+      <h3>Save folder variants
+      </h3>
+      <p>Burglin' Gnomes is a Unity game, so the LocalLow path is the first folder to verify. Do not confuse it with the Steam installation folder, screenshots folder, or generic Steam userdata folder unless your build stops using the current cloud path.
+      </p>
+      <ol>
+      <li><strong>Exit the lobby cleanly.</strong> Let the host leave through menu flow before copying the save.
+      </li>
+      <li><strong>Close the game.</strong> Do not copy while the file is being written.
+      </li>
+      <li><strong>Pause Steam Cloud risk.</strong> Wait for Steam to finish syncing before replacing files.
+      </li>
+      <li><strong>Copy the entire SaveGames folder.</strong> Keep a timestamped backup outside LocalLow.
+      </li>
+      <li><strong>Test restore on a duplicate first.</strong> Do not overwrite your only working file.
+      </li>
+      </ol>
+      <p><strong>INFERRED:</strong> if your save folder is empty, either the run has not produced a stable save yet, Steam Cloud is still syncing, the host owns the lobby save, or a failed-day state has already deleted the active save.
+      </p>
+      <h2>Progress after failed runs
+      </h2>
+      <h3>Keep lobby progress after fail
+      </h3>
+      <p>Do not plan around keeping lobby progress after a failed day. Current failure behavior is brutal: if the team misses the required task count and reaches the game-over state, progress can collapse back to Day 1. That includes the parts players care about most: house upgrades, stored materials, crafted route gear, and day momentum.
+      </p>
+      <table>
+      <thead>
+      <tr><th>State</th><th>Progress Risk</th><th>Correct Call</th></tr>
+      </thead>
+      <tbody>
+      <tr><td>Clean host exit after stable progress</td><td>Lower</td><td>Use menu exit, then verify the save exists.</td></tr>
+      <tr><td>Three-task minimum complete</td><td>Lower if extraction is clean</td><td>Extract instead of farming risky optional loot.</td></tr>
+      <tr><td>Timer low with fewer than three tasks</td><td>High</td><td>Drop loot and finish the fastest remaining task.</td></tr>
+      <tr><td>Game Over / failed day</td><td>Severe</td><td>Expect reset; restore only from a known backup.</td></tr>
+      <tr><td>Client disconnect</td><td>Variable</td><td>Host checks the Haven floor and save state before relaunch.</td></tr>
+      </tbody>
+      </table>
+      <p>This overlaps with the <a href="/guides/burglin-gnomes-lobby-progress-after-fail">Lobby Progress After Fail Guide</a>, but this page is stricter: it focuses on the physical save folder and backup-safe recovery. For route prevention, use the <a href="/guides/burglin-gnomes-all-task-guide">All Task Guide</a>.
+      </p>
+      <h3>Backup and recovery cautions
+      </h3>
+      <p>Backups are for recovery testing, not for hiding bad route decisions. Make one only after a clean state. If you restore over a cloud-synced folder at the wrong time, Steam can overwrite the file you were trying to protect.
+      </p>
+      <ul>
+      <li><strong>Back up after a completed day, not during panic.</strong> A backup made during a bad state preserves the bad state.
+      </li>
+      <li><strong>Do not use random save downloads.</strong> They can contain mismatched progression, unsafe files, or stale patch data.
+      </li>
+      <li><strong>Keep one untouched backup.</strong> Test restores on a copy before replacing the active folder.
+      </li>
+      <li><strong>Tell co-op teammates who owns the save.</strong> Host-side state matters more than client assumptions.
+      </li>
+      </ul>
+      <p>If you are already near failure, the best save protection is still gameplay discipline: finish three tasks, extract, and leave through a clean host flow.
+      </p>
+      <h2>FAQ
+      </h2>
+      <h3>Where is the Burglin' Gnomes save file?
+      </h3>
+      <p>On Windows, check <code>%USERPROFILE%&#92;AppData&#92;LocalLow&#92;GamesByFobri&#92;Gnomium&#92;SaveGames</code>. Current save files use the <code>*.bgsave</code> pattern.
+      </p>
+      <h3>Do you keep lobby progress after failing?
+      </h3>
+      <p>Do not count on it. A failed day or Game Over can reset progress back to Day 1. Clean exits and successful clears are safer than trying to save after failure.
+      </p>
+      <h3>Can I back up my save?
+      </h3>
+      <p>Yes, but only after closing the game and letting Steam Cloud finish. Copy the whole SaveGames folder, keep the backup outside LocalLow, and restore only from a known clean state.
+      </p>
+      <h2>Related Guides and Data Pages
+      </h2>
+      <ul>
+      <li><a href="/guides/burglin-gnomes-lobby-progress-after-fail">Lobby Progress After Fail Guide</a> - route decisions before the fail state.
+      </li>
+      <li><a href="/guides/burglin-gnomes-complete-beginners-guide">Complete Beginner Survival Guide</a> - daily task minimum, host saves, and first-week survival.
+      </li>
+      <li><a href="/guides/burglin-gnomes-all-task-guide">All Task Guide</a> - safest three-task routing before optional loot.
+      </li>
+      <li><a href="/guides/burglin-gnomes-multiplayer-co-op">Co-op Guide</a> - host discipline and team routing.
+      </li>
+      </ul>`,
+      },
+
+    {
         id: 11,
         title: "Burglin' Gnomes Controller Support Guide: Gamepad, Controls, and Setup",
         h1: "Burglin' Gnomes Controller Support Guide",

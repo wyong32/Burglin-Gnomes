@@ -498,8 +498,8 @@
       "lastmod": "2026-06-29"
     },
     "/guides": {
-      "hash": "8bfb9925b2f0d0c1",
-      "lastmod": "2026-07-13"
+      "hash": "0ce03b936988b4ba",
+      "lastmod": "2026-07-20"
     },
     "/guides/burglin-gnomes-complete-beginners-guide": {
       "hash": "e6ba736c8b19f9cd",
@@ -544,6 +544,14 @@
     "/guides/burglin-gnomes-how-to-flood-toilet": {
       "hash": "27e4d7c359877ac0",
       "lastmod": "2026-07-13"
+    },
+    "/guides/burglin-gnomes-items-slingshot-guide": {
+      "hash": "decdc741f2bf6729",
+      "lastmod": "2026-07-20"
+    },
+    "/guides/burglin-gnomes-save-file-progress-guide": {
+      "hash": "f8f428785d3907ce",
+      "lastmod": "2026-07-20"
     }
   }
 }

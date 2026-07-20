@@ -21,7 +21,7 @@
   </url>
   <url>
     <loc>https://burglin-gnomes.org/guides</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -648,6 +648,18 @@
     <lastmod>2026-06-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.76</priority>
+  </url>
+  <url>
+    <loc>https://burglin-gnomes.org/guides/burglin-gnomes-items-slingshot-guide</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://burglin-gnomes.org/guides/burglin-gnomes-save-file-progress-guide</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/guides/burglin-gnomes-controller-support</loc>
