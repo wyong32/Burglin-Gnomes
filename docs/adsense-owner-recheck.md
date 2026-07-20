@@ -23,6 +23,10 @@ Use this checklist after the production deployment. Items marked **Code verified
 
 ## Advertising and traffic checks
 
+- [ ] **Code verified — AdSense publisher switch:** Confirm `https://burglin-gnomes.org/ads.txt` contains only `google.com, pub-9151036466808188, DIRECT, f08c47fec0942fa0` and no reference to the previous publisher ID.
+- [ ] **Code verified — Auto Ads boundary:** Confirm normal content pages load one `adsbygoogle.js?client=ca-pub-9151036466808188` script, while `/search` and `/legal/*` load none.
+- [ ] **Code verified — GPT remains paused:** Confirm no production request is sent to `securepubads.g.doubleclick.net` and the existing GPT source files and commented placements remain unchanged.
+- [ ] **Owner check — AdSense account match:** Confirm `burglin-gnomes.org` is added to the AdSense account that owns publisher ID `pub-9151036466808188`; remove or correct any account-side setup that still expects the previous publisher ID.
 - [ ] **Owner check — ADS-PROG-01:** Never click the site's own ads and never ask testers, friends, contractors, or automated tools to generate clicks or impressions.
 - [ ] **Owner check — ADS-PROG-03 / ADS-UX-06:** Review desktop and mobile ad rendering. Ads must be visually separated from navigation and controls and use a neutral Advertisement label.
 - [ ] **Owner check — ADS-PROG-04:** Review Analytics and referral reports for paid-to-click traffic, traffic exchanges, spam email, automated traffic, or comment spam. Stop any questionable source before review.

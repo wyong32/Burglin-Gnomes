@@ -78,6 +78,17 @@
 
   <!--app-head-->
 
+  <!-- AdSense Auto Ads: content pages only; excluded from search and legal pages. -->
+  <script>
+    if (location.pathname !== '/search' && !location.pathname.startsWith('/legal/')) {
+      const adsenseAutoAds = document.createElement('script');
+      adsenseAutoAds.async = true;
+      adsenseAutoAds.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9151036466808188';
+      adsenseAutoAds.crossOrigin = 'anonymous';
+      document.head.appendChild(adsenseAutoAds);
+    }
+  </script>
+
   <!-- GPT ads (paused – restore by uncommenting this block and removing affiliate popunder below)
   <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" crossorigin="anonymous"></script>
   <script>

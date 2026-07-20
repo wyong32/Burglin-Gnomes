@@ -129,6 +129,15 @@ if (/<loc>https:\/\/burglin-gnomes\.org\/search<\/loc>/.test(sitemap)) {
   fail('/search must not appear in public/sitemap.xml')
 }
 
+const expectedAdsTxt = 'google.com, pub-9151036466808188, DIRECT, f08c47fec0942fa0\n'
+const adsTxt = read('public/ads.txt') ?? ''
+if (adsTxt !== expectedAdsTxt) {
+  fail('public/ads.txt must contain only the approved pub-9151036466808188 authorization line')
+}
+if (adsTxt.includes('pub-9435047454967498')) {
+  fail('The previous AdSense publisher ID must not remain in public/ads.txt')
+}
+
 const generatedHtmlFiles = walk('dist').filter((relativePath) => relativePath.endsWith('.html'))
 if (generatedHtmlFiles.length !== 138) {
   fail(`Expected 138 generated HTML files, found ${generatedHtmlFiles.length}`)
@@ -297,11 +306,37 @@ for (const routePath of excludedAdRoutes) {
 }
 
 const indexTemplate = read('index.html') ?? ''
+const autoAdsUrl =
+  'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9151036466808188'
+const autoAdsUrlCount = indexTemplate.split(autoAdsUrl).length - 1
+if (autoAdsUrlCount !== 1) {
+  fail(`The approved AdSense Auto Ads URL must appear exactly once in index.html; found ${autoAdsUrlCount}`)
+}
+if (!indexTemplate.includes('adsenseAutoAds.async = true')) {
+  fail('The AdSense Auto Ads loader must load asynchronously')
+}
+if (!indexTemplate.includes("adsenseAutoAds.crossOrigin = 'anonymous'")) {
+  fail('The AdSense Auto Ads loader must set anonymous cross-origin mode')
+}
+if (!indexTemplate.includes('document.head.appendChild(adsenseAutoAds)')) {
+  fail('The AdSense Auto Ads loader must append its script to the document head')
+}
 if (!indexTemplate.includes("location.pathname !== '/search'")) {
   fail('Affiliate popunder loader must exclude /search')
 }
 if (!indexTemplate.includes("!location.pathname.startsWith('/legal/')")) {
   fail('Affiliate popunder loader must exclude /legal/*')
+}
+
+const activeIndexTemplate = indexTemplate.replace(/<!--[\s\S]*?-->/g, '')
+for (const activeGptPattern of [
+  'securepubads.g.doubleclick.net',
+  'googletag.defineSlot',
+  'googletag.defineOutOfPageSlot',
+]) {
+  if (activeIndexTemplate.includes(activeGptPattern)) {
+    fail(`GPT must remain inactive outside HTML comments: ${activeGptPattern}`)
+  }
 }
 
 if (failures.length) {
