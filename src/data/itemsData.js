@@ -45,6 +45,7 @@ function makeItem({
   acquisition = [],
   stats = [],
   sections = [],
+  deepDiveSections = [],
 }) {
   return {
     slug,
@@ -63,6 +64,7 @@ function makeItem({
     relatedCrafts: [],
     usedIn: [],
     sections,
+    deepDiveSections,
   }
 }
 
@@ -152,6 +154,54 @@ function dartItem({ key, effectName, priority, image }) {
           'Blowgun spends one dart per shot and can still chip valid targets even when the main value is the potion effect.',
       },
     ],
+    deepDiveSections:
+      key === 'sleep'
+        ? [
+            {
+              heading: 'Sleep Dart quick answer',
+              paragraphs: [
+                'Sleep Dart is control ammunition for the Blowgun, not a weapon that works on its own. The current crafting route starts with a Sleep Potion and uses the Repackager to turn that potion into five darts. Bring it when temporarily stopping a valid target creates time for a rescue, a task interaction, or a clean exit. Do not plan around an exact sleep duration: effect timing and valid targets are patch-sensitive and should be checked in a low-risk run before the team commits valuable loot.',
+              ],
+            },
+            {
+              heading: 'Prepare the complete Blowgun loadout',
+              paragraphs: [
+                'The most common preparation mistake is banking darts without confirming that somebody is carrying a Blowgun. Treat the launcher and ammunition as one kit. Before leaving the gnome world, assign the Blowgun to the player who can hold a clear angle while another player interacts with the objective. Put the darts where that player can reach them without reorganizing a full inventory during pressure. If the route does not need control, keep the potion or materials for a later run instead of converting them automatically.',
+                'A five-dart batch is a limited route resource. Agree on what deserves a shot before entering the house. A rescue opening, a required hostile route, or a narrow exit is a stronger use than testing the dart on the first harmless target. This keeps the control tool available when the run becomes difficult.',
+              ],
+            },
+            {
+              heading: 'Use a control-window workflow',
+              paragraphs: [
+                'Call the target, confirm that teammates are outside the firing line, then shoot from a position that still has an exit. Once the effect lands, act immediately: revive, finish the nearby interaction, pass the blocked doorway, or create distance. Sleep is valuable because it changes the route for a short period; standing still to watch the target wastes the advantage. If the hit does not apply the expected effect, retreat first and record the target and patch version rather than spending the rest of the batch in panic.',
+              ],
+            },
+            {
+              heading: 'Solo and co-op timing',
+              paragraphs: [
+                'Solo players need a conservative angle because shooting, confirming the effect, and completing the objective all belong to one person. Keep the escape route behind you and avoid firing from a dead end. In co-op, split the job: one player carries the Blowgun and watches the target, one completes the interaction or rescue, and the remaining players keep the exit clear. A short verbal countdown prevents a teammate from waking or blocking the same target with an unnecessary close-range attack.',
+              ],
+            },
+            {
+              heading: 'Targets, misses, and ammo economy',
+              paragraphs: [
+                'Use Sleep Dart only on targets the current build accepts as valid blow-dart targets. The data confirms the delivery method, but it does not justify a promise that every NPC, animal, hazard, or boss-like entity can be slept. Test unknown targets away from a clean three-task run. A missed shot, blocked line, or unsupported target should change the plan immediately. Do not keep firing simply because four darts remain; move to the fallback route and preserve ammunition for a confirmed interaction.',
+              ],
+            },
+            {
+              heading: 'Patch verification checklist',
+              paragraphs: [
+                'After an update, repeat one controlled test before publishing or trusting old timing advice. Record the target, whether the dart was consumed, whether the status appeared, what interrupted it, and whether network delay changed the result. Separate what was seen from what is inferred. This page intentionally avoids fixed seconds and guaranteed target lists until the behavior is repeatable.',
+              ],
+              bullets: [
+                'Confirm one Sleep Potion still produces five Sleep Darts at the Repackager.',
+                'Confirm the Blowgun consumes one dart for each fired shot.',
+                'Check the target in solo and co-op if the result appears inconsistent.',
+                'Keep a normal escape or rescue plan in case the status fails.',
+              ],
+            },
+          ]
+        : [],
   })
 }
 
@@ -660,6 +710,51 @@ const houseWeapons = [
     sections: [
       { heading: 'Where to find Spoon', body: 'Look in kitchen and dining areas while searching for more important utensil or food objectives.' },
       { heading: 'How to use Spoon', body: 'Carry it only when the route already needs utensil loot or nearby object interaction.' },
+    ],
+    deepDiveSections: [
+      {
+        heading: 'Spoon quick answer',
+        paragraphs: [
+          'Spoon is low-priority kitchen or dining loot. It is worth carrying when the current task list names a utensil-style interaction, when a trade or nearby objective needs the object, or when the team is already searching the same drawers and surfaces. It is not a reason to extend a safe run into a risky room. If no objective points to it, leave the slot open for a material, weapon, or task item with a confirmed purpose.',
+        ],
+      },
+      {
+        heading: 'Search the room without creating a detour',
+        paragraphs: [
+          'Start with the task sheet, then decide whether Kitchen or a connected Human House route is already part of the three-task plan. Check visible dining surfaces and the same drawers you would open for utensil or small-object tasks. Work from the exit inward so a human patrol or rat does not trap the carrier behind open storage. Stop searching once the room no longer advances a task. A spoon found beside a required object is efficient; a spoon at the end of an extra room sweep is usually not.',
+          'Use the location links on this page to pair the item with a real route. Kitchen has strong task and loot overlap, but that density can tempt squads to search every container. Keep one recognizable return line and avoid dropping more important loot simply because the spoon was the last object picked up.',
+        ],
+      },
+      {
+        heading: 'Make a deliberate carry decision',
+        paragraphs: [
+          'Before taking the spoon, name the reason for the slot: current task, confirmed trade, object interaction, or a short carry that is already on the exit line. If nobody can name the reason, leave it. Recheck the decision when the team finds a weapon, scarce material, or explicit task item. Low-priority loot should be the first thing dropped when inventory pressure appears. This rule keeps the page useful without pretending an ordinary utensil is automatically a strong combat or progression choice.',
+        ],
+      },
+      {
+        heading: 'Co-op role split for kitchen loot',
+        paragraphs: [
+          'In co-op, one player can search drawers while another watches the doorway and the remaining player keeps the route to the objective or exit clear. The spoon carrier should repeat why the item matters so the squad does not collect duplicates or lose track of the task item. If a threat enters, the watcher calls the retreat and the carrier drops low-value clutter before a weapon or required object. A quick role split is safer than having every player open the same storage from different angles.',
+        ],
+      },
+      {
+        heading: 'Compare Spoon with nearby alternatives',
+        paragraphs: [
+          'Fork and Knife are the closest related utensil pages, but their usefulness still depends on task wording and route context. A crafted Metal Bat or another confirmed weapon belongs to a different decision category: it is prepared for threat control, while Spoon is primarily carried loot and interaction context in the current data. Do not replace a reliable weapon because the site groups Spoon under Weapons. Category labels help navigation; the quick facts, priority, and observed use should control the actual run decision.',
+        ],
+      },
+      {
+        heading: 'Common mistakes and patch checks',
+        paragraphs: [
+          'The usual mistakes are searching for Spoon before reading tasks, carrying it after a better item appears, treating a database category as proof of damage, and staying in Kitchen after the third safe objective is ready. After a patch, verify the object name, pickup behavior, any task wording that references utensils, and whether a trade or interaction has changed. Until a repeatable test proves more, this guide keeps damage values, spawn guarantees, and special effects unspecified.',
+        ],
+        bullets: [
+          'Read the High-Gnome task list before entering the room.',
+          'Use Kitchen or dining storage only when it overlaps the planned route.',
+          'Drop the spoon before a confirmed weapon, material bottleneck, or required task item.',
+          'Report changed task wording through the Contact page with the page URL and patch date.',
+        ],
+      },
     ],
   }),
   makeItem({

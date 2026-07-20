@@ -9,9 +9,10 @@ import { computed, nextTick, onMounted, ref } from 'vue'
 import { getAffiliateBannerSize, mountAffiliateAd } from '@/utils/affiliateAds'
 
 const slotRef = ref(null)
+const bannerSize = ref(getAffiliateBannerSize())
 
 const slotStyle = computed(() => {
-  const { width, height } = getAffiliateBannerSize()
+  const { width, height } = bannerSize.value
   return {
     minWidth: `${width}px`,
     minHeight: `${height}px`,
@@ -20,6 +21,9 @@ const slotStyle = computed(() => {
 })
 
 onMounted(async () => {
+  // SSR uses the desktop dimensions for deterministic HTML. Re-evaluate the
+  // viewport after hydration so mobile slots cannot force horizontal scroll.
+  bannerSize.value = getAffiliateBannerSize()
   await nextTick()
   if (slotRef.value) {
     mountAffiliateAd(slotRef.value)

@@ -112,6 +112,17 @@
 
             <AffiliateAd />
 
+            <section v-if="area.deepDiveSections?.length" id="field-guide" class="guide-block">
+              <h2>{{ area.name }} field guide</h2>
+              <article v-for="section in area.deepDiveSections" :key="section.heading" class="note-panel">
+                <h3>{{ section.heading }}</h3>
+                <p v-for="paragraph in section.paragraphs" :key="paragraph">{{ paragraph }}</p>
+                <ul v-if="section.bullets?.length">
+                  <li v-for="bullet in section.bullets" :key="bullet">{{ bullet }}</li>
+                </ul>
+              </article>
+            </section>
+
             <section id="notes" class="guide-block">
               <h2>How to route {{ area.name }}</h2>
               <article v-for="section in area.sections" :key="section.heading" class="note-panel">
@@ -154,13 +165,16 @@ const recipes = craftingData.find((section) => section.key === 'recipes').items
 
 const area = computed(() => areas.find((entry) => entry.slug === route.params.slug))
 
-const areaSidebarSections = [
-  { id: 'overview', label: 'Route overview', href: '#overview' },
-  { id: 'items', label: 'Items and weapons', href: '#items' },
-  { id: 'recipes', label: 'Crafting links', href: '#recipes' },
-  { id: 'tasks', label: 'Tasks and danger', href: '#tasks' },
-  { id: 'notes', label: 'Route notes', href: '#notes' },
-]
+const areaSidebarSections = computed(() =>
+  [
+    { id: 'overview', label: 'Route overview', href: '#overview' },
+    { id: 'items', label: 'Items and weapons', href: '#items' },
+    { id: 'recipes', label: 'Crafting links', href: '#recipes' },
+    { id: 'tasks', label: 'Tasks and danger', href: '#tasks' },
+    area.value?.deepDiveSections?.length && { id: 'field-guide', label: 'Field guide', href: '#field-guide' },
+    { id: 'notes', label: 'Route notes', href: '#notes' },
+  ].filter(Boolean),
+)
 const areaItems = computed(() =>
   items
     .filter((item) => item.areas?.includes(route.params.slug))

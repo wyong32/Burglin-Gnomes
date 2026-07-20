@@ -22,7 +22,6 @@ const fullDomain = seoConfig.fullDomain.replace(/\/+$/, '')
 
 const staticSourceMap = {
   '/': ['src/views/HomeView.vue'],
-  '/search': ['src/views/SearchView.vue', 'src/utils/searchIndex.js'],
   '/wiki': ['src/views/WikiView.vue', 'src/data/areasData.js'],
   '/guides': ['src/views/GuidesView.vue', 'src/data/guides.js'],
   '/beginner': ['src/views/BeginnerGuideView.vue', 'src/data/beginnerData.js'],

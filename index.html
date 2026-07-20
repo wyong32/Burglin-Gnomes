@@ -76,6 +76,8 @@
       }
     </script>
 
+  <!--app-head-->
+
   <!-- GPT ads (paused – restore by uncommenting this block and removing affiliate popunder below)
   <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" crossorigin="anonymous"></script>
   <script>
@@ -147,16 +149,14 @@
   </script>
   -->
 
-  <!-- Affiliate popunder for burglin-gnomes.org -->
-  <script src="https://pl29872442.effectivecpmnetwork.com/0c/cf/83/0ccf83bcc91ffbffc62738ee96334611.js"></script>
-
-  <!-- 清除本地存储 -->
+  <!-- Affiliate popunder: content pages only; excluded from search and legal pages. -->
   <script>
-    window.localStorage.removeItem('__lsv__');
+    if (location.pathname !== '/search' && !location.pathname.startsWith('/legal/')) {
+      const affiliatePopunder = document.createElement('script');
+      affiliatePopunder.src = 'https://pl29872442.effectivecpmnetwork.com/0c/cf/83/0ccf83bcc91ffbffc62738ee96334611.js';
+      document.body.appendChild(affiliatePopunder);
+    }
   </script>
-
-  <!-- 数据收集脚本 -->
-  <script src="/collet-data.js"></script>
 
 </body>
 

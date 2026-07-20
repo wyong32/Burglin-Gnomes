@@ -1,6 +1,14 @@
 import { buildAreaPageMeta } from '../utils/contentLabels.js'
 
-const withAreaTdk = (areas) => areas.map((area) => ({ ...area, tdk: buildAreaPageMeta(area) }))
+const withAreaTdk = (areas) => {
+  const source = areas.find((area) => area.slug === 'gnome-world')
+  const bathroom = areas.find((area) => area.slug === 'bathroom')
+  if (source?.deepDiveSections?.length && bathroom && !bathroom.deepDiveSections?.length) {
+    bathroom.deepDiveSections = source.deepDiveSections
+    delete source.deepDiveSections
+  }
+  return areas.map((area) => ({ ...area, tdk: buildAreaPageMeta(area) }))
+}
 
 const areas = [
   {
@@ -24,6 +32,56 @@ const areas = [
         heading: 'Why this area matters',
         body:
           'Most failed beginner runs start before the house: players bring the wrong tools, forget to bank materials, or start without agreeing on the extraction threshold.',
+      },
+    ],
+    deepDiveSections: [
+      {
+        heading: 'Bathroom route quick answer',
+        paragraphs: [
+          'Route Bathroom when the task list points to a toilet interaction, hygiene loot, cigarettes, or a small-storage search. Treat it as a compact objective room, not a place to clear automatically. The narrow layout can turn a long cabinet search into a containment problem when the human arrives, so identify the door and any alternate teammate position before opening storage. Finish the named interaction first, take only useful nearby loot, and leave before the room becomes the center of the run.',
+        ],
+      },
+      {
+        heading: 'Plan entry and exit before searching',
+        paragraphs: [
+          'Pause at the room edge and name the escape line. One player should be able to leave without crossing the person who is interacting with the toilet or cabinet. Keep carried objects out of the doorway, because a dropped item can make an already tight route harder to read. If the team entered through a recognizable window, vent, or connected room, repeat that return route aloud. The goal is to make the exit obvious before a human patrol, physics event, or rescue call removes the time needed to think.',
+        ],
+      },
+      {
+        heading: 'Use a task-first search order',
+        paragraphs: [
+          'Start with the exact task object. For Travel through toilet, Flood Toilet, or Flush item toilet, confirm the interaction and task registration before opening unrelated cabinets. For a small-storage search, work from the nearest container toward the exit and stop when the required item or a higher-priority piece of loot is found. This order avoids spending the extraction window on low-value clutter. It also makes a failed interaction easier to diagnose because the room was quiet before extra objects and players were added.',
+        ],
+      },
+      {
+        heading: 'Handle human and rat pressure',
+        paragraphs: [
+          'The Bathroom is dangerous when a threat controls the only comfortable doorway. A human can turn a small room into a containment spot, while rats from storage routes can punish a player who is focused on drawers. Do not start a long fight beside the objective. Leave, create space, and return with a known weapon or control plan when the room matters to the task sheet. If the objective is optional, abandon it and protect the three-task clear instead of converting a short visit into a rescue chain.',
+        ],
+      },
+      {
+        heading: 'Split co-op responsibilities',
+        paragraphs: [
+          'A simple two-player split works well: the route player completes the interaction or searches one storage line, while the safety player watches the approach and keeps the exit open. Extra teammates should not crowd the toilet or doorway. They can hold the connected room, carry confirmed loot out, or continue a second safe objective. The watcher calls stop as soon as the patrol changes. The searcher should leave immediately rather than finishing one more drawer, because the value of the room comes from task overlap, not from clearing every container.',
+        ],
+      },
+      {
+        heading: 'Separate flood mechanics from bugs',
+        paragraphs: [
+          'Flood, flush, ragdoll, weak-body behavior, and co-op desync can look similar during a noisy attempt. Test one interaction at a time. Record whether the task registered, which player initiated it, whether an item was held, and whether the result matched for host and guest. If a player becomes stuck or the physics state looks wrong, use the established bug-fix and revive guidance rather than repeating the same interaction with the whole squad in the room. Patch-sensitive evidence is more useful than a confident guess.',
+        ],
+      },
+      {
+        heading: 'Bathroom completion checklist',
+        paragraphs: [
+          'Leave the room when the named task is complete, the useful storage line is checked, or the escape becomes uncertain. Revisit only if the remaining task list still requires it. After game updates, recheck toilet task wording, flood behavior, small-storage contents, threat pathing, and whether doors or connected routes behave differently. This guide does not assume fixed spawns or guaranteed weapon finds; those claims require repeatable runs.',
+        ],
+        bullets: [
+          'Confirm the task before entering and the registration before looting.',
+          'Keep the doorway and return route free of dropped objects.',
+          'Assign one searcher and one watcher instead of crowding the room.',
+          'Exit on threat pressure unless Bathroom still blocks the three-task clear.',
+        ],
       },
     ],
   },

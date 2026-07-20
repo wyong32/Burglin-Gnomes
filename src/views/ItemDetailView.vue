@@ -117,6 +117,17 @@
 
             <AffiliateAd />
 
+            <section v-if="item.deepDiveSections?.length" id="field-guide" class="guide-block">
+              <h2>{{ item.name }} field guide</h2>
+              <article v-for="section in item.deepDiveSections" :key="section.heading" class="note-panel">
+                <h3>{{ section.heading }}</h3>
+                <p v-for="paragraph in section.paragraphs" :key="paragraph">{{ paragraph }}</p>
+                <ul v-if="section.bullets?.length">
+                  <li v-for="bullet in section.bullets" :key="bullet">{{ bullet }}</li>
+                </ul>
+              </article>
+            </section>
+
             <section id="notes" class="guide-block">
               <h2>How to use {{ item.name }} in a run</h2>
               <article v-for="section in item.sections" :key="section.heading" class="note-panel">
@@ -165,6 +176,7 @@ const itemSidebarSections = computed(() =>
     { id: 'recipes', label: 'Recipes', href: '#recipes' },
     { id: 'related', label: 'Related items', href: '#related' },
     itemGuideLink.value && { id: 'guide', label: 'Related guide', href: '#guide' },
+    item.value?.deepDiveSections?.length && { id: 'field-guide', label: 'Field guide', href: '#field-guide' },
     { id: 'notes', label: 'Route notes', href: '#notes' },
   ].filter(Boolean),
 )
@@ -192,5 +204,22 @@ const itemGuideLink = computed(() => {
 
 .note-panel h3 {
   margin-bottom: 8px;
+}
+
+.note-panel p + p,
+.note-panel ul {
+  margin-top: 10px;
+}
+
+.note-panel ul {
+  display: grid;
+  gap: 8px;
+  padding-left: 20px;
+}
+
+.note-panel li {
+  color: var(--color-text);
+  font-weight: 800;
+  list-style: disc;
 }
 </style>

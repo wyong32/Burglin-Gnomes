@@ -3,6 +3,7 @@ import { AFFILIATE_BANNER } from '@/config/affiliateAds'
 let loadQueue = Promise.resolve()
 
 function getBannerConfig() {
+  if (typeof window === 'undefined') return AFFILIATE_BANNER.desktop
   const isMobile = window.matchMedia(AFFILIATE_BANNER.breakpoint).matches
   return isMobile ? AFFILIATE_BANNER.mobile : AFFILIATE_BANNER.desktop
 }
@@ -13,7 +14,7 @@ export function getAffiliateBannerSize() {
 }
 
 export function mountAffiliateAd(containerEl) {
-  if (!containerEl) return
+  if (!containerEl || typeof window === 'undefined' || typeof document === 'undefined') return
 
   loadQueue = loadQueue.then(
     () =>

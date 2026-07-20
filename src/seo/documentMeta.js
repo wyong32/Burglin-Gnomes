@@ -53,10 +53,10 @@ function setLinkRel(rel, href) {
   el.setAttribute('href', href)
 }
 
-export function applyDocumentSeo({ path, title, description, keywords, ogImage, ogType, jsonLd }) {
+export function applyDocumentSeo({ path, title, description, keywords, ogImage, ogType, jsonLd, canonicalUrl, robots = 'index, follow' }) {
   if (typeof document === 'undefined') return
 
-  const canonicalUrl = resolveCanonicalUrl(path)
+  const resolvedCanonicalUrl = canonicalUrl || resolveCanonicalUrl(path)
   const resolvedTitle = title || seoConfig.defaults.title
 
   document.title = resolvedTitle
@@ -64,8 +64,8 @@ export function applyDocumentSeo({ path, title, description, keywords, ogImage, 
   setMeta('name', 'description', description || seoConfig.defaults.description)
   if (keywords) setMeta('name', 'keywords', keywords)
   setMeta('name', 'author', seoConfig.defaults.author)
-  setMeta('name', 'robots', 'index, follow')
-  setMeta('name', 'googlebot', 'index, follow')
+  setMeta('name', 'robots', robots)
+  setMeta('name', 'googlebot', robots)
 
   const absImage = toAbsoluteUrl(ogImage || seoConfig.defaultOgImage)
 
@@ -73,7 +73,7 @@ export function applyDocumentSeo({ path, title, description, keywords, ogImage, 
   setMeta('property', 'og:description', description || seoConfig.defaults.description)
   setMeta('property', 'og:image', absImage)
   setMeta('property', 'og:image:alt', `${seoConfig.siteName} — share image`)
-  setMeta('property', 'og:url', canonicalUrl)
+  setMeta('property', 'og:url', resolvedCanonicalUrl)
   setMeta('property', 'og:type', ogType || seoConfig.defaults.type || 'website')
   setMeta('property', 'og:site_name', seoConfig.siteName)
   setMeta('property', 'og:locale', 'en_US')
@@ -82,16 +82,16 @@ export function applyDocumentSeo({ path, title, description, keywords, ogImage, 
   setMeta('name', 'twitter:title', resolvedTitle)
   setMeta('name', 'twitter:description', description || seoConfig.defaults.description)
   setMeta('name', 'twitter:image', absImage)
-  setMeta('name', 'twitter:url', canonicalUrl)
+  setMeta('name', 'twitter:url', resolvedCanonicalUrl)
 
-  setLinkRel('canonical', canonicalUrl)
+  setLinkRel('canonical', resolvedCanonicalUrl)
 
   const ld =
     jsonLd ||
     buildDefaultWebPageJsonLd({
       name: resolvedTitle,
       description: description || seoConfig.defaults.description,
-      url: canonicalUrl,
+      url: resolvedCanonicalUrl,
     })
   injectJsonLd(ld)
 }

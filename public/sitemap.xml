@@ -8,14 +8,8 @@
     <priority>1</priority>
   </url>
   <url>
-    <loc>https://burglin-gnomes.org/search</loc>
-    <lastmod>2026-06-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
     <loc>https://burglin-gnomes.org/wiki</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.92</priority>
   </url>
@@ -33,7 +27,7 @@
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -45,13 +39,13 @@
   </url>
   <url>
     <loc>https://burglin-gnomes.org/base-building</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.86</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/bestiary</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.88</priority>
   </url>
@@ -63,7 +57,7 @@
   </url>
   <url>
     <loc>https://burglin-gnomes.org/legal/privacy-policy</loc>
-    <lastmod>2026-06-12</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.35</priority>
   </url>
@@ -93,349 +87,349 @@
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/fraggles</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/chemicals</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/fabric</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/clonk</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/plastic</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/gnomium</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/poopling</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/scraplings</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/tusk</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/metal-bat</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/branch</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/slingshot</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/marble-gun</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/boxing-gloves</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/blowgun</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/gun</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/shotgun</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/grenade</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/taser</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/pepper-spray</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/knife</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/fork</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/spoon</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/rocket-launcher</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/landmine</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/firework</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/chainsaw</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/gardening-shears</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/pickaxe</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/eyeglass</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/grappling-hook</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/backpack</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/spring-shoes</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/gnomium-gloves</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/glider</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/helmet</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/glue-gloves</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/fairywings</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/music-box</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/cigarette</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/papyrus</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/fart-potion</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/health-potion</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/confusion-potion</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/mobility-potion</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/sleep-potion</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/stamina-potion</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/strength-potion</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/flight-potion</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/marble</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/confusion-dart</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/fart-dart</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/flight-dart</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/health-dart</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/mobility-dart</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/sleep-dart</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/stamina-dart</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/items/strength-dart</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -573,79 +567,79 @@
   </url>
   <url>
     <loc>https://burglin-gnomes.org/areas/gnome-world</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.76</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/areas/well</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.76</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/areas/potion-table</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.76</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/areas/repackager</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.76</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/areas/human-house</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.76</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/areas/cabinets-drawers</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.76</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/areas/kitchen</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.76</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/areas/bathroom</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.76</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/areas/bedroom-living-room</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.76</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/areas/outdoor-lawn</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.76</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/areas/garage-shed</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.76</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/areas/greenhouse-garden</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.76</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/areas/weapon-safe</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.76</priority>
   </url>
@@ -729,103 +723,103 @@
   </url>
   <url>
     <loc>https://burglin-gnomes.org/bestiary/high-gnome</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.78</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/bestiary/fairy</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.78</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/bestiary/human-homeowner</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.78</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/bestiary/cat</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.78</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/bestiary/rat</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.78</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/bestiary/cockroach</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.78</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/bestiary/evil-gnome</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.78</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/bestiary/vacuum-robot</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.78</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/bestiary/tall-humanoid</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.78</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/bestiary/groundhog</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.78</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/bestiary/jonathan</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.78</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/bestiary/boar</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.78</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/bestiary/pitbull</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.78</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/bestiary/sealman</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.78</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/bestiary/bee</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.78</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/bestiary/seagull</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.78</priority>
   </url>
   <url>
     <loc>https://burglin-gnomes.org/bestiary/environmental-hazards</loc>
-    <lastmod>2026-06-29</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.78</priority>
   </url>

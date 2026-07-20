@@ -27,9 +27,6 @@
 
           <!-- <GptAd unit="banner3" /> -->
 
-
-          <AffiliateAd />
-
           <section v-if="query" class="search-results-section" aria-label="Search results">
             <div class="section-heading">
               <span class="eyebrow">Results</span>
@@ -70,8 +67,6 @@
 
           <!-- <GptAd unit="banner1" /> -->
 
-
-          <AffiliateAd />
         </div>
       </div>
     </section>

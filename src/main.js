@@ -1,14 +1,8 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import AffiliateAd from './components/AffiliateAd.vue'
-import GptAd from './components/GptAd.vue'
-import router from './router'
+import { createWebHistory } from 'vue-router'
+
+import { createSiteApp } from './createSiteApp.js'
 import './assets/global.css'
 
-const app = createApp(App)
+const { app, router } = createSiteApp(createWebHistory(import.meta.env.BASE_URL))
 
-app.component('GptAd', GptAd)
-app.component('AffiliateAd', AffiliateAd)
-app.use(router)
-
-app.mount('#app')
+router.isReady().then(() => app.mount('#app'))

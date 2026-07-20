@@ -13,6 +13,7 @@ export const routeSeo = {
     description:
       "Search Burglin' Gnomes guides for items, crafting recipes, enemies, beginner routes, wiki topics, and patch notes.",
     keywords: 'Burglin Gnomes search, item lookup, recipe finder, enemy guide',
+    robots: 'noindex, follow',
   },
   wiki: {
     title: "Burglin' Gnomes Wiki — Guides, Items & Enemies",

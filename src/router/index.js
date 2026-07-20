@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter } from 'vue-router'
 import AreaDetailView from '../views/AreaDetailView.vue'
 import BaseBuildingView from '../views/BaseBuildingView.vue'
 import BeginnerGuideView from '../views/BeginnerGuideView.vue'
@@ -45,8 +45,9 @@ const bestiaryEntries = getSectionItems(enemiesData, 'entries')
 const areaEntries = getSectionItems(areasData, 'areas')
 const guideEntries = guidesData.filter((entry) => entry.addressBar)
 
+export function createSiteRouter(history) {
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history,
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) return savedPosition
     if (to.hash) {
@@ -318,6 +319,7 @@ router.afterEach((to) => {
     description,
     keywords: to.meta?.keywords || seoConfig.defaults.keywords,
     ogImage: to.meta?.ogImage,
+    robots: to.meta?.robots || 'index, follow',
     jsonLd:
       to.name === 'home'
         ? buildHomeGraphJsonLd({
@@ -329,4 +331,5 @@ router.afterEach((to) => {
   })
 })
 
-export default router
+  return router
+}

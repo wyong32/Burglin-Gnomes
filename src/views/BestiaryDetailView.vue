@@ -90,6 +90,17 @@
 
             <AffiliateAd />
 
+            <section v-if="entry.deepDiveSections?.length" id="field-guide" class="guide-block">
+              <h2>{{ entry.name }} field guide</h2>
+              <article v-for="section in entry.deepDiveSections" :key="section.heading" class="note-panel">
+                <h3>{{ section.heading }}</h3>
+                <p v-for="paragraph in section.paragraphs" :key="paragraph">{{ paragraph }}</p>
+                <ul v-if="section.bullets?.length">
+                  <li v-for="bullet in section.bullets" :key="bullet">{{ bullet }}</li>
+                </ul>
+              </article>
+            </section>
+
             <section id="notes" class="guide-block">
               <h2>{{ entry.name }} route notes</h2>
               <article v-for="section in entry.sections" :key="section.heading" class="note-panel">
@@ -174,8 +185,9 @@ const bestiarySidebarSections = computed(() => {
     { id: 'behavior', label: 'Behavior', href: '#behavior' },
     { id: 'counters', label: 'Survival plan', href: '#counters' },
     { id: 'related-guides', label: 'Related guides', href: '#related-guides' },
+    entry.value?.deepDiveSections?.length && { id: 'field-guide', label: 'Field guide', href: '#field-guide' },
     { id: 'notes', label: 'Route notes', href: '#notes' },
-  ]
+  ].filter(Boolean)
 
   if (sameCategoryEntries.value.length) {
     sections.push({
@@ -212,6 +224,23 @@ const dangerClass = (danger) => {
 
 .note-panel h3 {
   margin-bottom: 8px;
+}
+
+.note-panel p + p,
+.note-panel ul {
+  margin-top: 10px;
+}
+
+.note-panel ul {
+  display: grid;
+  gap: 8px;
+  padding-left: 20px;
+}
+
+.note-panel li {
+  color: var(--color-text);
+  font-weight: 800;
+  list-style: disc;
 }
 
 .category-back-link {

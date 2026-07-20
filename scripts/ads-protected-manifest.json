@@ -1,0 +1,9 @@
+{
+  "algorithm": "sha256",
+  "files": {
+    "src/config/gpt.js": "fa75f0521a52b8c1aba6a69012beb19d79cffb1669676f634207fa8831949787",
+    "src/components/GptAd.vue": "c9d4f28bbb9e7a51a189540fcade3e5c2b4d07eb992b8727bd39c801414b9894",
+    "src/utils/gptAds.js": "687a36f7b7264bb361d46feb5389a9c301175856b39c05ddfd80f693142e28a2",
+    "public/ads.txt": "c9bf6b9201bfcdc7367eca97aabd36cdbb38807af66a82ed4da0f1512e472d18"
+  }
+}
