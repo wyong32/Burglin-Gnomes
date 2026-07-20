@@ -46,6 +46,7 @@ function makeItem({
   stats = [],
   sections = [],
   deepDiveSections = [],
+  contentExpansionSections,
 }) {
   return {
     slug,
@@ -65,6 +66,7 @@ function makeItem({
     usedIn: [],
     sections,
     deepDiveSections,
+    ...(contentExpansionSections?.length ? { contentExpansionSections } : {}),
   }
 }
 
@@ -129,7 +131,7 @@ function potionItem({ key, ingredient, effectName, priority, use, image }) {
   })
 }
 
-function dartItem({ key, effectName, priority, image }) {
+function dartItem({ key, effectName, priority, image, contentExpansionSections = [] }) {
   const slug = `${key}-dart`
   const name = `${titleCase(key)} Dart`
   return makeItem({
@@ -143,6 +145,7 @@ function dartItem({ key, effectName, priority, image }) {
     use: `Ammo for Blowgun that applies the ${effectName} potion status on valid blow-dart targets.`,
     advice: `Prepare ${name} only when you also have Blowgun; it is not fired by itself.`,
     relatedItems: [`${key}-potion`, 'blowgun'],
+    contentExpansionSections,
     sections: [
       {
         heading: `How to get ${name}`,
@@ -783,6 +786,43 @@ const houseWeapons = [
           'Use it for RPG shot objectives or planned explosive control. Keep teammates clear and know your exit before firing.',
       },
     ],
+    contentExpansionSections: [
+      {
+        heading: 'Decide whether the detour is worth it',
+        paragraphs: [
+          'Rocket Launcher is a route decision before it is a combat decision. Start with the High-Gnome task list and ask whether an explosive objective, a weapon-storage stop, or a known threat already takes the squad toward its likely search areas. If the answer is no, a rare heavy weapon can become an expensive distraction: every extra room costs daylight, separates the team, and delays the three tasks needed for a safe extraction. A launcher found on the planned line is valuable; a launcher pursued across the house without a task reason is usually greed.',
+          'Set a search limit before entering weapon storage. Check the containers and connected rooms that overlap another objective, then leave when that useful overlap ends. The current guide does not promise a fixed spawn or a guaranteed room. Treat missing loot as a signal to continue the run, not as proof that one more cabinet must contain the weapon.',
+        ],
+      },
+      {
+        heading: 'Prepare the firing route before pickup',
+        paragraphs: [
+          'Before carrying the launcher into a live route, identify the target, the firing lane, the safe direction for teammates, and the exit used after the shot. Explosive equipment punishes improvised positioning. A doorway that looks clear can become crowded when a carrier backs up, a rescuer crosses the line, or a threat changes direction. Make the call while the squad still has cover and room to separate.',
+          'The launcher should not replace route awareness. Keep a normal escape available, avoid firing from a cramped hiding point, and do not let the whole squad gather behind the shooter. If the team cannot describe what the shot is meant to solve, save the weapon or leave it for a later objective rather than turning ordinary movement into an uncontrolled explosion test.',
+        ],
+      },
+      {
+        heading: 'Use explosive control without breaking the team plan',
+        paragraphs: [
+          'In co-op, assign one player as shooter and one as route caller. The shooter controls aim and timing; the caller confirms that carriers and rescuers are clear, then names the next movement after the blast. Everyone else should know whether the goal is task credit, space to cross a room, or emergency threat control. One short countdown is more useful than several players shouting different targets.',
+          'Do not fire merely because a threat is visible. A loud, risky solution is justified only when it protects a completed objective, opens the planned route, or prevents a likely team loss. After the shot, move according to the call instead of standing still to inspect the result. The run is won by completing tasks and extracting, not by spending every dramatic item found in the house.',
+        ],
+      },
+      {
+        heading: 'Compare safer alternatives when the launcher is missing',
+        paragraphs: [
+          'Gun and Shotgun offer different control choices when the route needs a conventional weapon, while Grenade can overlap with some explosive planning without demanding the same firing lane. None is an automatic replacement: compare the current objective, available inventory, room shape, and the team member who can use the item safely. A familiar weapon on the direct task route can be better than a rare launcher that requires a long search.',
+          'The best alternative may also be no weapon detour at all. Doors, furniture, hiding positions, and a coordinated retreat often solve route pressure while preserving time and carry slots. If three tasks are already secure, protect extraction rather than extending the run solely to upgrade the squad loadout.',
+        ],
+      },
+      {
+        heading: 'Recover from mistakes and verify patch-sensitive behavior',
+        paragraphs: [
+          'If the launcher route goes wrong, stop adding risk. Call the nearest safe exit, account for every player, drop low-priority loot if movement is blocked, and decide whether the weapon is still worth carrying. Do not send a second player deeper simply to recover an optional item while the task carrier is already safe. A failed search is cheaper than a failed extraction.',
+          'Patch Sensitive: after an update, verify the displayed item name, pickup behavior, valid targets, task wording, and whether the shot behaves consistently in a low-value run. Record the game version and repeat the observation before treating it as a stable rule. This page intentionally avoids exact damage, blast radius, spawn probability, and timing claims until they can be supported by repeatable evidence.',
+        ],
+      },
+    ],
   }),
   makeItem({
     slug: 'landmine',
@@ -1216,7 +1256,48 @@ const ammo = [
     { key: 'health', effectName: 'HEALTH', priority: 'High on risky routes' },
     { key: 'mobility', effectName: 'MOBILITY', priority: 'Route dependent' },
     { key: 'sleep', effectName: 'SLEEP', priority: 'Target dependent' },
-    { key: 'stamina', effectName: 'STAMINA', priority: 'Route dependent' },
+    {
+      key: 'stamina',
+      effectName: 'STAMINA',
+      priority: 'Route dependent',
+      contentExpansionSections: [
+        {
+          heading: 'Treat Stamina Dart as route support',
+          paragraphs: [
+            'Stamina Dart belongs in a support plan, not in every Blowgun loadout. Its stated role is to apply the Stamina potion status to a valid blow-dart target, so the first question is whether extra stamina would change a specific part of the route. A long carry, a rescue, or an exposed return may justify the preparation. A short room search with several safe pauses usually does not. Start from the task sheet and the expected movement problem before spending a potion at the Repackager.',
+            'The dart also depends on the Blowgun. Count both pieces when judging the carry cost: ammunition without the launcher cannot solve the route, and a Blowgun without a useful target is only inventory pressure. Bank the setup until the team can name who receives the effect and what that player will do with the recovery window.',
+          ],
+        },
+        {
+          heading: 'Choose the right recovery window',
+          paragraphs: [
+            'Use support before the route collapses, but not so early that the effect is spent during setup. A practical window begins when the recipient has a clear path and a defined job, such as finishing a carry, reaching a downed teammate, or crossing back to extraction. Confirm that the target is valid, the shooter has a clean angle, and the recipient knows the next turn before committing a dart.',
+            'Avoid firing during crowded movement or from behind several teammates. A miss costs limited ammunition and can distract the group at the moment it needs a simple retreat call. If the path changes or a threat blocks the planned lane, reset behind cover and keep the dart rather than forcing the original timing. This guide does not claim an exact stamina gain or duration because those details require controlled, current-version testing.',
+          ],
+        },
+        {
+          heading: 'Assign the dart to a clear co-op role',
+          paragraphs: [
+            'A two-player team can separate the support job from the carry job: one player holds the Blowgun and watches the route while the other moves the objective. Larger teams should still name a single support shooter so several players do not spend resources on the same moment. The recipient should call readiness, and the shooter should answer only when the lane is clear. That short exchange prevents surprise shots and makes the next movement predictable.',
+            'Keep rescue responsibility explicit. If the support player becomes isolated while searching for an angle, the loadout has made the squad weaker rather than faster. Stay near cover, preserve a normal retreat, and treat the dart as a bonus to an already understandable route. It should not be the only plan for getting a carrier home.',
+          ],
+        },
+        {
+          heading: 'Compare stamina support with mobility choices',
+          paragraphs: [
+            'Stamina Potion is the closest resource comparison because the dart is produced from the matching potion route. Decide whether the team needs a remotely delivered status or whether keeping the potion is simpler. Mobility Potion and movement gear solve different problems and should be compared by the obstacle in front of the squad, not by a generic idea that more speed is always better.',
+            'Also compare the value of carrying ordinary task loot, healing support, or control ammunition. If the route is short and threat-heavy, another Blowgun effect may matter more. If the route is long but safe, disciplined pauses and a lighter inventory may solve it without spending ammunition. The right choice is the smallest loadout that reliably completes the current objectives.',
+          ],
+        },
+        {
+          heading: 'Avoid wasted shots and retest after patches',
+          paragraphs: [
+            'Common waste patterns include crafting darts without a Blowgun, firing before the recipient starts moving, shooting through teammates, using support on a player with no assigned task, and relying on the effect after the route has already broken. Prevent them with a quick checklist: confirm equipment, target, lane, purpose, and fallback. If any answer is unclear, hold the shot and simplify the route first.',
+            'Patch Sensitive: after an update, verify that one Stamina Potion still follows the displayed Repackager recipe, that the output quantity shown in game matches the guide, that the Blowgun consumes one dart per shot, and that the status appears on the intended valid target. Record observations from a low-value run and repeat inconsistent results. Do not convert one successful shot into a guaranteed duration, range, or target list.',
+          ],
+        },
+      ],
+    },
     { key: 'strength', effectName: 'STRENGTH', priority: 'Threat dependent' },
   ].map(dartItem),
 ]

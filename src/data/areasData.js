@@ -300,6 +300,50 @@ const areas = [
           'If the cat is active, indoor safety becomes more valuable than outdoor loot. Close doors and windows when possible and avoid long exterior carries.',
       },
     ],
+    contentExpansionSections: [
+      {
+        heading: 'Read the lawn before committing to an entry',
+        paragraphs: [
+          'Outdoor Lawn is not just empty ground between the gnome base and the house. It is the decision space where the team chooses an entry, identifies exterior threats, and decides whether garden or NPC opportunities belong in the current run. Pause at a safe observation point before spreading out. Locate the usable approach, note which door or window can support a return, and match those options to the task list instead of running toward the first visible opening.',
+          'Vine-window routes can change which side of the house is useful, so avoid memorizing one guaranteed entrance. Use visible landmarks and communicate the selected entry for this run. If no outside task overlaps the approach, cross the lawn with a purpose and move indoors. Searching every edge for an ideal route can cost more time than a slightly longer but clearly understood entry.',
+        ],
+      },
+      {
+        heading: 'Cluster outdoor tasks into one exposure window',
+        paragraphs: [
+          'Read Window Open, Bee sting, garden-related work, and outdoor NPC interactions as a possible cluster rather than four separate trips. Group only the objectives that share a safe side of the map and can be completed without carrying unnecessary loot back and forth. One planned exterior pass reduces repeated exposure and gives the team a clear moment to reassess before entering the house.',
+          'Do not force every outside objective into the same pass. A task that requires a missing tool, an uncertain NPC request, or a dangerous threat position may belong later. Finish the reliable overlap first, then decide whether the remaining task still contributes to the three-task minimum. Task clustering is valuable because it shortens indecision, not because it creates a rule that the lawn must be fully cleared.',
+        ],
+      },
+      {
+        heading: 'Plan carries around doors, windows, and cover',
+        paragraphs: [
+          'Before moving a heavy or important object across the lawn, walk the return line without the burden. Check the opening, the turn back toward safety, and the place where the carrier can drop the item without blocking everyone else. A route that is comfortable for an empty scout may be poor for a slow carrier, especially when the entry requires precise movement or a teammate to hold access.',
+          'Use doors, windows, walls, and terrain as decision points. The carrier announces each transition; the safety player checks the next exposed segment before the item moves. If the route closes or a threat occupies the path, set the object down in a recoverable position and choose another line. Protecting the task item and the carrier is more important than preserving a perfectly continuous carry.',
+        ],
+      },
+      {
+        heading: 'Reroute for the cat and other exterior threats',
+        paragraphs: [
+          'The cat changes the value of open ground. When it is active near the planned route, reduce time outside, stop optional searches, and favor an entry that the whole team can identify quickly. Do not assume that distance alone makes a line safe; use current sight, cover, and an available indoor break point. If the threat position is unclear, send a light scout rather than the objective carrier.',
+          'Bee and other exterior encounters have different purposes, so keep their task context separate from cat avoidance. A Bee sting objective may justify a controlled interaction, while an unrelated encounter should not pull the squad away from extraction. For any threat, call the reroute before players split. Six individual reactions create more danger than one conservative team decision.',
+        ],
+      },
+      {
+        heading: 'Split scout, carrier, and safety roles in co-op',
+        paragraphs: [
+          'A small team can cover three simple jobs even when one player holds two of them. The scout confirms the next opening and reports threats. The carrier moves the task object or important loot only after that report. The safety player watches the previous segment, keeps the retreat recognizable, and helps with doors or rescues. Name the jobs at the start of the exterior pass so everyone knows who should move first.',
+          'Solo players can use the same structure as a checklist: scout a short segment, return to the object, carry it to the next safe point, then repeat. This is slower than a blind sprint but easier to recover when the layout or threat position differs from the previous run. In larger groups, avoid sending every unassigned player ahead; extra bodies can hide hazards and make narrow entries harder to read.',
+        ],
+      },
+      {
+        heading: 'Choose the extraction moment and recheck changed routes',
+        paragraphs: [
+          'Once three tasks are secure, the lawn becomes an extraction decision rather than a general loot field. Count the completed objectives, identify who carries the most important item, and choose the return line before adding optional garden or house searches. If the team is damaged, separated, or uncertain about the cat, take the conservative extraction. A clean banked run is better than losing finished work to one final detour.',
+          'Patch Sensitive: after an update, verify which openings are usable, whether visible vine-window behavior matches the current guide, how exterior task wording appears, and whether threat or NPC placement has changed. Record the route and game version from a low-value run before publishing a firm recommendation. This page intentionally avoids guaranteed layouts, spawn rates, exact detection distances, and fixed timing claims.',
+        ],
+      },
+    ],
   },
   {
     slug: 'garage-shed',

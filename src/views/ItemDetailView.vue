@@ -135,6 +135,17 @@
                 <p>{{ section.body }}</p>
               </article>
             </section>
+
+            <section v-if="item.contentExpansionSections?.length" id="expanded-guide" class="guide-block">
+              <h2>More decisions for {{ item.name }}</h2>
+              <article v-for="section in item.contentExpansionSections" :key="section.heading" class="note-panel">
+                <h3>{{ section.heading }}</h3>
+                <p v-for="paragraph in section.paragraphs" :key="paragraph">{{ paragraph }}</p>
+                <ul v-if="section.bullets?.length">
+                  <li v-for="bullet in section.bullets" :key="bullet">{{ bullet }}</li>
+                </ul>
+              </article>
+            </section>
           </div>
         </div>
       </div>
@@ -178,6 +189,7 @@ const itemSidebarSections = computed(() =>
     itemGuideLink.value && { id: 'guide', label: 'Related guide', href: '#guide' },
     item.value?.deepDiveSections?.length && { id: 'field-guide', label: 'Field guide', href: '#field-guide' },
     { id: 'notes', label: 'Route notes', href: '#notes' },
+    item.value?.contentExpansionSections?.length && { id: 'expanded-guide', label: 'More decisions', href: '#expanded-guide' },
   ].filter(Boolean),
 )
 const relatedItems = computed(() => (item.value?.relatedItems || []).map((slug) => items.find((entry) => entry.slug === slug)).filter(Boolean))

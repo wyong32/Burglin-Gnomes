@@ -5,12 +5,14 @@ import { fileURLToPath } from 'node:url'
 
 import areasData from '../src/data/areasData.js'
 import enemiesData from '../src/data/enemiesData.js'
+import itemsData from '../src/data/itemsData.js'
 
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const failures = []
 
 const areas = areasData.find((section) => section.key === 'areas')?.items ?? []
 const bestiaryEntries = enemiesData.find((section) => section.key === 'entries')?.items ?? []
+const items = itemsData.find((section) => section.key === 'items')?.items ?? []
 if (!areas.find((entry) => entry.slug === 'bathroom')?.deepDiveSections?.length) {
   fail('Bathroom deep-dive content is missing from the bathroom record')
 }
@@ -22,6 +24,18 @@ if (!bestiaryEntries.find((entry) => entry.slug === 'environmental-hazards')?.de
 }
 if (bestiaryEntries.find((entry) => entry.slug === 'high-gnome')?.deepDiveSections?.length) {
   fail('Environmental hazard deep-dive content must not appear on the high-gnome record')
+}
+for (const slug of ['rocket-launcher', 'stamina-dart']) {
+  if (!items.find((entry) => entry.slug === slug)?.contentExpansionSections?.length) {
+    fail(`${slug} content-expansion sections are missing from the item record`)
+  }
+}
+const expandedItemSlugs = items.filter((entry) => Object.hasOwn(entry, 'contentExpansionSections')).map((entry) => entry.slug)
+if (JSON.stringify(expandedItemSlugs.sort()) !== JSON.stringify(['rocket-launcher', 'stamina-dart'])) {
+  fail(`Only the two approved item records may expose contentExpansionSections; found ${expandedItemSlugs.join(', ')}`)
+}
+if (!areas.find((entry) => entry.slug === 'outdoor-lawn')?.contentExpansionSections?.length) {
+  fail('Outdoor Lawn content-expansion sections are missing from the outdoor-lawn record')
 }
 
 function fail(message) {
@@ -76,6 +90,13 @@ function visibleText(html) {
 
 function wordCount(html) {
   return visibleText(html).match(/[A-Za-z0-9]+(?:['’-][A-Za-z0-9]+)*/g)?.length ?? 0
+}
+
+function headings(html) {
+  return [...html.matchAll(/<h([1-3])\b[^>]*>([\s\S]*?)<\/h\1>/gi)].map((match) => [
+    Number(match[1]),
+    visibleText(match[2]).trim(),
+  ])
 }
 
 function outputPath(routePath) {
@@ -187,7 +208,10 @@ for (const routePath of representativeRoutes) {
 const deepRoutes = [
   '/items/spoon',
   '/items/sleep-dart',
+  '/items/rocket-launcher',
+  '/items/stamina-dart',
   '/areas/bathroom',
+  '/areas/outdoor-lawn',
   '/bestiary/environmental-hazards',
 ]
 for (const routePath of deepRoutes) {
@@ -196,6 +220,66 @@ for (const routePath of deepRoutes) {
   const words = wordCount(html)
   if (words < 800 || words > 1500) {
     fail(`${routePath} must contain 800–1500 visible words; found ${words}`)
+  }
+}
+
+const preservedHeadings = {
+  '/items/rocket-launcher': [
+    [1, "Rocket Launcher — Weapon Guide | Burglin' Gnomes"],
+    [2, 'Rocket Launcher quick facts'],
+    [2, 'Where to find Rocket Launcher'],
+    [2, 'Recipes that craft or use Rocket Launcher'],
+    [2, 'Items related to Rocket Launcher'],
+    [2, 'Guide for using Rocket Launcher'],
+    [2, 'How to use Rocket Launcher in a run'],
+    [3, 'Where to find Rocket Launcher'],
+    [3, 'How to use Rocket Launcher'],
+  ],
+  '/items/stamina-dart': [
+    [1, "Stamina Dart — Ammo Guide | Burglin' Gnomes"],
+    [2, 'Stamina Dart quick facts'],
+    [2, 'Where to find Stamina Dart'],
+    [2, 'Recipes that craft or use Stamina Dart'],
+    [2, 'Items related to Stamina Dart'],
+    [2, 'Guide for using Stamina Dart'],
+    [2, 'How to use Stamina Dart in a run'],
+    [3, 'How to get Stamina Dart'],
+    [3, 'Use and properties'],
+  ],
+  '/areas/outdoor-lawn': [
+    [1, "Outdoor Lawn — Exterior route Area Guide | Burglin' Gnomes"],
+    [2, 'Outdoor Lawn route overview'],
+    [2, 'Items and weapons found in Outdoor Lawn'],
+    [2, 'Recipes connected to Outdoor Lawn'],
+    [2, 'Tasks and danger checks in Outdoor Lawn'],
+    [3, 'Tasks that can point here'],
+    [3, 'Dangers to clear before looting'],
+    [2, 'How to route Outdoor Lawn'],
+    [3, 'Why the lawn matters'],
+    [3, 'Outdoor threat control'],
+  ],
+}
+
+for (const [routePath, expectedPrefix] of Object.entries(preservedHeadings)) {
+  const html = read(outputPath(routePath))
+  if (!html) continue
+  const actualPrefix = headings(html).slice(0, expectedPrefix.length)
+  if (JSON.stringify(actualPrefix) !== JSON.stringify(expectedPrefix)) {
+    fail(`${routePath} must preserve every legacy H1/H2/H3 as the exact heading prefix`)
+  }
+}
+
+const disclosureFragments = [
+  'independent, player-created guide',
+  'not affiliated with, endorsed by, or operated by Fobri',
+  'respective rights holders',
+]
+for (const routePath of ['/', '/legal/about-us']) {
+  const html = read(outputPath(routePath))
+  if (!html) continue
+  const text = visibleText(html)
+  for (const fragment of disclosureFragments) {
+    if (!text.includes(fragment)) fail(`${routePath} is missing unofficial-fan disclosure text: ${fragment}`)
   }
 }
 

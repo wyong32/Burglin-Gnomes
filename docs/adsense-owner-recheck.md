@@ -4,12 +4,12 @@ Use this checklist after the production deployment. Items marked **Code verified
 
 ## Blockers and high-priority checks
 
-- [ ] **Code verified — ADS-CONTENT-01 / ADS-OWN-03:** Fetch `/`, `/items/spoon`, `/items/sleep-dart`, `/areas/bathroom`, and `/bestiary/environmental-hazards` without JavaScript. Confirm the HTML contains the visible H1, navigation, body copy, internal links, and route-specific metadata.
-- [ ] **Code verified — ADS-PUB-05 / ADS-UX-05:** Confirm About, Contact, Privacy, Terms, and Copyright links appear in the initial footer HTML and each route returns HTTP 200.
+- [ ] **Code verified — ADS-CONTENT-01 / ADS-OWN-03:** Fetch `/`, `/items/spoon`, `/items/sleep-dart`, `/items/rocket-launcher`, `/items/stamina-dart`, `/areas/bathroom`, `/areas/outdoor-lawn`, and `/bestiary/environmental-hazards` without JavaScript. Confirm the HTML contains the visible H1, navigation, body copy, internal links, and route-specific metadata.
+- [ ] **Code verified — ADS-PUB-05 / ADS-UX-05:** Confirm About, Contact, Privacy, Terms, and Copyright links appear in the initial footer HTML and each route returns HTTP 200. Confirm the footer and About page identify burglin-gnomes.org as an independent player-created guide that is not affiliated with, endorsed by, or operated by Fobri.
 - [ ] **Code verified — ADS-PUB-11 / ADS-PROG-06:** Confirm `/search` has `noindex, follow`, is absent from `sitemap.xml`, and loads neither affiliate banner placements nor the affiliate popunder.
 - [ ] **Code verified — ADS-PRIV-01 / ADS-PRIV-02:** Confirm the live Privacy Policy explains hosting logs, Analytics, Google and third-party advertising cookies or identifiers, affiliate advertising, consent controls, and contact handling.
 - [ ] **Code verified — fingerprint removal:** Confirm neither page source nor network requests reference `/collet-data.js` or `api.sdfgame.com/collect/api/report`.
-- [ ] **Code verified — sampled content depth:** Confirm each of the four report-sampled content pages contains 800–1500 visible English words.
+- [ ] **Code verified — sampled content depth:** Confirm all seven expanded report-sampled content pages contain 800–1500 visible English words. For Rocket Launcher, Stamina Dart, and Outdoor Lawn, confirm the pre-existing H1/H2/H3 sequence remains unchanged and the new headings appear only after it.
 - [ ] **Code verified — metadata:** Confirm representative home, item, area, bestiary, guide, search, and legal routes have unique titles, descriptions, canonicals, robots directives, social metadata, and JSON-LD in the initial HTML.
 
 ## Account and ownership checks
@@ -32,7 +32,7 @@ Use this checklist after the production deployment. Items marked **Code verified
 ## Privacy and consent checks
 
 - [ ] **Owner check — ADS-PRIV-03:** Inspect URLs, analytics events, data-layer values, and future ad targeting parameters. Do not pass email addresses, phone numbers, account names, or other PII to an ad request.
-- [ ] **Owner check — ADS-PRIV-04:** If the site receives visitors from the EEA, United Kingdom, or Switzerland, activate a Google-certified CMP and configure the required Google consent framework before personalized ads or non-essential advertising storage.
+- [ ] **Owner check — ADS-PRIV-04:** No CMP was installed in this code pass. If the site receives visitors from the EEA, United Kingdom, or Switzerland, select and configure a Google-certified CMP before personalized ads or non-essential advertising storage.
 - [ ] **Owner check — ADS-PRIV-05:** The current site does not request precise location. If a future feature adds it, obtain explicit consent and update the Privacy Policy first.
 - [ ] **Owner check — ADS-PRIV-07:** Do not proxy, rewrite, or attempt to set cookies on a Google-owned domain.
 - [ ] **Owner check — ADS-PRIV-08:** Do not create advertising audiences from health, religion, sexual orientation, or other sensitive categories.

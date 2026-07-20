@@ -130,6 +130,17 @@
                 <p>{{ section.body }}</p>
               </article>
             </section>
+
+            <section v-if="area.contentExpansionSections?.length" id="expanded-guide" class="guide-block">
+              <h2>More route decisions for {{ area.name }}</h2>
+              <article v-for="section in area.contentExpansionSections" :key="section.heading" class="note-panel">
+                <h3>{{ section.heading }}</h3>
+                <p v-for="paragraph in section.paragraphs" :key="paragraph">{{ paragraph }}</p>
+                <ul v-if="section.bullets?.length">
+                  <li v-for="bullet in section.bullets" :key="bullet">{{ bullet }}</li>
+                </ul>
+              </article>
+            </section>
             
           </div>
         </div>
@@ -173,6 +184,7 @@ const areaSidebarSections = computed(() =>
     { id: 'tasks', label: 'Tasks and danger', href: '#tasks' },
     area.value?.deepDiveSections?.length && { id: 'field-guide', label: 'Field guide', href: '#field-guide' },
     { id: 'notes', label: 'Route notes', href: '#notes' },
+    area.value?.contentExpansionSections?.length && { id: 'expanded-guide', label: 'More decisions', href: '#expanded-guide' },
   ].filter(Boolean),
 )
 const areaItems = computed(() =>

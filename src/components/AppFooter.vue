@@ -13,6 +13,11 @@
             Player-written routes, task calls, item notes, crafting priorities, enemy counters,
             and patch updates for Burglin' Gnomes — from burglin-gnomes.org.
           </p>
+          <p class="footer-disclaimer">
+            burglin-gnomes.org is an independent, player-created guide and is not affiliated with,
+            endorsed by, or operated by Fobri. Burglin' Gnomes names, trademarks, images, and game
+            materials belong to their respective rights holders.
+          </p>
         </div>
 
         <div class="footer-nav" aria-label="Footer navigation">
@@ -104,6 +109,11 @@ const legalLinks = legalNavLinks
   max-width: 620px;
   color: #f0e4c8;
   font-weight: 800;
+}
+
+.footer-disclaimer {
+  font-size: 0.9rem;
+  line-height: 1.65;
 }
 
 .footer-nav {

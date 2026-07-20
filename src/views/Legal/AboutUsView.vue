@@ -45,6 +45,11 @@
           <section class="guide-block">
             <h2>Trust and corrections</h2>
             <p>
+              burglin-gnomes.org is an independent, player-created guide and is not affiliated
+              with, endorsed by, or operated by Fobri. Burglin' Gnomes names, trademarks, images,
+              and game materials belong to their respective rights holders.
+            </p>
+            <p>
               Burglin' Gnomes is a live co-op game. Mechanics change. If something on this site
               is wrong or outdated, email us and we will fix it. Game names, images, and trademarks
               belong to their respective owners.
