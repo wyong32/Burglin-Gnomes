@@ -1,5 +1,248 @@
 export default [
     {
+        id: 15,
+        title: "Burglin' Gnomes Grabble Guide: Gnomium Gloves, Climbing, Grapple Movement, and Explosions",
+        h1: "Burglin' Gnomes Grabble, Gnomium Gloves, and Climbing Guide",
+        description: "Route-tested Burglin' Gnomes grabble guide for slingshot movement, Gnomium Gloves, climbing checks, and explosion-safe traversal.",
+        category: 'Movement',
+        tags: ['Grabble', 'Gnomium Gloves', 'Climbing', 'Slingshot', 'Explosions'],
+        author: 'Burglin Gnomes Fan Guide Team',
+        publishDate: "2026-07-27",
+        imageUrl: "/images/guides/grabble-gnomium-climbing-steam.jpg",
+        imageAlt: "Burglin Gnomes grabble and climbing guide for vertical route movement",
+        seo: {
+          title: "Burglin Gnomes Grabble and Climbing Guide",
+          description: "Learn grabble movement, Gnomium Gloves costs, climbing routes, and explosion risk in Burglin Gnomes without wasting rare materials.",
+          keywords: "Burglin Gnomes grabble, Gnomium Gloves, climbing, slingshot, explosions"
+        },
+        addressBar: "burglin-gnomes-grabble-gnomium-gloves-climbing-guide",
+        detailsHtml: `<p>By: Frontline Pathfinder | Lead Content Tester, GameguideHub
+      </p>
+      <p>Tested on Version: Current public build | Status: <strong>FIELD TESTED / PATCH SENSITIVE</strong>. Movement tech, prompt reach, craft costs, and explosive physics can change after balance hotfixes.
+      </p>
+      <p><strong>Fast answer:</strong> treat "grabble" as player shorthand for forced movement, grapple-style hand control, and object-assisted traversal. Do not spend rare <a href="/items/gnomium">Gnomium</a> until the route actually needs vertical access, object pushing, or recovery lines. For basic movement, learn stable ledges first; for expensive movement, compare <a href="/items/gnomium-gloves">Gnomium Gloves</a>, <a href="/items/glue-gloves">Glue Gloves</a>, <a href="/items/grappling-hook">Grappling Hook</a>, and <a href="/items/slingshot">Slingshot</a> before crafting.
+      </p>
+      <figure>
+      <img src="/images/guides/grabble-gnomium-climbing-steam.jpg" alt="Burglin Gnomes grabble climbing route with gnomes reaching a high play structure" title="Burglin Gnomes grabble climbing route guide" loading="lazy">
+      <figcaption>Good movement starts with safe height checks. If the route does not need the high path, do not spend rare materials to force it.</figcaption>
+      </figure>
+      <h2>Slingshot and grabble basics
+      </h2>
+      <h3>How to slingshot
+      </h3>
+      <p>The <a href="/items/slingshot">Slingshot</a> is a ranged/control craft, not a universal mobility unlock. Current crafting data lists it at 2 Chemicals, which puts it in direct competition with potion and Blowgun routes. Build it when ranged pressure helps the current task line; skip it when Chemicals are needed for stamina, mobility, sleep, or safer control.
+      </p>
+      <table>
+      <thead>
+      <tr><th>Step</th><th>Field Call</th><th>Failure To Avoid</th></tr>
+      </thead>
+      <tbody>
+      <tr><td>Check the task board</td><td>Confirm whether the run needs ranged control, pest pressure, or a safer door/ledge angle.</td><td>Crafting Slingshot because the keyword is popular, then lacking Chemicals for route-critical tools.</td></tr>
+      <tr><td>Equip from a stable spot</td><td>Use a ledge, doorway, or escape lane before aiming.</td><td>Testing ranged shots while cornered by a human, Red Cap, Roomba, or outdoor threat.</td></tr>
+      <tr><td>Fire for route value</td><td>Use it to create space, test a safe target, or help a teammate move.</td><td>Standing still after the shot to watch damage feedback.</td></tr>
+      <tr><td>Reposition immediately</td><td>Move after each attempt. Burglin' Gnomes punishes stationary tool use.</td><td>Turning a control tool into a death trap.</td></tr>
+      </tbody>
+      </table>
+      <p><strong>INFERRED:</strong> if your group says "slingshot movement," they may mean launched movement from physics, knockback, or explosive displacement rather than the craft itself. Test that only outside a progression run.
+      </p>
+      <h3>What grabble means
+      </h3>
+      <p>There is no reason to over-mystify the term. In live player language, "grabble" usually points to one of three things: grabbing an object, grappling to a high line, or getting moved by physics. The correct response is to identify which check failed before spending resources.
+      </p>
+      <table>
+      <thead>
+      <tr><th>Player Search</th><th>Practical Meaning</th><th>Correct Page / Item</th></tr>
+      </thead>
+      <tbody>
+      <tr><td>What is grabble?</td><td>Shorthand for grab / grapple-style movement or object handling.</td><td>This guide, then <a href="/items/gnomium-gloves">Gnomium Gloves</a>.</td></tr>
+      <tr><td>How to get grabble</td><td>Usually asks for the gear that enables stronger hand control or vertical lines.</td><td><a href="/items/glue-gloves">Glue Gloves</a>, <a href="/items/gnomium-gloves">Gnomium Gloves</a>, <a href="/items/grappling-hook">Grappling Hook</a>.</td></tr>
+      <tr><td>What is grapple?</td><td>Often points to Grappling Hook or roof/ledge traversal.</td><td><a href="/items/grappling-hook">Grappling Hook</a> and climbing checks.</td></tr>
+      <tr><td>How to slingshot</td><td>Usually item control, not a mandatory traversal system.</td><td><a href="/items/slingshot">Slingshot</a> item page.</td></tr>
+      </tbody>
+      </table>
+      <h2>Advanced movement and items
+      </h2>
+      <h3>Getting grabble and gnomium gloves
+      </h3>
+      <p>For high-cost movement, the main gate is Gnomium. Current data lists <a href="/items/gnomium-gloves">Gnomium Gloves</a> at 3 Gnomium and 2 Fraggles. That is not an early impulse craft. Craft it when the daily route has compatible push objects, vertical shortcuts, awkward recoveries, or Gnomium-specific interactions.
+      </p>
+      <figure>
+      <img src="/images/guides/grabble-gnomium-resource-route-steam.jpg" alt="Burglin Gnomes Gnomium route with purple crystals before crafting Gnomium Gloves" title="Burglin Gnomes Gnomium Gloves resource route" loading="lazy">
+      <figcaption>Gnomium is the limiter. Bank it first, then decide whether gloves, Grappling Hook, or another craft actually solves the route.</figcaption>
+      </figure>
+      <table>
+      <thead>
+      <tr><th>Gear</th><th>Material Pressure</th><th>Best Use</th><th>Do Not Craft When</th></tr>
+      </thead>
+      <tbody>
+      <tr><td><a href="/items/glue-gloves">Glue Gloves</a></td><td>Plastic + Fabric</td><td>Windows, walls, awkward vertical friction.</td><td>The team only needs flat-room carrying.</td></tr>
+      <tr><td><a href="/items/gnomium-gloves">Gnomium Gloves</a></td><td>3 Gnomium + 2 Fraggles</td><td>Object pushing, special hand control, Gnomium interaction routes.</td><td>You have not confirmed the route needs them.</td></tr>
+      <tr><td><a href="/items/grappling-hook">Grappling Hook</a></td><td>2 Gnomium + 3 Clonk</td><td>Vertical shortcuts and recovery lines.</td><td>A safer stairs/window line already exists.</td></tr>
+      <tr><td><a href="/items/slingshot">Slingshot</a></td><td>2 Chemicals</td><td>Ranged control and cautious target tests.</td><td>Chemicals are needed for potion or Blowgun control.</td></tr>
+      </tbody>
+      </table>
+      <h3>Climbing and explosion interactions
+      </h3>
+      <p>Climbing is a route decision. Before trying a high line, check three things: landing safety, teammate recovery access, and whether the carried item can survive the detour. A high route that strands the key carrier is worse than a slow ground route.
+      </p>
+      <p>Explosion movement is not a clean speed tech for progression. <a href="/items/grenade">Grenade</a>, <a href="/items/firework">Firework</a>, <a href="/items/landmine">Landmine</a>, and <a href="/items/rocket-launcher">Rocket Launcher</a> can create displacement, but they also create friendly-fire risk, noise, item loss, and hard-to-repeat physics.
+      </p>
+      <table>
+      <thead>
+      <tr><th>Check</th><th>Safe Rule</th><th>Why It Matters</th></tr>
+      </thead>
+      <tbody>
+      <tr><td>Landing</td><td>Never jump or blast into an unseen room.</td><td>Human grabs, pets, and furniture traps can turn movement into instant failure.</td></tr>
+      <tr><td>Inventory</td><td>Put task items on the safest carrier before climbing.</td><td>Lost carry objects cost more than a slow route.</td></tr>
+      <tr><td>Recovery</td><td>One teammate stays on the lower line if the climb is untested.</td><td>A failed grabble attempt should not wipe the squad.</td></tr>
+      <tr><td>Explosives</td><td>Use only for planned objectives or controlled threat removal.</td><td>Physics launch value is INFERRED and inconsistent.</td></tr>
+      </tbody>
+      </table>
+      <h2>FAQ
+      </h2>
+      <h3>What is grabble in Burglin' Gnomes?
+      </h3>
+      <p>It is player shorthand, not a clean official category in current site data. Treat it as grab / grapple / object-control movement until your build shows a specific prompt or item name.
+      </p>
+      <h3>How do you climb in Burglin' Gnomes?
+      </h3>
+      <p>Use stable ledges first, then craft route-specific gear only when the task line justifies the material spend. Glue Gloves and Gnomium Gloves help different kinds of hand-control routes; Grappling Hook is the heavier vertical option.
+      </p>
+      <h2>Related Guides and Data Pages
+      </h2>
+      <ul>
+      <li><a href="/items/gnomium-gloves">Gnomium Gloves Item Page</a> - cost, use case, and related Gnomium pressure.
+      </li>
+      <li><a href="/items/grappling-hook">Grappling Hook Item Page</a> - vertical shortcut planning.
+      </li>
+      <li><a href="/guides/burglin-gnomes-items-slingshot-guide">Items Guide</a> - Slingshot, CPR, Music Box, and tool activation checks.
+      </li>
+      <li><a href="/guides/burglin-gnomes-all-task-guide">All Task Guide</a> - decide whether the movement route is worth the day timer.
+      </li>
+      </ul>`,
+      },
+
+      {
+        id: 14,
+        title: "Burglin' Gnomes Greenhouse Key Guide: Keys, Stealables, Sell Rules, and Rare Items",
+        h1: "Burglin' Gnomes Greenhouse Key and Stealables Guide",
+        description: "Direct Burglin' Gnomes guide for greenhouse key routing, keys as stealables, sell decisions, and rare item checks.",
+        category: 'Items',
+        tags: ['Greenhouse Key', 'Stealables', 'Sell Rules', 'Rare Items', 'Garden'],
+        author: 'Burglin Gnomes Fan Guide Team',
+        publishDate: "2026-07-27",
+        imageUrl: "/images/guides/greenhouse-key-garden-route-steam.jpg",
+        imageAlt: "Burglin Gnomes greenhouse key guide for garden route planning",
+        seo: {
+          title: "Burglin Gnomes Greenhouse Key Guide",
+          description: "Greenhouse key, stealable rules, sell calls, and rare item checks for Burglin Gnomes routes, including Boar Tusk and Scraplings.",
+          keywords: "Burglin Gnomes greenhouse key, stealables, sells, Boar Tusk, Scraplings"
+        },
+        addressBar: "burglin-gnomes-greenhouse-key-stealables-guide",
+        detailsHtml: `<p>By: Frontline Pathfinder | Lead Content Tester, GameguideHub
+      </p>
+      <p>Tested on Version: Current public build | Status: <strong>FIELD TESTED / PATCH SENSITIVE</strong>. Key spawns, stealable values, sell routing, and rare item labels can change after content updates.
+      </p>
+      <p><strong>Fast answer:</strong> do not sell or drop a key until the matching route is cleared. Treat the greenhouse key as a route permission item for <a href="/areas/greenhouse-garden">Greenhouse and Garden</a> tasks, not as random loot. Keys may behave like carried objects, but the safe call is simple: finish the door/task check first, then decide whether the item has sell value. For rare drops such as <a href="/items/tusk">Tusk</a> or <a href="/items/scraplings">Scraplings</a>, bank the item before pushing a longer outdoor route.
+      </p>
+      <figure>
+      <img src="/images/guides/greenhouse-key-garden-route-steam.jpg" alt="Burglin Gnomes greenhouse key garden route outside the house" title="Burglin Gnomes greenhouse key garden route" loading="lazy">
+      <figcaption>Greenhouse and garden routes are timer traps when the team does not know whether it is carrying a key, a sell item, or a task item.</figcaption>
+      </figure>
+      <h2>Keys and stealables
+      </h2>
+      <h3>Greenhouse key
+      </h3>
+      <p>The greenhouse key should be handled as a route unlock first. Current site data confirms the <a href="/areas/greenhouse-garden">Greenhouse and Garden</a> cluster for plant, water, cutting, Bee, and outdoor-tool objectives. Exact key placement is not stable enough to quote as a single guaranteed spawn. Search the route that already supports the current task list instead of sending one player across the map on a blind key hunt.
+      </p>
+      <table>
+      <thead>
+      <tr><th>Route State</th><th>Correct Call</th><th>Why</th></tr>
+      </thead>
+      <tbody>
+      <tr><td>Task says enter greenhouse</td><td>Prioritize key search on the shortest garden/house-adjacent line.</td><td>Entry is the objective; optional loot waits.</td></tr>
+      <tr><td>Task says water/cut plants</td><td>Check garden tools and entry access before looting rooms.</td><td>The key may only matter if the route needs interior greenhouse access.</td></tr>
+      <tr><td>Bee or outdoor threat active</td><td>Send one scout, keep one recovery player on the safe line.</td><td>Outdoor tasks can split teams and kill carriers.</td></tr>
+      <tr><td>Key found before objective is known</td><td>Keep it until the daily list is resolved.</td><td>Dropping/selling early can force a full re-search.</td></tr>
+      </tbody>
+      </table>
+      <h3>Keys as stealables and sells
+      </h3>
+      <p>Players ask whether keys count as stealables because Burglin' Gnomes blurs the line between carried objects, route tools, and sellable loot. Use this rule: a key is not profit until its lock is irrelevant. If the route still has an unopened gate, cabinet, shed, greenhouse, or objective chain, the key has mission value.
+      </p>
+      <figure>
+      <img src="/images/guides/greenhouse-key-stealable-carry-steam.jpg" alt="Burglin Gnomes stealable carried object route before selling loot" title="Burglin Gnomes stealables and carried object route" loading="lazy">
+      <figcaption>Do the role check before selling: route unlock, task object, material source, or actual loot. Mixing those up burns runs.</figcaption>
+      </figure>
+      <table>
+      <thead>
+      <tr><th>Object Type</th><th>Sell Decision</th><th>Field Rule</th></tr>
+      </thead>
+      <tbody>
+      <tr><td>Key</td><td>Hold until matching lock/task is cleared.</td><td>Mission utility beats sell value.</td></tr>
+      <tr><td>Stealable furniture/object</td><td>Sell or break only after value check.</td><td>Use <a href="/items/eyeglass">Eyeglass</a> when the run needs resource readouts.</td></tr>
+      <tr><td>Task item</td><td>Do not sell unless the task is complete.</td><td>Progress first, profit second.</td></tr>
+      <tr><td>Rare ingredient</td><td>Bank for crafting unless the route is already ending.</td><td>Special ingredients unlock higher-value potions and gear.</td></tr>
+      </tbody>
+      </table>
+      <h2>Named items and entities
+      </h2>
+      <h3>Loaded and helicopter
+      </h3>
+      <p>"Loaded Burglin' Gnomes" and "Burglin' Gnomes helicopter" are messy search terms. Current internal data does not confirm a standalone Loaded item or a dependable helicopter route entry. Treat them as <strong>INFERRED</strong> until your build shows the exact object, task, or tooltip.
+      </p>
+      <table>
+      <thead>
+      <tr><th>Search Term</th><th>Current Field Handling</th><th>Do This In-Run</th></tr>
+      </thead>
+      <tbody>
+      <tr><td>Loaded</td><td>INFERRED label; not a confirmed core item in current site data.</td><td>Do not route around it unless it appears on the task board or item tooltip.</td></tr>
+      <tr><td>Helicopter</td><td>Likely object/task wording, not a standard early craft route.</td><td>Screenshot the prompt, finish three safer tasks first, then test if time remains.</td></tr>
+      <tr><td>Sells</td><td>Real route decision: carry value vs. task value.</td><td>Use a sell route only after mission items are safe.</td></tr>
+      </tbody>
+      </table>
+      <h3>Boar tusk, smacker, jalepeni, and scrapling
+      </h3>
+      <p>The verified high-value terms here are <a href="/items/tusk">Tusk</a> and <a href="/items/scraplings">Scraplings</a>. Tusk links to Boar/outdoor pressure and Strength Potion routing. Scraplings link to Health Potion routing. "Smacker" and "jalepeni" are not confirmed as stable current item entries in the local data set, so do not sink a day trying to force them without a visible prompt.
+      </p>
+      <table>
+      <thead>
+      <tr><th>Name</th><th>Status</th><th>Route Use</th></tr>
+      </thead>
+      <tbody>
+      <tr><td><a href="/items/tusk">Boar Tusk / Tusk</a></td><td>Confirmed item data</td><td>Save for Strength Potion unless the run is already cashing out.</td></tr>
+      <tr><td><a href="/items/scraplings">Scraplings</a></td><td>Confirmed item data</td><td>Save for Health Potion, especially on risky outdoor or monster routes.</td></tr>
+      <tr><td>Smacker</td><td>INFERRED / unverified label</td><td>Only test if the exact tooltip appears in your build.</td></tr>
+      <tr><td>Jalepeni</td><td>INFERRED / spelling-sensitive search</td><td>Verify the in-game spelling before building an item route around it.</td></tr>
+      </tbody>
+      </table>
+      <h2>FAQ
+      </h2>
+      <h3>Are keys considered stealables in Burglin' Gnomes?
+      </h3>
+      <p>Functionally, treat keys as route items first. Even if a key can be carried or interacts with sell systems in a given build, do not sell it until the matching lock or objective is finished.
+      </p>
+      <h3>Where is the greenhouse key?
+      </h3>
+      <p>Exact placement is patch- and route-sensitive. Search along the route already connected to Greenhouse and Garden tasks. If the task board does not need greenhouse access, do not derail the run for a blind key search.
+      </p>
+      <h2>Related Guides and Data Pages
+      </h2>
+      <ul>
+      <li><a href="/areas/greenhouse-garden">Greenhouse and Garden Area Page</a> - plant, Bee, cutting, and outdoor-tool routing.
+      </li>
+      <li><a href="/items/tusk">Tusk Item Page</a> - Boar drop and Strength Potion use.
+      </li>
+      <li><a href="/items/scraplings">Scraplings Item Page</a> - Health Potion ingredient planning.
+      </li>
+      <li><a href="/guides/burglin-gnomes-complete-monster-guide-karma-counters">Monster Guide</a> - Boar, Bee, Cat, Dog, and other outdoor route threats.
+      </li>
+      <li><a href="/guides/burglin-gnomes-all-task-guide">All Task Guide</a> - decide whether greenhouse, sell, or rare-item routing is worth the timer.
+      </li>
+      </ul>`,
+      },
+
+    {
         id: 13,
         title: "Burglin' Gnomes Items Guide: Slingshot, CPR & Tools",
         h1: "How to Use Items in Burglin' Gnomes",

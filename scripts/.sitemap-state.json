@@ -494,8 +494,8 @@
       "lastmod": "2026-07-20"
     },
     "/guides": {
-      "hash": "0ce03b936988b4ba",
-      "lastmod": "2026-07-20"
+      "hash": "b6c865496710a929",
+      "lastmod": "2026-07-27"
     },
     "/guides/burglin-gnomes-complete-beginners-guide": {
       "hash": "e6ba736c8b19f9cd",
@@ -548,6 +548,14 @@
     "/guides/burglin-gnomes-save-file-progress-guide": {
       "hash": "f8f428785d3907ce",
       "lastmod": "2026-07-20"
+    },
+    "/guides/burglin-gnomes-grabble-gnomium-gloves-climbing-guide": {
+      "hash": "714bee040a77b61d",
+      "lastmod": "2026-07-27"
+    },
+    "/guides/burglin-gnomes-greenhouse-key-stealables-guide": {
+      "hash": "88e51db085b57259",
+      "lastmod": "2026-07-27"
     }
   }
 }
