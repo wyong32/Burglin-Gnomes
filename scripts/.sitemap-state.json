@@ -494,8 +494,8 @@
       "lastmod": "2026-07-20"
     },
     "/guides": {
-      "hash": "b6c865496710a929",
-      "lastmod": "2026-07-27"
+      "hash": "4f3578ea18be3bc0",
+      "lastmod": "2026-08-04"
     },
     "/guides/burglin-gnomes-complete-beginners-guide": {
       "hash": "e6ba736c8b19f9cd",
@@ -556,6 +556,14 @@
     "/guides/burglin-gnomes-greenhouse-key-stealables-guide": {
       "hash": "88e51db085b57259",
       "lastmod": "2026-07-27"
+    },
+    "/guides/burglin-gnomes-cant-join-friend-host-fix": {
+      "hash": "97930bcaafa931c8",
+      "lastmod": "2026-08-04"
+    },
+    "/guides/burglin-gnomes-fps-performance-guide": {
+      "hash": "8c94c96fb9de6c55",
+      "lastmod": "2026-08-04"
     }
   }
 }

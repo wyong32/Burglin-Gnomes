@@ -139,8 +139,11 @@ if (adsTxt.includes('pub-9435047454967498')) {
 }
 
 const generatedHtmlFiles = walk('dist').filter((relativePath) => relativePath.endsWith('.html'))
-if (generatedHtmlFiles.length !== 138) {
-  fail(`Expected 138 generated HTML files, found ${generatedHtmlFiles.length}`)
+const sitemapUrlCount = sitemap.match(/<loc>/g)?.length ?? 0
+const noindexPrerenderedRoutes = 1
+const expectedHtmlCount = sitemapUrlCount + noindexPrerenderedRoutes
+if (generatedHtmlFiles.length !== expectedHtmlCount) {
+  fail(`Expected ${expectedHtmlCount} generated HTML files, found ${generatedHtmlFiles.length}`)
 }
 
 const allGeneratedTitles = new Map()

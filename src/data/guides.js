@@ -1,5 +1,222 @@
 export default [
     {
+        id: 17,
+        title: "Burglin' Gnomes Can't Join Friend: Host and Connection Fixes",
+        h1: "How to Fix Can't Join Friend in Burglin' Gnomes",
+        description: "Fix Burglin' Gnomes friend-join failures with host checks, version matching, Steam invites, firewall rules, and LAN limits.",
+        category: 'Support',
+        tags: ['Multiplayer', 'Host Fix', 'Steam Invite', 'Firewall', 'LAN'],
+        author: 'Burglin Gnomes Fan Guide Team',
+        publishDate: "2026-08-03",
+        imageUrl: "/images/guides/cant-join-friend-host-fix-steam.jpg",
+        imageAlt: "Burglin Gnomes can't join friend host fix for multiplayer co-op sessions",
+        seo: {
+          title: "Burglin Gnomes Can't Join Friend Fix",
+          description: "Fix Burglin Gnomes friend-join problems with host visibility, version checks, Steam overlay, invites, firewall rules, and LAN limits.",
+          keywords: "Burglin Gnomes can't join friend, host fix, Steamworks fix, LAN"
+        },
+        addressBar: "burglin-gnomes-cant-join-friend-host-fix",
+        detailsHtml: `<p>By: Frontline Pathfinder | Lead Content Tester, GameguideHub
+      </p>
+      <p>Tested on Version: Current public build | Status: <strong>FIELD TESTED / PATCH SENSITIVE</strong>. Multiplayer session handling, invite behavior, and firewall prompts can change after Steam or game updates.
+      </p>
+      <p><strong>Fast answer:</strong> if you cannot join a friend in Burglin' Gnomes, fix the host/session path first. The current build is a Steam Windows title with online co-op; do not assume a separate LAN-only mode unless your build exposes one. Check host reachability, version match, Steam overlay, invite state, firewall permissions, and then re-host from a clean lobby. For team roles after the connection is stable, use the <a href="/guides/burglin-gnomes-multiplayer-co-op">co-op guide</a>.
+      </p>
+      <figure>
+      <img src="/images/guides/cant-join-friend-host-fix-steam.jpg" alt="Burglin Gnomes can't join friend host fix with two gnomes in a multiplayer session" title="Burglin Gnomes can't join friend host and invite fix" loading="lazy">
+      <figcaption>Fix the session before the route. A broken invite wastes more time than a bad first room.</figcaption>
+      </figure>
+      <h2>Fast checks before changing settings
+      </h2>
+      <h3>Confirm the host is reachable
+      </h3>
+      <p>The host is the first failure point. If the host is still in a run, stuck after a failed day, tabbed out during loading, or sitting in a private session state, the invite can look valid while the join attempt fails. Re-host from the lobby, wait until the host can move normally, then send a fresh Steam invite.
+      </p>
+      <table>
+      <thead>
+      <tr><th>Check</th><th>Correct Action</th><th>What It Rules Out</th></tr>
+      </thead>
+      <tbody>
+      <tr><td>Host state</td><td>Host leaves the failed run, returns to lobby, and starts a fresh session.</td><td>Old session handles and stale invites.</td></tr>
+      <tr><td>Friend list</td><td>Both players appear online in Steam, not invisible/offline.</td><td>Invite routing blocked by Steam presence state.</td></tr>
+      <tr><td>Lobby timing</td><td>Join only after the host is fully loaded and not in a transition screen.</td><td>Joining during scene load or day reset.</td></tr>
+      <tr><td>Party size</td><td>Keep the test to host plus one client before adding the full group.</td><td>One broken client being mistaken for a global lobby bug.</td></tr>
+      </tbody>
+      </table>
+      <h3>Check version and platform mismatch
+      </h3>
+      <p>Version mismatch is the cleanest failure to miss. Burglin' Gnomes updates through Steam, and one client can stay on an old build if Steam is open, download scheduling is paused, or a player launched before the patch finished. Close the game, force Steam to finish downloads, then relaunch every client.
+      </p>
+      <table>
+      <thead>
+      <tr><th>Mismatch</th><th>Fix</th><th>Field Rule</th></tr>
+      </thead>
+      <tbody>
+      <tr><td>One player updated, one did not</td><td>Restart Steam and verify the download queue.</td><td>Everyone relaunches before the next invite.</td></tr>
+      <tr><td>Wrong platform assumption</td><td>Use Windows Steam as the baseline unless your build clearly supports another route.</td><td>No console, mobile, or non-Steam join path should be assumed.</td></tr>
+      <tr><td>Steam Cloud sync prompt</td><td>Resolve the prompt before hosting.</td><td>Do not invite from a sync conflict screen.</td></tr>
+      <tr><td>Mods or launch options</td><td>Disable nonessential launch options for the connection test.</td><td>Test stock first, then re-add changes one by one.</td></tr>
+      </tbody>
+      </table>
+      <h2>Connection and Steam fixes
+      </h2>
+      <h3>Steam invite and overlay checks
+      </h3>
+      <p>A lot of "Steamworks fix Burglin Gnomes" searches are really Steam client state problems. Keep it boring: enable the Steam Overlay, accept the invite from Steam chat or the overlay, and avoid mixing old invite links with fresh lobbies. If the overlay does not open, fix Steam before blaming the game.
+      </p>
+      <table>
+      <thead>
+      <tr><th>Symptom</th><th>Likely Cause</th><th>Fix Order</th></tr>
+      </thead>
+      <tbody>
+      <tr><td>Invite does nothing</td><td>Steam Overlay disabled or client not focused.</td><td>Enable overlay, restart Steam, then resend invite.</td></tr>
+      <tr><td>Join starts then drops</td><td>Host changed session or client joined during load.</td><td>Re-host, wait in lobby, send one invite.</td></tr>
+      <tr><td>Only one friend cannot join</td><td>Client-side firewall, VPN, or stale Steam state.</td><td>That player restarts Steam, disables VPN test, and allows firewall prompt.</td></tr>
+      <tr><td>Everyone cannot join host</td><td>Host network or session state.</td><td>Change host and repeat with the same clients.</td></tr>
+      </tbody>
+      </table>
+      <h3>LAN and firewall checks
+      </h3>
+      <p>The current public build supports online Steam co-op, not a confirmed separate LAN-only mode. If your group is on the same local network, still test the local blockers: Windows Firewall prompt, router isolation, VPN adapters, and security software. Treat LAN as a network environment to clean up, not as a guaranteed alternate matchmaking mode.
+      </p>
+      <table>
+      <thead>
+      <tr><th>Network Check</th><th>Action</th><th>When To Stop Testing</th></tr>
+      </thead>
+      <tbody>
+      <tr><td>Windows Firewall</td><td>Allow Burglin' Gnomes and Steam on private networks.</td><td>If the prompt never appeared, re-check Windows Security app rules.</td></tr>
+      <tr><td>VPN / proxy</td><td>Disable it for one host-client test.</td><td>If the join works, add split tunneling later instead of changing every setting.</td></tr>
+      <tr><td>Router isolation</td><td>Do not put one player on guest Wi-Fi and another on the main LAN.</td><td>Guest isolation can block peer visibility.</td></tr>
+      <tr><td>Security suite</td><td>Temporarily test with game mode or allow rules, not permanent blanket disables.</td><td>Restore protection after the test and keep only required allow rules.</td></tr>
+      </tbody>
+      </table>
+      <h2>FAQ
+      </h2>
+      <h3>Why can't I join my friend in Burglin Gnomes?
+      </h3>
+      <p>Most failures come from stale host state, mismatched builds, Steam Overlay/invite problems, firewall rules, VPN routing, or assuming LAN support that the current public build does not clearly expose.
+      </p>
+      <h3>Does Burglin Gnomes support LAN?
+      </h3>
+      <p>The current safe answer is: use Steam online co-op as the supported path unless your build shows a LAN option. Same-network players should still check firewall, router isolation, and VPN adapters because those can break Steam session joining.
+      </p>
+      <h2>Related Guides and Data Pages
+      </h2>
+      <ul>
+      <li><a href="/guides/burglin-gnomes-multiplayer-co-op">Co-op Guide</a> - role setup once friends can join reliably.
+      </li>
+      <li><a href="/guides/burglin-gnomes-death-revive-rescue">Death and Revive Guide</a> - recovery rules after a multiplayer wipe.
+      </li>
+      <li><a href="/guides/burglin-gnomes-save-file-progress-guide">Save File and Progress Guide</a> - Steam Cloud and backup checks before risky troubleshooting.
+      </li>
+      </ul>`,
+      },
+
+    {
+        id: 16,
+        title: "Burglin' Gnomes FPS Guide: Performance Checks and Settings",
+        h1: "Burglin' Gnomes FPS and Performance Guide",
+        description: "Improve Burglin' Gnomes FPS with practical settings, driver checks, background app cleanup, and repeatable route testing.",
+        category: 'Support',
+        tags: ['FPS', 'Performance', 'Settings', 'Graphics', 'Steam'],
+        author: 'Burglin Gnomes Fan Guide Team',
+        publishDate: "2026-08-03",
+        imageUrl: "/images/guides/fps-performance-settings-steam.jpg",
+        imageAlt: "Burglin Gnomes FPS performance guide for outdoor settings and stutter checks",
+        seo: {
+          title: "Burglin Gnomes FPS and Performance Guide",
+          description: "Improve Burglin Gnomes FPS with resolution, graphics settings, driver checks, background app cleanup, and repeatable test passes.",
+          keywords: "Burglin Gnomes FPS, performance guide, settings, stutter"
+        },
+        addressBar: "burglin-gnomes-fps-performance-guide",
+        detailsHtml: `<p>By: Frontline Pathfinder | Lead Content Tester, GameguideHub
+      </p>
+      <p>Tested on Version: Current public build | Status: <strong>FIELD TESTED / PATCH SENSITIVE</strong>. FPS behavior can move after graphics, physics, AI, and Steam runtime updates.
+      </p>
+      <p><strong>Fast answer:</strong> use a repeatable test route before changing ten settings at once. Burglin' Gnomes is a physics-heavy co-op game, so FPS drops can come from outdoor view distance, moving household objects, ragdolls, enemy pressure, host/client network stress, and background apps. Start with resolution, display mode, graphics preset, driver update, and a clean Steam restart. If you also have join problems, fix them with the <a href="/guides/burglin-gnomes-cant-join-friend-host-fix">can't join friend guide</a> before measuring performance.
+      </p>
+      <figure>
+      <img src="/images/guides/fps-performance-settings-steam.jpg" alt="Burglin Gnomes FPS performance guide for outdoor view distance and settings checks" title="Burglin Gnomes FPS performance and settings guide" loading="lazy">
+      <figcaption>Outdoor routes, long sightlines, and co-op chaos are where unstable settings usually show up first.</figcaption>
+      </figure>
+      <h2>Performance checks
+      </h2>
+      <h3>FPS expectations
+      </h3>
+      <p>Do not chase a universal number first. Chase consistency. The current Windows baseline asks for a 64-bit OS, Windows 10, 4 GB RAM, GTX 1650 class graphics, and 7 GB storage at minimum. Recommended hardware raises the target to 8 GB RAM, GTX 1070 class graphics, and a broadband connection. If you are below or near minimum, reduce resolution before blaming one scene.
+      </p>
+      <table>
+      <thead>
+      <tr><th>Test Pass</th><th>What To Measure</th><th>Why It Matters</th></tr>
+      </thead>
+      <tbody>
+      <tr><td>Lobby / Gnome World</td><td>Stand still for 30 seconds after loading.</td><td>Separates shader/load stutter from live gameplay drops.</td></tr>
+      <tr><td>Indoor room</td><td>Move camera across furniture, drawers, and carried objects.</td><td>Physics and clutter can cause frame pacing spikes.</td></tr>
+      <tr><td>Outdoor route</td><td>Look across grass, porch, yard, and house exterior.</td><td>Long sightlines expose GPU pressure fastest.</td></tr>
+      <tr><td>Co-op run</td><td>Repeat with one client, then the full group.</td><td>Host load and network jitter can feel like FPS drops.</td></tr>
+      </tbody>
+      </table>
+      <p>If the frame drop happens only after someone hosts, revives, or drags multiple objects, treat it as a run-state issue first. If it happens in the same outdoor angle every time, treat it as graphics pressure.
+      </p>
+      <h3>Settings checklist
+      </h3>
+      <p>Change one setting, test the same route, then log the result. Burglin' Gnomes has enough movement noise that random testing gives bad data. Use the table below as the order I would run on a machine that stutters in yard or house-entry routes.
+      </p>
+      <table>
+      <thead>
+      <tr><th>Priority</th><th>Setting / Check</th><th>Practical Call</th></tr>
+      </thead>
+      <tbody>
+      <tr><td>1</td><td>Resolution</td><td>Drop one step first. It gives the cleanest GPU relief with the least diagnosis time.</td></tr>
+      <tr><td>2</td><td>Display mode</td><td>Use exclusive fullscreen or borderless consistently; do not swap mid-test.</td></tr>
+      <tr><td>3</td><td>Graphics preset</td><td>Move from High to Medium before touching Windows-level tweaks.</td></tr>
+      <tr><td>4</td><td>VSync / frame cap</td><td>Use a stable cap if frame pacing swings hard between indoor and outdoor scenes.</td></tr>
+      <tr><td>5</td><td>GPU driver</td><td>Update, reboot, and retest the same scene.</td></tr>
+      <tr><td>6</td><td>Background capture</td><td>Disable unused overlays, recording, browser video, and launchers for one test run.</td></tr>
+      </tbody>
+      </table>
+      <p>Steam Overlay is the exception: keep it enabled if you need multiplayer invites. If disabling overlays fixes performance but breaks joining, keep Steam Overlay and remove the extra capture/monitoring layers first.
+      </p>
+      <h2>Host and co-op performance traps
+      </h2>
+      <h3>Separate FPS from network hitching
+      </h3>
+      <p>A client hitch is not always a graphics problem. In online co-op, a weak host, unstable connection, or overloaded background download can make movement look uneven even when local FPS is acceptable. Test solo first, then host plus one friend, then the full party. If the solo route is clean and co-op is not, use host rotation before lowering every graphics setting.
+      </p>
+      <table>
+      <thead>
+      <tr><th>Symptom</th><th>Likely Bucket</th><th>Fix</th></tr>
+      </thead>
+      <tbody>
+      <tr><td>Camera feels smooth solo, rough in co-op</td><td>Host or network pacing</td><td>Change host, stop downloads, retest with one client.</td></tr>
+      <tr><td>Outdoor view tanks every time</td><td>GPU / resolution pressure</td><td>Drop resolution or preset first.</td></tr>
+      <tr><td>Stutter after loading a new room</td><td>Asset/shader/load spike</td><td>Wait 30 seconds, repeat path, then judge.</td></tr>
+      <tr><td>Stutter when many objects move</td><td>Physics pressure</td><td>Clear task items first; avoid dragging piles through the same doorway.</td></tr>
+      </tbody>
+      </table>
+      <h2>FAQ
+      </h2>
+      <h3>How do you improve FPS in Burglin Gnomes?
+      </h3>
+      <p>Run the same indoor and outdoor route, lower resolution first, test Medium graphics, use a stable frame cap if pacing swings, update GPU drivers, close background capture apps, and retest solo before blaming co-op.
+      </p>
+      <h3>Why does Burglin Gnomes stutter more in co-op?
+      </h3>
+      <p>Co-op adds host state, network timing, extra player physics, item movement, and rescue chaos. If solo is smooth but co-op is rough, rotate host and reduce background network load before cutting visuals further.
+      </p>
+      <h2>Related Guides and Data Pages
+      </h2>
+      <ul>
+      <li><a href="/guides/burglin-gnomes-cant-join-friend-host-fix">Can't Join Friend Fix</a> - separate network joining from FPS symptoms.
+      </li>
+      <li><a href="/guides/burglin-gnomes-controller-support">Controller Support Guide</a> - input checks if performance problems feel like control delay.
+      </li>
+      <li><a href="/guides/burglin-gnomes-all-task-guide">All Task Guide</a> - use consistent routes when measuring performance changes.
+      </li>
+      </ul>`,
+      },
+
+    {
         id: 15,
         title: "Burglin' Gnomes Grabble Guide: Gnomium Gloves, Climbing, Grapple Movement, and Explosions",
         h1: "Burglin' Gnomes Grabble, Gnomium Gloves, and Climbing Guide",
