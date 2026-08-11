@@ -1,5 +1,246 @@
 export default [
     {
+        id: 19,
+        title: "Burglin' Gnomes Explosion Guide: How to Trigger Explosions Safely",
+        h1: "How to Cause an Explosion in Burglin' Gnomes",
+        description: "Learn safe explosion routing in Burglin' Gnomes with Grenade, Landmine, Firework, and Rocket Launcher checks.",
+        category: 'Mechanics',
+        tags: ['Explosion', 'Landmine', 'Grenade', 'Firework', 'Rocket Launcher'],
+        author: 'Burglin Gnomes Fan Guide Team',
+        publishDate: "2026-08-11",
+        imageUrl: "/images/guides/explosion-rocket-launcher-safety-steam.webp",
+        imageAlt: "Burglin Gnomes explosion guide showing a gnome aiming a rocket launcher for a safe blast route",
+        seo: {
+          title: "Burglin Gnomes Explosion Guide",
+          description: "Trigger explosions in Burglin Gnomes safely with Grenade, Landmine, Firework, and Rocket Launcher routes without wiping the run.",
+          keywords: "Burglin Gnomes explosion, landmine, grenade, firework"
+        },
+        addressBar: "burglin-gnomes-how-to-cause-explosion",
+        detailsHtml: `<p>By: Frontline Pathfinder | Lead Content Tester, GameguideHub
+      </p>
+      <p>Tested on Version: Current public build | Status: <strong>FIELD TESTED / PATCH SENSITIVE</strong>. Explosive behavior, item spawns, fuse timing, and task wording can change after updates.
+      </p>
+      <p><strong>Fast answer:</strong> the clean explosion route is to use a confirmed explosive item, place or throw it from a stable escape lane, call the blast to the team, then move before the fuse or impact resolves. For current guide routing, the practical explosive set is <a href="/items/grenade">Grenade</a>, <a href="/items/landmine">Landmine</a>, <a href="/items/firework">Firework</a>, and <a href="/items/rocket-launcher">Rocket Launcher</a>. Do not test explosions before the three-task minimum unless the task list explicitly requires it.
+      </p>
+      <figure>
+      <img src="/images/guides/explosion-rocket-launcher-safety-steam.webp" alt="Burglin Gnomes explosion guide showing a gnome aiming a rocket launcher for a safe blast route" title="Burglin Gnomes explosion and rocket launcher safety guide" loading="lazy">
+      <figcaption>Explosives solve route problems only when the escape lane is already planned. Random blasts usually cost more time than they save.</figcaption>
+      </figure>
+      <h2>Explosion trigger intent
+      </h2>
+      <h3>Explosion steps
+      </h3>
+      <p>If the daily task asks for an explosion, treat it as a task interaction first and a combat tool second. The safest sequence is boring: identify the explosive, clear teammates from the lane, trigger it from cover or distance, then immediately leave the blast area. Do not stand near the object to verify the result. Watch the task checkmark or call from a safe angle.
+      </p>
+      <table>
+      <thead>
+      <tr><th>Step</th><th>Field Call</th><th>Failure To Avoid</th></tr>
+      </thead>
+      <tbody>
+      <tr><td>1. Read the task</td><td>Confirm whether the objective wants a general explosion, Mine Trigger, or Mine Explode wording.</td><td>Wasting a rare explosive on a task that needed a different object.</td></tr>
+      <tr><td>2. Pick the item</td><td>Use <a href="/items/grenade">Grenade</a> or <a href="/items/firework">Firework</a> for active throws, <a href="/items/landmine">Landmine</a> for trap-style tasks, and <a href="/items/rocket-launcher">Rocket Launcher</a> only when the route justifies heavy firepower.</td><td>Bringing every explosive and losing inventory discipline.</td></tr>
+      <tr><td>3. Clear the lane</td><td>Call "blast" before arming or firing. One player watches the exit.</td><td>Teammates walking into the object while carrying task loot.</td></tr>
+      <tr><td>4. Trigger and leave</td><td>Throw, place, ignite, or fire, then move to cover.</td><td>Standing still to watch damage feedback.</td></tr>
+      </tbody>
+      </table>
+      <h3>Landmine variant
+      </h3>
+      <p>Landmine searches usually mean one of two things: the player has a task that references a mine, or the team wants a trap for a threat route. In both cases, place the mine where the target will cross, not where the team must return. A mine in the extraction lane is friendly fire with extra steps.
+      </p>
+      <table>
+      <thead>
+      <tr><th>Explosive</th><th>Best Use</th><th>Route Risk</th></tr>
+      </thead>
+      <tbody>
+      <tr><td><a href="/items/landmine">Landmine</a></td><td>Mine Trigger / Mine Explode task lines, bait routes, door control.</td><td>Bad placement can block the team path.</td></tr>
+      <tr><td><a href="/items/grenade">Grenade</a></td><td>Fast active blast when the throw lane is clean.</td><td>A bad throw can bounce into teammates or task loot.</td></tr>
+      <tr><td><a href="/items/firework">Firework</a></td><td>Explosive object or distraction route when storage gives one naturally.</td><td>Noise and chaos if used before the objective is ready.</td></tr>
+      <tr><td><a href="/items/rocket-launcher">Rocket Launcher</a></td><td>Heavy explosive route, major threat control, or task-specific blast testing.</td><td>Heavy detour before the third task can kill a clean day.</td></tr>
+      </tbody>
+      </table>
+      <h2>Safe blast routing
+      </h2>
+      <p>Explosive tasks become manageable when the team separates the carrier, shooter, and exit watcher. Solo players need the same structure, just compressed into one route: set the explosive from the edge of the room, do not cross the blast lane after arming it, and keep a door or ledge behind you.
+      </p>
+      <ol>
+      <li><strong>Finish easy objectives first.</strong> If the task list has cabinet, break, or carry objectives nearby, clear those before opening the explosive route.
+      </li>
+      <li><strong>Keep one player unburdened.</strong> The explosive user should not be the person carrying the key task item.
+      </li>
+      <li><strong>Use the shortest trigger lane.</strong> Long throws across cluttered rooms create bad bounces and bad camera checks.
+      </li>
+      <li><strong>Extract after the task resolves.</strong> If the blast completed the third objective, leave. Do not turn a successful explosion into a weapon hunt.
+      </li>
+      </ol>
+      <h2>Common explosion mistakes
+      </h2>
+      <ul>
+      <li><strong>Testing in the lobby path:</strong> practice low-value throws away from stored loot and teammate spawn routes.
+      </li>
+      <li><strong>Ignoring inventory cost:</strong> explosives compete with task items, control tools, and carry capacity.
+      </li>
+      <li><strong>Using a mine as a doorstop:</strong> never place it where the team must panic-run later.
+      </li>
+      <li><strong>Guessing exact damage:</strong> this page does not claim fixed blast radius or damage values because those need repeatable current-build tests.
+      </li>
+      </ul>
+      <h2>FAQ
+      </h2>
+      <h3>How do you cause an explosion in Burglin Gnomes?
+      </h3>
+      <p>Use a confirmed explosive item such as Grenade, Landmine, Firework, or Rocket Launcher, trigger it from a safe lane, and move away before the effect resolves. Match the item to the task wording if the objective names mines or a specific explosive route.
+      </p>
+      <h3>How do you prime a landmine in Burglin Gnomes?
+      </h3>
+      <p>Use Landmine only when the route or task needs it, place it where the target crosses, and keep teammates away from the return path. If the task wording changes after a patch, verify the prompt in a low-value run first.
+      </p>
+      <h2>Related Guides and Data Pages
+      </h2>
+      <ul>
+      <li><a href="/items/landmine">Landmine</a> - mine route, use, and placement cautions.
+      </li>
+      <li><a href="/items/grenade">Grenade</a> - high-risk thrown explosive notes.
+      </li>
+      <li><a href="/items/firework">Firework</a> - explosive object and distraction routing.
+      </li>
+      <li><a href="/items/rocket-launcher">Rocket Launcher</a> - heavy blast route and recovery cautions.
+      </li>
+      <li><a href="/guides/burglin-gnomes-all-task-guide">All Task Guide</a> - decide whether the explosion is worth doing before extraction.
+      </li>
+      </ul>`,
+      },
+
+    {
+        id: 18,
+        title: "Burglin' Gnomes Mods Guide: Thunderstore, Nexus, Fobri, and VR Mods",
+        h1: "Burglin' Gnomes Mods Guide",
+        description: "Check Burglin' Gnomes mod pages safely, verify Fobri pages, and avoid broken Nexus, Thunderstore, VR, or piracy downloads.",
+        category: 'Mods',
+        tags: ['Mods', 'Fobri', 'Nexus', 'Thunderstore', 'VR'],
+        author: 'Burglin Gnomes Fan Guide Team',
+        publishDate: "2026-08-11",
+        imageUrl: "/images/guides/mods-fobri-safe-setup-steam.webp",
+        imageAlt: "Burglin Gnomes mods guide showing a rooftop test route for safe mod setup and rollback checks",
+        seo: {
+          title: "Burglin Gnomes Mods and Fobri Guide",
+          description: "Burglin Gnomes mods guide for Nexus, Thunderstore, Fobri page checks, VR mod cautions, version matching, backups, and safe setup.",
+          keywords: "Burglin Gnomes mods, Fobri, Nexus, Thunderstore, VR mod"
+        },
+        addressBar: "burglin-gnomes-mods-fobri-guide",
+        detailsHtml: `<p>By: Frontline Pathfinder | Lead Content Tester, GameguideHub
+      </p>
+      <p>Tested on Version: Current public build | Status: <strong>FIELD TESTED / PATCH SENSITIVE</strong>. Mod loaders, unofficial packages, and compatibility notes can break after game updates.
+      </p>
+      <p><strong>Fast answer:</strong> verify the game page before touching any Burglin' Gnomes mod. Fobri is the developer and publisher shown on the official Steam listing; use that identity check before trusting pages that use "Fobri" in the title. For Thunderstore, Nexus, Steam, or VR mod searches, treat every file as unofficial until it lists the supported game version, loader, install path, rollback steps, and multiplayer compatibility. For ordinary progression problems, use the <a href="/guides/burglin-gnomes-lobby-progress-after-fail">lobby progress guide</a> before installing a keep-progress mod.
+      </p>
+      <figure>
+      <img src="/images/guides/mods-fobri-safe-setup-steam.webp" alt="Burglin Gnomes mods guide showing a rooftop test route for safe mod setup and rollback checks" title="Burglin Gnomes mods Fobri Thunderstore Nexus safety guide" loading="lazy">
+      <figcaption>Mod testing starts in a disposable route. If you cannot roll the install back, it is not ready for your main lobby.</figcaption>
+      </figure>
+      <h2>Where mod demand appears
+      </h2>
+      <h3>Thunderstore and Nexus intent
+      </h3>
+      <p>Player searches for Burglin' Gnomes Thunderstore and Nexus usually come from one of three needs: quality-of-life changes, save/progress tweaks, or VR experimentation. The current safe workflow is not "download the first result." It is page verification, version matching, then a throwaway test run.
+      </p>
+      <table>
+      <thead>
+      <tr><th>Search Area</th><th>What To Verify</th><th>Stop Condition</th></tr>
+      </thead>
+      <tbody>
+      <tr><td>Thunderstore</td><td>Game category, loader requirement, current game build, dependencies, changelog.</td><td>No Burglin' Gnomes category or package version listed.</td></tr>
+      <tr><td>Nexus</td><td>Exact game page, upload date, file comments, supported build, rollback notes.</td><td>Search-result page only, no dedicated current mod page.</td></tr>
+      <tr><td>Steam</td><td>Official app page, developer identity, updates, community hub, and whether Workshop support is exposed.</td><td>Third-party page claims official status without a Steam or Fobri verification path.</td></tr>
+      <tr><td>Discord / community</td><td>Announcement chain, pinned install notes, checksum or release page, support thread.</td><td>Loose file link with no version or author history.</td></tr>
+      </tbody>
+      </table>
+      <p><strong>INFERRED:</strong> if a mod page only says "works on latest" without naming a build, loader, or date, treat it as stale until tested. Burglin' Gnomes is physics-heavy and co-op-sensitive; a broken mod can look like lag, save corruption, or an invite bug.
+      </p>
+      <h3>Fobri lookup
+      </h3>
+      <p>The Fobri query is mostly a legitimacy check. The official Steam listing identifies Fobri as developer and publisher. That does not make every page using the word Fobri official. Use a two-link rule: a legitimate official claim should connect back to Steam, the developer site, support channels, or a clearly controlled Fobri account.
+      </p>
+      <table>
+      <thead>
+      <tr><th>Claim</th><th>Safe Read</th><th>Action</th></tr>
+      </thead>
+      <tbody>
+      <tr><td>"By Fobri"</td><td>Can be true only if the page ties back to official store or developer channels.</td><td>Verify from Steam first.</td></tr>
+      <tr><td>"Fobri mod"</td><td>May be fan wording, not an official release.</td><td>Look for a signed announcement or changelog.</td></tr>
+      <tr><td>"Free download"</td><td>High-risk acquisition intent, not a mod page.</td><td>Do not use it as an install path.</td></tr>
+      <tr><td>"VR mod"</td><td>Compatibility experiment unless the mod author documents controls, camera, and co-op behavior.</td><td>Test on a disposable save.</td></tr>
+      </tbody>
+      </table>
+      <h2>Mod safety and compatibility
+      </h2>
+      <h3>VR mod expectations
+      </h3>
+      <p>VR mod searches need extra caution because Burglin' Gnomes depends on small-character scale, object grabbing, camera motion, co-op sync, and physics chaos. A VR layer can break comfort, interaction prompts, and host/client state even if it launches.
+      </p>
+      <ul>
+      <li><strong>Control check:</strong> confirm how grabbing, carrying, throwing, and camera recentering work before running tasks.
+      </li>
+      <li><strong>Co-op check:</strong> test solo first, then host plus one client. Do not bring a VR setup directly into a full lobby.
+      </li>
+      <li><strong>Comfort check:</strong> avoid routes with rooftops, gliders, spring jumps, and explosive knockback until the camera behavior is stable.
+      </li>
+      <li><strong>Rollback check:</strong> keep a clean copy of the install and saves before testing.
+      </li>
+      </ul>
+      <h3>Avoid unsafe downloads
+      </h3>
+      <p>Piracy-looking searches such as Steamrip, FreeTP, crack, torrent, and "free version" are not modding. They are unsafe acquisition paths. They can ship outdated builds, hidden launchers, broken Steamworks behavior, or modified files that make troubleshooting impossible. If a player cannot join friends after using one of those builds, the first fix is returning to a verified Steam install, then using the <a href="/guides/burglin-gnomes-cant-join-friend-host-fix">can't join friend guide</a>.
+      </p>
+      <table>
+      <thead>
+      <tr><th>Risk</th><th>What It Breaks</th><th>Clean Fix</th></tr>
+      </thead>
+      <tbody>
+      <tr><td>Unknown build</td><td>Co-op invites, save behavior, and patch-sensitive mechanics.</td><td>Use the official Steam build before testing mods.</td></tr>
+      <tr><td>No changelog</td><td>You cannot know what files changed.</td><td>Skip the file or test only in a disposable install.</td></tr>
+      <tr><td>No rollback</td><td>Failed mod removal leaves polluted config or save state.</td><td>Back up saves and install folder first.</td></tr>
+      <tr><td>Multiplayer mismatch</td><td>Host and clients run different logic.</td><td>Make every client use the same verified mod list.</td></tr>
+      </tbody>
+      </table>
+      <h2>Safe setup checklist
+      </h2>
+      <ol>
+      <li><strong>Start clean.</strong> Verify the Steam install, then launch stock once.
+      </li>
+      <li><strong>Back up saves.</strong> Do this before any loader, DLL, config, or save-mod test.
+      </li>
+      <li><strong>Add one mod at a time.</strong> If two mods change physics, inventory, or lobby state, test them separately first.
+      </li>
+      <li><strong>Run a low-value day.</strong> Use a short task route from the <a href="/guides/burglin-gnomes-all-task-guide">All Task Guide</a>, then exit cleanly.
+      </li>
+      <li><strong>Record the build.</strong> Note game version, mod version, loader version, and whether co-op was tested.
+      </li>
+      </ol>
+      <h2>FAQ
+      </h2>
+      <h3>Does Burglin Gnomes have mods?
+      </h3>
+      <p>There is player demand for mods, but do not treat search snippets as compatibility proof. Use only pages that document game version, loader, dependencies, and rollback steps, then test on a disposable save before using your main lobby.
+      </p>
+      <h3>Is the Fobri Burglin Gnomes page real?
+      </h3>
+      <p>Fobri is the developer and publisher on the official Steam listing. Any other page claiming official status should link back to Steam, Fobri's site, or a controlled developer channel before you trust downloads from it.
+      </p>
+      <h2>Related Guides and Data Pages
+      </h2>
+      <ul>
+      <li><a href="/guides/burglin-gnomes-lobby-progress-after-fail">Lobby Progress After Fail</a> - read this before testing keep-progress mods.
+      </li>
+      <li><a href="/guides/burglin-gnomes-cant-join-friend-host-fix">Can't Join Friend Fix</a> - separate mod problems from Steam invite problems.
+      </li>
+      <li><a href="/guides/burglin-gnomes-fps-performance-guide">FPS and Performance Guide</a> - test performance stock before blaming modded stutter.
+      </li>
+      <li><a href="/guides/burglin-gnomes-all-task-guide">All Task Guide</a> - use short routes for disposable mod tests.
+      </li>
+      </ul>`,
+      },
+
+    {
         id: 17,
         title: "Burglin' Gnomes Can't Join Friend: Host and Connection Fixes",
         h1: "How to Fix Can't Join Friend in Burglin' Gnomes",

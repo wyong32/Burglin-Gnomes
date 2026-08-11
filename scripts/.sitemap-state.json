@@ -494,8 +494,8 @@
       "lastmod": "2026-07-20"
     },
     "/guides": {
-      "hash": "4f3578ea18be3bc0",
-      "lastmod": "2026-08-04"
+      "hash": "a4668e8bdfc5f48c",
+      "lastmod": "2026-08-11"
     },
     "/guides/burglin-gnomes-complete-beginners-guide": {
       "hash": "e6ba736c8b19f9cd",
@@ -564,6 +564,14 @@
     "/guides/burglin-gnomes-fps-performance-guide": {
       "hash": "8c94c96fb9de6c55",
       "lastmod": "2026-08-04"
+    },
+    "/guides/burglin-gnomes-how-to-cause-explosion": {
+      "hash": "509a74350ab707f3",
+      "lastmod": "2026-08-11"
+    },
+    "/guides/burglin-gnomes-mods-fobri-guide": {
+      "hash": "6342dcdbc357c988",
+      "lastmod": "2026-08-11"
     }
   }
 }
