@@ -300,45 +300,29 @@ if (searchHtml && !/<meta\s+name=["']robots["']\s+content=["']noindex, follow["'
   fail('/search must use noindex, follow')
 }
 
-const excludedAdRoutes = ['/search', ...representativeRoutes.filter((routePath) => routePath.startsWith('/legal/'))]
-for (const routePath of excludedAdRoutes) {
+const excludedPlaceholderRoutes = [
+  '/search',
+  ...representativeRoutes.filter((routePath) => routePath.startsWith('/legal/')),
+]
+for (const routePath of excludedPlaceholderRoutes) {
   const html = read(outputPath(routePath))
-  if (html && /class=["'][^"']*affiliate-ad/i.test(html)) {
-    fail(`Affiliate banner markup must not render on ${routePath}`)
+  if (html && /class=["'][^"']*ad-placeholder/i.test(html)) {
+    fail(`Advertising placeholder must not render on ${routePath}`)
   }
 }
 
-const indexTemplate = read('index.html') ?? ''
-const autoAdsUrl =
-  'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9151036466808188'
-const autoAdsUrlCount = indexTemplate.split(autoAdsUrl).length - 1
-if (autoAdsUrlCount !== 1) {
-  fail(`The approved AdSense Auto Ads URL must appear exactly once in index.html; found ${autoAdsUrlCount}`)
-}
-if (!indexTemplate.includes('adsenseAutoAds.async = true')) {
-  fail('The AdSense Auto Ads loader must load asynchronously')
-}
-if (!indexTemplate.includes("adsenseAutoAds.crossOrigin = 'anonymous'")) {
-  fail('The AdSense Auto Ads loader must set anonymous cross-origin mode')
-}
-if (!indexTemplate.includes('document.head.appendChild(adsenseAutoAds)')) {
-  fail('The AdSense Auto Ads loader must append its script to the document head')
-}
-if (!indexTemplate.includes("location.pathname !== '/search'")) {
-  fail('Affiliate popunder loader must exclude /search')
-}
-if (!indexTemplate.includes("!location.pathname.startsWith('/legal/')")) {
-  fail('Affiliate popunder loader must exclude /legal/*')
-}
-
-const activeIndexTemplate = indexTemplate.replace(/<!--[\s\S]*?-->/g, '')
-for (const activeGptPattern of [
-  'securepubads.g.doubleclick.net',
-  'googletag.defineSlot',
-  'googletag.defineOutOfPageSlot',
-]) {
-  if (activeIndexTemplate.includes(activeGptPattern)) {
-    fail(`GPT must remain inactive outside HTML comments: ${activeGptPattern}`)
+const forbiddenAdCodePatterns = [
+  ['AdSense loader', /pagead2\.googlesyndication\.com|adsbygoogle|ca-pub-/i],
+  ['Google Publisher Tag', /securepubads\.g\.doubleclick\.net|\bgoogletag\.|23346398271/i],
+  ['affiliate banner', /highperformanceformat\.com|\batOptions\b/i],
+  ['affiliate popunder', /effectivecpmnetwork\.com/i],
+]
+for (const relativePath of ['index.html', ...walk('src')]) {
+  const content = read(relativePath) ?? ''
+  for (const [label, pattern] of forbiddenAdCodePatterns) {
+    if (pattern.test(content)) {
+      fail(`${label} code must remain removed: ${relativePath}`)
+    }
   }
 }
 

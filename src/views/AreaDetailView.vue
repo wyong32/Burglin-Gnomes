@@ -13,9 +13,7 @@
           </figure>
         </div>
 
-        <!-- <GptAd unit="banner1" /> -->
-
-        <AffiliateAd />
+        <AdPlaceholder />
 
         <div class="guide-layout">
           <PageSidebar
@@ -44,9 +42,8 @@
               </div>
             </section>
             
-            <!-- <GptAd unit="banner2" /> -->
             
-            <AffiliateAd />
+            <AdPlaceholder />
 
             <section id="items" class="guide-block">
               <h2>Items and weapons found in {{ area.name }}</h2>
@@ -65,9 +62,7 @@
               </div>
             </section>
 
-            <!-- <GptAd unit="banner3" /> -->
-
-            <AffiliateAd />
+            <AdPlaceholder />
 
             <section id="recipes" class="guide-block">
               <h2>Recipes connected to {{ area.name }}</h2>
@@ -86,9 +81,7 @@
               </div>
             </section>
 
-            <!-- <GptAd unit="banner1" /> -->
-
-            <AffiliateAd />
+            <AdPlaceholder />
 
             <section id="tasks" class="guide-block">
               <h2>Tasks and danger checks in {{ area.name }}</h2>
@@ -108,9 +101,7 @@
               </div>
             </section>
 
-            <!-- <GptAd unit="banner2" /> -->
-
-            <AffiliateAd />
+            <AdPlaceholder />
 
             <section v-if="area.deepDiveSections?.length" id="field-guide" class="guide-block">
               <h2>{{ area.name }} field guide</h2>
@@ -154,9 +145,7 @@
         </div>
       </div>
 
-      <!-- <GptAd unit="banner3" /> -->
-
-      <AffiliateAd />
+      <AdPlaceholder />
     </div>
   </section>
 </template>

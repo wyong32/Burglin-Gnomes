@@ -16,9 +16,7 @@
           </figure>
         </div>
 
-        <!-- <GptAd unit="banner1" /> -->
-
-        <AffiliateAd />
+        <AdPlaceholder />
 
         <section v-if="categoryOptions.length" class="guide-filter-section">
           <div class="guide-filter-content" aria-label="Guide categories">
@@ -79,9 +77,7 @@
           </div>
         </section>
 
-        <!-- <GptAd unit="banner2" /> -->
-
-        <AffiliateAd />
+        <AdPlaceholder />
       </div>
     </div>
   </section>

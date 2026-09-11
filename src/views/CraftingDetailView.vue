@@ -13,9 +13,7 @@
           </figure>
         </div>
 
-        <!-- <GptAd unit="banner1" /> -->
-
-        <AffiliateAd />
+        <AdPlaceholder />
 
         <div class="guide-layout">
           <PageSidebar
@@ -61,9 +59,7 @@
               <p>{{ recipe.bestUse }}</p>
             </section>
 
-            <!-- <GptAd unit="banner2" /> -->
-
-            <AffiliateAd />
+            <AdPlaceholder />
 
             <section id="areas" class="guide-block">
               <h2>Where to craft or route {{ recipe.name }}</h2>
@@ -96,9 +92,7 @@
               </div>
             </section>
 
-            <!-- <GptAd unit="banner3" /> -->
-
-            <AffiliateAd />
+            <AdPlaceholder />
 
             <section v-if="recipeGuideLink" id="guide" class="guide-block">
               <h2>Guide for {{ recipe.name }} and similar gear</h2>
@@ -124,9 +118,7 @@
               </div>
             </section>
 
-            <!-- <GptAd unit="banner1" /> -->
-
-            <AffiliateAd />
+            <AdPlaceholder />
 
             <section id="notes" class="guide-block">
               <h2>{{ recipe.name }} route notes</h2>

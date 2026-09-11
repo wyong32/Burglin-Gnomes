@@ -17,9 +17,7 @@
           </figure>
         </div>
 
-        <!-- <GptAd unit="banner1" /> -->
-
-        <AffiliateAd />
+        <AdPlaceholder />
 
         <div class="guide-layout">
           <PageSidebar
@@ -79,9 +77,7 @@
               </div>
             </section>
 
-            <!-- <GptAd unit="banner2" /> -->
-
-            <AffiliateAd />
+            <AdPlaceholder />
 
             <section id="human-world" class="guide-block">
               <h2>Human World: task area with extraction pressure</h2>
@@ -131,9 +127,7 @@
               </div>
             </section>
 
-            <!-- <GptAd unit="banner3" /> -->
-
-            <AffiliateAd />
+            <AdPlaceholder />
 
             <section id="area-routes" class="guide-block">
               <h2>Area pages for items, weapons, and recipes</h2>
@@ -160,9 +154,7 @@
               </div>
             </section>
 
-            <!-- <GptAd unit="banner1" /> -->
-
-            <AffiliateAd />
+            <AdPlaceholder />
 
             <section id="tree" class="guide-block">
               <h2>The Tree: spawn and respawn point</h2>
@@ -205,9 +197,7 @@
               </div>
             </section>
 
-            <!-- <GptAd unit="banner2" /> -->
-
-            <AffiliateAd />
+            <AdPlaceholder />
 
             <section id="well" class="guide-block">
               <h2>The Well: craft backpack, pickaxe, metal bat, shoes, and potions</h2>
@@ -266,9 +256,7 @@
               </div>
             </section>
 
-            <!-- <GptAd unit="banner3" /> -->
-
-            <AffiliateAd />
+            <AdPlaceholder />
 
             <section id="pre-run-checklist" class="guide-block">
               <h2>Pre-run checklist before entering the house</h2>
@@ -286,9 +274,7 @@
           </div>
         </div>
 
-        <!-- <GptAd unit="banner1" /> -->
-
-        <AffiliateAd />
+        <AdPlaceholder />
       </div>
     </div>
   </section>

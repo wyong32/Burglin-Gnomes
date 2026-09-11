@@ -17,9 +17,7 @@
           </figure>
         </div>
 
-        <!-- <GptAd unit="banner1" /> -->
-
-        <AffiliateAd />
+        <AdPlaceholder />
 
         <div class="guide-layout">
           <PageSidebar
@@ -81,9 +79,7 @@
               </div>
             </section>
 
-            <!-- <GptAd unit="banner2" /> -->
-
-            <AffiliateAd />
+            <AdPlaceholder />
 
             <section id="area-guides" class="guide-block">
               <h2>Area guides for items, routes, and threats</h2>
@@ -111,9 +107,7 @@
               </div>
             </section>
 
-            <!-- <GptAd unit="banner3" /> -->
-
-            <AffiliateAd />
+            <AdPlaceholder />
 
             <section id="wiki-topics" class="guide-block">
               <h2>Popular questions by topic</h2>
@@ -206,9 +200,7 @@
     </div>
   </section>
 
-  <!-- <GptAd unit="banner1" /> -->
-
-  <AffiliateAd />
+  <AdPlaceholder />
 
   <section id="guide-labels" class="labels-section page-section">
     <div class="container">
@@ -244,9 +236,7 @@
     </div>
   </section>
 
-  <!-- <GptAd unit="banner2" /> -->
-
-  <AffiliateAd />
+  <AdPlaceholder />
 
   <section id="official-facts" class="facts-section page-section">
     <div class="container">
@@ -286,9 +276,7 @@
     </div>
   </section>
 
-  <!-- <GptAd unit="banner3" /> -->
-
-  <AffiliateAd />
+  <AdPlaceholder />
   </div>
 </template>
 

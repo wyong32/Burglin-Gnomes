@@ -51,47 +51,16 @@
           </section>
 
           <section class="guide-block">
-            <h2>Google and third-party advertising</h2>
+            <h2>Advertising status</h2>
             <p>
-              This site may display advertising supplied by Google or other third-party advertising
-              vendors. Those vendors may use cookies, mobile or browser identifiers, IP-derived
-              location, and information about visits to this and other sites to deliver, measure,
-              limit, and report advertisements. Depending on your region and consent choices, ads
-              may be personalized using interests or may be non-personalized and based primarily on
-              the current page and general location.
+              Content pages reserve labelled spaces where advertising may appear in the future.
+              These spaces are currently visual placeholders only: the site does not load Google
+              AdSense, Google Publisher Tag, affiliate banner, or affiliate popunder scripts.
             </p>
             <p>
-              Google is a third-party vendor and may use advertising cookies to serve ads. You can
-              review or change Google advertising personalization through
-              <a href="https://adssettings.google.com/" rel="noopener noreferrer" target="_blank">Google Ads Settings</a>.
-              Information about how Google uses data from sites that use its services is available
-              from
-              <a href="https://policies.google.com/technologies/partner-sites" rel="noopener noreferrer" target="_blank">Google's partner-sites notice</a>.
-            </p>
-          </section>
-
-          <section class="guide-block">
-            <h2>Affiliate advertising</h2>
-            <p>
-              Normal content pages may include affiliate advertising supplied by an external ad
-              network. The provider may set or read cookies and similar identifiers, measure whether
-              an ad was delivered or selected, apply frequency limits, and perform fraud prevention.
-              Affiliate advertising is labelled as advertising and does not change the price of the
-              guide content, which remains freely accessible. Search and legal pages do not load our
-              affiliate banner placements or affiliate popunder loader.
-            </p>
-          </section>
-
-          <section class="guide-block">
-            <h2>Consent choices for the EEA, United Kingdom, and Switzerland</h2>
-            <p>
-              Where required, advertising and related storage must be controlled through a consent
-              mechanism that meets applicable law and Google's consent requirements. Visitors in the
-              European Economic Area, United Kingdom, and Switzerland should be presented with a
-              Google-certified consent management platform before personalized advertising or
-              non-essential advertising storage is used. Available choices may include accepting,
-              rejecting, or managing vendors and purposes. Consent can be changed later through the
-              controls provided by that platform.
+              An ads.txt authorization record does not itself load advertising or place cookies in a
+              visitor's browser. If active advertising is introduced later, this policy will be
+              updated to identify the providers and any applicable consent choices.
             </p>
           </section>
 
@@ -134,8 +103,8 @@
             <h2>Policy updates</h2>
             <p>
               We may update this policy when our hosting, analytics, advertising, legal obligations,
-              or site features change. Material updates will be published on this page. The effective
-              date of this version is July 20, 2026.
+              or site features change. Material updates will be published on this page. The
+              effective date of this version is September 11, 2026.
             </p>
           </section>
 
@@ -152,8 +121,7 @@
   </section>
 </template>
 
-<script setup>
-</script>
+<script setup></script>
 
 <style scoped>
 .legal-main {

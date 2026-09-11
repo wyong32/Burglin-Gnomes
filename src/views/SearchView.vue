@@ -25,7 +25,6 @@
             </div>
           </div>
 
-          <!-- <GptAd unit="banner3" /> -->
 
           <section v-if="query" class="search-results-section" aria-label="Search results">
             <div class="section-heading">
@@ -65,7 +64,6 @@
             </div>
           </section>
 
-          <!-- <GptAd unit="banner1" /> -->
 
         </div>
       </div>

@@ -17,9 +17,7 @@
           </figure>
         </div>
 
-        <!-- <GptAd unit="banner1" /> -->
-
-        <AffiliateAd />
+        <AdPlaceholder />
 
         <div class="guide-layout">
           <PageSidebar
@@ -78,9 +76,7 @@
                     </div>
                   </div>
 
-                  <!-- <GptAd unit="banner2" /> -->
-
-                  <AffiliateAd />
+                  <AdPlaceholder />
   
                 </section>
               </div>

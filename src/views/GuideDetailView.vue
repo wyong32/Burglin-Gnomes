@@ -25,9 +25,7 @@
           </figure>
         </div>
 
-        <!-- <GptAd unit="banner2" /> -->
-
-        <AffiliateAd />
+        <AdPlaceholder />
 
         <div class="guide-layout guide-detail-layout">
           <article class="guide-main guide-article">
@@ -37,9 +35,7 @@
 
             <div class="guide-body" v-html="guide.detailsHtml"></div>
 
-            <!-- <GptAd unit="banner3" /> -->
-
-            <AffiliateAd />
+            <AdPlaceholder />
 
             <section v-if="guidePager.length" class="related-guides-section">
               <div class="section-heading">

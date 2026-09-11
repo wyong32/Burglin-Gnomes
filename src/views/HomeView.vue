@@ -42,9 +42,7 @@
     </div>
   </section>
 
-  <!-- <GptAd unit="banner3" /> -->
-
-  <AffiliateAd />
+  <AdPlaceholder />
 
   <section class="facts-section page-section">
     <div class="container">
@@ -84,9 +82,7 @@
     </div>
   </section>
 
-  <!-- <GptAd unit="banner1" /> -->
-
-  <AffiliateAd />
+  <AdPlaceholder />
 
   <section class="intro-band">
     <div class="container">
@@ -106,9 +102,7 @@
     </div>
   </section>
 
-  <!-- <GptAd unit="banner2" /> -->
-
-  <AffiliateAd />
+  <AdPlaceholder />
 
   <section class="quicklinks-section page-section">
     <div class="container">
@@ -160,9 +154,7 @@
     </div>
   </section>
 
-  <!-- <GptAd unit="banner3" /> -->
-
-  <AffiliateAd />
+  <AdPlaceholder />
 
   <section class="plan-section page-section">
     <div class="container">
@@ -207,9 +199,7 @@
     </div>
   </section>
 
-  <!-- <GptAd unit="banner1" /> -->
-
-  <AffiliateAd />
+  <AdPlaceholder />
 
   <section class="overview-section page-section">
     <div class="container">
@@ -241,9 +231,7 @@
     </div>
   </section>
 
-  <!-- <GptAd unit="banner2" /> -->
-
-  <AffiliateAd />
+  <AdPlaceholder />
 
   <section class="priority-section page-section">
     <div class="container">
@@ -288,9 +276,7 @@
     </div>
   </section>
 
-  <!-- <GptAd unit="banner3" /> -->
-
-  <AffiliateAd />
+  <AdPlaceholder />
 
   <section class="first-tasks-section page-section">
     <div class="container">
@@ -345,9 +331,7 @@
     </div>
   </section>
 
-  <!-- <GptAd unit="banner1" /> -->
-
-  <AffiliateAd />
+  <AdPlaceholder />
 
   <section class="tools-section page-section">
     <div class="container">
@@ -377,9 +361,7 @@
     </div>
   </section>
 
-  <!-- <GptAd unit="banner2" /> -->
-
-  <AffiliateAd />
+  <AdPlaceholder />
 
   <section class="systems-section page-section">
     <div class="container">
@@ -411,9 +393,7 @@
     </div>
   </section>
 
-  <!-- <GptAd unit="banner3" /> -->
-
-  <AffiliateAd />
+  <AdPlaceholder />
 
   <section class="faq-section page-section" id="faq">
     <div class="container">
@@ -444,9 +424,8 @@
     </div>
   </section>
   
-  <!-- <GptAd unit="banner1" /> -->
   
-  <AffiliateAd />
+  <AdPlaceholder />
   </div>
 </template>
 

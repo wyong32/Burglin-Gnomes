@@ -18,9 +18,7 @@
           </figure>
         </div>
 
-        <!-- <GptAd unit="banner2" /> -->
-
-        <AffiliateAd />
+        <AdPlaceholder />
 
         <div class="guide-layout">
           <PageSidebar
@@ -60,9 +58,7 @@
               </div>
             </section>
 
-            <!-- <GptAd unit="banner3" /> -->
-
-            <AffiliateAd />
+            <AdPlaceholder />
 
             <section id="controls" class="guide-block">
               <h2>Basic controls that actually decide runs</h2>
@@ -85,9 +81,7 @@
               </div>
             </section>
 
-            <!-- <GptAd unit="banner1" /> -->
-
-            <AffiliateAd />
+            <AdPlaceholder />
 
             <section id="first-route" class="guide-block">
               <h2>Best first route for new players</h2>
@@ -106,9 +100,7 @@
               </div>
             </section>
 
-            <!-- <GptAd unit="banner2" /> -->
-
-            <AffiliateAd />
+            <AdPlaceholder />
 
             <section id="first-tasks" class="guide-block">
               <h2>First task list new players should learn</h2>
@@ -136,9 +128,7 @@
               </div>
             </section>
 
-            <!-- <GptAd unit="banner3" /> -->
-
-            <AffiliateAd />
+            <AdPlaceholder />
 
             <section id="task-system" class="guide-block">
               <h2>Daily task pool, group limits, and difficulty by day</h2>
@@ -191,9 +181,7 @@
               </div>
             </section>
 
-            <!-- <GptAd unit="banner1" /> -->
-
-            <AffiliateAd />
+            <AdPlaceholder />
 
             <section id="doors-windows" class="guide-block">
               <h2>How to open doors, climb windows, and avoid getting stuck</h2>
@@ -232,9 +220,7 @@
               </div>
             </section>
 
-            <!-- <GptAd unit="banner2" /> -->
-
-            <AffiliateAd />
+            <AdPlaceholder />
 
             <section id="death-revival" class="guide-block">
               <h2>Death and revival mechanics: CPR, Spirit Catcher, and failed days</h2>
@@ -269,9 +255,7 @@
               </div>
             </section>
 
-            <!-- <GptAd unit="banner3" /> -->
-
-            <AffiliateAd />
+            <AdPlaceholder />
 
             <section id="bug-fixes" class="guide-block">
               <h2>Muscle weakness bug, co-op lag, disconnects, and virtual memory setup</h2>
@@ -305,9 +289,7 @@
               </div>
             </section>
 
-            <!-- <GptAd unit="banner1" /> -->
-
-            <AffiliateAd />
+            <AdPlaceholder />
 
             <section id="settings" class="guide-block">
               <h2>Settings and controls worth checking before the first run</h2>
@@ -324,9 +306,7 @@
               </div>
             </section>
 
-            <!-- <GptAd unit="banner2" /> -->
-
-            <AffiliateAd />
+            <AdPlaceholder />
 
             <section id="room-order" class="guide-block">
               <h2>Recommended room order</h2>
@@ -348,9 +328,7 @@
     </div>
   </section>
 
-  <!-- <GptAd unit="banner3" /> -->
-
-  <AffiliateAd />
+  <AdPlaceholder />
 
   <section id="checklist" class="route-section page-section">
     <div class="container">
@@ -369,9 +347,7 @@
     </div>
   </section>
 
-  <!-- <GptAd unit="banner1" /> -->
-
-  <AffiliateAd />
+  <AdPlaceholder />
 
   <section id="mistakes" class="mistakes-section page-section">
     <div class="container">
@@ -390,9 +366,7 @@
     </div>
   </section>
 
-  <!-- <GptAd unit="banner2" /> -->
-
-  <AffiliateAd />
+  <AdPlaceholder />
   </div>
 </template>
 

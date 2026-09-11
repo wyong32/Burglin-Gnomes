@@ -17,9 +17,7 @@
           </figure>
         </div>
 
-        <!-- <GptAd unit="banner2" /> -->
-
-        <AffiliateAd />
+        <AdPlaceholder />
 
         <div class="guide-layout">
           <PageSidebar
@@ -63,9 +61,7 @@
               </div>
             </section>
 
-            <!-- <GptAd unit="banner3" /> -->
-
-            <AffiliateAd />
+            <AdPlaceholder />
 
             <section id="recipes" class="guide-block recipe-board-section">
               <div class="section-heading">
@@ -92,9 +88,7 @@
               </div>
             </section>
 
-            <!-- <GptAd unit="banner1" /> -->
-
-            <AffiliateAd />
+            <AdPlaceholder />
 
             <section id="materials" class="guide-block materials-section">
               <div class="section-heading">
@@ -118,9 +112,7 @@
               </div>
             </section>
 
-            <!-- <GptAd unit="banner2" /> -->
-
-            <AffiliateAd />
+            <AdPlaceholder />
           </div>
         </div>
       </div>
